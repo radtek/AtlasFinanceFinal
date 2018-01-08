@@ -3,21 +3,21 @@ using AttributeRouting.Web.Mvc;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Atlas.Online.Web.AttributeRoutingConfig), "Start")]
 
-namespace Atlas.Online.Web
+namespace Atlas.Online.Web 
 {
-  public static class AttributeRoutingConfig
-  {
-    public static void RegisterRoutes(RouteCollection routes)
-    {
-      // See http://github.com/mccalltd/AttributeRouting/wiki for more options.
-      // To debug routes locally using the built in ASP.NET development server, go to /routes.axd
+    public static class AttributeRoutingConfig
+	{
+		public static void RegisterRoutes(RouteCollection routes) 
+		{    
+			// See http://github.com/mccalltd/AttributeRouting/wiki for more options.
+			// To debug routes locally using the built in ASP.NET development server, go to /routes.axd
+            
+			routes.MapAttributeRoutes();
+		}
 
-      routes.MapAttributeRoutes();
+        public static void Start() 
+		{
+            RegisterRoutes(RouteTable.Routes);
+        }
     }
-
-    public static void Start()
-    {
-      //RegisterRoutes(RouteTable.Routes);
-    }
-  }
 }
