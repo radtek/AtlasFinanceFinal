@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Online.Transaction.Processor", "Atlas.Online.Transaction.Processor.csproj", "{176C88CF-FC9A-45EF-BAC0-92943D3EC76A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{91E4E4D8-22C4-497C-B054-698F47B1193F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.RabbitMQ.Messages", "..\..\..\Libraries\Atlas.RabbitMQ.Messages\Atlas.RabbitMQ.Messages.csproj", "{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Level Reactors", "Service Level Reactors", "{3DA02B5C-666A-4C88-8AC8-E573B0360569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Enumerators", "..\..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj", "{07FC6272-5FA2-45A7-A99C-062EC5B0C205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.DevExpress.Xpo", "..\..\..\Libraries\Masstransit.DevExpress.Xpo\MassTransit.DevExpress.Xpo.csproj", "{5877E676-EE4C-45B7-911A-17D8CE303E9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{176C88CF-FC9A-45EF-BAC0-92943D3EC76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176C88CF-FC9A-45EF-BAC0-92943D3EC76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176C88CF-FC9A-45EF-BAC0-92943D3EC76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176C88CF-FC9A-45EF-BAC0-92943D3EC76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5877E676-EE4C-45B7-911A-17D8CE303E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5877E676-EE4C-45B7-911A-17D8CE303E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5877E676-EE4C-45B7-911A-17D8CE303E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5877E676-EE4C-45B7-911A-17D8CE303E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,3 @@
+
+@REM Generate classes
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\SvcUtil.exe" https://webservices.compuscan.co.za/NormalSearchService?wsdl /language:C# /ct:System.Collections.Generic.List`1  /serializer:XmlSerializer /o:"D:\AtlasDev\Services\Atlas.Scorecard.Server\Server\WCF\Client\NormalSearchService.cs" /config:"D:\AtlasDev\Services\Atlas.Scorecard.Server\Server\WCF\Client\NormalSearchService.config" /n:*,Atlas.ThirdParty.CS.Bureau

@@ -1,0 +1,140 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Naedo Controls";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="ControlController" class="ng-cloak" ng-init="init(@Html.Json((object)ViewBag.id))">
+  <div ng-show="recordNotFound">
+    <center><div class="space-buffer" id="spin" /></center>
+  </div>
+  <div class="ng-cloak" ng-show="!recordNotFound">
+    <div class="tabbable-custom">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#filter">Filter</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="filter" class="tab-pane active">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="clearfix">
+                <div class="col-md-2">
+                  <label>Action Start Date</label>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                      <input type="text" class="form-control" ng-model="filterActionStartDate" readonly="" comp-datepicker-trigger>
+                      <span class="input-group-btn">
+                        <button class="btn" ng-click="filterActionStartDate=''"><i class="fa fa-times"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label>Action End Date</label>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                      <input type="text" class="form-control" ng-model="filterActionEndDate" readonly="" comp-datepicker-trigger>
+                      <span class="input-group-btn">
+                        <button class="btn" ng-click="filterActionEndDate=''"><i class="fa fa-times"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer clearfix">
+              <div>
+                <button ng-click="refresh()" class="btn btn-info pull-right">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table ng-table="controlParams" class="table ng-cloak">
+      <tr ng-repeat="control in $data">
+        <td data-title="'Bank'" class="hidden-sm hidden-xs">
+          <center> {{control.Bank }}</center>
+        </td>
+        <td data-title="'Bank Account Name'" class="hidden-sm hidden-xs">
+          <center> {{control.BankAccountName }}</center>
+        </td>
+        <td data-title="'Bank Account No'" class="hidden-sm hidden-xs" sortable="'BankAccountNo'">
+          <center> {{control.BankAccountNo }}</center>
+        </td>
+        <td data-title="'ID No'" class="hidden-sm hidden-xs">
+          <center> {{control.IdNumber }}</center>
+        </td>
+        <td data-title="'First Action Date'" class="hidden-sm hidden-xs" sortable="'FirstInstalmentDate'">
+          <center> {{control.FirstInstalmentDate | date:'yyyy-MM-dd'}}</center>
+        </td>
+        <td data-title="'Instalment'" class="hidden-sm hidden-xs" sortable="'Instalment'">
+          <center> {{control.Instalment | currency}}</center>
+        </td>
+        <td data-title="'Tracking Days'" class="hidden-sm hidden-xs">
+          <center> {{control.TrackingDaysDescription}}</center>
+        </td>
+        <td data-title="'Control Status'" class="hidden-sm hidden-xs" sortable="'ControlStatusDescription'">
+          <center><span class="curved-border" falcon-label condition="control.ControlStatusColour">{{ control.ControlStatusDescription }}</span></center>
+        </td>
+        <td data-title="'Manage'" class="hidden-sm hidden-xs">
+          <center>
+            <a ng-click="manage(control.ControlId)" rel="tooltip" title="Manage"><span class="curved-border label label-info">manage</span></a>
+
+            @if (User.IsInRole("Admin"))
+              {
+              <a ng-click="setControlId(control.ControlId)" data-toggle="modal" href="#confirmDelete" rel="tooltip" title="Remove"><span class="curved-border label label-danger">remove</span></a>
+              }
+              else
+              {
+              <a data-toggle="modal" rel="tooltip" title="Remove"><span class="curved-border label label-danger">remove</span></a>
+              }
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div aria-hidden="true" aria-labelledby="confirmDelLabel" role="dialog" tabindex="-1" id="confirmDelete" class="modal fade" style="overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        @if (User.IsInRole("Admin"))
+        {
+          <text>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Confirm Deletion ?</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you wish to remove this debit order control? {{ controlId }}</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-danger" type="button" ng-click="confirmDeletion(controlId)">Yes</button>
+              <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
+            </div>
+          </text>
+        }
+        else
+        {
+          <text>
+            <div class="modal-header-invalid">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Invalid Operation</h4>
+            </div>
+            <div class="modal-body">
+              <p>You do not have the writes to delete this record!</p>
+            </div>
+          </text>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,51 @@
+---
+title : My Account
+title_secondary : Login details
+description:
+page_list_description: Login Details
+layout: account
+---
+<form action="">
+	<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="email" class="field-label">New email address</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="email-confirm" class="field-label">Confirm new email address</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="password" class="field-label">New password</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="password-confirm" class="field-label">Confirm new password</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+	</div><!-- .row -->
+	<div class="ar">
+		<label for="submit" class="btn btn-right"><input id="submit" name="submit" type="submit" value="Update"></label>
+	</div>
+</form>

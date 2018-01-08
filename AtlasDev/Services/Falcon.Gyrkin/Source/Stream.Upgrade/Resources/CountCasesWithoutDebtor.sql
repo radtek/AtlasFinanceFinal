@@ -1,0 +1,6 @@
+﻿SELECT COUNT(CSE."CaseId")
+FROM "STR_Case" CSE
+LEFT JOIN "STR_Account" ACC ON CSE."AccountId" = ACC."AccountId"
+WHERE CSE."DebtorId" IS NULL
+AND ACC."DebtorId" IS NOT NULL
+LIMIT 10000

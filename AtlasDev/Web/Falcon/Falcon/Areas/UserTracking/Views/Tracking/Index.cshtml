@@ -1,0 +1,170 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "User Tracking";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="UserTrackingController" ng-init="init()">
+  <div class="col-md-12">    
+    <ng-form name="groupForm" id="groupForm">
+      <div class="tabbable-custom">      
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#filter" anchor-prevent-propagation>Filter</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="filter" class="tab-pane active">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="clearfix">
+                  <div class="col-md-2">
+                    <label>Start Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group date date-picker input-medium" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input name="StartDate" type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger required>
+                        <span class="input-group-btn">
+                          <button class="btn red-sunglo" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                        </span>                                                
+                      </div>                   
+                    </div>
+                    <span class="help-block">
+                      <span ng-show="groupForm.StartDate.$error.required" style="color:red;">
+                        Invalid Start Date!
+                      </span>
+                    </span>
+                      
+                  </div>
+                  <div class="col-md-2">
+                    <label>End Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input name="EndDate" type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger required>
+                        <span class="input-group-btn">
+                          <button class="btn red-sunglo" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                    <span class="help-block">
+                      <span ng-show="groupForm.EndDate.$error.required" style="color:red;">
+                        Invalid End Date!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Branch</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group input-medium">
+                      <select class="form-control" ng-model="filterBranch" ng-options="c.BranchId as c.Name for c in branches | orderBy:'Name'" ng-init="branches = options[1]"><option value='' disabled>{{ selectStateBranch }}</option></select>
+                      <span class="input-group-btn">
+                        <button class="btn red-sunglo" ng-click="filterBranch=null"><i class="fa fa-times"></i></button>
+                      </span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>User</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group input-medium">
+                      <select class="form-control" ng-model="filterUser" ng-options="b.UserId as (b.FirstName + ' ' + b.LastName) for b in users | orderBy:'FirstName'" ng-init="users = options[0]"><option value='' disabled>{{ selectStateUser }}</option></select>
+                      <span class="input-group-btn">
+                        <button class="btn red-sunglo" ng-click="filterUser=null"><i class="fa fa-times"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer clearfix">
+                <div>
+                  <button ng-click="apply()" class="btn red-sunglo pull-right" ng-disabled="isSearching || groupForm.EndDate.$error.required || groupForm.StartDate.$error.required">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table ng-table="userParams" class="table table-striped">
+        <tr ng-repeat="tracing in $data">
+          <td data-title="'Branch'">
+            <center> {{tracing.Branch}}</center>
+          </td>
+          <td data-title="'User'">
+            <center> {{tracing.FirstName + ' ' + tracing.LastName}}</center>
+          </td>
+          <td data-title="'Event'">
+            <center> {{tracing.Event}}</center>
+          </td>
+          <td data-title="'Event Date'" sortable="'EventDate'">
+            <center> {{tracing.EventDate |  date:'yyyy-MM-dd HH:mm' }}</center>
+          </td>
+          <td data-title="'Options'">
+            <center><a ng-click="pin(tracing)" data-toggle="modal" rel="tooltip" title="Pin User" href="!#pinDlg" anchor-prevent-propagation><span class="curved-border label label-info">pin</span></a></center>
+          </td>
+        </tr>
+      </table>
+    </ng-form>
+  </div>
+  
+  <div aria-hidden="true" aria-labelledby="viewPinLabel" role="dialog" tabindex="-1" id="pinDlg" class="modal fade" style="overflow-y: auto;" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-header-red-sunglo">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <center><h4 class="modal-title">Pin User</h4></center>
+        </div>
+        <div class="modal-body">
+          <div class="form-body">
+            <div class="form-group">
+              <label>User</label>
+              <input type="text" class="form-control" placeholder="" disabled value="{{ trace.FirstName + ' ' + trace.LastName }}">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">
+                  <label>Elapse</label>
+                  <div class="input-group input-small">
+                    <select class="form-control" ng-model="filterElapse" ng-options="c.Id as c.name for c in elapses"></select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label>Severity</label>
+                  <div class="input-group input-small">
+                    <select class="form-control" ng-model="filterSeverity" ng-options="c.Id as c.name for c in severity"></select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label>Alert Type</label>
+                  <div class="input-group input-small">
+                    <select class="form-control" ng-model="filterAlertType" ng-options="c.Id as c.name for c in alertTypes"></select>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="form-group">
+              <label>Value</label>
+              <input class="form-control" type="text" ng-model="elapseValue"></input>
+            </div>
+            <div class="form-group">
+              <label>{{ alertTypeMessage }}</label>
+              <tags-input ng-model="contactValues" placeholder="Add"></tags-input>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn blue-madison" type="button" ng-click="savepin(trace)" ng-disabled="loading">Pin</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

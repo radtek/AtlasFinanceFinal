@@ -1,0 +1,84 @@
+---
+title: Contact
+description:
+layout: with_outline
+---
+
+<div class="pt-beta">
+	<div class="row cf">
+		<div class="col col-6">
+			<div class="pr-alpha">
+				<img class="mb-alpha" src="{{urls.media}}/need-help.png" alt="Need Help? 0800 204 679 - Customer Care hotline. Available week days 9am to 5pm" width="274" height="84">
+
+				<h2 class="fc-beta">Send us a message</h2>
+
+				<form>
+
+					<div class="row cf">
+
+						<div class="field cf">
+							<div class="col col-4 pr-alpha">
+								<label for="company" class="field-label">Name</label>
+							</div><!-- .col -->
+							<div class="col col-8">
+								{{> forms/input }}
+							</div><!-- .col -->
+						</div>
+
+						<div class="field cf">
+							<div class="col col-4 pr-alpha">
+								<label for="company" class="field-label">Email Address</label>
+							</div><!-- .col -->
+							<div class="col col-8">
+								{{> forms/input }}
+							</div><!-- .col -->
+						</div>
+
+						<div class="field cf">
+							<div class="col col-4 pr-alpha">
+								<label for="company" class="field-label">Cell Number</label>
+							</div><!-- .col -->
+							<div class="col col-8">
+								{{> forms/inputs_two }}
+							</div><!-- .col -->
+						</div>
+
+					</div><!-- .row -->
+
+					<textarea class="d-block" palceholder="question" rows="6"></textarea>
+
+					<div class="field">
+						<strong class="mr-alpha">How should we reply to you?</strong>
+
+						{{> forms/radio }}
+						<label class="field-label mr-micro" for="checkbox4"><span class="icon radio-custom visuallyhidden-ie8"></span> Please email me</label>
+
+						{{> forms/radio }}
+						<label class="field-label" for="checkbox4"><span class="icon radio-custom visuallyhidden-ie8"></span> Please call me</label>
+					</div>
+
+					<div class="ar">
+						<label for="submit" class="btn btn-right mb-none">
+							<input id="submit" type="submit">
+						</label>
+					</div>
+
+				</form>
+
+			</div>
+		</div><!-- .col -->
+
+		<div class="col col-6">
+			<div class="bd-alpha-ltr brad-gamma bgc-alpha-ltst p-alpha ml-alpha">
+				<img class="mb-alpha" src="{{urls.media}}/responsible-lending.jpg" alt="Responsible lending creates growth" width="362" height="214">
+				
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div><!-- .col -->
+	</div><!-- .row -->
+</div>

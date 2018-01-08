@@ -1,0 +1,157 @@
+﻿@{
+  ViewBag.Title = "Application Create";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="page-content" style="min-height:1105px" ng-controller="AccountApplicationCreationControllerWizardController">
+  <div class="row" ng-show="!Loaded">
+    <div class="col-lg-12">
+      <div class="">
+        <center><img src="~/assets/img/icon_loading.gif" /></center>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN PAGE CONTENT-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet box grey-cascade" id="form_wizard_1">
+        <div class="portlet-title">
+          <div class="caption">
+            <i class="fa fa-gift"></i> Application Wizard - <span class="step-title">
+              Step 1 of 4
+            </span>
+          </div>
+        </div>
+        <div class="portlet-body form">
+          <div class="form-horizontal" novalidate="novalidate">
+            <div class="form-wizard">
+              <div class="form-body">
+                <ul class="nav nav-pills nav-justified steps">
+                  <li ng-class="{'active': isCurrentStep(0)}">
+                    <a href="#tab1" data-toggle="tab" class="step">
+                      <span class="number">
+                        1
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Client Check
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(1)}">
+                    <a href="#tab2" data-toggle="tab" class="step">
+                      <span class="number">
+                        2
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Client Details
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(2)}">
+                    <a href="#tab3" data-toggle="tab" class="step active">
+                      <span class="number">
+                        3
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Billing Setup
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(3)}">
+                    <a href="#tab4" data-toggle="tab" class="step">
+                      <span class="number">
+                        4
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Confirm
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(3)}">
+                    <a href="#tab4" data-toggle="tab" class="step">
+                      <span class="number">
+                        4
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Confirm
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(3)}">
+                    <a href="#tab4" data-toggle="tab" class="step">
+                      <span class="number">
+                        4
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Confirm
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{'active': isCurrentStep(3)}">
+                    <a href="#tab4" data-toggle="tab" class="step">
+                      <span class="number">
+                        4
+                      </span>
+                      <span class="desc">
+                        <i class="fa fa-check"></i> Confirm
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <div id="bar" class="progress progress-striped" role="progressbar">
+                  <div class="progress-bar progress-bar-success" style="width: 5%;">
+                  </div>
+                </div>
+                <div class="tab-content" ng-switch="getCurrentStep()">
+                  @*<div class="alert alert-danger display-none" style="display: block;">
+                  <button class="close" data-dismiss="alert"></button>
+                  You have some form errors. Please check below.
+                </div>
+                <div class="alert alert-success display-none" style="display: none;">
+                  <button class="close" data-dismiss="alert"></button>
+                  Your form validation is successful!
+                </div>*@
+                  <div class="tab-pane" id="tab1" ng-class="{'active': isCurrentStep(0)}" ng-switch-when="ClientCheck">
+                    <div class="form-group">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-4">
+                        @{Html.RenderPartial("_ClientCheck");}
+                      </div><div class="col-md-4"></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab2" ng-class="{'active': isCurrentStep(1)}" ng-switch-when="ClientDetails">
+                    @{Html.RenderPartial("_ClientDetails");}
+                  </div>
+                  <div class="tab-pane" id="tab3" ng-class="{'active': isCurrentStep(2)}" ng-switch-when="three">
+                    <h3 class="block">Provide your billing and credit card details</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <div class="row">
+                  <div class="col-md-offset-3 col-md-9">
+                    <div class="pull-right">
+                      <a href="javascript:;" class="btn blue component-well" ng-click="handleNext()" ng-disabled="!buttonEnabled">
+                        Continue <i class="m-icon-swapright m-icon-white"></i>
+                      </a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="javascript:;" class="btn default component-well" ng-click="handlePrevious()">
+                        <i class="m-icon-swapleft"></i> Back
+                      </a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="javascript:;" class="btn green component-well" style="display: none;">
+                        Submit <i class="m-icon-swapright m-icon-white"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END PAGE CONTENT-->

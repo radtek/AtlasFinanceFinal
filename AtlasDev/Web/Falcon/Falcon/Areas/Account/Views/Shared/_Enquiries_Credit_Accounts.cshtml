@@ -1,0 +1,32 @@
+﻿<section class="panel-body">
+  <div class="horizontal-form">
+    <div class="row">
+      <div class="col-sm-12">
+        <fieldset>
+          <legend>Transactions</legend>
+          <div class="table-responsive">
+            <table ng-table="creditAccountParams" class="table table-striped">
+              <tr ng-repeat="creditAccountParams in $data">
+                <td data-title="'Transaction Type'" sortable="'TransactionType'">
+                  <center> {{statement.TransactionType}}</center>
+                </td>
+                <td data-title="'Amount'" sortable="'Amount'">
+                  <center> {{statement.Amount | currency}}</center>
+                </td>
+                <td data-title="'Balance'" sortable="'RunningBalance'">
+                  <center> {{statement.RunningBalance | currency}}</center>
+                </td>
+                <td data-title="'Transaction Date'" sortable="'TransactionDate'">
+                  <center> {{statement.TransactionDate | date:'yyyy-MM-dd'}}</center>
+                </td>
+                <td data-title="'Create Date'" sortable="'CreateDate'">
+                  <center> {{statement.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</section>

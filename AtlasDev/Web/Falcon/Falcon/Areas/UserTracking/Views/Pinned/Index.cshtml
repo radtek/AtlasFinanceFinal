@@ -1,0 +1,64 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "User Tracking";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="UserTrackingPinnedController" ng-init="init()">
+  <div class="col-md-12">
+    <table ng-table="userParams" class="table table-striped">
+      <tr ng-repeat="pinned in $data">
+        <td data-title="'Id'">
+          <center> {{pinned.PinnedUserId}}</center>
+        </td>
+        <td data-title="'User'">
+          <center> {{pinned.FirstName + ' ' + pinned.LastName}}</center>
+        </td>
+        <td data-title="'Alert Type'">
+          <center> {{pinned.RuleSet.AlertType}}</center>
+        </td>
+        <td data-title="'Severity'">
+          <center> {{pinned.RuleSet.SeverityClassification}}</center>
+        </td>
+        <td data-title="'Elapse'">
+          <center> {{pinned.RuleSet.Elapse}}</center>
+        </td>
+        <td data-title="'Value'">
+          <center> {{pinned.RuleSet.Value}}</center>
+        </td>
+        <td data-title="'Violation Count'">
+          <center> {{pinned.ViolationCount}}</center>
+        </td>
+        <td data-title="'Active'">
+          <center><div ng-if="pinned.Active"><span class="curved-border label label-success"><i class="fa fa-check"></i></span></div></center>
+        </td>
+        <td data-title="'Create Date'" sortable="'CreateDate'">
+          <center> {{pinned.CreateDate |  date:'yyyy-MM-dd HH:mm' }}</center>
+        </td>
+        <td>
+          <center><a ng-click="setPin(pinned)" data-toggle="modal" rel="tooltip" title="remove pin" href="!#remoteDlg" anchor-prevent-propagation><span class="curved-border label label-danger">remove pin</span></a></center>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div aria-hidden="true" aria-labelledby="viewRemoveDlg" role="dialog" tabindex="-1" id="remoteDlg" class="modal fade" style="overflow-y: auto;" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-header-red-sunglo">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <center><h4 class="modal-title">Remove Pin</h4></center>
+        </div>
+        <div class="modal-body">
+          <div class="form-body">
+            Are you sure you want to remove this pin?
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn blue-madison" type="button" ng-click="removePin(pin)" ng-disabled="loading">Remove</button>
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

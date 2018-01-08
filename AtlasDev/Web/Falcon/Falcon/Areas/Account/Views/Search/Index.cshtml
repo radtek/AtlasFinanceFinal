@@ -1,0 +1,98 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Account Search";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="page-content" ng-controller="AccountSearchController" ng-init="init()">
+  <!-- page end-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable tabbable-custom tabbable-full-width">
+        <div class="tab-content">
+          <!--end tab-pane-->
+          <div id="tab_1_5" class="tab-pane active">
+            <div class="row search-form-default">
+              <div class="col-md-12">
+                <form class="form-group" action="#">
+                  <div class="input-group">
+                    <div class="input-cont">
+                      <input type="text" placeholder="Search..." id="searchInput" class="form-control" ng-model="query">
+                    </div>
+                    <span class="input-group-btn">
+                      <button type="button" class="pull-right btn btn-success" button-loading="!loaded" data-loading-text="Processing..." ng-click="search()" id="searchButton">Search &nbsp; <i class="m-icon-swapright m-icon-white"></i></button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row" ng-show="!loaded">
+              <div class="col-lg-12">
+                <div class="">
+                  <center><img src="~/assets/img/icon_loading.gif" /></center>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert-warning" ng-show="emptyResult">
+              <center>No record(s) found!</center>
+            </div>
+            <div class="table-responsive" ng-show="loaded && !emptyResult">
+              <table ng-table="searchParams" class="table table-striped" show-filter="true">
+                <tr ng-repeat="account in $data">
+                  <td data-title="'Id'" sortable="'AccountId'">
+                    <center> {{account.AccountId}}</center>
+                  </td>
+                  <td data-title="'Account No'" filter="{ 'AccountNo': 'text' }" sortable="'AccountNo'">
+                    <center> {{account.AccountNo}}</center>
+                  </td>
+                  <td data-title="'Status'" sortable="'Status'">
+                    <center><span class="curved-border" falcon-label condition="account.StatusColour">{{account.Status}}</span></center>
+                  </td>
+                  <td data-title="'Amount'">
+                    <center> {{account.LoanAmount | currency}}</center>
+                  </td>
+                  <td data-title="'Capital'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CapitalAmount'">
+                    <center> {{account.CapitalAmount | currency}}</center>
+                  </td>
+                  <td data-title="'Balance'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'Balance'">
+                    <center> {{account.Balance | currency }}</center>
+                  </td>
+                  <td data-title="'Open Date'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'OpenDate'">
+                    <center> {{account.OpenDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                  </td>
+                  <td data-title="'First Instalment Date'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'FirstInstalmentDate'">
+                    <center> {{account.FirstInstalmentDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                  </td>
+                  <td data-title="'Create Date'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+                    <center> {{account.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                  </td>
+                  <td class="hidden-sm hidden-xs">
+                    <center>
+                      <a href="#" class="curved-border label label-info" ng-click="manage(account.AccountId)">
+                        manage
+                      </a>
+                    </center>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!--end tab-pane-->
+        </div>
+      </div>
+    </div>
+    <!--end tabbable-->
+  </div>
+</div>
+@section Scripts {
+  <script type="text/javascript">
+    $('#searchInput').keypress(function (e) {
+      if (e.which == 13) {
+        $('#searchButton').click();
+        return false;
+      }
+    });
+  </script>
+}
+@section LoginCSS{
+  @Styles.Render("~/AccountSearchCSS")
+}

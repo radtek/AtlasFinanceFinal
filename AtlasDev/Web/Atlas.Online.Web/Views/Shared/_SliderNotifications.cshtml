@@ -1,0 +1,15 @@
+﻿@using Atlas.Online.Web.Resources;
+<div class="of-h cf">
+  <div class="alert alert-error anim-opacity anim-margin anim-opacity-off anim-margin-top-hide ng-cloak" ng-class="{'anim-opacity-off anim-margin-top-hide': workingDay}"><strong>@ErrorMessages.Application_CannotSelectHoliday</strong></div>
+</div>
+<div class="of-h cf">
+  <div class="alert alert-info anim-opacity anim-margin anim-opacity-off anim-margin-top-hide ng-cloak" ng-class="{'anim-opacity-off anim-margin-top-hide': !capitalOutOfBounds}"><strong>@ErrorMessages.Application_LoanAmountOutOfBounds</strong></div>            
+</div>
+<div class="of-h cf">
+  <div class="alert alert-info anim-opacity anim-margin anim-opacity-off anim-margin-top-hide ng-cloak" ng-class="{'anim-opacity-off anim-margin-top-hide': !periodOutOfBounds}"><strong>@ErrorMessages.Application_LoanPeriodOutOfBounds</strong></div>            
+</div>
+
+<div class="error ng-cloak" ng-show="!!error">
+  {{ error.message }}<br />
+  <a href="#" ng-show="error && !!error.retryHandler" ng-click="error.retryHandler()">Retry</a>
+</div>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Avs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Avs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAvsStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvsStatistics" nillable="true" type="tns:AvsStatistics" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvsStatistics" nillable="true" type="tns:ArrayOfAvsStatistics" />
+  <xs:complexType name="AvsStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalComplete" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPending" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalQueued" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalSent" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalTransactions" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvsStatistics" nillable="true" type="tns:AvsStatistics" />
+  <xs:complexType name="ArrayOfAvsTransactions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvsTransactions" nillable="true" type="tns:AvsTransactions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvsTransactions" nillable="true" type="tns:ArrayOfAvsTransactions" />
+  <xs:complexType name="AvsTransactions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankId" type="xs:long" />
+      <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastStatusDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResponseAcceptsCredit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseAcceptsDebit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseAccountOpen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResponseIdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseInitials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseOpenThreeMonths" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultColour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusIcon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="ThirdPartyRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvsTransactions" nillable="true" type="tns:AvsTransactions" />
+  <xs:complexType name="AvsService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextGenerationNo" type="xs:int" />
+      <xs:element minOccurs="0" name="NextTransmissionNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SaveSequenceNo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvsService" nillable="true" type="tns:AvsService" />
+  <xs:complexType name="ArrayOfAvsServiceBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AvsServiceBank" nillable="true" type="tns:AvsServiceBank" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAvsServiceBank" nillable="true" type="tns:ArrayOfAvsServiceBank" />
+  <xs:complexType name="AvsServiceBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankId" type="xs:long" />
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLinked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvsServiceBank" nillable="true" type="tns:AvsServiceBank" />
+</xs:schema>

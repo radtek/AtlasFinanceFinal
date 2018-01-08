@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 oldie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	{{> meta }}
+
+	<body class="d-table-full">
+
+		{{> header }}
+
+		<div class="sub-header sub-header-default"></div>
+
+		<div class="area-content bgi-gr-tb-ntrl-max">
+			<div class="wrap cf">
+				<div class="container-primary bgc-ntrl-min pos-r postn-kilo
+					{{# page.class_container_primary }}
+						{{ page.class_container_primary }}
+					{{/ page.class_container_primary }}"
+				>
+					{{{ content }}}
+				</div>
+			</div>
+
+			<div class="wrap cf ac mb-beta">
+
+				{{# page.is_home}}
+					{{> home_additional }}
+				{{/ page.is_home}}
+
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style addthis_16x16_style d-iblock">
+					<a class="addthis_button_facebook"
+						addthis:url="http://example.com"
+						addthis:title="An Example Title"
+						addthis:description="An Example Description">
+					</a>
+					<a class="addthis_button_twitter"
+						addthis:url="http://example.com"
+						addthis:title="An Example Title"
+						addthis:description="An Example Description">
+					</a>
+					<a class="addthis_button_google_plusone_share"
+						addthis:url="http://example.com"
+						addthis:title="An Example Title"
+						addthis:description="An Example Description">
+					</a>
+					<a class="addthis_button_compact"
+						addthis:url="http://example.com"
+						addthis:title="An Example Title"
+						addthis:description="An Example Description">
+					</a>
+				</div>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51f7a8833f365117"></script>
+				<!-- AddThis Button END -->
+			</div>
+		</div><!-- .area-content -->
+
+		{{> footer }}
+
+		{{# javascripts.load }}
+			vendor/jquery/jquery-1.8.3.min.js
+		{{/ javascripts.load }}
+
+	</body>
+</html>

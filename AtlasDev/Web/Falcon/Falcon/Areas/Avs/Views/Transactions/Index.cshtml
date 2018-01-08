@@ -1,0 +1,282 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Account Holder Verification";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="AvsController" ng-init="init()">
+  <div ng-show="isLoaded">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tabbable-custom">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab" href="#statistics" anchor-prevent-propagation>Statistics</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#filter" anchor-prevent-propagation>Filter</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="statistics" class="tab-pane active">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <td><center>Bank Name</center></td>
+                      <td><center>Queued</center></td>
+                      <td><center>Pending</center></td>
+                      <td><center>Complete</center></td>
+                      <td><center>Sent</center></td>
+                      <td><center>Total Transactions</center></td>
+                      <td><center>Response Time</center></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="stat in avsStats">
+                      <td><center>{{stat.Bank}}</center></td>
+                      <td><center>{{stat.TotalQueued}}</center></td>
+                      <td><center>{{stat.TotalPending}}</center></td>
+                      <td><center>{{stat.TotalComplete}}</center></td>
+                      <td><center>{{stat.TotalSent}}</center></td>
+                      <td><center>{{stat.TotalTransactions}}</center></td>
+                      <td><center>{{stat.ResponseTime}}</center></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="filter" class="tab-pane">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="clearfix">
+                    <div class="col-md-2">
+                      <label>Start Date</label>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <div class="input-group date date-picker input-medium" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                          <input type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                          <span class="input-group-btn">
+                            <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <label>End Date</label>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                          <input type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                          <span class="input-group-btn">
+                            <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix pad-buffer-top">
+                    <div class="col-md-2">
+                      <label>Transaction ID</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input class="form-control input-medium" id="filters_transactionId" numbers-only="numbers-only" ng-model="filterTransactionId" name="transactionId" type="text" />
+                    </div>
+                    <div class="col-md-2">
+                      <label>ID Number/Passport</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input class="form-control input-medium" id="filters_iDNumber" ng-model="filterIdNumber" name="IdNumber" type="text" />
+                    </div>
+                  </div>
+                  <div class="clearfix pad-buffer-top">
+                    <div class="col-md-2">
+                      <label>Branch</label>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group input-medium">
+                        <select ng-init="getCompanys()" class="form-control" ng-model="filterCompany" ng-options="c.CompanyId as c.CompanyName for c in companies"></select>
+                        <span class="input-group-btn">
+                          <button class="btn" ng-click="filterCompany=0"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <label>Bank</label>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group input-medium">
+                        <select class="form-control" ng-model="filterBank" ng-options="b.BankId as b.BankName for b in banks"></select>
+                        <span class="input-group-btn">
+                          <button class="btn" ng-click="filterBank=0"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-footer clearfix">
+                  <div>
+                    <button ng-click="refresh()" class="btn green pull-right">Apply</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 pad-buffer-bottom">
+            <button type="button" class="btn green pull-right" ng-disabled="isRefreshing" ng-click="refresh()">Refresh</button>
+            @*<div class="btn-group pull-right pad-buffer-right">
+              <button type="button" class="btn btn-primary" tabindex="-1" ng-click="resendMultiple(0)">Resend</button>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                <i class="fa fa-angle-down"></i>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="service in services">
+                  <a ng-click="resendMultiple(service.ServiceId)">
+                    {{service.Description}}
+                  </a>
+                </li>
+              </ul>
+            </div>*@
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table si-table class="table table-striped ng-cloak">
+            <tr>
+              <th></th>
+              <th>Initials</th>
+              <th>Last Name</th>
+              <th>Account No</th>
+              <th>ID Number</th>
+              <th>Bank</th>
+              <th>Status</th>
+              <th>Service</th>
+              <th class="col-align-center">Result</th>
+              <th class="col-align-center">Request Date</th>
+              <th class="col-align-center">Response Date</th>
+              <th class="col-align-center">Delay</th>
+              <th class="col-align-center">Manage</th>
+            </tr>
+            <tbody>
+              <tr si-sortable ng-repeat="avs in avsData" id="transaction_{{::avs.TransactionId}}">
+                <td>
+                  <div class="checker"><span ng-class="{checked:avs.Selected, unchecked:!avs.Selected}"><input type="checkbox" ng-model="avs.Selected"></span></div>
+                </td>
+                <td>{{ ::avs.Initials }}</td>
+                <td>{{::avs.LastName}}</td>
+                <td>{{::avs.AccountNo }}</td>
+                <td>{{::avs.IdNumber}}</td>
+                <td>{{::avs.Bank}}</td>
+                <td>{{::avs.Status}}</td>
+                <td>{{::avs.Service}}</td>
+                <td class="col-align-center"><span class="curved-border" falcon-label condition="avs.ResultColour" popover data-trigger="hover" data-html="true" data-selector="" data-placement="left" data-original-title="Results" data-content="{{avsResultHtml(avs);}}">{{avs.Result}}</span></td>
+                <td class="col-align-center">{{::avs.CreateDate | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td class="col-align-center">{{::avs.ResponseDate | date:'yyyy-MM-dd HH:mm'}}</td>
+                <td class="col-align-center">{{::avs.TimeTaken}}</td>
+                <td class="col-align-center">
+                  <center>
+                    @*<a ng-click="results(avs)" rel="tooltip" title="Transaction Results"><span class="curved-border label label-success">results</span></a>*@
+                    @*<a ng-click="resend(avs)" rel="tooltip" title="Resend transaction"><span class="curved-border label label-info">resend</span></a>*@
+                    <div class="input-group-btn input-small">
+                      <button type="button" class="btn btn-info" tabindex="-1" ng-click="resend(avs, 0)">Resend</button>
+                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                        <i class="fa fa-angle-down"></i>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="service in services">
+                          <a ng-click="resend(avs, service.ServiceId)">
+                            {{service.Description}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </center>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="8">
+                  <si-table-pagination limit="{{ limit }}" indices="5" total="params.total" offset="params.offset" />
+                </td>
+                <td colspan="4">
+                  <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 1000;" anchor-prevent-propagation>1000</a>
+                  <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 100;" anchor-prevent-propagation>100</a>
+                  <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 10;" anchor-prevent-propagation>10</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+          @*<table ng-table="tableParams" class="table table-striped" show-filter="true">
+              <tr ng-repeat="avs in $data">
+                <td>
+                  <div class="checker"><span ng-class="{checked:avs.Selected, unchecked:!avs.Selected}"><input type="checkbox" ng-model="avs.Selected"></span></div>
+                </td>
+                <td data-title="'Initials'" filter="{ 'Initials': 'text' }" sortable="'Initials'">
+                  <center> {{avs.Initials}}</center>
+                </td>
+                <td data-title="'Last Name'" filter="{ 'LastName': 'text' }" sortable="'LastName'">
+                  <center> {{avs.LastName}}</center>
+                </td>
+                <td data-title="'Account No'" filter="{ 'AccountNo': 'text' }" sortable="'AccountNo'">
+                  <center> {{avs.AccountNo}}</center>
+                </td>
+                <td data-title="'ID Number'" filter="{ 'IdNumber': 'text' }" sortable="'IdNumber'">
+                  <center> {{avs.IdNumber}}</center>
+                </td>
+                <td data-title="'Bank'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                  <center> {{avs.Bank}}</center>
+                </td>
+                <td data-title="'Status'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                  <center> {{avs.Status}}</center>
+                </td>
+                <td data-title="'Result'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'Result'">
+                  <center><span class="curved-border" falcon-label condition="avs.ResultColour" popover data-trigger="hover" data-html="true" data-selector="" data-placement="left" data-original-title="Results" data-content="{{avsResultHtml(avs);}}">{{avs.Result}}</span></center>
+                </td>
+                <td data-title="'RequestDate'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+                  <center> {{avs.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                </td>
+                <td data-title="'ResponseDate'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'ResponseDate'">
+                  <center> {{avs.ResponseDate | date:'yyyy-MM-dd HH:mm'}}</center>
+                </td>
+                <td data-title="'Delay'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'TimeTaken'">
+                  <center> {{avs.TimeTaken}}</center>
+                </td>
+                <td data-title="'Manage'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" >
+                  <center><a ng-click="resend()" rel="tooltip" title="Resend transaction"><span class="curved-border label label-info">resend</span></a></center>
+                </td>
+              </tr>
+            </table>*@
+        </div>
+      </div>
+    </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="viewResendDlg" role="dialog" tabindex="-1" id="resendDlg" class="modal" style="overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form name="escalateForm" id="escalateForm">
+          <div class="modal-header modal-header-yellow-crusta">
+            <center>
+              <h4 class="modal-title">Resend Transaction</h4>
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                Are you sure you wish to resend this transaction?
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">No</a>
+            <a class="pull-right btn btn-primary component-well" button-loading="resending" data-loading-text="Processing Request..." ng-click="resend();">Yes</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

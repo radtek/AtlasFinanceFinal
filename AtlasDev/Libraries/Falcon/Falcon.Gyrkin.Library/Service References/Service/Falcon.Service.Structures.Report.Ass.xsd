@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="MainSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cheque" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChequeCount" type="xs:long" />
+      <xs:element minOccurs="0" name="Collections" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Handovers" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HandoversCount" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainSummary" nillable="true" type="tns:MainSummary" />
+  <xs:complexType name="ArrayOfCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cheque" nillable="true" type="tns:Cheque" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheque" nillable="true" type="tns:ArrayOfCheque" />
+  <xs:complexType name="Cheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNo1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cheque" nillable="true" type="tns:Cheque" />
+  <xs:complexType name="ArrayOfInsurancePercentiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsurancePercentiles" nillable="true" type="tns:InsurancePercentiles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsurancePercentiles" nillable="true" type="tns:ArrayOfInsurancePercentiles" />
+  <xs:complexType name="InsurancePercentiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoInsurance1" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance12" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance2" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance24" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance3" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance4" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance5" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsurance6" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInsuranceTot" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsurancePercentiles" nillable="true" type="tns:InsurancePercentiles" />
+  <xs:complexType name="ArrayOfInterestPercentiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InterestPercentiles" nillable="true" type="tns:InterestPercentiles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterestPercentiles" nillable="true" type="tns:ArrayOfInterestPercentiles" />
+  <xs:complexType name="InterestPercentiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoInterest1" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest12" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest2" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest24" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest3" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest4" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest5" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterest6" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoInterestTot" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterestPercentiles" nillable="true" type="tns:InterestPercentiles" />
+  <xs:complexType name="ArrayOfInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Insurance" nillable="true" type="tns:Insurance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsurance" nillable="true" type="tns:ArrayOfInsurance" />
+  <xs:complexType name="Insurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNo1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Insurance" nillable="true" type="tns:Insurance" />
+  <xs:complexType name="ArrayOfInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Interest" nillable="true" type="tns:Interest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterest" nillable="true" type="tns:ArrayOfInterest" />
+  <xs:complexType name="Interest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNo1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Interest" nillable="true" type="tns:Interest" />
+  <xs:complexType name="ArrayOfLoanMix">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanMix" nillable="true" type="tns:LoanMix" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanMix" nillable="true" type="tns:ArrayOfLoanMix" />
+  <xs:complexType name="LoanMix">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoan6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoLoanMix1" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix12" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix2" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix24" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix3" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix4" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix5" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMix6" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanMixNot1" type="xs:float" />
+      <xs:element minOccurs="0" name="PayNoLoanTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanMix" nillable="true" type="tns:LoanMix" />
+  <xs:complexType name="ArrayOfAverageNewCientLoan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AverageNewCientLoan" nillable="true" type="tns:AverageNewCientLoan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAverageNewCientLoan" nillable="true" type="tns:ArrayOfAverageNewCientLoan" />
+  <xs:complexType name="AverageNewCientLoan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNo1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AverageNewCientLoan" nillable="true" type="tns:AverageNewCientLoan" />
+  <xs:complexType name="ArrayOfAverageLoan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AverageLoan" nillable="true" type="tns:AverageLoan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAverageLoan" nillable="true" type="tns:ArrayOfAverageLoan" />
+  <xs:complexType name="AverageLoan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayNo1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo12" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo24" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo4" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo5" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNo6" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoChequeTot" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayNoTot" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AverageLoan" nillable="true" type="tns:AverageLoan" />
+</xs:schema>

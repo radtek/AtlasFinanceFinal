@@ -1,0 +1,69 @@
+﻿<div ng-controller="AccountEnquiriesAvsController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="avsParams" class="table">
+            <tr ng-repeat="avs in $data" ng-click="changeSelection('avRowSelected',avs,'avsTransactions')" ng-class="{selected: avs.$selected}" style="cursor: pointer;">
+              <td data-title="'Account No'" filter="{ 'AccountNo': 'text' }" sortable="'AccountNo'">
+                <center> {{avs.AccountNo}}</center>
+              </td>
+              <td data-title="'ID Number'" filter="{ 'IdNumber': 'text' }" sortable="'IdNumber'">
+                <center> {{avs.IdNumber}}</center>
+              </td>
+
+              <td data-title="'Bank'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{avs.Bank}}</center>
+              </td>
+              <td data-title="'Status'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{avs.Status}}</center>
+              </td>
+              <td data-title="'Result'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'Result'">
+                <center><div class="curved-border" falcon-label condition="avs.ResultColour" popover data-trigger="hover" data-html="true" data-selector="" data-placement="left" data-html="true" data-original-title="Response" data-content="{{avsResultHtml(avs);}}">{{avs.Result}}</div></center>
+              </td>
+              <td data-title="'CreateDate'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+                <center> {{avs.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn yellow" ng-disabled="!avRowSelected.$selected || avRowSelected.StatusId == 1" ng-click="avsDialgueResend = true;" data-toggle="modal" href="#AvsDialogue">Resend</button>
+            <button type="submit" class="btn red" ng-disabled="!avRowSelected.$selected || avRowSelected.StatusId != 1 " ng-click="avsDialgueResend = false;" data-toggle="modal" href="#AvsDialogue">Cancel</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+
+  <!-- AVS Modals -->
+
+  <div class="modal fade" id="AvsDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger" ng-if="avsDialgueResend === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Cancel AVS</h4>
+        </div>
+        <div class="modal-header label-warning" ng-if="avsDialgueResend === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Resend AVS</h4>
+        </div>
+        <div class="modal-body" ng-if="avsDialgueResend === false">
+          You are about to cancel the selected AVS, are you sure you wish to continue?
+        </div>
+        <div class="modal-body" ng-if="avsDialgueResend === true">
+          You are about to resend the selected AVS, are you sure you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn red" ng-click="cancelAvs(avRowSelected.TransactionId);" ng-if="avsDialgueResend === false">Confirm</button>
+          <button type="button" class="btn green" ng-click="resendAvs(avRowSelected.TransactionId);" ng-if="avsDialgueResend === true">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

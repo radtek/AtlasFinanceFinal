@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:complexType name="AVSReply">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountAcceptsCredits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountAcceptsDebits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountOpen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountOpen90days" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Bank" type="q1:General.BankName" />
+      <xs:element minOccurs="0" name="BankAccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="FinalResult" nillable="true" type="q2:AVS.Result" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNumberMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InitialsMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastNameMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="WaitingReply" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AVSReply" nillable="true" type="tns:AVSReply" />
+  <xs:complexType name="AVSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountAcceptsCredits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountAcceptsDebits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountOpen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountOpen90days" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="FinalResult" nillable="true" type="q3:AVS.Result" />
+      <xs:element minOccurs="0" name="IdNumberMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InitialsMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastNameMatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="WaitingReply" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AVSResponse" nillable="true" type="tns:AVSResponse" />
+</xs:schema>

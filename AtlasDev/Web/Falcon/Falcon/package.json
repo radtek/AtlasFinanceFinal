@@ -1,0 +1,22 @@
+{
+  "name": "Falcon",
+  "description": "All inclusive Management Platform",
+  "author": "Fabian Franco-Roldan, Lee Venkatsamy",
+  "version": "0.1.0",
+  "repository": "https://github.com/AtlasFinance/AtlasDev",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-clean": "*",
+    "gulp-concat": "*",
+    "gulp-gzip": "0.0.8",
+    "gulp-jshint": "*",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-size": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "jshint": "*",
+    "jshint-stylish": "*"
+  }
+}

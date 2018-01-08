@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow:
+
+Sitemap: https://www.atlasonline.co.za/sitemap

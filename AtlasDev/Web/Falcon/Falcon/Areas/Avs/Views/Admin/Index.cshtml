@@ -1,0 +1,131 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="page-content" ng-controller="AvsAdminController" ng-init="init()">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="page-breadcrumb breadcrumb">
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/">Home</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/Admin">Admin</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <a href="#">AVS</a>
+        </li>
+      </ul>
+      <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+  </div>
+  <div class="row" ng-show="!loaded">
+    <div class="col-lg-12">
+      <div class="alert alert-info">
+        <strong>Loading!</strong>
+        Please Wait..
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="loaded">
+    <div class="col-lg-12">
+      <div class="portlet box green">
+        <div class="portlet-title">
+          <div class="caption">Services</div>
+        </div>
+        <div class="portlet-body">
+          <ul class="list-group colors">
+            <li class="list-group-item" ng-repeat="service in services" ng-click="getBanks(service.ServiceId)" ng-class="{active: service.ServiceId == selectedService.ServiceId}">
+              {{service.Description}}
+            </li>
+          </ul>
+          @*<ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="service in services" ng-click="getBanks(service.ServiceId)" ng-class="{active: service.ServiceId == selectedService.ServiceId}">
+              <label>{{service.ServiceName}}</label>
+            </li>
+          </ul>*@
+          <div class="row pad-buffer-top">
+            <div class="col-md-6">
+              <div class="portlet boxless">
+                <div class="portlet-title">
+                  <div class="caption">Bank Setup</div>
+                </div>
+                <div class="portlet-body">
+                  <div class="clearfix">
+                    <div class="col-md-4 checkbox-list">
+                      <ul class="list-group">
+                        <li ng-repeat="serviceBank in selectedServiceBanks" class="list-group-item" ng-class="{activebg:serviceBank.IsLinked, inactivebg:!serviceBank.IsLinked}" ng-click="checked(serviceBank)">
+                          {{serviceBank.BankName}}
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-3" ng-show="showBankWarning">
+                      <div class="alert alert-warning">
+                        <strong>
+                          Warning!
+                        </strong>
+                        There are unassigned banks:
+                        <ul class="list">
+                          <li ng-repeat="bank in unlinkedBanks">
+                            <strong>{{bank.BankName}}</strong>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="portlet boxless">
+                <div class="portlet-title">
+                  <div class="caption">Sequence No.'s</div>
+                </div>
+                <div class="portlet-body">
+                  <div class="clearfix">
+                    <div class="col-md-3">
+                      <label>Next Transmission No.</label>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="input-group">
+                        <input id="txtTransmissionNo" class="form-control" numbers-only="numbers-only" ng-disabled="selectedService.NextTransmissionNo==0" type="text" ng-model="selectedService.NextTransmissionNo" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix pad-buffer-top">
+                    <div class="col-md-3">
+                      <label>Next Generation No.</label>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="input-group">
+                        <input id="txtGenerationNo" class="form-control" numbers-only="numbers-only" ng-disabled="selectedService.NextTransmissionNo==0" type="text" ng-model="selectedService.NextGenerationNo" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix pad-buffer-top">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-3">
+                      <span ng-class="{checked:selectedService.SaveSequenceNo, unchecked:!selectedService.SaveSequenceNo}">
+                        <input type="checkbox" ng-disabled="selectedService.NextTransmissionNo==0" ng-model="selectedService.SaveSequenceNo" />
+                      </span>
+                      Save Sequences
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-actions right">
+              <button class="btn green" ng-click="apply()">Apply</button>
+              <button class="btn default" ng-click="reset()">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

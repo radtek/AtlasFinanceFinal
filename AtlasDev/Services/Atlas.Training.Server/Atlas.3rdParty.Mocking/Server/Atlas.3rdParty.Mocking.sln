@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Training.Server", "Atlas.Training.Server.csproj", "{63A7F84A-79B8-40A9-AB98-4C6EBA1D07B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Fingerprint.WCF", "..\..\..\Atlas.Fingerprint.Server\Atlas.Fingerprint.WCF\Atlas.Fingerprint.WCF.csproj", "{615418A8-F2CA-4D99-BA29-B4A545FD1A63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Scorecard.WCF", "..\..\..\Atlas.Scorecard.Server\Atlas.Scorecard.WCF\Atlas.Scorecard.WCF.csproj", "{D87516A5-65E7-426B-AEDB-465595DE0F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Mongo.FP.Entities", "..\..\..\Atlas.Fingerprint.Server\Atlas.Mongo.FP\Atlas.Mongo.FP.Entities.csproj", "{11E58A67-CDE8-456D-B09A-758DE7610C3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.ThirdParty.Mocking.WCF", "..\Atlas.3rdParty.Mocking.WCF\Atlas.ThirdParty.Mocking.WCF.csproj", "{8664ACC3-CB83-4921-AEC8-EE04763229C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atkas.BankVerification.WCF", "..\..\..\Atlas.ASS.Server\Atkas.BankVerification.WCF\Atkas.BankVerification.WCF.csproj", "{66D4082F-F3D9-4DF1-AB87-DAD05AEA5505}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63A7F84A-79B8-40A9-AB98-4C6EBA1D07B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A7F84A-79B8-40A9-AB98-4C6EBA1D07B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A7F84A-79B8-40A9-AB98-4C6EBA1D07B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A7F84A-79B8-40A9-AB98-4C6EBA1D07B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{615418A8-F2CA-4D99-BA29-B4A545FD1A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615418A8-F2CA-4D99-BA29-B4A545FD1A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615418A8-F2CA-4D99-BA29-B4A545FD1A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615418A8-F2CA-4D99-BA29-B4A545FD1A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D87516A5-65E7-426B-AEDB-465595DE0F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87516A5-65E7-426B-AEDB-465595DE0F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87516A5-65E7-426B-AEDB-465595DE0F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87516A5-65E7-426B-AEDB-465595DE0F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8664ACC3-CB83-4921-AEC8-EE04763229C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8664ACC3-CB83-4921-AEC8-EE04763229C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8664ACC3-CB83-4921-AEC8-EE04763229C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8664ACC3-CB83-4921-AEC8-EE04763229C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D4082F-F3D9-4DF1-AB87-DAD05AEA5505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D4082F-F3D9-4DF1-AB87-DAD05AEA5505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D4082F-F3D9-4DF1-AB87-DAD05AEA5505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D4082F-F3D9-4DF1-AB87-DAD05AEA5505}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

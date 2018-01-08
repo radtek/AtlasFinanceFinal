@@ -1,0 +1,332 @@
+Return-path: <info@powerloans.co.za>
+Envelope-to: info@powerloans.co.za
+Delivery-date: Sun, 20 Sep 2015 15:26:31 +0200
+Received: from localhost
+	([127.0.0.1] helo=dedi188.jnb2.host-h.net ident=Debian-exim)
+	by dedi188.jnb2.host-h.net with esmtps (TLS1.2:DHE_RSA_AES_128_CBC_SHA1:128)
+	(Exim 4.80)
+	(envelope-from <info@powerloans.co.za>)
+	id 1ZdedT-0003oO-H7
+	for info@powerloans.co.za; Sun, 20 Sep 2015 15:26:31 +0200
+Received: from powerkakas by dedi188.jnb2.host-h.net with local (Exim 4.80)
+	(envelope-from <powerkakas@dedi188.jnb2.host-h.net>)
+	id 1ZdedT-0003oJ-0A
+	for info@powerloans.co.za; Sun, 20 Sep 2015 15:26:31 +0200
+To: info@powerloans.co.za
+Subject: Power Finance Enquiry
+X-PHP-Originating-Script: 1235:phpmailer.php
+Date: Sun, 20 Sep 2015 15:26:30 +0200
+From: Power Finance Team <info@powerloans.co.za>
+Message-ID: <490b4c9f359df95582a1fb47ea345d6d@powerloans.co.za>
+X-Priority: 3
+X-Mailer: PHPMailer (phpmailer.sourceforge.net) [version 2.0.4]
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/html; charset="utf-8"
+Delivered-To: powerkakas-info@powerloans.co.za
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+					  <html>
+						 <head>
+							<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+							<base href="http://powerloans.co.za//" />
+							<title>Email</title>
+						 </head>
+						 
+						 <body><p><img src="templates/ja_purity/images/logo_power.jpg" border="0" /></p>
+<!-- =================================================================================================== -->
+<div id="page1_i" class="page" style="visibility:visible;"><!-- <b>PAGE1_i</b> -->
+<div class="formbox1">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">How much do you need:</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_dropdown"><label class="cf_label" style="width: 110px;"><strong>How much do you need?</strong></label> R500</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_dropdown"><label class="cf_label" style="width: 110px;"><strong>How long do you need it for?</strong></label> 1-10days</div>
+</div>
+</div>
+</div>
+<!-- =================================================================================================== -->
+<div id="page1" class="page"><!-- <b>PAGE1</b> -->
+<div class="formbox1">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Income</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Basic Salary (Nett) as per payslip</strong></label> 9000</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Bonus &amp; Commision</strong></label> 1000</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Overtime</strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Total Income</strong></label> 10000</div>
+</div>
+</div>
+</div>
+<!-- =================================================================================================== -->
+<div id="page2" class="page"><!-- <b>PAGE2</b> -->
+<div class="formbox2">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Living Expenses</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Housing/Rent</strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Municipal Services </strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Clothing</strong></label> 300</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Medical Bills</strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Monthly Groceries</strong></label> 0</div>
+</div>
+</div>
+</div>
+<!-- ================================================================================================================================ -->
+<div id="page2i" class="page"><!-- <b>PAGE2</b> -->
+<div class="formbox2i">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">General Expenses</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Telephone</strong></label> 280</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Transport</strong></label> 500</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>School &amp; University Fees</strong></label> 0</div>
+</div>
+<!--
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><b>Child Care</b></label> {Child}</div>
+</div>
+-->
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Marital Maintenance Payments</strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Savings / Pocket Money</strong></label> 0</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Other</strong></label> 0</div>
+</div>
+<!--
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><b>Total Expenses</b></label> {Total}</div>
+</div>
+--></div>
+</div>
+<!-- ================================================================================================================================ -->
+<div id="page3" class="page"><!-- <b>PAGE3</b> -->
+<div class="formbox3">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Debt Expenses</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Insurance Premiums</strong></label> 200</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Store Cards</strong></label> 200</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Hire Purchase Instalments</strong></label> 890</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Micro and Other Loans</strong></label> 2500</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Other Payments Due</strong></label> 0</div>
+</div>
+</div>
+</div>
+<!-- =================================================================================================== -->
+<div id="page4" class="page"><!-- <b>PAGE4</b> -->
+<div class="formbox4">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Your personal details</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Email</strong></label> noxoloncayo@gmail.com</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Name</strong></label> Noxolo Ncayo</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Surname</strong></label> Ncayo</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Initials</strong></label> N</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>ID</strong></label> 8710220243089</div>
+</div>
+</div>
+</div>
+<!-- =================================================================================================== -->
+<div id="page4i" class="page"><!-- <b>PAGE4</b> -->
+<div class="formbox4i">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Your contact details</h1>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Daytime number you prefer</strong></label> 0738890950</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Tel W</strong></label> 0415044857</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Tel H</strong></label> </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Fax No.</strong></label> </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Cell No.</strong></label> 0738890950</div>
+</div>
+</div>
+</div>
+</div>
+<!-- =================================  =================================   =================================  =================================     -->
+<div id="page5" class="page"><!-- <b>PAGE5</b> -->
+<div class="formbox5">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Address</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textarea"><label class="cf_label" style="width: 110px;"><strong>Physical</strong></label> 139 steel street kwa magxaki pe</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Postcode</strong></label> 6201</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_checkbox"><label class="cf_label" style="width: 110px;"><strong>Is your postal the same as your physical address?</strong></label>
+<div class="float_left">check 1                  <br /></div>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textarea"><label class="cf_label" style="width: 110px;"><strong>Postal</strong></label> </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Postcode</strong></label> </div>
+</div>
+</div>
+</div>
+<!-- =================================  =================================   =================================  =================================     -->
+<div id="page6" class="page"><!-- <b>PAGE6</b> -->
+<div class="formbox6">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Next of kin</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Name</strong></label> Siyanda</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Surname</strong></label> Vazi</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Tel No.</strong></label> 0632440488</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Cell No.</strong></label> 0632247033</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textarea"><label class="cf_label" style="width: 110px;"><strong>Address</strong></label> 139 Stemele Street Kwa Magxaki</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Postcode</strong></label> 6001</div>
+</div>
+</div>
+</div>
+<!-- =================================================================================================== -->
+<div id="page7" class="page"><!-- <b>PAGE7</b> -->
+<div class="formbox7">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Employer Details</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Employer</strong></label> Nelson Mandela metropolitan</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Employee No.</strong></label> 135602</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Department</strong></label> Development </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong> Contact Person</strong></label> Mark</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Contact No.</strong></label> 0415042175</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textarea"><label class="cf_label" style="width: 110px;"><strong> Address 1</strong></label> 1018 main building south campus </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Postcode</strong></label> 6001</div>
+</div>
+</div>
+</div>
+<!-- =================================  =================================   =================================  =================================     -->
+<div id="page8" class="page"><!-- <b>PAGE8</b> -->
+<div class="formbox8">
+<div class="form_item">
+<div class="form_element cf_heading">
+<h1 class="cf_text">Bank Details</h1>
+</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Bank</strong></label> Standard  Bank </div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Branch</strong></label> Clearly park</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Branch Code</strong></label> 051717</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_textbox"><label class="cf_label" style="width: 110px;"><strong>Account No.</strong></label> 356294129</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_dropdown"><label class="cf_label" style="width: 110px;"><strong>Account Type</strong></label> Current</div>
+</div>
+<div class="form_item">
+<div class="form_element cf_dropdown"><label class="cf_label" style="width: 110px;"><strong>Pay Date</strong></label> 25 <span class="cell">day of the month</span></div>
+</div>
+<div class="form_item">
+<div class="form_element cf_checkbox">
+<div class="float_left"><strong>Permission to credit check?</strong> check 2          <br /><label class="cf_label" style="width: 110px;"><strong>Terms</strong></label> check 1          <br /></div>
+</div>
+</div>
+<br /></div>
+</div><br /><br />
+Submitted by 41.132.138.85</body>
+					  </html>

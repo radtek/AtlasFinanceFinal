@@ -1,0 +1,126 @@
+﻿<div ng-controller="AccountQuotationController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="quotationParams" class="table" style="cursor: pointer;">
+            <tr ng-repeat="quotation in $data" ng-click="changeSelection('quOptionRowSelected',quotation,'quotations')" ng-class="{selected: quotation.$selected}">
+              <td data-title="'No.'">
+                <center> {{quotation.QuotationNo}}</center>
+              </td>
+              <td data-title="'Type'">
+                <center><span>{{quotation.AffordabilityOptionType }}</span></center>
+              </td>
+              <td data-title="'Status'">
+                <center><span class="curved-border" ng-class="quotation.QuotationStatusColor">{{quotation.QuotationStatus }}</span></center>
+              </td>
+              <td data-title="'Last Status Date'">
+                <center><span>{{quotation.LastStatusDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+              <td data-title="'Loan Amount'">
+                <center><span>{{quotation.Amount | currency}}</span></center>
+              </td>
+              <td data-title="'Total Fees'">
+                <center><span>{{quotation.TotalFees | currency}}</span></center>
+              </td>
+              <td data-title="'Capital Amount'">
+                <center><span>{{quotation.CapitalAmount | currency}}</span></center>
+              </td>
+              <td data-title="'Interest Rate'">
+                <center><span>{{quotation.InterestRate }}</span></center>
+              </td>
+              <td data-title="'Instalment'">
+                <center><span>{{quotation.Instalment | currency}}</span></center>
+              </td>
+              <td data-title="'No. Of Instalments'">
+                <center><span>{{quotation.NumOfInstalments }}</span></center>
+              </td>
+              <td data-title="'Total Repayment'">
+                <center><span>{{quotation.TotalRepayment | currency}}</span></center>
+              </td>
+              <td data-title="'Period'">
+                <center><span>{{quotation.Period }}</span></center>
+              </td>
+              <td data-title="'Period Frequency'">
+                <center><span>{{quotation.PeriodFrequency }}</span></center>
+              </td>
+              <td data-title="'First Debit Date'">
+                <center><span>{{quotation.DateOfDebit | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+              <td data-title="'Quote Date'">
+                <center><span>{{quotation.QuoteDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn yellow" ng-disabled="account.StatusId >= 35 || account.StatusId == 5 || account.StatusId == 15 || account.StatusId == 20" ng-click="quotationReject = false;" data-toggle="modal" href="#QuotationDialogue">Adjust</button>
+            <button type="submit" class="btn red" ng-disabled="!quOptionRowSelected.$selected || !(quOptionRowSelected.QuotationStatusId == 1 || quOptionRowSelected.QuotationStatusId == 2)" ng-click="quotationReject = true;" data-toggle="modal" href="#QuotationDialogue">Reject</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+  <!-- Quotation Modals -->
+  <div class="modal fade" id="QuotationDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger" ng-if="quotationReject === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Reject Quotation</h4>
+        </div>
+        <div class="modal-header label-danger" ng-init="preloadAdjustment()" ng-if="quotationReject === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Adjust Quotation</h4>
+        </div>
+        <div class="modal-body" ng-if="quotationReject === true">
+          You are about to reject this Quotation, are you sure you wish to continue?
+        </div>
+        <div class="modal-body form" ng-if="quotationReject === false">
+          <div class="centered">
+            <div class="form-body">
+              <div class="form-group">
+                <label class="col-md-4 control-label">Applied Amount</label>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input class="form-control input-small" currency-input ng-model="$parent.appliedAmount" name="quotationAppliedAmount" type="text" />
+                    <span popover data-trigger="hover" ng-show="naShowAppliedAmountValidation == true" data-html="true" data-placement="right" data-title="Validation Error" data-content="Amount needs to be greater than R 100.00!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-body">
+              <div class="form-group">
+                <label class="col-md-4 control-label">Period</label>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input class="form-control input-small" numbers-only ng-model="$parent.period" name="quotationPeriod" type="text" ng-change="updateRepaymentDate($parent.period)" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-body">
+              <div class="form-group">
+                <label class="col-md-4 control-label">First Instalment Date</label>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input class="form-control form-control-inline input-small default-date-picker" size="14" type="text" ng-model="$parent.repaymentDate" id="dtePicker" value="" ng-change="updatePeriod($parent.repaymentDate)" ng-disabled="account.HostId != 2">
+                    <span popover data-trigger="hover" ng-show="naShowRepaymentDateValidation == true" data-html="true" data-placement="right" data-title="Validation Error" data-content="Date needs to be in the future!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn red" ng-click="rejectQuotation();" ng-if="quotationReject === true">Confirm</button>
+          <button type="button" class="btn red" ng-click="adjustQuotation($parent.appliedAmount,$parent.period);" ng-if="quotationReject === false">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

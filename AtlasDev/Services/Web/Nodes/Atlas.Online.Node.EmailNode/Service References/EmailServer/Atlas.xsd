@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Enumerators.EmailMessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="Statement" />
+      <xs:enumeration value="Payment_Due" />
+      <xs:enumeration value="Overdue" />
+      <xs:enumeration value="Legal_Notice" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerators.EmailMessageType" nillable="true" type="tns:Enumerators.EmailMessageType" />
+</xs:schema>

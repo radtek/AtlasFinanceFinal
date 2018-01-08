@@ -1,0 +1,1103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Branch" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.General" />
+  <xs:element name="AssReporting_GetCheque">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q1:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetChequeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetChequeResult" nillable="true" type="q2:ArrayOfCheque" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInsurancePercentiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q3:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInsurancePercentilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetInsurancePercentilesResult" nillable="true" type="q4:ArrayOfInsurancePercentiles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInterestPercentiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q5:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInterestPercentilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetInterestPercentilesResult" nillable="true" type="q6:ArrayOfInterestPercentiles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInsuranceFees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q7:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInsuranceFeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetInsuranceFeesResult" nillable="true" type="q8:ArrayOfInsurance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInterestFees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q9:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetInterestFeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetInterestFeesResult" nillable="true" type="q10:ArrayOfInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetLoanMix">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q11:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetLoanMixResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetLoanMixResult" nillable="true" type="q12:ArrayOfLoanMix" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetAverageNewClientLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q13:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetAverageNewClientLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetAverageNewClientLoanResult" nillable="true" type="q14:ArrayOfAverageNewCientLoan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetAverageLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q15:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetAverageLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetAverageLoanResult" nillable="true" type="q16:ArrayOfAverageLoan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_ExportCIReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q17:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="exportPossibleHandover" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_ExportCIReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssReporting_ExportCIReportResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssInt_AddUserOverride">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="userOperatorCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="regionalOperatorId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newLevel" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssInt_AddUserOverrideResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssInt_AddUserOverrideResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_LocatebyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_LocatebyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Operations_LocatebyIdResult" nillable="true" type="q18:Person" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_LocateByPersonId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_LocateByPersonIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Operations_LocateByPersonIdResult" nillable="true" type="q19:Person" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="cache" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Operations_GetPermissionsResult" nillable="true" type="q20:ArrayOfRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetWebRoles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetWebRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Operations_GetWebRolesResult" nillable="true" type="q21:ArrayOfWebRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetPersonList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idCollection" nillable="true" type="q22:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Operations_GetPersonListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Operations_GetPersonListResult" nillable="true" type="q23:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="branchId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="transactionId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="idNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bankId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AVS_GetTransactionsResult" nillable="true" type="q24:TupleOfArrayOfAvsStatisticsArrayOfAvsTransactionsi4excQx1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_ResendTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="transactionIds" nillable="true" type="q25:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_ResendTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_CancelTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="transactionIds" nillable="true" type="q26:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_CancelTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetBanks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetBanksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="AVS_GetBanksResult" nillable="true" type="q27:ArrayOfBank" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetServiceSchedules">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetServiceSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AVS_GetServiceSchedulesResult" nillable="true" type="q28:ArrayOfKeyValueOfAvsServiceArrayOfAvsServiceBanki4excQx1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_UpdateServicesSchedules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="serviceSchedules" nillable="true" type="q29:ArrayOfKeyValueOfAvsServiceArrayOfAvsServiceBanki4excQx1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_UpdateServicesSchedulesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="branchId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="startRangeActionDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endRangeActionDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="payoutId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="idNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bankId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Payout_GetTransactionsResult" nillable="true" type="q30:TupleOfPayoutStatisticsArrayOfPayoutTransactionZE5bebb_P" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetBanks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetBanksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Payout_GetBanksResult" nillable="true" type="q31:ArrayOfBank" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetAlerts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_GetAlertsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Payout_GetAlertsResult" nillable="true" type="q32:ArrayOfDashboardAlert" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_PlaceOnHold">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payoutId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_PlaceOnHoldResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_RemoveFromHold">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payoutId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Payout_RemoveFromHoldResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_Get">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="notificationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Notification_GetResult" nillable="true" type="q33:Notification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_MarkAsRead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="notificationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_MarkAsReadResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_Gets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="branchId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Notification_GetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Notification_GetsResult" nillable="true" type="q34:ArrayOfNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_Get">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="host" type="q35:General.Host" />
+        <xs:element minOccurs="0" name="branchId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startRange" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endRange" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Workflow_GetResult" nillable="true" type="q36:ArrayOfProcessAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_GetProcessSteps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processJobId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_GetProcessStepsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Workflow_GetProcessStepsResult" nillable="true" type="q37:ArrayOfProcessStepAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_RedirectAccountToProcessStep">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processStepJobAccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Workflow_RedirectAccountToProcessStepResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Host_GetAccessible">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Host_GetAccessibleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Host_GetAccessibleResult" nillable="true" type="q38:ArrayOfHost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublicHolidays_Get">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublicHolidays_GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="PublicHolidays_GetResult" nillable="true" type="q39:ArrayOfPublicHoliday" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_Send">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_SendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OTP_SendResult" nillable="true" type="q40:TupleOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_Verify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="security" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="otp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_VerifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OTP_VerifyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_VerifyToHash">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hash" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="otp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_VerifyToHashResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OTP_VerifyToHashResult" nillable="true" type="q41:TupleOfbooleanstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_StoreToHash">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="otpSecurity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_StoreToHashResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OTP_StoreToHashResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Account_SearchResult" nillable="true" type="q42:ArrayOfAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_GetDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_GetDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Account_GetDetailResult" nillable="true" type="q43:AccountDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_UpdateStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="newStatus" type="q44:Account.AccountStatus" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="reason" nillable="true" type="q45:Account.AccountStatusReason" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="subReason" nillable="true" type="q46:Account.AccountStatusSubReason" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_UpdateStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_AddNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="userPersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentNoteId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_AddNoteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_EditNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="noteId" type="xs:long" />
+        <xs:element minOccurs="0" name="userPersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_EditNoteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_DeleteNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="noteId" type="xs:long" />
+        <xs:element minOccurs="0" name="userPersonId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_DeleteNoteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_AdjustLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="loanAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="period" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_AdjustLoanResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_GetCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="host" type="q47:General.Host" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_GetCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Account_Affordability_GetCategoriesResult" nillable="true" type="q48:ArrayOfAffordabilityCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_AcceptOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="affordabilityOptionId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_AcceptOptionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_AddItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="affordabilityCategoryId" type="xs:int" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_AddItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Account_Affordability_AddItemResult" nillable="true" type="q49:AccountAffordabilityItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_DeleteItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="affordabilityId" type="xs:long" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_Affordability_DeleteItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Account_Affordability_DeleteItemResult" nillable="true" type="q50:AccountAffordabilityItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_QuotationAccept">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="quotationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_QuotationAcceptResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_QuotationReject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="quotationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Account_QuotationRejectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ledger_GetPastPaymentTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ledger_GetPastPaymentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Ledger_GetPastPaymentTypesResult" nillable="true" type="q51:ArrayOfLedgerTransactionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ledger_AddPastPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="transactionType" type="q52:GeneralLedger.TransactionType" />
+        <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ledger_AddPastPaymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_AddContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="contactType" type="q53:General.ContactType" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_AddContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_AddContactResult" nillable="true" type="q54:AccountContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_DisableContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="contactId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_DisableContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_DisableContactResult" nillable="true" type="q55:AccountContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_AddAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="userPersonId" type="xs:long" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="addressType" type="q56:General.AddressType" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="province" type="q57:General.Province" />
+        <xs:element minOccurs="0" name="line1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="line2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="line3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="line4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_AddAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_AddAddressResult" nillable="true" type="q58:AccountAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_DisableAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="addressId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_DisableAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_DisableAddressResult" nillable="true" type="q59:AccountAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_NewRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="userPersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="relationType" type="q60:General.RelationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_NewRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_NewRelationResult" nillable="true" type="q61:Relation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_UpdateRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+        <xs:element minOccurs="0" name="relationPersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="relationType" type="q62:General.RelationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_UpdateRelationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="Person_UpdateRelationResult" nillable="true" type="q63:Relation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_LocateByIdentityNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_LocateByIdentityNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Person_LocateByIdentityNoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_GetByIdentityNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_GetByIdentityNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="Person_GetByIdentityNoResult" nillable="true" type="q64:PER_PersonDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_GetByPrimaryKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pk" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_GetByPrimaryKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="Person_GetByPrimaryKeyResult" nillable="true" type="q65:PER_PersonDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_VerifyIsValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_VerifyIsValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Person_VerifyIsValidResult" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_ValidatePasswordReset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hash" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person_ValidatePasswordResetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Person_ValidatePasswordResetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fraud_OverrideResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fraudScoreId" type="xs:long" />
+        <xs:element minOccurs="0" name="overridePersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fraud_OverrideResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fraud_OverrideResultResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authentication_ResetAttempts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authenticationId" type="xs:long" />
+        <xs:element minOccurs="0" name="overridePersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authentication_ResetAttemptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Authentication_ResetAttemptsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authentication_OverrideResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="authenticationId" type="xs:long" />
+        <xs:element minOccurs="0" name="overridePersonId" type="xs:long" />
+        <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authentication_OverrideResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Authentication_OverrideResultResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Credit_ReSubmit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enquiryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Credit_ReSubmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Credit_ReSubmitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Credit_FetchCreditReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enquiryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Credit_FetchCreditReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Credit_FetchCreditReportResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetPersonRegions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetPersonRegionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" minOccurs="0" name="AssReporting_GetPersonRegionsResult" nillable="true" type="q66:ArrayOfRegion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetRegionBranches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="regionId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetRegionBranchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Branch" minOccurs="0" name="AssReporting_GetRegionBranchesResult" nillable="true" type="q67:ArrayOfBranch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetPersonRegionBranches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetPersonRegionBranchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.General" minOccurs="0" name="AssReporting_GetPersonRegionBranchesResult" nillable="true" type="q68:ArrayOfRegionBranch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetMainSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="branchIds" nillable="true" type="q69:ArrayOflong" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssReporting_GetMainSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" minOccurs="0" name="AssReporting_GetMainSummaryResult" nillable="true" type="q70:MainSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,217 @@
+﻿@model Atlas.Online.Web.Models.SettlementContractModel
+
+@{
+    ViewBag.Title = "SettlmentContract";
+    Layout = null; // "~/Views/Reports/Layout.cshtml";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Settlement Quotation</title>
+   <style>
+        body{font-family:Verdana;font-size:9pt;}
+        h1{padding:20px 0 20px 0;margin: 0 0 0 0;font-size:12pt;}
+    </style>
+</head>
+
+
+<body onload="javascript:window.print();">
+<table width="100%" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td align="right" style="text-align:right;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="45%">Atlas Finance (Pty) Ltd <br/>
+Company Reg No: 2006/005672/07<br/>
+Vat Reg No: 4890236526<br/>
+NCR Reg No: NCRCP408 </td>
+    <td colspan="2">&nbsp;</td>
+    <td width="45%" align="right" style="text-align:right;">Loan Originator: Atlas Finance (Pty) LTD<br/>
+      Customer Care: 0861 266 353<br/>
+      E-mail: info@atlasonline.co.za<br/>
+    Website: www.atlasonline.co.za </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4" align="center"><p>Quotation Date</p>
+    <p><strong>@String.Format("{0:d}", DateTime.Now)</strong></p></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="font-size:22px" align="center"><strong>Settlement Quotation</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="font-size:18px"><strong>Personal Details</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><table width="100%" style="border:1px solid black;" border="0">
+      <tr>
+        <td width="10%" ><strong>Address:</strong></td>
+        <td width="35%" rowspan="4" style="vertical-align:top;" >@Html.Raw(Html.Encode(Model.ResidentialAddress).Replace("\n","<br />&nbsp;"))</td>
+        <td width="18%" ><strong>ID Number:</strong></td>
+        <td width="37%">@Html.DisplayFor(x => x.IdNumber)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td ><strong>Name:</strong></td>
+        <td>@Html.DisplayFor(x => x.FirstName)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td ><strong>Surname:</strong></td>
+        <td>@Html.DisplayFor(x => x.LastName)</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><strong>Loan Reference No:</strong></td>
+        <td>@Html.DisplayFor(x => x.AccountNo)</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="3" rowspan="6" style="vertical-align:top;"><table width="100%" border="0">
+      <tr>
+        <td width="36%" style="border:1px solid black;"><strong>Balance:</strong></td>
+        <td width="64%">@String.Format("{0:c}",Model.Amount)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid black;"><strong>Interest:</strong></td>
+        <td>@String.Format("{0:c}",Model.Interest)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid black;"><strong>Administration Fee:</strong></td>
+        <td>@String.Format("{0:c}",Model.Fees)</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid black;"><strong>Settlement Amount:</strong></td>
+        <td>@String.Format("{0:c}",Model.TotalAmount)</td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr>
+    <td colspan="4" align="center"><strong>THE SETTLEMENT QUOTATION IS ONLY VALID FOR @String.Format("{0:d}", DateTime.Now) UNTIL @String.Format("{0:d}", Model.SettlementDate)</strong></td>
+  </tr>
+  <tr>
+    <td width="31%">&nbsp;</td>
+    <td width="40%">&nbsp;</td>
+    <td width="15%">&nbsp;</td>
+    <td width="14%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><strong>Note:</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><ol>
+      <li>This Settlement Quotation is only valid for
+        @Html.DisplayFor(x => x.ValidDaysLeft)
+        days until
+        @String.Format("{0:d}", Model.SettlementDate)
+        (&quot;Settlement Date&quot;).</li>
+      <li>This Settlement Quotation is furnished to you without prejudice and has been generated to reflect all payments made by you to date. Should any cheque or payment not be met timeously or at all and/or any payment be referred to us by your bank then notwithstanding the rights that 
+      
+       Finance may have in terms of the Loan Agreement or otherwise, the Settlement Quotation will no longer be valid and you will need to obtain a revised quotation from Atlas Finance.</li>
+      <li>Should the Settlement Date be a date in the future then the settlement amount does not include payments from the date when the Settlement Quotation was calculated to the actual Settlement Date and such payments will still need to be made by you as and when they fall due.</li>
+      <li>Should there be an error or omission in calculating the settlement amount you will remain liable to Atlas Finance for all amounts due.</li>
+      <li>This loan was originated by Atlas Finance(Pty) Ltd, a registered credit provider (NCRCP5361)</li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4">This Settlement Amount must be paid into the following bank account on or before
+      @String.Format("{0:d}", Model.SettlementDate)
+failing to do so will invalidate this settlement quotation which will therefor  expire and you will have to contact Customer Care on 0861 XXX (XXX XXX) to obtain a new settlement quotation:</td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><table style="border:1px solid black;" width="100%" border="0">
+      <tr>
+        <td width="36%">Account Name:</td>
+        <td width="64%">&lt;AccountName&gt;</td>
+      </tr>
+      <tr>
+        <td>Bank:</td>
+        <td>&lt;Bank&gt;</td>
+      </tr>
+      <tr>
+        <td>Branch Code:</td>
+        <td>&lt;BranchCode&gt;</td>
+      </tr>
+      <tr>
+        <td>Account Number:</td>
+        <td>&lt;BankAccountNo&gt;</td>
+      </tr>
+      <tr>
+        <td>Reference:</td>
+        <td>&lt;AccountNo&gt;</td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><strong>IMPORTANT:</strong> Please use loan reference number @Html.DisplayFor(x => x.AccountNo) when making payment and e-mail this signed quote as well as a copy of the bank deposit slip to info@atlasonline.co.za </td>
+  </tr>
+</table>
+
+</body>
+</html>

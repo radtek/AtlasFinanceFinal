@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Atlas.Bank.Verification.Server" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Atlas.Bank.Verification.Server" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Atlas.Bank.Verification.Server/Imports">
+      <xsd:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd0" namespace="Atlas.Bank.Verification.Server" />
+      <xsd:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+      <xsd:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVerificationServer_IsCDV_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCDV" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_IsCDV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCDVResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_IsCDVWithBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCDVWithBranch" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_IsCDVWithBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCDVWithBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoAVSEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoAVSEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoAVSEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoAVSEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoAVSEnquiryWithHost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoAVSEnquiryWithHost" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoAVSEnquiryWithHost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoAVSEnquiryWithHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoLegacyEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoLegacyEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_DoLegacyEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoLegacyEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_GetAVSResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificationServer_GetAVSResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAVSResponseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVerificationServer">
+    <wsdl:operation name="IsCDV">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/IsCDV" message="tns:IVerificationServer_IsCDV_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/IsCDVResponse" message="tns:IVerificationServer_IsCDV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCDVWithBranch">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/IsCDVWithBranch" message="tns:IVerificationServer_IsCDVWithBranch_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/IsCDVWithBranchResponse" message="tns:IVerificationServer_IsCDVWithBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoAVSEnquiry">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoAVSEnquiry" message="tns:IVerificationServer_DoAVSEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoAVSEnquiryResponse" message="tns:IVerificationServer_DoAVSEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoAVSEnquiryWithHost">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoAVSEnquiryWithHost" message="tns:IVerificationServer_DoAVSEnquiryWithHost_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoAVSEnquiryWithHostResponse" message="tns:IVerificationServer_DoAVSEnquiryWithHost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoEnquiry">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoEnquiry" message="tns:IVerificationServer_DoEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoEnquiryResponse" message="tns:IVerificationServer_DoEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoLegacyEnquiry">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoLegacyEnquiry" message="tns:IVerificationServer_DoLegacyEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/DoLegacyEnquiryResponse" message="tns:IVerificationServer_DoLegacyEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSResponse">
+      <wsdl:input wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/GetAVSResponse" message="tns:IVerificationServer_GetAVSResponse_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Bank.Verification.Server/IVerificationServer/GetAVSResponseResponse" message="tns:IVerificationServer_GetAVSResponse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

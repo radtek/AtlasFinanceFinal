@@ -1,0 +1,105 @@
+﻿@{
+  ViewBag.Title = "Campaign Manager - SMS";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" ng-controller="CampaignSmsController" ng-init="init();">
+  <div class="col-md-12">
+    <div id="filter" class="tab-pane active">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="clearfix">
+            <div class="col-md-2">
+              <label>Start Date</label>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                  <input type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                  <span class="input-group-btn">
+                    <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>End Date</label>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                  <input type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                  <span class="input-group-btn">
+                    <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer clearfix">
+          <div>
+            <button ng-click="refresh()" class="btn btn-info pull-right" ng-disabled="loading">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table ng-table="campaignParams" class="table ng-cloak">
+      <tr ng-repeat="sms in $data">
+        <td data-title="'Id'" class="hidden-sm hidden-xs" sortable="'NotificationId'">
+          <center> {{sms.NotificationId }}</center>
+        </td>
+        <td data-title="'To'" class="hidden-sm hidden-xs" sortable="'To'">
+          <center> {{sms.To }}</center>
+        </td>
+        <td data-title="'Status'" class="hidden-sm hidden-xs" sortable="'Status'">
+          <center> {{sms.Status }}</center>
+        </td>
+        <td data-title="'Reply'" class="hidden-sm hidden-xs" sortable="'Reply'">
+          <center ng-if="sms.ReplyId !== 0"><img src="~/assets/img/orb.png" /></center>
+          <center ng-if="sms.ReplyId === 0"><img src="~/assets/img/red-orb.png"/></center>
+        </td>
+        <td data-title="'CreateDate'" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+          <center> {{sms.CreateDate | date:'yyyy-MM-dd'}}</center>
+        </td>
+        <td data-title="'Manage'" class="hidden-sm hidden-xs">
+          <center> <a ng-click="view(sms)" rel="tooltip" title="View" data-toggle="modal" href="!#viewResend" anchor-prevent-propagation><span class="curved-border label label-info">view</span></a></center>
+        </td>
+      </tr>
+    </table>
+    <div aria-hidden="true" aria-labelledby="viewDelLabel" role="dialog" tabindex="-1" id="viewResend" class="modal fade" style="overflow-y: auto;" boot-modal>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modal-header-primary">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <center><h4 class="modal-title">Message View</h4></center>
+          </div>
+          <div class="modal-body">
+            <div class="form-body">
+              <div class="form-group">
+                <label>To</label>
+                <input type="text" class="form-control" placeholder="" disabled value="{{ smsMessage.To }}">
+              </div>
+              <div class="form-group">
+                <label>Sent</label>
+                <input type="text" class="form-control" placeholder="" disabled value="{{ smsMessage.CreateDate | date:'yyyy-MM-dd'}}">
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-control text-area-resize-vertical" rows="5" disabled>{{ smsMessage.Body }}</textarea>
+              </div>
+              <div class="form-group" ng-if="smsMessage.ReplyId !== 0">
+                <label>Reply</label>
+                <textarea class="form-control text-area-resize-vertical" rows="5" disabled>{{ smsMessage.Reply }}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="resend(smsMessage)" ng-disabled="loading" >Resend</button>
+            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

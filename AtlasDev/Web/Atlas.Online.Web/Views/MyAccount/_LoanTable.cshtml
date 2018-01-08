@@ -1,0 +1,41 @@
+﻿@using Atlas.Online.Data.Models.DTO;
+@using Atlas.Online.Web.Extensions;
+
+@{ bool hasLoan = ((List<ApplicationDto>)ViewBag.Loans).Count() > 0; }
+<table class="d-table-full ac table-alt mb-beta table-hoverable" ng-class="{loader: loans != null && !loans.length }">
+  <thead>
+		<tr>
+      <th></th>
+			<th>Account No</th>
+			<th>Loan Amount</th>
+			<th>Application Date</th>
+			<th>Repayment Date</th>
+      <th>Repayment Amount</th>
+			<th>Status</th>
+		</tr>
+  </thead>
+	<tbody>
+    @if (!hasLoan)
+    {
+      <tr><td colspan="7" class="fc-alpha ac">No loans</td></tr>
+    }
+    @{ int _i = 1; }
+    @foreach (var item in (List<ApplicationDto>)ViewBag.Loans)
+    {
+      string _selectRowFn = String.Format("selectRow({0}, {1}, {2})", _i, item.ApplicationId, Convert.ToInt32(item.Status));
+      @Html.Raw(String.Format("<tr ng-click='{1}' ng-class=\"{{ 'table-hoverable-selected': selectedRow == {0} }}{2}\">", _i, _selectRowFn, item.Amount < 0 ? "fc-beta" : ""))
+      @Html.TableCell(String.Format(
+        "<input type='radio' class='visuallyhidden' id='loan-radio-{0}' ng-click='{1}' ng-checked='selectedRow == {0}'><label for='loan-radio-{0}' class='va-bl lh-alpha'><span class='icon radio-custom visuallyhidden-ie8'></span></label>"
+      , _i, _selectRowFn))
+      @Html.TableCell(String.Format("<a href='javascript:void(0);' class='td-d'>{0}</a>", item.AccountNo ?? "--"))
+      @Html.TableCell(String.Format("{0:C0}", item.Amount))
+      @Html.TableCell(item.CreateDate.ToString("dd-MM-yyyy"))
+      @Html.TableCell(item.RepaymentDate.ToString("dd-MM-yyyy"))
+      @Html.TableCell(item.Affordability != null ? String.Format("{0:C0}", item.Affordability.RepaymentAmount) : "--")
+      @Html.TableCell(item.Status)
+      @Html.Raw("</tr>")
+      _i++;
+    }
+
+	</tbody>
+</table>

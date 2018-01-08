@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.nupaytsp.co.za/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://www.nupaytsp.co.za/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.nupaytsp.co.za/">
+      <s:element name="acountChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_account_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_acount_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_acount_branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_acount_type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acountChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acountChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aedoConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_acount_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_acount_branch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_tracking_indicator" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_frequency" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aedoConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aedoConvertResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractActivation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contractActivationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractCancellation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractCancellationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contractCancellationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractDateChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractDateChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contractDateChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractTrackingChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tracking_indicator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contractTrackingChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contractTrackingChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentAmountChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_amount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentAmountChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentAmountChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentCancellation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentCancellationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentCancellationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentDateChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentDateChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentDateChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentMaintenance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_tracking_indicator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentMaintenanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentMaintenanceResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentReschedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentRescheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentRescheduleResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentRescheduleMaintenance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="new_submit_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_tracking_indicator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentRescheduleMaintenanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentRescheduleMaintenanceResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentTrackingChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_acceptor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_tracking_indicator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="instalmentTrackingChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instalmentTrackingChangeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadTSPTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nominated_account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="account_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="entry_class" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_of_instalments" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="action_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="days_warning" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="email_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email_address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sms_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cell_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadTSPTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uploadTSPTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadCCTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nominated_account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_of_instalments" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="action_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credit_card_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cvv2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiry_date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="days_warning" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="email_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email_address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sms_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cell_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadCCTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uploadCCTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadNaedoTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nominated_account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="account_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tracking_indicator" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="no_of_instalments" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="action_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="days_warning" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="email_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email_address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sms_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cell_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="uploadNaedoTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uploadNaedoTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateInstalment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="action_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateInstalmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateInstalmentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancelTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelInstalment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="instalment" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelInstalmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancelInstalmentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CDVCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_number" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="account_type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CDVCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CDVCheckResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTSPTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="current_client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="account_type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTSPTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateTSPTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNaedoTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="current_client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="account_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tracking_indicator" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNaedoTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateNaedoTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCCTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="current_client_ref_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ref_2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateCCTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateCCTransactionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchant_number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="report_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="date_to" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="token_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="block_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReportResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="acountChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:acountChange" />
+  </wsdl:message>
+  <wsdl:message name="acountChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:acountChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="aedoConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:aedoConvert" />
+  </wsdl:message>
+  <wsdl:message name="aedoConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:aedoConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="contractActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:contractActivation" />
+  </wsdl:message>
+  <wsdl:message name="contractActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:contractActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="contractCancellationSoapIn">
+    <wsdl:part name="parameters" element="tns:contractCancellation" />
+  </wsdl:message>
+  <wsdl:message name="contractCancellationSoapOut">
+    <wsdl:part name="parameters" element="tns:contractCancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="contractDateChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:contractDateChange" />
+  </wsdl:message>
+  <wsdl:message name="contractDateChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:contractDateChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="contractTrackingChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:contractTrackingChange" />
+  </wsdl:message>
+  <wsdl:message name="contractTrackingChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:contractTrackingChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentAmountChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentAmountChange" />
+  </wsdl:message>
+  <wsdl:message name="instalmentAmountChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentAmountChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentCancellationSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentCancellation" />
+  </wsdl:message>
+  <wsdl:message name="instalmentCancellationSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentCancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentDateChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentDateChange" />
+  </wsdl:message>
+  <wsdl:message name="instalmentDateChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentDateChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentMaintenanceSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="instalmentMaintenanceSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentRescheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentReschedule" />
+  </wsdl:message>
+  <wsdl:message name="instalmentRescheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentRescheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentRescheduleMaintenanceSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentRescheduleMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="instalmentRescheduleMaintenanceSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentRescheduleMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalmentTrackingChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:instalmentTrackingChange" />
+  </wsdl:message>
+  <wsdl:message name="instalmentTrackingChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:instalmentTrackingChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadTSPTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:uploadTSPTransaction" />
+  </wsdl:message>
+  <wsdl:message name="uploadTSPTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:uploadTSPTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadCCTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:uploadCCTransaction" />
+  </wsdl:message>
+  <wsdl:message name="uploadCCTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:uploadCCTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadNaedoTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:uploadNaedoTransaction" />
+  </wsdl:message>
+  <wsdl:message name="uploadNaedoTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:uploadNaedoTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateInstalmentSoapIn">
+    <wsdl:part name="parameters" element="tns:updateInstalment" />
+  </wsdl:message>
+  <wsdl:message name="updateInstalmentSoapOut">
+    <wsdl:part name="parameters" element="tns:updateInstalmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelTransaction" />
+  </wsdl:message>
+  <wsdl:message name="cancelTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelInstalmentSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelInstalment" />
+  </wsdl:message>
+  <wsdl:message name="cancelInstalmentSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelInstalmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDVCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:CDVCheck" />
+  </wsdl:message>
+  <wsdl:message name="CDVCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:CDVCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTSPTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTSPTransaction" />
+  </wsdl:message>
+  <wsdl:message name="updateTSPTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTSPTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateNaedoTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:updateNaedoTransaction" />
+  </wsdl:message>
+  <wsdl:message name="updateNaedoTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:updateNaedoTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCCTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:updateCCTransaction" />
+  </wsdl:message>
+  <wsdl:message name="updateCCTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:updateCCTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportSoapIn">
+    <wsdl:part name="parameters" element="tns:getReport" />
+  </wsdl:message>
+  <wsdl:message name="getReportSoapOut">
+    <wsdl:part name="parameters" element="tns:getReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsNaedoSoap">
+    <wsdl:operation name="acountChange">
+      <wsdl:input message="tns:acountChangeSoapIn" />
+      <wsdl:output message="tns:acountChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aedoConvert">
+      <wsdl:input message="tns:aedoConvertSoapIn" />
+      <wsdl:output message="tns:aedoConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contractActivation">
+      <wsdl:input message="tns:contractActivationSoapIn" />
+      <wsdl:output message="tns:contractActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contractCancellation">
+      <wsdl:input message="tns:contractCancellationSoapIn" />
+      <wsdl:output message="tns:contractCancellationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contractDateChange">
+      <wsdl:input message="tns:contractDateChangeSoapIn" />
+      <wsdl:output message="tns:contractDateChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contractTrackingChange">
+      <wsdl:input message="tns:contractTrackingChangeSoapIn" />
+      <wsdl:output message="tns:contractTrackingChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentAmountChange">
+      <wsdl:input message="tns:instalmentAmountChangeSoapIn" />
+      <wsdl:output message="tns:instalmentAmountChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentCancellation">
+      <wsdl:input message="tns:instalmentCancellationSoapIn" />
+      <wsdl:output message="tns:instalmentCancellationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentDateChange">
+      <wsdl:input message="tns:instalmentDateChangeSoapIn" />
+      <wsdl:output message="tns:instalmentDateChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentMaintenance">
+      <wsdl:input message="tns:instalmentMaintenanceSoapIn" />
+      <wsdl:output message="tns:instalmentMaintenanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentReschedule">
+      <wsdl:input message="tns:instalmentRescheduleSoapIn" />
+      <wsdl:output message="tns:instalmentRescheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentRescheduleMaintenance">
+      <wsdl:input message="tns:instalmentRescheduleMaintenanceSoapIn" />
+      <wsdl:output message="tns:instalmentRescheduleMaintenanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="instalmentTrackingChange">
+      <wsdl:input message="tns:instalmentTrackingChangeSoapIn" />
+      <wsdl:output message="tns:instalmentTrackingChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadTSPTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function uploads a TSP Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:uploadTSPTransactionSoapIn" />
+      <wsdl:output message="tns:uploadTSPTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadCCTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function uploads a CreditCard Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:uploadCCTransactionSoapIn" />
+      <wsdl:output message="tns:uploadCCTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadNaedoTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function uploads a Naedo Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:uploadNaedoTransactionSoapIn" />
+      <wsdl:output message="tns:uploadNaedoTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInstalment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function updates an Instalment as specified</wsdl:documentation>
+      <wsdl:input message="tns:updateInstalmentSoapIn" />
+      <wsdl:output message="tns:updateInstalmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function cancels the requested Transaction for specified merchant service type and clientref2</wsdl:documentation>
+      <wsdl:input message="tns:cancelTransactionSoapIn" />
+      <wsdl:output message="tns:cancelTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelInstalment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function cancels the requested Instalment for specified merchant service type and clientref2</wsdl:documentation>
+      <wsdl:input message="tns:cancelInstalmentSoapIn" />
+      <wsdl:output message="tns:cancelInstalmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CDVCheck">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function does CDV checking for specified account number, account type and branch code</wsdl:documentation>
+      <wsdl:input message="tns:CDVCheckSoapIn" />
+      <wsdl:output message="tns:CDVCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTSPTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function updates a TSP Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:updateTSPTransactionSoapIn" />
+      <wsdl:output message="tns:updateTSPTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateNaedoTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function updates a Naedo Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:updateNaedoTransactionSoapIn" />
+      <wsdl:output message="tns:updateNaedoTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCCTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function updates a Credit Card Transaction as specified</wsdl:documentation>
+      <wsdl:input message="tns:updateCCTransactionSoapIn" />
+      <wsdl:output message="tns:updateCCTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the requested Transaction report for specified merchant and service type between specified dates</wsdl:documentation>
+      <wsdl:input message="tns:getReportSoapIn" />
+      <wsdl:output message="tns:getReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsNaedoSoap" type="tns:wsNaedoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="acountChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/acountChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aedoConvert">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/aedoConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractActivation">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/contractActivation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractCancellation">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/contractCancellation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractDateChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/contractDateChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractTrackingChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/contractTrackingChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentAmountChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentAmountChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentCancellation">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentCancellation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentDateChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentDateChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentMaintenance">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentReschedule">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentReschedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentRescheduleMaintenance">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentRescheduleMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentTrackingChange">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/instalmentTrackingChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadTSPTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/uploadTSPTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadCCTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/uploadCCTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadNaedoTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/uploadNaedoTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInstalment">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/updateInstalment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/cancelTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelInstalment">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/cancelInstalment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDVCheck">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/CDVCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTSPTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/updateTSPTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNaedoTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/updateNaedoTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCCTransaction">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/updateCCTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <soap:operation soapAction="https://www.nupaytsp.co.za/getReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsNaedoSoap12" type="tns:wsNaedoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="acountChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/acountChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aedoConvert">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/aedoConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractActivation">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/contractActivation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractCancellation">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/contractCancellation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractDateChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/contractDateChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contractTrackingChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/contractTrackingChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentAmountChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentAmountChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentCancellation">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentCancellation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentDateChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentDateChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentMaintenance">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentReschedule">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentReschedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentRescheduleMaintenance">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentRescheduleMaintenance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalmentTrackingChange">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/instalmentTrackingChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadTSPTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/uploadTSPTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadCCTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/uploadCCTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadNaedoTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/uploadNaedoTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInstalment">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/updateInstalment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/cancelTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelInstalment">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/cancelInstalment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDVCheck">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/CDVCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTSPTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/updateTSPTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNaedoTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/updateNaedoTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCCTransaction">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/updateCCTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReport">
+      <soap12:operation soapAction="https://www.nupaytsp.co.za/getReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsNaedo">
+    <wsdl:port name="wsNaedoSoap" binding="tns:wsNaedoSoap">
+      <soap:address location="https://www.nupaytsp.co.za/wsNaedo/wsNaedo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsNaedoSoap12" binding="tns:wsNaedoSoap12">
+      <soap12:address location="https://www.nupaytsp.co.za/wsNaedo/wsNaedo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

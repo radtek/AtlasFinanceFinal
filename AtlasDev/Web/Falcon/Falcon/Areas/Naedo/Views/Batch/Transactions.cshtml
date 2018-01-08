@@ -1,0 +1,113 @@
+﻿@{
+  ViewBag.Title = "Naedo Transactions";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="NaedoTransactionController" ng-init="init();" class="ng-cloak" ng-cloak>
+   <div class="alert alert-block alert-danger animated fadeIn" ng-show="recordNotFound">
+    <center><i class="fa fa-times-circle"></i> <strong>Error:</strong> Batch {{ id }} does not exist.</center>
+  </div>
+  <div class="ng-cloak" ng-show="!recordNotFound">
+    <section class="panel">
+      <section class="panel-body">
+        <fieldset>
+          <legend>Transaction</legend>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_batch_status">Batch Status</label>
+                <input class="form-control" id="control_batch_status" name="control[batch_status]" type="text" value="{{ batchStatusDescription }}" readonly />
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_transmission_accepted">Transmission Accepted</label>
+                <input class="form-control" id="control_transmission_accepted" name="control[transmission_accepted]" type="text" value="{{ transmissionAccepted }}" readonly>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_submit_date">Action Date</label>
+                <input class="form-control" id="control_action_date" name="control[action_date]" type="text" value="{{ actionDate | date:'yyyy-MM-dd' }}" readonly>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_submit_date">Submit Date</label>
+                <input class="form-control" id="control_submit_date" name="control[submit_date]" type="text" value="{{ submitDate | date:'yyyy-MM-dd HH:mm' }}" readonly>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_last_status_date">Last Status Date</label>
+                <input class="form-control" id="control_last_status_date" name="control[last_status_date]" type="text" value="{{ lastStatusDate | date:'yyyy-MM-dd HH:mm' }}" readonly>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_create_date">Create Date</label>
+                <input class="form-control" id="control_create_date" name="control[create_date]" type="text" value="{{ createDate | date:'yyyy-MM-dd HH:mm' }}" readonly>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </section>
+    </section>
+    <div class="table-responsive">
+      <table ng-table="transactionParams" class="table ng-cloak">
+        <tr ng-repeat="transaction in $data">
+          <td data-title="'No.'" class="hidden-sm hidden-xs">
+            <center> {{transaction.TransactionNo}}</center>
+          </td>
+          <td data-title="'Account Name'" class="hidden-sm hidden-xs" sortable="'BankAccountName'">
+            <center>{{transaction.BankAccountName}}</center>
+          </td>
+          <td data-title="'Account No'" class="hidden-sm hidden-xs" sortable="'BankAccountNo'">
+            <center>{{transaction.BankAccountNo}}</center>
+          </td>
+          <td data-title="'ID Number'" class="hidden-sm hidden-xs" sortable="'IdNumber'">
+            <center>{{transaction.IdNumber}}</center>
+          </td>
+          <td data-title="'Response Code'" class="hidden-sm hidden-xs" sortable="'ResponseCode'">
+            <center><strong>{{transaction.ResponseCode}}</strong></center>
+          </td>
+          <td data-title="'Response'" class="hidden-sm hidden-xs">
+            <center>{{transaction.ResponseCodeDescription}}</center>
+          </td>
+          <td data-title="'Override Tracking Days'" class="hidden-sm hidden-xs" ng-show="overrideTrackingDayColumn" sortable="'OverrideTrackingDays'">
+            <center>{{ transaction.OverrideTrackingDays }}</center>
+          </td>
+          <td data-title="'Override Action Date'" class="hidden-sm hidden-xs" ng-show="overrideTrackingDate" sortable="'OverrideActionDate'">
+            <center> {{transaction.OverrideActionDate  | date:'yyyy-MM-dd' }}</center>
+          </td>
+          <td data-title="'Cancel Date'" class="hidden-sm hidden-xs" ng-show="cancelDate" sortable="'CancelDate'">
+            <center> {{transaction.CancelDate | date:'yyyy-MM-dd' }}</center>
+          </td>
+          <td data-title="'Status'" class="hidden-sm hidden-xs" sortable="'Status'">
+            <center><span falcon-label class="curved-border" condition="transaction.StatusColour">{{transaction.StatusDescription}}</span></center>
+          </td>
+          <td data-title="'Override Amount'" class="hidden-sm hidden-xs" ng-show="overrideTrackingAmount" sortable="'OverrideAmount'">
+            <div ng-if="transaction.OverrideAmount">
+              <center><span class=" curved-border label label-primary">{{transaction.OverrideAmount  | currency }}</span></center>
+            </div>
+          </td>
+          <td data-title="'Amount'" class="hidden-sm hidden-xs" sortable="'Amount'">
+            <div ng-if="transaction.OverrideAmount">
+              <center><span class="curved-border label label-danger" style="text-decoration:line-through">{{transaction.Amount | currency}}</span></center>
+            </div>
+            <div ng-if="!transaction.OverrideAmount">
+              <center><span class="curved-border label label-primary">{{transaction.Amount | currency}}</span></center>
+            </div>
+          </td>
+          <td data-title="'Manage'" class="hidden-sm hidden-xs">
+            <center>
+              <a ng-click="manage(transaction.ControlId, transactionId)" rel="tooltip" title="Manage"><span class="curved-border label label-info">manage</span></button></a>
+              <!--<a ng-click="setControlId(debitOrderBatch.ControlId)" data-toggle="modal" href="#confirmDelete" rel="tooltip" title="Delete"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></a>-->
+            </center>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Avs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Avs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AvsService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextGenerationNo" type="xs:int" />
+      <xs:element minOccurs="0" name="NextTransmissionNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SaveSequenceNo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvsService" nillable="true" type="tns:AvsService" />
+</xs:schema>

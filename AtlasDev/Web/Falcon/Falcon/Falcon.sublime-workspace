@@ -1,0 +1,256 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"broa",
+				"broadcastSubscriber"
+			],
+			[
+				"_",
+				"_subscriptionChannelBusy"
+			],
+			[
+				"_sub",
+				"_subscriptions"
+			],
+			[
+				"avs",
+				"avsData"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/factories/StreamResourceFactory.js",
+			"settings":
+			{
+				"buffer_size": 3932,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install package ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/AtlasDev/Web/Falcon/Falcon",
+		"/C/AtlasDev/Web/Falcon/Falcon/app",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/controllers",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/controllers/account",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/directives",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/factories",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/scripts",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/scripts/angular"
+	],
+	"file_history":
+	[
+		"/C/AtlasDev/Web/Falcon/Falcon/app/controllers/StreamController.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/controllers/ParentController.js",
+		"/F/json.json",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/controllers/AvsController.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/app.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/css/custom.css",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/common/filters.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/common/settings.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/factories/StreamResourceFactory.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/scripts/login.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/app/directives/directives.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/scripts/components-pickers.js",
+		"/C/AtlasDev/Web/Falcon/Falcon/assets/plugins/jquery.blockui.min.js"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/factories/StreamResourceFactory.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3932,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1153,
+								1166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.587628865979,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Falcon.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 305.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f3629c8d-8adf-4771-b070-815b7289a6b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Atlas.Domain" />
+      <ReferencedAssembly AssemblyName="Atlas.Enumerators" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8200/OrchestrationService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="9cf8cef4-4b35-4329-a88e-7add08152eda" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ae74a59d-8904-4601-b91f-321bf7528acc" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="29bac3c4-8cbb-4df6-984e-0839d157a4a5" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Atlas.Domain.DTO.xsd" MetadataType="Schema" ID="c63a37da-7334-4578-bc7f-b8ad57ffe148" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Atlas.Enumerators.xsd" MetadataType="Schema" ID="1dfd56a5-d5cb-4287-a1d6-4965143bb886" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Atlas.Domain.DTO.Nucard.xsd" MetadataType="Schema" ID="9438421d-48e8-47f7-8b12-ec2c1bfb7b4c" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Atlas.Orchestration.Server.Structures.xsd" MetadataType="Schema" ID="0dc69da0-41b9-4589-b860-8c37657c0679" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="c897b48a-09e3-498f-955e-606ca771371f" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Atlas.Domain.Structures.xsd" MetadataType="Schema" ID="653cd46d-b6e6-442d-823b-9be750cd3a4e" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="75a2c796-94a1-46f3-857f-ced010d7cb78" SourceId="1" SourceUrl="net.tcp://localhost:8200/OrchestrationService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

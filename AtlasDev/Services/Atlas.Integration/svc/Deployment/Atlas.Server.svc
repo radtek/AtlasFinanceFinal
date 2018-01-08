@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Service="Atlas.Server.Implementation.Integration" %>

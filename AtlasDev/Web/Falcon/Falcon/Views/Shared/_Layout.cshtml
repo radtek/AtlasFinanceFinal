@@ -1,0 +1,111 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8" ng-app="falcon">
+   <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9" ng-app="falcon">
+   <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" ng-app="falcon">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>Falcon</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta content="Atlas Core Platform" name="description" />
+  <meta content="Atlas Finance PTY (LTD)." name="author" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+  @{
+    if (!Html.IsDebug(HttpContext.Current))
+    {
+      @Styles.Render("~/mandatory")
+      @*<link href="@Url.VersionStatic("/build/app.min.css")" rel="stylesheet" />*@
+    }
+    else
+    {
+      @Styles.Render("~/mandatory")
+    }
+    if (IsSectionDefined("LoginCSS"))
+    {
+      @RenderSection("LoginCSS", required: false);
+    }
+    if (IsSectionDefined("LockCSS"))
+    {
+      @RenderSection("LockCSS", required: false);
+    }
+  }
+  <link rel="shortcut icon" href="favicon.ico" />
+</head>
+@{
+  if (Request.IsAuthenticated && ViewContext.RouteData.Values["Controller"].ToString() != "LockOut" && ViewContext.RouteData.Values["Controller"].ToString() != "KeepAlive" && ViewContext.RouteData.GetRequiredString("action").ToLower() != "otp" && ViewContext.RouteData.GetRequiredString("action").ToString().ToLower() != "associate")
+  {
+    <body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1" ng-cloak ng-controller="ParentController" ng-init="init()">
+
+      @Html.Partial("_HeaderNav")
+      <div class="clearfix">
+      </div>
+      <div class="page-container">
+        @*@Html.Partial("_ResponsiveMenu")*@
+        <div class="page-head" ng-controller="NavigationMenuController">
+          <div class="container margin-left-inherit-important">
+            <div class="page-title left-align-text-important">
+              <h1>{{ activeMenu }}<small> {{ activeMenuDesc }}</small></h1>
+            </div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="container-fluid">
+            @RenderBody()
+          </div>
+        </div>
+      </div>     
+      @{
+    if (!Html.IsDebug(HttpContext.Current))
+    {
+      @Scripts.Render("~/StandardJs")
+      @*<script type="text/javascript" src="@Url.VersionStatic("/build/app.core.min.js")"></script>
+      <script type="text/javascript" src="@Url.VersionStatic("/build/app.min.js")"></script>*@
+    }
+    else
+    {
+      @Scripts.Render("~/StandardJs")
+    }
+      }
+      @RenderSection("Scripts", required: false)
+      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+    </body>
+  }
+  else if (Request.IsAuthenticated && ViewContext.RouteData.Values["Controller"].ToString() == "LockOut" && ViewContext.RouteData.GetRequiredString("action").ToString().ToLower() != "otp" && ViewContext.RouteData.GetRequiredString("action").ToString().ToLower() != "associate")
+  {
+    @RenderBody()
+    if (!Html.IsDebug(HttpContext.Current))
+    {
+      @Scripts.Render("~/StandardJs")
+        @*<script type="text/javascript" src="@Url.VersionStatic("/build/app.core.min.js")"></script>
+          <script type="text/javascript" src="@Url.VersionStatic("/build/app.min.js")"></script>*@
+    }
+    else
+    {
+      @Scripts.Render("~/StandardJs")
+    }
+    @RenderSection("Scripts", required: false)
+  }
+  else
+  {
+    @RenderBody()
+    if (!Html.IsDebug(HttpContext.Current))
+    {
+     @Scripts.Render("~/StandardJs")
+      @*<script type="text/javascript" src="@Url.VersionStatic("/build/app.core.min.js")"></script>
+        <script type="text/javascript" src="@Url.VersionStatic("/build/app.min.js")"></script>*@
+    }
+    else
+    {
+      @Scripts.Render("~/StandardJs")
+    }
+    @RenderSection("Scripts", required: false)
+  }
+}
+</html>

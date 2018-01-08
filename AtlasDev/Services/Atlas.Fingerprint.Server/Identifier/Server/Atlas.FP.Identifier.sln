@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.FP.Identifier", "Atlas.FP.Identifier.csproj", "{2391D55A-1EED-4C1F-8696-FC143FD7B229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.FP.Identifier.MessageTypes", "..\MessageTypes\Atlas.FP.Identifier.MessageTypes.csproj", "{CBB37772-B971-4280-8AE5-968841711191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Mongo.FP.Entities", "..\..\Atlas.Mongo.FP\Atlas.Mongo.FP.Entities.csproj", "{11E58A67-CDE8-456D-B09A-758DE7610C3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Common.Interface", "..\..\..\..\Libraries\Atlas.Common.Interface\Atlas.Common.Interface.csproj", "{1846E86A-33C9-4802-A135-A3E2F419118F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Servers.Common", "..\..\..\..\Libraries\Atlas.Servers.Common\Atlas.Servers.Common.csproj", "{EBDFCE74-C37A-418B-AAED-353F122A0420}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2391D55A-1EED-4C1F-8696-FC143FD7B229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2391D55A-1EED-4C1F-8696-FC143FD7B229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2391D55A-1EED-4C1F-8696-FC143FD7B229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2391D55A-1EED-4C1F-8696-FC143FD7B229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB37772-B971-4280-8AE5-968841711191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB37772-B971-4280-8AE5-968841711191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB37772-B971-4280-8AE5-968841711191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB37772-B971-4280-8AE5-968841711191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E58A67-CDE8-456D-B09A-758DE7610C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1846E86A-33C9-4802-A135-A3E2F419118F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1846E86A-33C9-4802-A135-A3E2F419118F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1846E86A-33C9-4802-A135-A3E2F419118F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1846E86A-33C9-4802-A135-A3E2F419118F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDFCE74-C37A-418B-AAED-353F122A0420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDFCE74-C37A-418B-AAED-353F122A0420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDFCE74-C37A-418B-AAED-353F122A0420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDFCE74-C37A-418B-AAED-353F122A0420}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

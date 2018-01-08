@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EB5BB36-E4C5-4BC5-A0EF-E4A3173442EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stream.Service</RootNamespace>
+    <AssemblyName>Stream.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Falcon.Gyrkin\Source\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.2.0\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StreamService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Ass\Atlas.Ass.Framework\Atlas.Ass.Framework.csproj">
+      <Project>{C619816D-6491-495C-A6F9-78130FA24C6C}</Project>
+      <Name>Atlas.Ass.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Data.Dapper\Atlas.Data.Dapper.csproj">
+      <Project>{deba17c2-0ca8-47a9-95fe-50b29365bd59}</Project>
+      <Name>Atlas.Data.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07FC6272-5FA2-45A7-A99C-062EC5B0C205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Falcon\Common\Falcon.Interfaces\Falcon.Common.Interfaces.csproj">
+      <Project>{130E010C-66A1-4128-8F61-03118BCE3B53}</Project>
+      <Name>Falcon.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Falcon.Gyrkin\Source\Stream.Interfaces\Stream.Framework.csproj">
+      <Project>{77D9E64A-BD91-4CCE-BA43-2AF61E667355}</Project>
+      <Name>Stream.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Falcon.Gyrkin\Source\Stream.Structures\Stream.Structures.csproj">
+      <Project>{9C466A48-7B08-420D-961F-DA72B1684336}</Project>
+      <Name>Stream.Structures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

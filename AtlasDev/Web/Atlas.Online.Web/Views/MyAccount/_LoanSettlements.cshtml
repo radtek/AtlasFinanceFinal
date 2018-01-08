@@ -1,0 +1,77 @@
+﻿@using Atlas.Online.Web.Resources
+<div ng-form="form">
+
+  <div class="of-h">
+    <div class="alert alert-error anim-margin anim-margin-top-hide" ng-class="{ 'anim-margin-top-hide': isWorkingDay}">@ErrorMessages.Application_CannotSelectHoliday</div>
+  </div>
+
+  <p class="mt-none">
+    If you would like to settle your account early, please click here.
+    Please note the settlement amount must be paid 2 days in advance in order for the debit order not to go off your account.
+  </p>
+
+	<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+		<div class="field cf">
+			<div class="col col-5 pr-micro">
+				<label for="amount" class="field-label mb-none">Repayment amount</label>
+			</div><!-- .col -->
+			<div class="col col-7"><p>{{ repaymentAmount | f8currency:'R ':2 }}</p></div><!-- .col -->
+		</div>
+
+    <div class="field cf">
+			<div class="col col-5 pr-micro">
+				<label for="amount" class="field-label mb-none">Current repayment date</label>
+			</div><!-- .col -->
+			<div class="col col-7"><p>{{ repaymentDate | date }}</p></div><!-- .col -->
+		</div>
+
+  </div>
+
+  <hr />
+
+	<div class="row cf">
+
+    <div class="field cf">
+			<div class="col col-5 pr-micro">
+				<label for="date" class="field-label">New repayment due date</label>
+			</div><!-- .col -->
+			<div class="col col-7">
+			  <input name="newRepaymentDate" class="input-beta d-block" ng-model="newRepaymentDate" ui-date="dateOptions" readonly>
+			</div><!-- .col -->
+		</div>
+
+    <div class="of-h">
+      <div class="field cf mb-alpha anim-margin anim-margin-top-hide" ng-class="{'anim-margin-top-hide': !newRepaymentAmount }">
+			  <div class="col col-5 pr-micro">
+				  <label for="date" class="field-label mb-none">New repayment amount</label>
+			  </div><!-- .col -->
+			  <div class="col col-7">
+          <strong class="fc-beta">{{ newRepaymentAmount | f8currency:'R ':2 }}</strong>
+			  </div><!-- .col -->
+		  </div>
+    </div>
+
+	</div><!-- .row -->
+
+   <div class="cf mb-alpha mt-alpha ar">
+    <a href="@Url.Action("SettlementContract", "Reports")/{{ applicationId }}"
+      ng-click="preventClick($event)"
+      class="d-iblock ac mr-alpha" target="_blank"
+       ng-class="{ disabled : !hasSettlement }">
+	    <i class="circle-icon-container fc-alpha-ltr fs-mega">
+		    <i class="icon icon-letter fc-alpha fs-gamma"  ng-class="{ 'fc-alpha-lt': !hasSettlement }"></i>
+	    </i>
+	    <div>Contract</div>
+    </a>
+  </div>
+
+  <div class="row cf">
+    <div class="col col-6">
+      <a href="#/CurrentLoan" class="btn btn-left btn-alpha btn-left-alpha">Back</a>
+    </div>
+    <div class="col col-6 ar">
+		  <label for="submit" class="btn" ng-class="{disabled: !isValid()}"><input id="submit" name="submit" ng-click="submit($event)" ng-disabled="!isValid()" type="submit" value="Submit"></label>
+    </div>
+	</div>
+</div>

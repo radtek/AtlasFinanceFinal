@@ -1,0 +1,16 @@
+// fonts and paths to be declared here
+
+$font-omega					: "atlas-icons";
+$font-omega-path		: "../fnt/icon";
+$font-omega-filename: "atlas-icons";
+$font-omega-stack		: $font-omega;
+
+
+// Font Alpha - HEADING FONT
+$font-alpha					: "Questrial";
+$font-alpha-stack		: $font-alpha, Arial, sans-serif;
+
+// Variants of Alpha typeface
+// $font-alpha-filename-i	: "[italic-font-file-name-without-extension]"; // italic
+// $font-alpha-filename-b	: "[bold-font-file-name-without-extension]"; // bold
+// $font-alpha-filename-bi: "[bold-italic-font-file-name-without-extension]"; // bold-italic

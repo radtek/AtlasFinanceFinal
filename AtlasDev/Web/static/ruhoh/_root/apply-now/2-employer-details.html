@@ -1,0 +1,142 @@
+---
+title : Apply Now
+title_additional : Employer Details
+page_list_description: Step 2
+description:
+layout: with_outline
+step-2: true
+---
+
+{{> apply_now_steps }}
+
+<div class="alert alert-error">error message</div>
+
+<div class="row cf mb-gamma">
+
+	<div class="col col-6 pr-alpha">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Name of company</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/input }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Work number</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/input }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">HR contact number</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/inputs_two }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Address line 1</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/input }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Address line 2</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/input }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">City / Town</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/input }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Province</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					<div class="row cf">
+						<div class="col col-8">
+							{{> forms/select }}
+						</div><!-- .col -->
+						<div class="col col-4">
+							{{> forms/input }}
+						</div><!-- .col -->
+					</div><!-- .row -->
+				</div><!-- .col -->
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .col -->
+
+	<div class="col col-6 pl-alpha">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Industry</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/select }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Frequency of income</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/select }}
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-4 pr-alpha">
+					<label for="" class="field-label">Salary per date</label>
+				</div><!-- .col -->
+				<div class="col col-8">
+					{{> forms/select }}
+				</div><!-- .col -->
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .col -->
+
+</div><!-- .row -->
+
+<hr class="hr-dotted">
+
+<div class="row cf">
+	<div class="col col-6 ">
+		<a class="btn btn-l btn-alpha btn-l-alpha btn-left btn-l-left btn-left-alpha btn-l-left-alpha mb-none" href="1-personal-details">
+			Personal Details
+			<i class="btn-l-hint btn-l-hint-alpha btn-l-hint-left btn-l-hint-left-alpha">Step 1</i>
+		</a>
+	</div><!-- .col -->
+	<div class="col col-6 ar">
+		<a class="btn btn-l btn-right btn-l-right mb-none" href="3-income-expenses">
+			<i class="btn-l-hint btn-l-hint-right">Step 3</i>
+			Income &amp; Expenses
+		</a>
+	</div><!-- .col -->
+</div><!-- .row -->

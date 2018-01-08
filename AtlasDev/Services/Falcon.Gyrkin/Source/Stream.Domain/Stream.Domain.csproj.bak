@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAB637BC-CFA9-4917-B5F3-5C9622B158E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stream.Domain</RootNamespace>
+    <AssemblyName>Stream.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\STR_AccountNoteType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\STR_Account.cs" />
+    <Compile Include="Models\STR_Note.cs" />
+    <Compile Include="Models\STR_ActionType.cs" />
+    <Compile Include="Models\STR_Actuator.cs" />
+    <Compile Include="Models\STR_ActuatorType.cs" />
+    <Compile Include="Models\STR_Budget.cs" />
+    <Compile Include="Models\STR_Case.cs" />
+    <Compile Include="Models\STR_CaseNotification.cs" />
+    <Compile Include="Models\STR_CaseStatus.cs" />
+    <Compile Include="Models\STR_CaseStream.cs" />
+    <Compile Include="Models\STR_CaseStreamAction.cs" />
+    <Compile Include="Models\STR_CaseStreamAllocation.cs" />
+    <Compile Include="Models\STR_CaseStreamEscalation.cs" />
+    <Compile Include="Models\STR_Category.cs" />
+    <Compile Include="Models\STR_CategoryHost.cs" />
+    <Compile Include="Models\STR_Comment.cs" />
+    <Compile Include="Models\STR_CommentGroup.cs" />
+    <Compile Include="Models\STR_Debtor.cs" />
+    <Compile Include="Models\STR_DebtorAddress.cs" />
+    <Compile Include="Models\STR_DebtorContact.cs" />
+    <Compile Include="Models\STR_Escalation.cs" />
+    <Compile Include="Models\STR_Frequency.cs" />
+    <Compile Include="Models\STR_Group.cs" />
+    <Compile Include="Models\STR_GroupHost.cs" />
+    <Compile Include="Models\STR_GroupStream.cs" />
+    <Compile Include="Models\STR_Priority.cs" />
+    <Compile Include="Models\STR_Stream.cs" />
+    <Compile Include="Models\STR_SubCategory.cs" />
+    <Compile Include="Models\STR_Transaction.cs" />
+    <Compile Include="Models\STR_TransactionStatus.cs" />
+    <Compile Include="Models\STR_TransactionType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Data\Atlas.Domain.csproj">
+      <Project>{42909E2D-45B8-44CC-9B2D-BE40CE0D148F}</Project>
+      <Name>Atlas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stream.Interfaces\Stream.Framework.csproj">
+      <Project>{77d9e64a-bd91-4cce-ba43-2af61e667355}</Project>
+      <Name>Stream.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2067 @@
+@charset "UTF-8";
+
+@import "modules/!modules";
+/*
+Theme Name: Atlas Online
+Description: Atlas Online's loan system website, <a href="http://fixate.it">developed</a> by Fixate.
+Version: 1.0
+.
+*/
+
+/* ==|== &colours ==============================================================
+
+	 colour													#
+
+	 ========================================================================== */
+
+/* ==|== &INDEX ================================================================
+
+	- BASE STYLES
+		- Normalize
+			- HTML5 display definitions
+			- Base
+			- Links
+			- Typography
+			- Lists
+			- Embedded content
+			- Figures
+			- Forms
+			- Tables
+		- Fonts
+
+	- BLOCKS
+		- Grid
+		- Main Structure
+			- Header
+			- Primary Content
+			- Secondary Content
+			- Footer
+		- Media Block
+		- Flex Video
+		- Navigation
+		- Forms
+			- Date Picker
+			- Autocomplete
+			- Wysiwyg
+		- Buttons
+		- Icons
+		- Alerts
+		- Labels
+		- Slider
+		- Comments
+			- Comment
+			- Pingbacks / Trackbacks
+			- Comment Form
+		- Widgets
+		- Progress Bars
+		- Tool Tips
+		- Dialogs
+		- Collapse (Accordion)
+		- Bootstrap Helpers
+		- Loaders
+
+	- GENERAL STYLING
+		- Typography
+			- Headers
+			- Lists
+			- Horizontal Rules
+			- Typography Modifiers
+		- Backgrounds & Borders
+		- Layout
+			- Layout Modifiers
+		- Helpers
+
+	- ANIMATIONS
+
+	- MEDIA QUERIES
+
+	- PRINT STYLES
+
+	 ========================================================================== */
+
+/*
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+
+/* =============================================================================
+	 CSS Device Adaptation
+	 ========================================================================== */
+/*
+ * Ensure IE10 respects viewport width when in 'snap' mode - http://mopo.ws/WmFbcL
+ */
+@-ms-viewport{ width: device-width;}
+
+/* =============================================================================
+	 HTML5 display definitions
+	 ========================================================================== */
+/*
+ * 1. Corrects `block` display not defined in IE 8/9.
+ * 2. Corrects `inline-block` display not defined in IE 8/9.
+ * 3. Prevents modern browsers from displaying `audio` without controls.
+ *		Remove excess height in iOS 5 devices.
+ * 4. Addresses styling for `hidden` attribute not present in IE 8/9.
+ * 5. Default behaviour for touch-based browsing on IE10 devices running
+ * Windows 8
+ *
+ * Apply a natural box layout model to all elements.
+ * Be aware that IE8 and up support box-sizing, IE7 & 6 require polyfill.
+ * Associated jQuery bug - http://mopo.ws/AsGGa2
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block;} /* 1 */
+
+audio, canvas, video { display: inline-block;} /* 2 */
+
+audio:not([controls]) { display: none; height: 0;} /* 3 */
+
+[hidden] { display: none;} /* 4 */
+
+canvas { -ms-touch-action: double-tap-zoom;} /* 5 */
+
+/* =============================================================================
+	 &Base
+	 ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ *
+ * Apply a natural box layout model to all elements.
+ * Be aware that IE8 and up support box-sizing, IE7 & 6 require polyfill.
+ * Associated jQuery bug - http://mopo.ws/AsGGa2
+ */
+
+* {
+	@include box-sizing(border-box);
+}
+
+a {}
+
+html {
+	// set desired font size in /var/_units.scss
+	font-size: fix8-get-base-font-size(); /* #{$unit-base} */
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+html, button, input, select, textarea {
+	font-family: Helvetica, Arial, sans-serif;
+	color: $clr-alpha;
+}
+
+body {
+	background: $clr-ntrl-min;
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 0;
+}
+
+// Serve hi-res background to higher px density displays at same size as
+// original background
+// @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+// only screen and (-o-min-device-pixel-ratio: 3/2),
+// only screen and (min--moz-device-pixel-ratio: 1.5),
+// only screen and (min-device-pixel-ratio: 1.5) {
+// 	body {
+// 		background-image:url(img/[]@2x.png);
+// 		background-size: [width] [height];
+// 	}
+// }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ */
+
+::-moz-selection { background: $clr-beta; color: $clr-ntrl-min; text-shadow: none;}
+::selection { background: $clr-beta; color: $clr-ntrl-min; text-shadow: none;}
+
+
+/* =============================================================================
+	 &Links
+	 ========================================================================== */
+
+a {
+	color: $clr-alpha-dk;
+	text-decoration: none;
+	@include transition(all 100ms ease-in-out);
+	outline: 0;
+}
+a:visited {}
+
+a:hover {	color: $clr-alpha-lt;}
+a:active {
+	color: $clr-alpha;
+	@include transition(all 0ms);
+}
+a:focus { outline: thin dotted;}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0;}
+
+/* disabled link styles */
+a.disabled,
+a.disabled:hover,
+a.disabled:hover { color: $clr-alpha-ltr;}
+
+/* =============================================================================
+	 &Typography
+	 ========================================================================== */
+p { hyphens: auto;}
+
+abbr[title] { border-bottom: 1px dotted;}
+
+b, strong { font-weight: bold;}
+
+i { font-style: normal;}
+
+blockquote {
+	font-style: italic;
+	@include px-and-rem(margin, 1.5);
+	@include px-and-rem(padding, .25, 1.5);
+	border-left: 1px solid $clr-alpha;
+}
+
+dfn { font-style: italic;}
+
+hr { display: block; height:	 1px; margin: 1em 0; padding: 0; border: 0; border-top: 1px solid $clr-alpha-lt;}
+
+ins { background: #ff9; color: $clr-ntrl-max; text-decoration: none;}
+
+mark { background: #ff0; color: $clr-ntrl-max;}
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, serif; font-size: 1em;}
+
+kbd {
+	font-size: 85%;
+	padding: .25em .5em;
+	border: 1px solid $clr-ntrl-10;
+	border-radius: 2px;
+	vertical-align: middle;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word;}
+
+q { quotes: "\201C" "\201D" "\2018" "\2019";}
+q:before, q:after { content: ""; content: none;}
+
+small { font-size: 85%;}
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { position: relative; font-size: 75%; line-height: 0; vertical-align: baseline;}
+sup { top: -0.5em;}
+sub { bottom: -0.25em;}
+
+
+/* =============================================================================
+	 &Lists
+	 ========================================================================== */
+
+ul, ol {
+	@include px-and-rem(margin, 1);
+	padding: 0 0 0 40px;
+}
+dd { margin: 0 0 0 40px;}
+nav ul, nav ol {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* =============================================================================
+	 &Embedded content
+	 ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img {
+	width: auto;
+	height: auto;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+/*
+ * Prevent images and embeds from exceeding width of containing element
+ * width:; and height:; above apply
+ */
+
+img, embed, object, video { max-width: 100%;}
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+
+svg:not(:root) { overflow: hidden;}
+
+
+/* =============================================================================
+	 &Figures
+	 ========================================================================== */
+
+figure { margin: 0;}
+
+
+/* =============================================================================
+	 &Forms
+	 ========================================================================== */
+
+form { margin: 0;}
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer;}
+
+/*
+ * 1. Correct color not inheriting in IE8/9
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend { border: 0; padding: 0;}
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+
+button, input, select, textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 2 */
+	margin: 0; /* 3 */
+	vertical-align: baseline;
+}
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+
+button, input { line-height: normal;}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button, html input[type="button"], /* 1 */
+input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button; /* 2 */
+	cursor: pointer; /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+
+button[disabled], input[disabled], :disabled, .disabled, .unselectable {
+	color: $clr-alpha-ltr;
+	cursor: default;
+	pointer-events: none;
+}
+
+/*
+ * Consistent box sizing and appearance
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 4. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ * 5. Removes inner padding and search cancel button in Safari 5 and Chrome
+ * 		on OS X.
+ */
+
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* 3 */
+	@include box-sizing(border-box); /* 4 */
+}
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none;} /* 5 */
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0;}
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+/*input:valid, textarea:valid {}
+input:invalid, textarea:invalid {}*/
+
+::-webkit-input-placeholder { color: #aaa;}
+					:-moz-placeholder { color: #aaa;}
+						:-o-placeholder { color: #aaa;}
+					 :-ms-placeholder { color: #aaa;}
+
+focus::-webkit-input-placeholder { color: $clr-ntrl-20;}
+					focus:-moz-placeholder { color: $clr-ntrl-20;}
+						focus:-o-placeholder { color: $clr-ntrl-20;}
+					 focus:-ms-placeholder { color: $clr-ntrl-20;}
+
+
+/* =============================================================================
+	 &Tables
+	 ========================================================================== */
+
+table {
+	border-collapse: collapse; border-spacing: 0;
+	font-weight: bold;
+	border: 1px solid $clr-alpha-ltst;
+}
+
+th { vertical-align: top;}
+
+td {
+	color: $clr-alpha-dk;
+	vertical-align: middle;
+}
+
+.fc-beta td {
+	color: inherit;
+}
+
+th, td {
+	border: 1px solid $clr-alpha-ltr;
+	padding: .5em .5em;
+}
+
+.table-alt tr:nth-of-type(2n) {	background-color: $clr-alpha-ltst;}
+
+.table-hoverable tbody > tr:hover {
+	background-color: $clr-alpha-ltr;
+	cursor: pointer;
+}
+
+.table-hoverable tbody > .table-hoverable-selected,
+.table-hoverable tbody > .table-hoverable-selected:hover {
+	background-color: lighten($clr-beta-ltst, 10%);
+	cursor: default;
+}
+
+.t-alpha tr td:first-child { width: 60%;}
+
+.t-alpha tr:last-child { background: $clr-alpha-ltst;}
+
+
+/* =============================================================================
+	 &Fonts
+	 ========================================================================== */
+/* base-icon-font built as a subset using icons from FontAwesome and IcoMoon */
+@include font-face($font-omega, $font-omega-filename, $font-omega-path, $weight: normal, $style: normal);
+
+
+/* *****************************************************************************
+	 &BLOCKS
+	 ************************************************************************** */
+/* =============================================================================
+	 &Grid
+	 ========================================================================== */
+/*
+ * Gridpak Beta CSS
+ *
+ * Generator - http: //gridpak.com/
+ * Created by @erskinedesign
+ */
+
+/* rows hold columns - should be used with .cf */
+// .row { margin-left: -$unit-default-px;}
+
+.row .col:first-child {
+	margin-left:0;
+}
+
+/* Reusable column setup */
+.col {
+	border: 0 solid hsla(0,0%,0%,0);
+	float: left;
+	position: relative;
+	@include background-clip(padding-box !important);
+	@include transition(left 250ms ease-in-out, right 250ms ease-in-out);
+}
+
+/*
+ * Restrict inline-block cols to modern browsers.
+ * Inline-block columns are useful when floated columns of different heights
+ * prevent subsequent columns from floating to their appropriate positions
+ */
+:root .row-ib-cols { margin: 0 -3px 0 3px;}
+
+/*
+ * vertical align should be set on a per column basis to prevent specificity
+ * issues when attempting to use different alignment values
+ */
+:root .row-ib-cols .col {
+	float: none;
+	display: inline-block;
+	margin-left: -3px;
+}
+
+:root .row-ib-cols-va-m .col {
+	vertical-align: middle;
+}
+
+.col-1 { width: 8.333%;}
+.col-2 { width: 16.667%;}
+.col-3 { width: 25.0%;}
+.col-4 { width: 33.333%;}
+.col-5 { width: 41.667%;}
+.col-6 { width: 50.0%;}
+.col-7 { width: 58.333%;}
+.col-8 { width: 66.667%;}
+.col-9 { width: 75.0%;}
+.col-10 { width: 83.333%;}
+.col-11 { width: 91.667%;}
+.col-12 {
+	margin-left: 0;
+	width: 100%;
+}
+
+.pull-1 { left: -8.333%;}
+.pull-2 { left: -16.667%;}
+.pull-3 { left: -25.0%;}
+.pull-4 { left: -33.333%;}
+.pull-5 { left: -41.667%;}
+.pull-6 { left: -50.0%;}
+.pull-7 { left: -58.333%;}
+.pull-8 { left: -66.667%;}
+.pull-9 { left: -75.0%;}
+.pull-10 { left: -83.333%;}
+.pull-11 { left: -91.667%;}
+.pull-12 {
+	margin-left: 0;
+	left: -100%;
+}
+
+.push-1 { right: -8.333%;}
+.push-2 { right: -16.667%;}
+.push-3 { right: -25.0%;}
+.push-4 { right: -33.333%;}
+.push-5 { right: -41.667%;}
+.push-6 { right: -50.0%;}
+.push-7 { right: -58.333%;}
+.push-8 { right: -66.667%;}
+.push-9 { right: -75.0%;}
+.push-10 { right: -83.333%;}
+.push-11 { right: -91.667%;}
+.push-12 {
+	margin-left: 0;
+	right: -100%;
+}
+
+/* =============================================================================
+	 &Main Structure
+	 ========================================================================== */
+/* -----------------------------------------------------------------------------
+	 &Header
+	 -------------------------------------------------------------------------- */
+.logo-container {
+	position: relative;
+	min-height: 1em;
+}
+.logo {
+	position: absolute;
+	bottom: -85px;
+	left: 0;
+}
+
+.sub-header {	min-width: 980px;}
+
+.sub-header-default {
+	background: $clr-ntrl-max url(../img/header/default-header-atlas-online.jpg) no-repeat center top;
+	min-height: 306px;
+}
+
+/* -----------------------------------------------------------------------------
+	 &Primary Content
+	 -------------------------------------------------------------------------- */
+.container-primary {
+	position: relative;
+	@include px-and-rem(padding, 2.5, 2.5, 3.5);
+	border-radius: $bradius-alpha;
+	box-shadow: 0 1px 1px $clr-alpha,
+							0 2px 1px $clr-alpha-ltst,
+							0 3px 1px $clr-alpha,
+							0 4px 1px $clr-alpha-ltst,
+							0 5px 1px $clr-alpha,
+							0 6px 1px $clr-alpha-ltst,
+							0 7px 1px $clr-alpha,
+							0 8px 1px $clr-alpha-ltst,
+							0 9px 1px $clr-alpha;
+}
+
+.container-outline {
+	position: relative;
+	@include px-and-rem(padding, 0, 2.5, 3.5);
+}
+
+.container-outline:before {
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1px solid $clr-alpha-ltr;
+	border-radius: $bradius-delta;
+}
+
+// used for equal height columns -> http://css-tricks.com/fluid-width-equal-height-columns/
+// requires overflow: hidden on parent
+.equal-height {
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+
+.account-menu-bg {	position: relative;}
+
+.account-menu-bg:before {
+	position: absolute;
+	content: "";
+	background-color: $clr-ntrl-min;
+	@include gradient(background-image, linear-gradient(180deg, transparent, hsla(0, 0%, 0%, .05)));
+	width: 33.333%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	border-right: 1px solid $clr-alpha-ltr;
+	box-shadow: 1px 1px 2px -1px hsla(0, 0%, 0%, .25);
+}
+
+/* -----------------------------------------------------------------------------
+	 &Secondary Content
+	 -------------------------------------------------------------------------- */
+.steps {
+	background: $clr-beta url(../img/steps-bg.png) no-repeat center 11px;
+	text-align: center;
+	@include px-and-rem(padding, 3, 2.5, .5);
+}
+
+.steps-col {
+	@extend .col;
+	color: $clr-beta-ltr;
+	width: 20%;
+}
+
+.steps-current { color: $clr-ntrl-min;}
+
+.circle-icon-container {
+	position: relative;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+}
+
+.steps .circle-icon-container { @include px-and-rem(font-size, 2.5em);}
+
+.circle-icon-container .icon {
+	position: absolute;
+	line-height: 1.65;
+	top: 50%;
+	left: 50%;
+	margin-top: -1em;
+	margin-left: -.5em;
+}
+
+.steps .circle-icon-container .icon {
+	line-height: 1.85;
+}
+
+
+.circle-icon-container:before,
+.circle-icon-container:after {
+	position: absolute;
+	font-family: $font-omega-stack;
+	line-height: 1;
+}
+
+.circle-icon-container:before {
+	content: "\e030";
+	font-size: inherit;
+	color: inherit;
+	text-shadow: 0 1px 0 hsla(0, 0%, 100%, .25);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.steps .circle-icon-container:before { color: $clr-beta-dk;}
+.steps-current .circle-icon-container:before { color: $clr-beta-ltr;}
+
+.steps-current .circle-icon-container:after {
+	content: "\f000";
+	@include px-and-rem(font-size, 3.5); // 42px
+	color: $clr-ntrl-min;
+	top: -6%;
+	left: -6px;
+	text-shadow: 0 1px 3px hsla(0, 0%, 0%, .5);
+}
+
+.verify {
+	position: relative;
+	display: inline-block;
+}
+
+.verify-spinner,
+.verify:after {
+	position: absolute;
+	width: 142px;
+	height: 142px;
+}
+
+.verify:after {
+	content: "";
+	background: url(../img/verify/verify-cap.png) no-repeat center center;
+	top: 25px;
+	left: 187px;
+	z-index: 20;
+}
+
+.verify-spinner {
+	position: absolute;
+  display: block;
+	top: 13px;
+	left: 174px;
+	z-index: 10;
+	width: 166px;
+	height: 166px;
+}
+
+.verify-spinner-inner { fill: $clr-beta }
+
+/* -----------------------------------------------------------------------------
+	 &Footer
+	 -------------------------------------------------------------------------- */
+
+
+/* =============================================================================
+	 &Media Block
+	 ========================================================================== */
+/*
+ * media object - http://mopo.ws/GJYch3
+ * .mblock and .mblock-beta should always be used in conjunction with
+ * .cf
+ *
+ * Improvements by Nicholas Gallagher - http://jsfiddle.net/necolas/rZvEF/
+ *
+ * .mblock {}
+ * .mblock > .mblock-alpha {}
+ */
+.mblock:before, .mblock:after { content: ""; display: table; height:0;}
+.mblock:after { clear: both;}
+
+.mblock > .mblock-beta {
+	display: table-cell; /* 1 */
+	width: 10000px; /* 2 */
+}
+.mblock .mblock-alpha { float: left; @include px-and-rem(margin-right, 1);}
+.mblock .mblock-alpha img { display: block;}
+
+
+/* =============================================================================
+	 &Flex Video - http://mopo.ws/TuyaHd
+	 ========================================================================== */
+.flex-video {
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 67.5%; /* 4:3; */
+	height: 0;
+	@include px-and-rem(margin-right, 1);
+	overflow: hidden;
+}
+.flex-video-widescreen { padding-bottom: 57.25%; /* 16:9; */}
+.flex-video-vimeo { padding-top: 0;}
+.flex-video iframe,
+.flex-video object,
+.flex-video embed,
+.flex-video video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* =============================================================================
+	 &Navigation
+	 ========================================================================== */
+/*
+ * Nav abstraction - use classes specific to particular nav
+ * to differentiate - http://mopo.ws/zadlrO
+ */
+.menu {
+	list-style: none;
+	margin-left: 0;
+	@include px-and-rem(font-size, 1.25); // 15px
+	font-weight: bold;
+	text-transform: capitalize;
+	text-shadow: 0 1px 1px hsla(0, 0%, 0%, .25);
+	padding-left: 0;
+}
+
+.menu-item { position: relative;}
+
+.menu-item > a {
+	display: inline-block;
+	color: $clr-ntrl-min;
+	padding: .5em 1em;
+}
+
+.current-menu-item > a {
+	text-shadow: none;
+	cursor: default;
+}
+
+.menu-item,
+.menu-item a { display: inline-block;}
+
+.menu-item + .menu-item > a { border-left: 1px solid transparentize($clr-ntrl-max, .8);}
+
+.menu-item > a:hover { color: $clr-beta-ltr;}
+.current-menu-item > a,
+.current-menu-item > a:hover,
+.current-menu-item > a:active,
+.menu-item > a:active { color: $clr-beta-ltst;}
+
+.sub-menu {
+	position: absolute;
+	display: none;
+	background-color: $clr-beta;
+	border-right: 1px solid hsla(0, 0%, 0%, .2);
+	border-left: 1px solid hsla(0, 0%, 0%, .2);
+	z-index: 100;
+}
+
+.sub-menu a {	padding-left: 2em;}
+
+.sub-menu .sub-menu a {	padding-left: 4em;}
+
+.menu-item a:hover + .sub-menu,
+.sub-menu:hover {	display: block;}
+
+.sub-menu .sub-menu { top: 0; left: 100%;}
+
+.sub-menu a,
+.sub-menu .sub-menu a {
+	min-width: 225px;
+	padding-left: 1em;
+	white-space: nowrap;
+}
+
+
+/* =============================================================================
+	 &Forms
+	 ========================================================================== */
+.field, .field-label { position: relative;}
+
+.field-label {
+	display: inline-block;
+	font-weight: bold;
+	@include px-and-rem(margin-bottom, 1.5);
+}
+
+input, textarea {
+	@include px-and-rem(margin-bottom, 1.5);
+	padding: .9em .85em .8em;
+	border: 1px solid $clr-alpha-lt;
+	border-radius: $bradius-delta;
+	box-shadow: inset 1px 1px 4px 0px hsla(0, 0%, 0%, .25);
+	@include transition(all 150ms ease-in-out);
+}
+
+input[readonly],
+textarea[readonly] {
+	color: $clr-alpha-lt;
+	border-color: lighten($clr-alpha-lt, 10%);
+	box-shadow: none;
+}
+
+.input-beta {
+	color: $clr-beta;
+	@include px-and-rem(font-size, 1.333); //16px
+	padding: .55em .5em .45em;
+}
+
+.input-beta[readonly] { color: $clr-beta-ltr;}
+
+input[type="radio"],
+input[type="checkbox"] {
+	cursor: pointer;
+	border: none;
+}
+
+/* Angular.js styles */
+.ng-dirty.ng-invalid input.ng-dirty.ng-invalid,
+input.ng-dirty.ng-invalid {
+	color: $clr-beta-lt;
+	border-color: $clr-beta-ltr;
+	box-shadow: inset 1px 1px 4px 0px hsla(0, 100%, 50%, .25);
+}
+
+.radio-custom:before,
+.checkbox-custom:before { margin-bottom: .5em;}
+
+.radio-custom:before { content: "\e010";}
+.checkbox-custom:before { content: "\e000"; /* .icon-check-empty - FontAwesome */}
+
+input:checked + label > .radio-custom:before {
+	content: "\e011";
+	color: $clr-beta;
+}
+input:checked + label > .checkbox-custom:before {
+	content: "\e001"; /* .icon-check - FontAwesome */
+	color: $clr-beta;
+}
+
+
+/* -----------------------------------------------------------------------------
+	 &Select Menu
+	 -------------------------------------------------------------------------- */
+@import "vendor/dropkick";
+
+/* -----------------------------------------------------------------------------
+	 &Date Picker
+	 -------------------------------------------------------------------------- */
+@import "vendor/jquery-ui-datepicker";
+
+/* -----------------------------------------------------------------------------
+	 &Wysiwyg
+	 -------------------------------------------------------------------------- */
+
+
+/* =============================================================================
+	 &Buttons
+	 ========================================================================== */
+@import "partials/buttons";
+
+
+/* =============================================================================
+	 &Icons
+	 ========================================================================== */
+/*  Styling inspired by FontAwesome - http://mopo.ws/ReAOC6
+		------------------------------------------------------- */
+.icon:before, .icon:before {
+	font-family: $font-omega-stack;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+}
+a .icon, a .icon {
+	display: inline-block;
+	text-decoration: inherit;
+}
+/* makes the font 33% larger relative to the icon container */
+.icon-large:before {
+	vertical-align: top;
+	font-size: 1.3333333333333333em;
+}
+.btn .icon, .btn .icon {
+	/* keeps button heights with and without icons the same */
+	line-height: .5;
+}
+li .icon, li .icon {
+	display: inline-block;
+	width: 1.25em;
+	text-align: center;
+}
+li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
+	/* 1.5 increased font size for icon-large * 1.25 width */
+
+	width: 1.875em;
+}
+li.icon, li.icon {
+	margin-left: 0;
+	list-style-type: none;
+}
+li.icon:before, li.icon:before {
+	text-indent: -2em;
+	text-align: center;
+}
+li.icon.icon-large:before, li.icon.icon-large:before {
+	text-indent: -1.3333333333333333em;
+}
+
+.icon-anim-rotate {
+	@include transform-origin(49% 38%);
+
+	@include animation(rotate 1s infinite linear);
+}
+
+/*
+ * Use the Unicode Private Use Area (PUA) to ensure screen readers do not
+ * read off random characters that represent icons
+ */
+
+/* WEB APPLICATION ICONS U+e0xxx --------------------------------------------- */
+.icon-checkbox-unchecked:before	{ content: "\e000";}
+.icon-checkbox-checked:before		{ content: "\e001";}
+
+.icon-radio-unchecked:before		{ content: "\e010";}
+.icon-radio-checked:before			{ content: "\e011";}
+
+.icon-briefcase:before 					{ content: "\e020";}
+
+.icon-circle:before							{ content: "\e030";}
+
+.icon-credit-card:before				{ content: "\e040";}
+
+.icon-diary-circle:before				{ content: "\e051";}
+
+.icon-download:before						{ content: "\e060";}
+.icon-download-circle:before		{ content: "\e061";}
+
+.icon-letter:before							{ content: "\e070";}
+
+.icon-lock-circle:before				{ content: "\e081";}
+
+.icon-mail:before								{ content: "\e090";}
+.icon-mail-circle:before				{ content: "\e091";}
+
+.icon-marker:before							{ content: "\f000";}
+
+.icon-newspaper-circle:before		{ content: "\f011";}
+
+.icon-notes:before							{ content: "\f020";}
+
+.icon-paper-pile:before					{ content: "\f030";}
+
+.icon-printer:before						{ content: "\f040";}
+.icon-printer-circle:before			{ content: "\f041";}
+
+.icon-profile:before						{ content: "\f050";}
+
+.icon-q-mark:before							{ content: "\f060";}
+
+.icon-tick:before								{ content: "\f070";}
+
+.icon-watch-circle:before				{ content: "\f081";}
+
+.icon-pencil:before							{ content: "\f090";}
+
+
+/* DIRECTIONAL ICONS U+e2xxx ------------------------------------------------- */
+.icon-caret-up:before						{ content: "\e200";}
+.icon-caret-down:before					{ content: "\e201";}
+.icon-caret-right:before				{ content: "\e202";}
+.icon-caret-left:before					{ content: "\e203";}
+
+
+
+/* =============================================================================
+	 &Alerts
+	 ========================================================================== */
+.alert {
+	background-color: $clr-warning-ltst;
+	color: $clr-warning;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	margin-bottom: 18px;
+	padding: 8px 35px 8px 14px;
+	border: 1px solid $clr-warning-ltr;
+	border-radius: $bradius-delta;
+}
+
+.alert-heading {
+	color: inherit;
+}
+
+.alert a {
+	color: inherit;
+	border-bottom: 1px dotted $clr-warning;
+}
+
+.alert a:hover { border-bottom-style: solid;}
+
+.alert .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 18px;
+}
+
+.alert-block {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.alert-block > p,
+.alert-block > ul {
+	margin-bottom: 0;
+}
+
+.alert .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 18px;
+}
+
+.close {
+	display: inline-block;
+	float: right;
+	background: transparent;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1;
+	color: #bbb;
+	color: hsla(0, 0%, 0%, .2);
+	text-align: center;
+	text-shadow: 0 1px 0 $clr-ntrl-min;
+	margin-left: .5em;
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mAlerts
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.alert-success {
+	color: $clr-success;
+	background-color: $clr-success-ltst;
+	border-color: $clr-success-ltr;
+}
+.alert-success a { border-color: $clr-success;}
+
+.alert-danger,
+.alert-error {
+	color: $clr-danger;
+	background-color: $clr-danger-ltst;
+	border-color: $clr-danger-ltr;
+}
+.alert-danger a,
+.alert-error a { border-color: $clr-danger;}
+
+.alert-info {
+	color: $clr-info;
+	background-color: $clr-info-ltst;
+	border-color: $clr-info-ltr;
+}
+.alert-info a { border-color: $clr-info;}
+
+
+/* =============================================================================
+	 &Labels
+	 ========================================================================== */
+.label {
+	color: $clr-ntrl-min;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: $clr-ntrl-50;
+
+	padding: 1px 4px 2px;
+	border-radius: 2px;
+}
+
+a.label:hover {
+	color: $clr-ntrl-min;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mLabels
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.label-important { background-color: $clr-danger;}
+.label-important[href] { background-color: $clr-danger-dk;}
+
+.label-warning { background-color: $clr-warning;}
+.label-warning[href] { background-color: $clr-warning-dk;}
+
+.label-success { background-color: $clr-success;}
+.label-success[href] { background-color: $clr-success-dk;}
+
+.label-info { background-color: $clr-info;}
+.label-info[href] { background-color: $clr-success-dk;}
+
+.label-inverse { background-color: $clr-ntrl-80;}
+.label-inverse[href] { background-color: $clr-ntrl-90;}
+
+
+/* =============================================================================
+	 &Slider
+	 ========================================================================== */
+.slider-container {
+	position: relative;
+	display: block;
+	background-color: $clr-alpha-ltr;
+	height: .5em;
+	@include px-and-rem(margin-bottom, 1.5);
+	cursor: pointer;
+	box-shadow: 0 1px 1px hsla(0, 100%, 100%, .5),
+							inset 0 1px 1px hsla(0, 0%, 0%, .1),
+							0 0 60px 7px hsla(0, 0%, 0%, .1);
+}
+
+.slider-container:focus { outline: 0;}
+
+.slider-container:before {
+	position: absolute;
+	content: "";
+	top: -1em;
+	right: -1em;
+	bottom: -1em;
+	left: -1em;
+	z-index: 0;
+}
+
+.slider-container,
+.slider-progress { border-radius: $bradius-delta;}
+
+.slider-progress {
+	position: absolute;
+	background-color: $clr-beta-lt;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.slider-handle {
+	display: block;
+	position: absolute;
+	background: transparent url(../img/slider-handle.png) no-repeat center top;
+	width: 32px;
+	height: 32px;
+	top: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+}
+
+.slider-handle:hover,
+.slider-handle:active {
+	background: transparent url(../img/slider-handle.png) no-repeat center -32px;
+}
+
+.ruler {
+	position: relative;
+	display: block;
+	height: 12px;
+	@include gradient(background-image, linear-gradient(90deg, $clr-alpha-lt 0, $clr-alpha-lt 1px, transparent 1px));
+	background-size: 20px 100%;
+	background-position: 10px 0;
+	background-repeat: repeat-x;
+	@include px-and-rem(margin-bottom, 1.5);
+}
+
+.ruler:before {
+	position: absolute;
+	content: "";
+	border-bottom: 1px dotted $clr-alpha-lt;
+	top: 50%;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+
+/* =============================================================================
+	 &Comments
+	 ========================================================================== */
+
+
+/* =============================================================================
+	 &Widgets
+	 ========================================================================== */
+
+
+/* =============================================================================
+	 &Progress Bars
+	 ========================================================================== */
+.progress {
+	height: 18px;
+	@include px-and-rem(margin-bottom, 1);
+	overflow: hidden;
+	background-color: $clr-ntrl-10;
+
+	@include gradient(background-image, linear-gradient(180deg, #f5f5f5, #f9f9f9));
+	background-repeat: repeat-x;
+
+	border-radius: $bradius-delta;
+	@include box-shadow(inset 0 1px 2px hsla(0, 0%, 0%, .1));
+}
+
+.progress-bar {
+	width: 0;
+	max-width: 100%;
+	height: 18px;
+	font-size: 12px;
+	color: $clr-ntrl-min;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: $clr-alpha;
+
+	@include gradient(background-image, linear-gradient(180deg, transparent, hsla(0, 0%, 100%, .1)));
+	background-repeat: repeat-x;
+
+	@include box-shadow(inset 0 -1px 0 hsla(0, 0%, 0%, .15));
+	@include box-sizing(border-box);
+	@include transition(width .6s ease);
+}
+
+.progress-anim > .progress-bar {
+	@include animation(progress-bar-stripes 2s linear infinite);
+}
+
+.progress-bar-striped {
+	background-color: $clr-alpha;
+	@include gradient(background-image, linear-gradient(
+																				-45deg,
+																				hsla(0, 0%, 100%, .15) 25%,
+																				transparent 25%,
+																				transparent 50%,
+																				hsla(0, 0%, 100%, .15) 50%,
+																				hsla(0, 0%, 100%, .15) 75%,
+																				transparent 75%,
+																				transparent)
+	);
+
+	@include background-size(40px 40px);
+}
+
+@-webkit-keyframes progress-bar-stripes {
+	0% { background-position: 40px 0;}
+	100% { background-position: 0 0;}
+}
+
+@-moz-keyframes progress-bar-stripes {
+	0% { background-position: 40px 0;}
+	100% { background-position: 0 0;}
+}
+
+@-ms-keyframes progress-bar-stripes {
+	0% { background-position: 40px 0;}
+	100% { background-position: 0 0;}
+}
+
+@-o-keyframes progress-bar-stripes {
+	0% { background-position: 40px 0;}
+	100% { background-position: 0 0;}
+}
+
+@keyframes progress-bar-stripes {
+	0% { background-position: 40px 0;}
+	100% { background-position: 0 0;}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mProgress Bars
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.progress-success > .progress-bar,
+.progress-success > .progress-bar-striped {	background-color: $clr-success;}
+
+.progress-danger > .progress-bar,
+.progress-danger > .progress-bar-striped { background-color: $clr-beta;}
+
+.progress-info > .progress-bar,
+.progress-info > .progress-bar-striped { background-color: $clr-info;}
+
+.progress-warning > .progress-bar,
+.progress-warning > .progress-bar-striped {	background-color: $clr-warning;}
+
+
+/* =============================================================================
+	 &Tool Tips
+	 ========================================================================== */
+@import "vendor/tooltipster";
+
+
+/* =============================================================================
+	 &Dialogs
+	 ========================================================================== */
+@import "vendor/bootstrap-modal";
+
+
+/* =============================================================================
+	 &Collapse
+	 ========================================================================== */
+@import "vendor/bootstrap-collapse";
+
+
+/* =============================================================================
+	 &Bootstrap Helpers
+	 ========================================================================== */
+@import "vendor/bootstrap-helpers";
+
+/* =============================================================================
+	 &Loaders
+	 ========================================================================== */
+.loader {	position: relative;}
+
+.loader:after {
+	position: absolute;
+	content: "";
+	background: transparentize($clr-ntrl-min, .5) url(../img/loader-l.gif) no-repeat center center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	@include transition(all 250ms ease-in-out);
+}
+
+.loader-full:after { position: fixed;}
+
+/* *****************************************************************************
+	 &gSTYLING
+	 ************************************************************************** */
+/* =============================================================================
+	 &Typography
+	 ========================================================================== */
+/*
+ * The following styles ensure that font sizes can be reused in markup
+ * rather than applying the same font-size value to multiple selectors.
+ *
+ * All line heights are 24px to ensure a consistent vertical rhythm.
+ * Line heights should be set to match line-height set on body.
+ *
+ */
+
+/*
+ * Common margin-bottom for vertical rhythm.
+ */
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+fieldset,
+p,
+table,
+pre,
+hr {
+	@include px-and-rem(margin-top, 1.5);
+	@include px-and-rem(margin-bottom, 1.5);
+}
+
+/*
+ * Massive type
+ */
+.fs-giga { font-size: 80px; font-size: 6.667rem; line-height: 1;}
+.fs-mega { font-size: 44px; font-size: 3.143rem; line-height: 1;}
+.fs-kilo { font-size: 36px; font-size: 3rem; line-height: 1;}
+
+/*
+ * Define headings and their associated classes here.
+ */
+h1, .fs-alpha   { font-size: 26px; font-size: 2.167rem; line-height: 1.581;}
+h2, .fs-beta    { font-size: 24px; font-size: 2rem; line-height: 1.581;}
+h3, .fs-gamma   { font-size: 22px; font-size: 1.833rem; line-height: 1.581;}
+h4, .fs-delta   { font-size: 20px; font-size: 1.667rem; line-height: 1.581;}
+h5, .fs-epsilon { font-size: 18px; font-size: 1.5rem; line-height: 1.581;}
+h6, .fs-zeta    { font-size: 16px; font-size: 1.333rem; line-height: 1.581;}
+
+
+.fs-base { @include px-and-rem(font-size, 1);}
+/*
+ * Smaller-than-body-copy sizes here.
+ */
+.fs-milli { font-size:10px; font-size:0.857rem; line-height: 1.581;}
+.fs-micro { font-size: 8px; font-size: 0.625rem; line-height: 1.581;}
+
+
+/* -----------------------------------------------------------------------------
+	 &Headers
+	 -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+
+// to be used as title for .container-outline
+.hn-in-outline {
+	display: inline-block;
+	background-color: $clr-ntrl-min;
+	position: relative;
+	top: -.75em;
+	padding-left: .25em;
+	padding-right: .5em;
+	margin: 0;
+}
+
+
+/* -----------------------------------------------------------------------------
+	 ii &Lists
+	 -------------------------------------------------------------------------- */
+.list-reset {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* -----------------------------------------------------------------------------
+	 &Horizontal Rules
+	 -------------------------------------------------------------------------- */
+.hr-dotted { border-style: dotted;}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mTypography
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.error { color: #CC3333;}
+
+/* font-family modifiers */
+.ff-mono { font-family: monospace;}
+.ff-alpha { font-family: $font-alpha-stack;}
+
+.ff-zeta { font-family: Tahoma, sans-serif;}
+
+/* font-family modifiers */
+.fc-ntrl-min 	{ color: $clr-ntrl-min;}
+
+.fc-alpha-dk 	{ color: $clr-alpha-dk;}
+.fc-alpha 		{ color: $clr-alpha;}
+
+.fc-alpha-lt 	{ color: $clr-alpha-lt;}
+.fc-alpha-ltr 	{ color: $clr-alpha-ltr;}
+
+.fc-alpha-lt 	{ color: $clr-alpha-lt;}
+a.fc-alpha-lt:hover { color: $clr-alpha-ltr;}
+a.fc-alpha-lt:active { color: $clr-alpha;}
+
+.fc-beta 					{ color: $clr-beta;}
+a.fc-beta:hover	 	{ color: $clr-beta-lt;}
+a.fc-beta:active 	{ color: $clr-beta-dk;}
+
+.fc-success			{ color: $clr-success;}
+a.fc-success:hover 	{ color: $clr-success-lt;}
+a.fc-success:active { color: $clr-success-dk;}
+
+/* font weight modifiers */
+.fw-n { font-weight: normal;}
+.fw-b { font-weight: bold;}
+
+/* case modifiers */
+.case-u { text-transform: uppercase;}
+.case-l { text-transform: lowercase;}
+.case-n { text-transform: none;}
+.case-c { text-transform: capitalize;}
+
+/* text decoration modifiers */
+.td-u { text-decoration: underline;}
+.td-d { text-decoration: dotted;}
+
+/* text shadow modifiers */
+.tsh-ntrl-min { text-shadow: 0 1px 0 $clr-ntrl-min;}
+.tsh-ntrl-max { text-shadow: 0 1px 0 $clr-ntrl-max;}
+
+/* vertical align modifiers */
+.va-t { vertical-align: top;}
+.va-m { vertical-align: middle;}
+.va-b { vertical-align: bottom;}
+.va-bl { vertical-align: baseline;}
+.va-sup { vertical-align: super;}
+.va-sub { vertical-align: sub;}
+.va-tt { vertical-align: text-top;}
+.va-tb { vertical-align: text-bottom;}
+
+/* Floating & Alignment Modifiers */
+.fl { float: left;}
+.fr { float: right;}
+.al { text-align: left;}
+.ac { text-align: center;}
+.ar { text-align: right;}
+
+/* truncating text / ellipsis */
+.truncate {
+	display: block;
+	text-overflow: ellipsis;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* line height modifiers */
+.lh-alpha { line-height: 1;}
+.lh-beta { line-height: 2;}
+
+/* text aesthetic modifiers */
+.text-deco-sideline {
+	display: table;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.text-deco-sideline:after {
+	display: table-cell;
+	content: "";
+	@include background-clip(padding-box);
+	width: 100%;
+	border-left: 18px solid $clr-ntrl-min;
+	@include px-and-rem(border-left-width, 1.5);
+	border-bottom: 1px dotted $clr-alpha-lt;
+	top: -.75em;
+	position: relative;
+}
+
+/* =============================================================================
+	 &Backgrounds & Borders
+	 ========================================================================== */
+/* backgorund colour modifiers */
+.bgc-ntrl-min 	{ background-color: $clr-ntrl-min}
+
+.bgc-alpha-dk 	{ background-color: $clr-alpha-dk}
+.bgc-alpha			{ background-color: $clr-alpha}
+.bgc-alpha-lt 	{ background-color: $clr-alpha-lt}
+.bgc-alpha-ltr 	{ background-color: $clr-alpha-ltr}
+.bgc-alpha-ltst { background-color: $clr-alpha-ltst}
+
+.bgc-beta-dk 	{ background-color: $clr-beta-dk}
+.bgc-beta			{ background-color: $clr-beta}
+.bgc-beta-lt 	{ background-color: $clr-beta-lt}
+.bgc-beta-ltst{ background-color: $clr-beta-ltst}
+
+.bgc-ntrl-min 	{ background-color: $clr-ntrl-min}
+
+/* background image modifiers */
+.bgi-gr-tb-alpha {
+	@include gradient(background-image, linear-gradient(180deg, transparent, hsla(0, 0%, 0%, .05)));
+}
+
+.oldie .bgi-gr-tb-alpha {
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000,endColorstr=#19000000)";
+}
+
+.bgi-gr-tb-ntrl-max {
+	@include gradient(background-image, linear-gradient(180deg, hsla(0, 0%, 0%, .15), transparent 50%));
+}
+
+.oldie .bgi-gr-tb-ntrl-max {
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000,endColorstr=#00000000)";
+}
+
+.bgi-circle-grad {
+	background-image: url(../img/slider-value-bg.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.bgi-shadow-circle {
+	background-image: url(../img/shadows/shadow-circular.png);
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+/* box shadow modifiers */
+.bxsh-up-l { box-shadow: 0 0 40px 10px hsla(0, 0%, 0%, .1);}
+
+.bxsh-right-micro { box-shadow: 1px 1px 1px hsla(0, 0%, 0%, .25);}
+.bxsh-down { box-shadow: 0 1px 2px hsla(0, 0%, 0%, .1);}
+.bxsh-down-dk { box-shadow: 0 1px 2px hsla(0, 0%, 0%, .3);}
+
+/* border modifiers */
+.bd-alpha { border: 1px solid $clr-alpha; }
+.bd-alpha-ltr { border: 1px solid $clr-alpha-ltr;}
+.bdl-alpha-ltr { border-left: 1px solid $clr-alpha-ltr;}
+.bdr-alpha-ltr { border-right: 1px solid $clr-alpha-ltr; box-shadow: 1px 0 0 hsla(0, 0%, 100%, 1);}
+.bdb-alpha-ltr { border-bottom: 1px solid $clr-alpha-ltr;}
+
+.bdb-beta-l { border-bottom: 12px solid $clr-beta;}
+
+/* border radius modifiers */
+.brad-alpha { border-radius: $bradius-alpha;}
+.brad-gamma { border-radius: $bradius-gamma;}
+
+.brad-delta { border-radius: $bradius-delta;}
+
+
+/* =============================================================================
+	 &Layout
+	 ========================================================================== */
+/* use to set max width of content areas */
+.wrap {
+	width: 980px;
+	margin: 0 auto;
+	@include px-and-rem(padding-left, 1);
+	@include px-and-rem(padding-right, 1);
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mLayout
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* display level modifiers */
+.d-block { display: block;}
+
+/* required for <button>, <input>, and <textarea>*/
+input.d-block,
+textarea.d-block,
+select.d-block,
+button.d-block,
+iframe.d-block { width: 100%;}
+
+.d-iblock { display: inline-block;}
+
+.d-table,
+.d-itable {
+	height: 100%;
+}
+
+.d-table-full {
+	display: table;
+	width: 100%;
+}
+
+.d-table { display: table;}
+.ie9 .d-table-ie { display: table;}
+
+.d-itable {	display: inline-table;}
+
+.d-table-row { display: table-row;}
+
+.d-table-inner,
+.d-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* width modifiers */
+.w-full { width: 100%; }
+
+/* overflow modifiers */
+.of-h { overflow: hidden;}
+
+/* position modifiers */
+.pos-r { position: relative;}
+
+.postn-kilo { top: -60px;}
+
+/* margin modifiers */
+.m-none { margin: 0;}
+.mt-none { margin-top: 0;}
+.mb-none { margin-bottom: 0;}
+
+.mr-micro { @include px-and-rem(margin-right, .5);}
+
+.mb-alpha { @include px-and-rem(margin-bottom, 1.5);}
+.ml-alpha { @include px-and-rem(margin-left, 1.5);}
+.mr-alpha { @include px-and-rem(margin-right, 1.5);}
+
+.mb-beta { @include px-and-rem(margin-bottom, 2.5);}
+
+.mb-gamma { @include px-and-rem(margin-bottom, 3.5);}
+
+.mt-delta { @include px-and-rem(margin-top, 4.5);}
+
+.mb-delta { @include px-and-rem(margin-bottom, 4.5);}
+
+.mt-epsilon { @include px-and-rem(margin-top, 5.5);}
+
+/* MAGIC DWELLS HERE!! - magic margins due to uninformed design decisions */
+.mtn-message { margin-top: -74px;}
+.mbn-message-footer-pre { margin-bottom: -5.65em;}
+
+/* padding modifiers */
+.p-none { padding: 0;}
+
+.pr-micro { @include px-and-rem(padding-right, .5);}
+
+.pt-milli { @include px-and-rem(padding-top, 1);}
+
+.pl-milli { @include px-and-rem(padding-left, 1);}
+
+.p-alpha { @include px-and-rem(padding, 1.5);}
+.pt-alpha { @include px-and-rem(padding-top, 1.5);}
+
+.plr-alpha {
+	@include px-and-rem(padding-left, 1.5);
+	@include px-and-rem(padding-right, 1.5);
+}
+
+.pl-alpha {	@include px-and-rem(padding-left, 1.5);}
+.pr-alpha {	@include px-and-rem(padding-right, 1.5);}
+
+.ptb-alpha {
+	@include px-and-rem(padding-top, 1.5);
+	@include px-and-rem(padding-bottom, 1.5);
+}
+
+.p-beta { @include px-and-rem(padding, 2.5);}
+
+.pt-beta { @include px-and-rem(padding-top, 2.5);}
+.pb-beta { @include px-and-rem(padding-bottom, 2.5);}
+
+.ptb-beta {
+	@include px-and-rem(padding-top, 2.5);
+	@include px-and-rem(padding-bottom, 2.5);
+}
+
+.pl-beta { @include px-and-rem(padding-left, 2.5);}
+
+.plr-beta {
+	@include px-and-rem(padding-left, 2.5);
+	@include px-and-rem(padding-right, 2.5);
+}
+
+.pr-beta {	@include px-and-rem(padding-right, 3.5);}
+
+.pt-gamma { @include px-and-rem(padding-top, 3.5);}
+.pb-gamma { @include px-and-rem(padding-bottom, 3.5);}
+
+.ptb-gamma {
+	@include px-and-rem(padding-top, 3.5);
+	@include px-and-rem(padding-bottom, 3.5);
+}
+
+.plr-gamma {
+	@include px-and-rem(padding-left, 3.5);
+	@include px-and-rem(padding-right, 3.5);
+}
+
+.ptb-delta {
+	@include px-and-rem(padding-top, 4.5);
+	@include px-and-rem(padding-bottom, 4.5);
+}
+
+.pt-theta {	@include px-and-rem(padding-top, 8.5);}
+
+
+/* =============================================================================
+	 &Helpers
+	 ========================================================================== */
+/*
+ * For image replacement: http://mopo.ws/wj7fIN
+ * Nicholas Gallagher's detailed post on new .ir - http://mopo.ws/wHCSUu
+ * Causes issues with em based margins on elements using .ir
+ */
+.ir { background-color: transparent; border: 0; overflow: hidden;}
+
+.ir:before { content: ""; display: block; width: 0; height: 150%;}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden, .ng-cloak { display: none !important; visibility: hidden;}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+:root .visuallyhidden { position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; border: 0;}
+.ie8 .visuallyhidden-ie8 { position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; border: 0;}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { position: static; clip: auto; width: auto; height: auto; margin: 0; overflow: visible;}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden;}
+
+/* Clearfix for containing floats: h5bp.com/q */
+.cf:before, .cf:after { content: ""; display: table; height:0;}
+.cf:after { clear: both;}
+.cf { *zoom: 1;}
+
+
+/* *****************************************************************************
+	 &ANIMATIONS
+	 ************************************************************************** */
+.anim-slide {
+	@include transition(all 250ms ease-in-out);
+	@include use-gpu();
+}
+
+.anim-slide-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+.anim-slide-top-hide { top: -100%;}
+
+// requires a container set to overflow: hidden;
+.anim-margin {
+	@include transition(all 250ms ease-in-out);
+	@include use-gpu();
+}
+
+.anim-margin-top-hide {	margin-top: -50%;}
+
+.anim-opacity {	@include transition(all 250ms ease-in-out);}
+
+.anim-opacity-off { opacity: 0;}
+
+.anim-opacity-on { opacity: 1;}
+
+
+@-webkit-keyframes rotate {
+	0% { -webkit-transform: rotate(0deg);}
+	100% { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+	0% { -moz-transform: rotate(0deg);}
+	100% { -moz-transform: rotate(360deg);}
+}
+
+@-o-keyframes rotate {
+	0% { -o-transform: rotate(0deg);}
+	100% { -o-transform: rotate(360deg);}
+}
+
+@-ms-keyframes rotate {
+	0% { -ms-transform: rotate(0deg);}
+	100% { -ms-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+	0% { transform: rotate(0deg);}
+	100% { transform: rotate(360deg);}
+}
+
+
+/* *****************************************************************************
+	 &MEDIA QUERIES
+	 ************************************************************************** */
+/* 1. 2 Column Grid - &vpalpha 0px ->
+================================================================================
+Col 1:   8.33333333333%
+Col 2:   16.6666666667%
+Col 3:   25.0%
+Col 4:   33.3333333333%
+Col 5:   41.6666666667%
+Col 6:   50.0%
+Col 7:   58.3333333333%
+Col 8:   66.6666666667%
+Col 9:   75.0%
+Col 10:  83.3333333333%
+Col 11:  91.6666666667%
+Col 12:  100%
+============================================================================= */
+
+/*
+ * At base font-size of #{$unit-default-px}
+ */
+ @media screen and (min-width: 0) {
+
+}
+
+/* 2. 6 Column Grid - &vpbeta - 480px ->
+================================================================================
+Col 1:   8.33333333333%
+Col 2:   16.6666666667%
+Col 3:   25.0%
+Col 4:   33.3333333333%
+Col 5:   41.6666666667%
+Col 6:   50.0%
+Col 7:   58.3333333333%
+Col 8:   66.6666666667%
+Col 9:   75.0%
+Col 10:  83.3333333333%
+Col 11:  91.6666666667%
+Col 12:  100%
+============================================================================= */
+
+/*
+ * At base font-size of #{$unit-default-px}
+ * 480px = 30em
+ */
+
+@media screen and (min-width: 30em) {
+
+}
+
+/* 3. 12 Column Grid - &vpgamma - 768px ->
+================================================================================
+Col 1:   8.33333333333%
+Col 2:   16.6666666667%
+Col 3:   25.0%
+Col 4:   33.3333333333%
+Col 5:   41.6666666667%
+Col 6:   50.0%
+Col 7:   58.3333333333%
+Col 8:   66.6666666667%
+Col 9:   75.0%
+Col 10:  83.3333333333%
+Col 11:  91.6666666667%
+Col 12:  100%
+============================================================================= */
+
+/*
+ * At base font-size of #{$unit-default-px}
+ * 768px = 48em
+ */
+@media screen and (min-width: 48em) {
+
+}
+
+/* 4. 12 Column Grid - &vpdelta - 1280px ->
+================================================================================
+Col 1:   8.33333333333%
+Col 2:   16.6666666667%
+Col 3:   25.0%
+Col 4:   33.3333333333%
+Col 5:   41.6666666667%
+Col 6:   50.0%
+Col 7:   58.3333333333%
+Col 8:   66.6666666667%
+Col 9:   75.0%
+Col 10:   83.3333333333%
+Col 11:   91.6666666667%
+Col 12:   100%
+============================================================================= */
+
+/*
+ * At base font-size of #{$unit-default-px}
+ * 1280px = 80em
+ */
+@media screen and (min-width: 80em) {
+
+}
+
+.validation-summary-errors {
+	background-color: $clr-danger-ltst;
+	color: $clr-danger;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	margin-bottom: 18px;
+	padding: 8px 35px 8px 14px;
+	border: 1px solid $clr-danger-ltr;
+	border-radius: $bradius-delta;
+}
+
+.validation-summary-errors-heading {
+	color: inherit;
+}
+
+.validation-summary-errors a {
+	color: inherit;
+	border-bottom: 1px dotted $clr-danger;
+}
+
+.validation-summary-errors a:hover { border-bottom-style: solid;}
+
+.validation-summary-errors .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 18px;
+}
+
+/* =============================================================================
+	 &PRINT STYLES - Inlined to avoid required HTTP connection: h5bp.com/r
+	 ========================================================================== */
+@import "partials/print";

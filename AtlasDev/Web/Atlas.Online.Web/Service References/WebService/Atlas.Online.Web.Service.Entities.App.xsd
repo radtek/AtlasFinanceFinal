@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ApplicationAffordability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Fees" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstalmentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InterestCharges" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Period" type="xs:int" />
+      <xs:element minOccurs="0" name="RepaymentAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationAffordability" nillable="true" type="tns:ApplicationAffordability" />
+  <xs:complexType name="ApplicationSettlementSubmission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="xs:long" />
+      <xs:element minOccurs="0" name="RepaymentDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationSettlementSubmission" nillable="true" type="tns:ApplicationSettlementSubmission" />
+  <xs:complexType name="ApplicationSettlementResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RepaymentAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationSettlementResult" nillable="true" type="tns:ApplicationSettlementResult" />
+  <xs:complexType name="ApplicationDeclinedReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationDeclinedReason" nillable="true" type="tns:ApplicationDeclinedReason" />
+  <xs:complexType name="ApplicationSettlementResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepaymentDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationSettlementResponse" nillable="true" type="tns:ApplicationSettlementResponse" />
+  <xs:complexType name="PaidUpLetter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidUpLetter" nillable="true" type="tns:PaidUpLetter" />
+</xs:schema>

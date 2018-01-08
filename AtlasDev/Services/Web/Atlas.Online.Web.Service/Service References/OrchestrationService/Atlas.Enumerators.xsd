@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="General.Host">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Atlas_Online">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Atlas_CallCentre">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SDC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Falcon">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SalesAgentApp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.Host" nillable="true" type="tns:General.Host" />
+  <xs:simpleType name="General.PersonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Client">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employee">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.PersonType" nillable="true" type="tns:General.PersonType" />
+  <xs:simpleType name="General.AddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Postal" />
+      <xs:enumeration value="Residential" />
+      <xs:enumeration value="Employer" />
+      <xs:enumeration value="Work" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.AddressType" nillable="true" type="tns:General.AddressType" />
+  <xs:simpleType name="General.Province">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="EC" />
+      <xs:enumeration value="GAU" />
+      <xs:enumeration value="KZN" />
+      <xs:enumeration value="LIM" />
+      <xs:enumeration value="MPL" />
+      <xs:enumeration value="NC" />
+      <xs:enumeration value="NW" />
+      <xs:enumeration value="WC" />
+      <xs:enumeration value="FS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.Province" nillable="true" type="tns:General.Province" />
+  <xs:simpleType name="General.BankAccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Cheque" />
+      <xs:enumeration value="Savings" />
+      <xs:enumeration value="Transmission" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.BankAccountType" nillable="true" type="tns:General.BankAccountType" />
+  <xs:simpleType name="General.BankName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FNB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BOL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LIS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SAM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NBS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ABS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PEP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P_N_P">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CAP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BOA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AFR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INV">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UBA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.BankName" nillable="true" type="tns:General.BankName" />
+  <xs:simpleType name="General.BankPeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="LessThanThreeMonths" />
+      <xs:enumeration value="GreaterThanThreeMonths" />
+      <xs:enumeration value="GreaterThanTwelveMonths" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.BankPeriod" nillable="true" type="tns:General.BankPeriod" />
+  <xs:simpleType name="General.ContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="TelNoHome" />
+      <xs:enumeration value="TelNoWork" />
+      <xs:enumeration value="TelNoWorkFax" />
+      <xs:enumeration value="CellNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CellWork">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WorkEmail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PersonalEmail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FaxNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.ContactType" nillable="true" type="tns:General.ContactType" />
+  <xs:simpleType name="General.Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.Gender" nillable="true" type="tns:General.Gender" />
+  <xs:simpleType name="General.RelationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Father" />
+      <xs:enumeration value="Mother" />
+      <xs:enumeration value="Sister" />
+      <xs:enumeration value="Brother" />
+      <xs:enumeration value="Friend" />
+      <xs:enumeration value="Spouse" />
+      <xs:enumeration value="Relative" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="General.RelationType" nillable="true" type="tns:General.RelationType" />
+  <xs:simpleType name="Orchestration.AVSTransaction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Duration_Exceeded">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Do_AVS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AVS_Current">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AVS_Failed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AVS_Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Orchestration.AVSTransaction" nillable="true" type="tns:Orchestration.AVSTransaction" />
+  <xs:simpleType name="Notification.NotificationTemplate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="Payment" />
+      <xs:enumeration value="Declined_BankDetails" />
+      <xs:enumeration value="Declined_CreditRisk" />
+      <xs:enumeration value="Declined_Affordability" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="RTC_CutOff" />
+      <xs:enumeration value="Paid_Up" />
+      <xs:enumeration value="Appeal_Received" />
+      <xs:enumeration value="Contact_Us" />
+      <xs:enumeration value="Quote_Expire_Daily" />
+      <xs:enumeration value="Quote_Expired" />
+      <xs:enumeration value="Instalment_Reminder" />
+      <xs:enumeration value="Overdue_Account" />
+      <xs:enumeration value="Registration" />
+      <xs:enumeration value="Core" />
+      <xs:enumeration value="Forgot_Password" />
+      <xs:enumeration value="Application_Expired" />
+      <xs:enumeration value="Application_Expiring" />
+      <xs:enumeration value="BankDetails_Failed" />
+      <xs:enumeration value="Account_Review" />
+      <xs:enumeration value="Declined_CompanyPolicy" />
+      <xs:enumeration value="Declined_Fraud" />
+      <xs:enumeration value="Declined_Authentication" />
+      <xs:enumeration value="AVSPassed_AcceptQuote" />
+      <xs:enumeration value="Stream_SMS_Initiate" />
+      <xs:enumeration value="Stream_SMS_PTPBroken" />
+      <xs:enumeration value="Stream_SMS_PTPCreated" />
+      <xs:enumeration value="Stream_SMS_NoContact" />
+      <xs:enumeration value="Stream_SMS_PaymentThanks" />
+      <xs:enumeration value="Stream_SMS_PTCBroken">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stream_SMS_PTCCreated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stream_SMS_FirstWarning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stream_SMS_SecondWarning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stream_SMS_ThirdWarning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stream_Letter_FinalDemand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Notification.NotificationTemplate" nillable="true" type="tns:Notification.NotificationTemplate" />
+  <xs:complexType name="ArrayOfAccount.Policy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Account.Policy" type="tns:Account.Policy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccount.Policy" nillable="true" type="tns:ArrayOfAccount.Policy" />
+  <xs:simpleType name="Account.Policy">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Not_Set" />
+      <xs:enumeration value="Permanently_Employed" />
+      <xs:enumeration value="Paid_Via_Eft" />
+      <xs:enumeration value="Employed_Minimum_Period" />
+      <xs:enumeration value="ThreeMonthlyInstalmentsPaidCurrent" />
+      <xs:enumeration value="Retirement_Age" />
+      <xs:enumeration value="LatestThreeMonthlyInstalmentPaidCurrentAccounts" />
+      <xs:enumeration value="NetIncomeMinimum" />
+      <xs:enumeration value="EmployerType" />
+      <xs:enumeration value="AgeMinimum21OfYears" />
+      <xs:enumeration value="Client_Status_Current" />
+      <xs:enumeration value="Employment_Status_Current" />
+      <xs:enumeration value="Employer_Blocked" />
+      <xs:enumeration value="Account_Status_Current" />
+      <xs:enumeration value="Account_Status_Previous" />
+      <xs:enumeration value="Fraud_Alert_Declined_Previous_Account" />
+      <xs:enumeration value="AgeMax60Years" />
+      <xs:enumeration value="AgeMax65Years" />
+      <xs:enumeration value="Salary_Bank_Account" />
+      <xs:enumeration value="Country_Of_Birth" />
+      <xs:enumeration value="Maximum_Open_Accounts" />
+      <xs:enumeration value="Latest_Two_Instalments_Not_Yet_Paid" />
+      <xs:enumeration value="Account_Status_Pending" />
+      <xs:enumeration value="Client_Credit_Risk" />
+      <xs:enumeration value="Company_Policy" />
+      <xs:enumeration value="Account_Status_Review" />
+      <xs:enumeration value="Account_Status_PreApproved" />
+      <xs:enumeration value="Account_Status_Approved" />
+      <xs:enumeration value="Account_Status_Cancelled" />
+      <xs:enumeration value="Account_Status_Inactive" />
+      <xs:enumeration value="Handed_Over" />
+      <xs:enumeration value="Bad_Debt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Account.Policy" nillable="true" type="tns:Account.Policy" />
+</xs:schema>

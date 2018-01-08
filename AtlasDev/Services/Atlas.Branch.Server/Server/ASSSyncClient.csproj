@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12537598-1794-4FAC-B470-9693AEFB740E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASSSyncClient</RootNamespace>
+    <AssemblyName>ASSSyncClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AtlasLib.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ASSSyncClient.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutomaticUpdater">
+      <HintPath>C:\Program Files (x86)\wyBuild\AutomaticUpdater\Microsoft .NET 4.0\AutomaticUpdater.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="fastjson, Version=2.1.0.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
+      <HintPath>packages\fastJSON.2.1.18\lib\net40\fastjson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="LumiSoft.Net">
+      <HintPath>..\..\..\Libraries\ThirdParty\Lumisoft.net\bin\Release\LumiSoft.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.2.2.7\lib\net40\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.2.2.7\lib\net40\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Quartz, Version=2.3.3.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SDTBarcode.Net, Version=2.1.140.1, Culture=neutral, PublicKeyToken=dd656976f1501da4, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\ThirdParty\SDTBarcodeSDK\x86\SDTBarcode.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.1.5.14\lib\net40\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.1.5.14\lib\net40\Serilog.FullNetFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=3.3.154.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.3.3.1\lib\net40-full\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf.Serilog, Version=3.3.154.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.Serilog.3.3.1\lib\net40-full\Topshelf.Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuartzTasks\AssVerUpdate.cs" />
+    <Compile Include="QuartzTasks\BackupDatabase.cs" />
+    <Compile Include="QuartzTasks\CheckForAppUpdates.cs" />
+    <Compile Include="QuartzTasks\POPIDelete.cs" />
+    <Compile Include="QuartzTasks\PostgresCheckConn.cs" />
+    <Compile Include="QuartzTasks\DBUpdateStrucVer.cs" />
+    <Compile Include="QuartzTasks\LocalAssDirCleanUp.cs" />
+    <Compile Include="QuartzTasks\LocalDbCleanUps.cs" />
+    <Compile Include="QuartzTasks\LogEventsToServer.cs" />
+    <Compile Include="QuartzTasks\PostgresCheckService.cs" />
+    <Compile Include="QuartzTasks\RebootServerWeekly.cs" />
+    <Compile Include="QuartzTasks\UploadAuditLogs.cs" />
+    <Compile Include="QuartzTasks\UploadLocalLrepRecId.cs" />
+    <Compile Include="Utils\Alerting\SendEMail.cs" />
+    <Compile Include="Utils\API\NativeMethods.cs" />
+    <Compile Include="Utils\FTP\ScannerFtpServer.cs" />
+    <Compile Include="QuartzTasks\SyncTimeWithServer.cs" />
+    <Compile Include="QuartzTasks\UpdateLocalMasterTables.cs" />
+    <Compile Include="QuartzTasks\UploadChanges.cs" />
+    <Compile Include="Utils\BasicCrypto.cs" />
+    <Compile Include="Utils\PostgresUtils.cs" />
+    <Compile Include="Utils\Serialization\ObjectToBytes.cs" />
+    <Compile Include="Utils\AppSettings.cs" />
+    <Compile Include="Utils\WCF\ChunkDownloader.cs" />
+    <Compile Include="Utils\LogEvents.cs" />
+    <Compile Include="Utils\WCF\SyncSourceRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.release.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="appSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AtlasLib.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Atlas.DataSync.ASSService\Atlas.DataSync.WCF.Client\Atlas.DataSync.WCF.Client.csproj">
+      <Project>{966fa7eb-8d68-4dfa-b146-ff13583203b0}</Project>
+      <Name>Atlas.DataSync.WCF.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Atlas.DataSync.ASSService\Atlas.DataSync.WCF\Atlas.DataSync.WCF.csproj">
+      <Project>{834b9dd8-6fbe-49d2-9f17-4a519de8b7f6}</Project>
+      <Name>Atlas.DataSync.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Atlas.Document.Server\Atlas.Document.WCF.Client\Atlas.Document.WCF.Client.csproj">
+      <Project>{5792c57c-06ef-49ef-8196-1cbace78dceb}</Project>
+      <Name>Atlas.Document.WCF.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Atlas.Document.Server\Atlas.Document.WCF\Atlas.Document.WCF.csproj">
+      <Project>{9f8a719b-8a97-4145-ad7f-70626082a5b2}</Project>
+      <Name>Atlas.Document.WCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>ECHO %25TIME%25  Starting build...
+SET RELEASEPATH=$(ProjectDir)..\wyUpdate\Release\V1.2.0.6
+
+IF $(ConfigurationName) == Release (
+  ECHO %25TIME%25  'Release' defined in Project- creating encrypted EXE with destination path: %25RELEASEPATH%25
+  IF NOT EXIST  "%25RELEASEPATH%25" MD "%25RELEASEPATH%25"
+  DEL "%25RELEASEPATH%25\*.*" /Q
+
+  ECHO %25TIME%25  Copying files... 
+  COPY "$(TargetDir)*.DLL" "%25RELEASEPATH%25"
+  COPY "$(TargetDir)App.release.config" "%25RELEASEPATH%25\ASSSyncClient.exe.config"
+
+  ECHO %25TIME%25 Obfuscating main EXE and core Dlls...
+"C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.Console.exe" -file "$(TargetPath)" -satellite_assemblies "%25RELEASEPATH%25\Atlas.DataSync.WCF.dll/%25RELEASEPATH%25\Atlas.Document.WCF.Client.dll/%25RELEASEPATH%25\Atlas.Document.WCF.dll/%25RELEASEPATH%25\Atlas.DataSync.WCF.Client.dll" -embed 1 -exception_handling 0 -antitamp 1 -control_flow_obfuscation 1 -flow_level 9 -resourceencryption 1 -necrobit 1 -necrobit_comp 1 -prejit 1 -targetfile "%25RELEASEPATH%25\$(TargetFileName)" -spcfile "D:\AtlasDev\CodeSign\AtlasFinance.pfx" -pvkpassword "KeepMeSafe!"
+
+  DEL "%25RELEASEPATH%25\Atlas.DataSync.WCF.Client.dll" /Q
+  DEL "%25RELEASEPATH%25\Atlas.DataSync.WCF.dll" /Q
+  DEL "%25RELEASEPATH%25\Atlas.Document.WCF.Client.dll" /Q
+  DEL "%25RELEASEPATH%25\Atlas.Document.WCF.dll" /Q
+
+  ECHO %25TIME%25  Done!
+    
+  DEL "%25RELEASEPATH%25\AutomaticUpdater.dll" /Q
+  DEL "%25RELEASEPATH%25\*.pdb" /Q
+  start %25windir%25\explorer.exe "%25RELEASEPATH%25"  
+)
+
+ECHO %25TIME%25  Build completed</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

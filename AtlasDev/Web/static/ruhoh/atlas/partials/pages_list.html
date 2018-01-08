@@ -1,0 +1,23 @@
+{{#is_active_page }}
+  <li class="active">
+  	<a href="{{url}}" class="active">
+			{{title}}
+			{{# page_list_description }} - {{ page_list_description }} {{/ page_list_description }}
+			{{# title_additional }}
+				 - {{ title_additional }}
+			{{/ title_additional }}
+  	</a>
+  </li>
+{{/is_active_page}}
+
+{{^is_active_page}}
+  <li>
+  	<a href="{{url}}">
+			{{title}}
+			{{# page_list_description }} - {{ page_list_description }} {{/ page_list_description }}
+			{{# title_additional }}
+				 - {{ title_additional }}
+			{{/ title_additional }}
+  	</a>
+  </li>
+{{/is_active_page }}

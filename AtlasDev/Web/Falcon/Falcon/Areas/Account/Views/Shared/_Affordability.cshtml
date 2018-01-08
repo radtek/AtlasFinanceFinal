@@ -1,0 +1,170 @@
+﻿<div ng-controller="AccountAffordabilityController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <legend>Affordability Options</legend>
+        <div class="table-responsive">
+          <table ng-table="affordabilityOptionParams" class="table" style="cursor: pointer;">
+            <tr ng-repeat="affordabilityOption in $data" ng-click="changeSelection('afOptionRowSelected',affordabilityOption,'affordabilityOptions')" ng-class="{selected: affordabilityOption.$selected}">
+              <td data-title="'No.'">
+                <center> {{affordabilityOption.AffordabilityOptionId}}</center>
+              </td>
+              <td data-title="'Type'">
+                <center><span>{{affordabilityOption.AffordabilityOptionType }}</span></center>
+              </td>
+              <td data-title="'Status'">
+                <center><span class="curved-border" ng-class="affordabilityOption.AffordabilityOptionStatusColor">{{affordabilityOption.AffordabilityOptionStatus }}</span></center>
+              </td>
+              <td data-title="'Last Status Date'">
+                <center><span>{{affordabilityOption.LastStatusDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+              <td data-title="'Loan Amount'">
+                <center><span>{{affordabilityOption.Amount | currency}}</span></center>
+              </td>
+              <td data-title="'Total Fees'">
+                <center><span>{{affordabilityOption.TotalFees | currency}}</span></center>
+              </td>
+              <td data-title="'Capital Amount'">
+                <center><span>{{affordabilityOption.CapitalAmount | currency}}</span></center>
+              </td>
+              <td data-title="'Instalment'">
+                <center><span>{{affordabilityOption.Instalment | currency}}</span></center>
+              </td>
+              <td data-title="'No. Of Instalments'">
+                <center><span>{{affordabilityOption.NumOfInstalments }}</span></center>
+              </td>
+              <td data-title="'Total Pay Back'">
+                <center><span>{{affordabilityOption.TotalPayBack | currency}}</span></center>
+              </td>
+              <td data-title="'Period'">
+                <center><span>{{affordabilityOption.Period }}</span></center>
+              </td>
+              <td data-title="'Period Frequency'">
+                <center><span>{{affordabilityOption.PeriodFrequency }}</span></center>
+              </td>
+              <td data-title="'Can Client Afford'">
+                <center><span>{{affordabilityOption.CanClientAfford}}</span></center>
+              </td>
+              <td data-title="'Create Date'">
+                <center><span>{{affordabilityOption.CreateDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn red" ng-disabled="!afOptionRowSelected.$selected || afOptionRowSelected.AffordabilityOptionStatusId == 3 || afOptionRowSelected.AffordabilityOptionStatusId == 4 || afOptionRowSelected.AffordabilityOptionStatusId == 5" ng-click="afModalType = 'rejectOption';" data-toggle="modal" href="#AffordabilityDialogue">Reject</button>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Affordability</legend>
+        <div class="table-responsive">
+          <table ng-table="affordabilityParams" class="table" style="cursor: pointer;">
+            <tr ng-repeat="affordabilityItem in $data" ng-click="changeSelection('afRowSelected',affordabilityItem,'affordabilityItems')" ng-class="{selected: affordabilityItem.$selected}">
+              <td data-title="'Category'">
+                <center> {{affordabilityItem.Category}}</center>
+              </td>
+              <td data-title="'Type'">
+                <center><span>{{affordabilityItem.Type }}</span></center>
+              </td>
+              <td data-title="'Amount'">
+                <center><span class="curved-border" ng-class="affordabilityItem.TypeColor">{{affordabilityItem.Amount | currency}}</span></center>
+              </td>
+              <td data-title="'Create Date'">
+                <center><span>{{affordabilityItem.CreateDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+              <td data-title="'Create User'">
+                <center><span>{{affordabilityItem.CreateUser }}</span></center>
+              </td>
+              <td data-title="'Delete Date'">
+                <center><span>{{affordabilityItem.DeleteDate | date:'yyyy-MM-dd' }}</span></center>
+              </td>
+              <td data-title="'Delete User'">
+                <center><span>{{affordabilityItem.DeleteUser }}</span></center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn yellow" ng-disabled="!canAddDeleteItem();" ng-click="afModalType = 'newItem';" data-toggle="modal" href="#AffordabilityDialogue">Add New</button>
+            <button type="submit" class="btn red" ng-disabled="!canAddDeleteItem() || !afRowSelected.$selected || afRowSelected.DeleteDate " ng-click="afModalType = 'deleteItem';" data-toggle="modal" href="#AffordabilityDialogue">Delete</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+  <!-- Naedo Modals -->
+  <div class="modal fade" id="AffordabilityDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger" ng-if="afModalType === 'acceptOption'">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Accept Affordability Option</h4>
+        </div>
+        <div class="modal-header label-danger" ng-if="afModalType === 'newItem'">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Add Affordability Item</h4>
+        </div>
+        <div class="modal-header label-warning" ng-if="afModalType === 'deleteItem'">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Delete Affordability Item</h4>
+        </div>
+        <div class="modal-body" ng-if="afModalType === 'acceptOption'">
+          You are about to accept this Affordability Option, are you sure you wish to continue?
+        </div>
+        <div class="modal-body form" ng-if="afModalType === 'newItem'">
+          <div class="centered">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group">
+                  <label class="col-md-2 control-label"></label>
+                  <label class="col-md-3 control-label">Type</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <select class="form-control input-medium" ng-model="$parent.affordabilityCategoryType" ng-options="b.TypeId as b.Type for b in affordabilityCategoryTypes" ng-change="UpdateCategoryByType()"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-body">
+                  <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <label class="col-md-3 control-label">Category</label>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <select class="form-control input-medium" ng-model="$parent.selectedAffordabilityCategory" ng-options="b.CategoryId as b.Description for b in affordabilityCategoriesByType"></select>
+                        <span popover data-trigger="hover" ng-show="afShowCategoryValidation === true" data-html="true" data-placement="right" data-title="Validation Error" data-content="A categor needs to be selected!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <label class="col-md-3 control-label">Amount</label>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <input class="form-control input-small" currency-input ng-model="$parent.affordabilityAmount" name="affordabilityAmountId" type="text" />
+                        <span popover data-trigger="hover" ng-show="afShowAmountValidation === true" data-html="true" data-placement="right" data-title="Validation Error" data-content="Amount needs to be greater than R 0.00!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-body" ng-if="afModalType === 'deleteItem'">
+          You are about to delete this Affordability Item, are you sure you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn red" ng-click="acceptAffordabilityOption();" ng-if="afModalType === 'acceptOption'">Confirm</button>
+          <button type="button" class="btn red" ng-click="addAffordabilityItem();" ng-if="afModalType === 'newItem'">Confirm</button>
+          <button type="button" class="btn green" ng-click="deleteAffordabilityItem(afRowSelected.AffordabilityId);" ng-if="afModalType === 'deleteItem'">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="GetQuestions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" minOccurs="0" name="GetQuestionsResult" nillable="true" type="q1:ArrayOfQuestionAnswers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitAnswers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" minOccurs="0" name="questionAnswers" nillable="true" type="q2:ArrayOfQuestionAnswers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitAnswersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" minOccurs="0" name="SubmitAnswersResult" type="q3:VerificationStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExceededAuthenticationTries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="IdNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExceededAuthenticationTriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ExceededAuthenticationTriesResult" nillable="true" type="q4:TupleOfbooleanint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C466A48-7B08-420D-961F-DA72B1684336}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stream.Structures</RootNamespace>
+    <AssemblyName>Stream.Structures</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AccountLastTransactionImportReference.cs" />
+    <Compile Include="Models\AccountStreamAction.cs" />
+    <Compile Include="Models\ActionType.cs" />
+    <Compile Include="Models\Actuator.cs" />
+    <Compile Include="Models\Budget.cs" />
+    <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\CaseStatus.cs" />
+    <Compile Include="Models\CaseStream.cs" />
+    <Compile Include="Models\EscalatedCaseStream.cs" />
+    <Compile Include="Models\CaseStreamAction.cs" />
+    <Compile Include="Models\CaseStreamAllocation.cs" />
+    <Compile Include="Models\CaseStreamEscalation.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentGroup.cs" />
+    <Compile Include="Models\Debtor.cs" />
+    <Compile Include="Models\DebtorAddress.cs" />
+    <Compile Include="Models\DebtorContact.cs" />
+    <Compile Include="Models\Escalation.cs" />
+    <Compile Include="Models\Frequency.cs" />
+    <Compile Include="Models\GetCaseStreamAction.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupHost.cs" />
+    <Compile Include="Models\GroupStream.cs" />
+    <Compile Include="Models\Reports\PerformanceSummary.cs" />
+    <Compile Include="Models\Stream.cs" />
+    <Compile Include="Models\StreamAccount.cs" />
+    <Compile Include="Models\StreamAccountNoteType.cs" />
+    <Compile Include="Models\StreamPriority.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionStatus.cs" />
+    <Compile Include="Models\TransactionType.cs" />
+    <Compile Include="Models\WorkItem.cs" />
+    <Compile Include="Models\WorkItemAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07FC6272-5FA2-45A7-A99C-062EC5B0C205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Falcon\Common\Falcon.Interfaces\Falcon.Common.Interfaces.csproj">
+      <Project>{130E010C-66A1-4128-8F61-03118BCE3B53}</Project>
+      <Name>Falcon.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Stream.Interfaces\Stream.Framework.csproj">
+      <Project>{77d9e64a-bd91-4cce-ba43-2af61e667355}</Project>
+      <Name>Stream.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD87F863-0FCC-4E08-A130-9A7E1EA1E1F9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.DocServer</RootNamespace>
+    <AssemblyName>Atlas.Document.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Atlas.DocServer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>document_new.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atlas.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Production\Atlas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\Production\Atlas.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Enumerators">
+      <HintPath>..\..\..\Libraries\Production\Atlas.Enumerators.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GdPicture.NET.12, Version=12.0.0.19, Culture=neutral, PublicKeyToken=7425795337ab7910, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\ThirdParty\GdPicture\Framework 4.6\GdPicture.NET.12.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>packages\MongoDB.Driver.2.2.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>packages\MongoDB.Driver.Core.2.2.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.1.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.3.1.7\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.4.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.2.4.0\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SDTBarcode.Net, Version=2.1.137.1, Culture=neutral, PublicKeyToken=dd656976f1501da4, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libraries\ThirdParty\SDTBarcodeSDK\x86\SDTBarcode.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.2.1.0\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.2.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>packages\SimpleInjector.3.2.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Wcf, Version=3.2.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>packages\SimpleInjector.Integration.Wcf.3.2.0\lib\net40\SimpleInjector.Integration.Wcf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>packages\Topshelf.4.0.1\lib\net452\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf.Serilog">
+      <HintPath>packages\Topshelf.Serilog.4.0.1\lib\net452\Topshelf.Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf.SimpleInjector, Version=1.0.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.SimpleInjector.1.0.0.17\lib\net40\Topshelf.SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Topshelf.SimpleInjector.Quartz, Version=1.0.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Topshelf.SimpleInjector.Quartz.1.0.0.17\lib\net40\Topshelf.SimpleInjector.Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuartzTasks\DeleteOldChunkedFiles.cs" />
+    <Compile Include="Utils\StreamUtils.cs" />
+    <Compile Include="WCF\DI\IDocumentConvertServiceHost.cs" />
+    <Compile Include="WCF\DI\IDocumentGeneratorServiceHost.cs" />
+    <Compile Include="WCF\DI\IDocumentRecognitionServiceHost.cs" />
+    <Compile Include="WCF\DI\IDocumentAdminServiceHost.cs" />
+    <Compile Include="WCF\Implementation\Admin\AddFileToPreparedStore_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\ChunkAppendBytes_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\ChunkGetFileSize_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\ChunkStartUpload_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\GetStorageFile_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\GetStorageInfo_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\ListStorageInfoFor_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\PrepareStore_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\StoreFileChunked_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\StoreFile_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\StoreScannedFileChunked_Impl.cs" />
+    <Compile Include="WCF\Implementation\Admin\StoreScannedFile_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\CleanUpScan_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\Convert_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\DocumentContainsData_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\IsValidDocument_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\PDFAddPassword_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\PDFAddSignature_Impl.cs" />
+    <Compile Include="WCF\Implementation\Convert\PDFOptimize_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\GetTemplateById_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\GetTemplateByType_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\RenderDocumentWithJSon_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\RenderDocumentWithDataSet_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\RenderDocumentWithJSonDataSet_Impl.cs" />
+    <Compile Include="WCF\Implementation\Generator\RenderDocument_Impl.cs" />
+    <Compile Include="WCF\Implementation\Recognition\DetermineDocumentCategory_Impl.cs" />
+    <Compile Include="WCF\Implementation\Recognition\DocumentRecognition.cs" />
+    <Compile Include="WCF\Implementation\Recognition\FindBarcodes_Impl.cs" />
+    <Compile Include="WCF\Implementation\Utils\ChunkedFileUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\CustomRichEditPrinter.cs" />
+    <Compile Include="WCF\Implementation\Utils\DataMatrixDocUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\DocConsts.cs" />
+    <Compile Include="WCF\Implementation\Admin\DocumentAdminServer.cs" />
+    <Compile Include="WCF\Implementation\Convert\DocumentConvertServer.cs" />
+    <Compile Include="WCF\Implementation\Generator\DocumentGeneratorServer.cs" />
+    <Compile Include="WCF\Implementation\Utils\DocUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\GdPictureUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\MongoStoreUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\PdfUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\RtfUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\SnapUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\TemplateUtils.cs" />
+    <Compile Include="WCF\Implementation\Utils\XtraReportUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="document_new.ico" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="connectionStrings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Atlas.Common.Interface\Atlas.Common.Interface.csproj">
+      <Project>{1846e86a-33c9-4802-a135-a3e2f419118f}</Project>
+      <Name>Atlas.Common.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Atlas.Servers.Common\Atlas.Servers.Common.csproj">
+      <Project>{ebdfce74-c37a-418b-aaed-353f122a0420}</Project>
+      <Name>Atlas.Servers.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Document.Mongo\Atlas.Document.Mongo\Atlas.Document.Mongo.csproj">
+      <Project>{e2d6624f-ccbd-47b9-949d-c1e15c40f03a}</Project>
+      <Name>Atlas.Document.Mongo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Document.WCF\Atlas.Document.WCF.csproj">
+      <Project>{9f8a719b-8a97-4145-ad7f-70626082a5b2}</Project>
+      <Name>Atlas.Document.WCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

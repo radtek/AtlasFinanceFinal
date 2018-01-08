@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AB36CCF-5FFD-4780-A54E-A102ECA028B5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>LumiSoft.Net</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LumiSoft.Net</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>LumiSoft.Net.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>LumiSoft.Net.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AsyncOP.cs" />
+    <Compile Include="AsyncOP_State.cs" />
+    <Compile Include="AUTH\AUTH_Gmail_OAuth1_3leg.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_CramMd5.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_DigestMd5.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_Login.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_Ntlm.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_Plain.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_XOAuth.cs" />
+    <Compile Include="AUTH\AUTH_SASL_Client_XOAuth2.cs" />
+    <Compile Include="ByteBuilder.cs" />
+    <Compile Include="ErrorEventHandler.cs" />
+    <Compile Include="Error_EventArgs.cs" />
+    <Compile Include="FTP\FTP_t_ReplyLine.cs" />
+    <Compile Include="FTP\Server\FTP_e_Appe.cs" />
+    <Compile Include="FTP\Server\FTP_e_Authenticate.cs" />
+    <Compile Include="FTP\Server\FTP_e_Cdup.cs" />
+    <Compile Include="FTP\Server\FTP_e_Cwd.cs" />
+    <Compile Include="FTP\Server\FTP_e_Dele.cs" />
+    <Compile Include="FTP\Server\FTP_e_GetDirListing.cs" />
+    <Compile Include="FTP\Server\FTP_e_GetFile.cs" />
+    <Compile Include="FTP\Server\FTP_e_GetFileSize.cs" />
+    <Compile Include="FTP\Server\FTP_e_Mkd.cs" />
+    <Compile Include="FTP\Server\FTP_e_Rmd.cs" />
+    <Compile Include="FTP\Server\FTP_e_Rnto.cs" />
+    <Compile Include="FTP\Server\FTP_e_Started.cs" />
+    <Compile Include="FTP\Server\FTP_e_Stor.cs" />
+    <Compile Include="HostEntry.cs" />
+    <Compile Include="IAsyncOP.cs" />
+    <Compile Include="UDP\UDP_DataReceiver.cs" />
+    <Compile Include="UDP\UDP_e_PacketReceived.cs" />
+    <Compile Include="_MD4.cs" />
+    <Compile Include="AUTH\AUTH_SASL_DigestMD5_Challenge.cs" />
+    <Compile Include="AUTH\AUTH_SASL_DigestMD5_Response.cs" />
+    <Compile Include="AUTH\AUTH_e_Authenticate.cs" />
+    <Compile Include="AUTH\AUTH_e_UserInfo.cs" />
+    <Compile Include="AUTH\Auth_HttpDigest.cs" />
+    <Compile Include="AUTH\Auth_HttpDigest_NonceManager.cs" />
+    <Compile Include="AUTH\AUTH_SASL_ServerMechanism.cs" />
+    <Compile Include="AUTH\AUTH_SASL_ServerMechanism_CramMd5.cs" />
+    <Compile Include="AUTH\AUTH_SASL_ServerMechanism_DigestMd5.cs" />
+    <Compile Include="AUTH\AUTH_SASL_ServerMechanism_Login.cs" />
+    <Compile Include="AUTH\AUTH_SASL_ServerMechanism_Plain.cs" />
+    <Compile Include="IO\Base64.cs" />
+    <Compile Include="IO\FifoBuffer.cs" />
+    <Compile Include="IO\MemoryStreamEx.cs" />
+    <Compile Include="IO\QuotedPrintableStream.cs" />
+    <Compile Include="IO\ReadWriteControlledStream.cs" />
+    <Compile Include="KeyValueCollection.cs" />
+    <Compile Include="ParseException.cs" />
+    <Compile Include="Range_long.cs" />
+    <Compile Include="BalanceMode.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="ExceptionEventArgs.cs" />
+    <Compile Include="FTP\Client\FTP_ClientException.cs" />
+    <Compile Include="FTP\FTP_ListItem.cs" />
+    <Compile Include="FTP\FTP_TransferMode.cs" />
+    <Compile Include="HostEndPoint.cs" />
+    <Compile Include="IO\Base64Stream.cs" />
+    <Compile Include="IO\MultiStream.cs" />
+    <Compile Include="IO\PartialStream.cs" />
+    <Compile Include="IO\SmartStream.cs" />
+    <Compile Include="Log\WriteLogEventArgs.cs" />
+    <Compile Include="Net_Utils.cs" />
+    <Compile Include="PortRange.cs" />
+    <Compile Include="SslMode.cs" />
+    <Compile Include="TCP\TCP_Session.cs" />
+    <Compile Include="TCP\TCP_Client.cs" />
+    <Compile Include="TCP\TCP_Server.cs" />
+    <Compile Include="TCP\TCP_ServerSession.cs" />
+    <Compile Include="TCP\TCP_SessionCollection.cs" />
+    <Compile Include="TCP\TCP_ServerSessionEventArgs.cs" />
+    <Compile Include="TimerEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UDP\UDP_Server.cs" />
+    <Compile Include="FTP\Client\FTP_Client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FTP\Server\FTP_Server.cs">
+    </Compile>
+    <Compile Include="FTP\Server\FTP_Session.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IO\DataSizeExceededException.cs" />
+    <Compile Include="IO\IncompleteDataException.cs" />
+    <Compile Include="IO\LineSizeExceededException.cs" />
+    <Compile Include="IO\SizeExceededAction.cs" />
+    <Compile Include="IO\JunkingStream.cs" />
+    <Compile Include="Log\LogEntry.cs" />
+    <Compile Include="Log\LogEntryType.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="WellKnownPorts.cs" />
+    <Compile Include="URI\UriSchemes.cs" />
+    <Compile Include="_AsyncResultState.cs" />
+    <Compile Include="IPBindInfo.cs" />
+    <Compile Include="CircleCollection.cs" />
+    <Compile Include="BindInfoProtocol.cs" />
+    <Compile Include="StringReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

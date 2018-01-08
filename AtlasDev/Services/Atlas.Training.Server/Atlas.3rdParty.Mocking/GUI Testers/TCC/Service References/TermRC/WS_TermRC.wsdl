@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="aedo_auth_req">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contract_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="install_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="installments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adj_rule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tracking" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customScreen" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumberIn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="aedoGlobalTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aedo_auth_reqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aedo_auth_reqResult" type="tns:AuthRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AuthRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContractAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tracking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdjRule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="aedo_naedo_auth_req">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMerchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NMerchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientRef1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientRef2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contract_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="install_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="installments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adj_rule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tracking" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customScreen" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumberIn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="aedoGlobalTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="aedo_naedo_auth_reqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aedo_naedo_auth_reqResult" type="tns:AuthRspN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AuthRspN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="contractType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContractAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tracking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdjRule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="miniStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="term_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="miniStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="miniStatementResult" type="tns:miniStatmentRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="miniStatmentRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="merchTermVerifyWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="termID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="merchTermVerifyWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="merchTermVerifyWebResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="printCustSlip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="terminal_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Merchant_Text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custPAN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custtran_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custtran_Time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract_Num" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num_Instalments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_Adj_Rule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tracking" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instalment_Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract_Amount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="printCustSlipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="printCustSlipResult" type="tns:custSlipResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="custSlipResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OneCor_AEDO_Auth_Req">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARMerchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARTerm_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARContract_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARinstall_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARcontract_amnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARinstallments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARfrequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARstart_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARemployer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARadj_rule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARtracking" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARclient_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARLine2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARLine3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARLine4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARscreen2Line1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARscreen2Line2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARscreen2Line3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OCAARscreen2Line4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OCAARprint" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="OCAARscreen1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="OCAARscreen2" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="OCAARglobalTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneCor_AEDO_Auth_ReqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneCor_AEDO_Auth_ReqResult" type="tns:AuthRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABILCardReg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="terminal_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABILCardRegResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ABILCardRegResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="handshake">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="handshakeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="handshakeResult" type="tns:HandShakeRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HandShakeRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="genericDataCaptureConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="term_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inputType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="promptTextLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GDCTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genericDataCaptureConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genericDataCaptureConfirmResult" type="tns:genDataCaptRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="genDataCaptRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataCaptured" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="genericDataCapture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="term_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="promptTextDisplayTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="inputType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="promptTextLine1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prompTextline4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GDCTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genericDataCaptureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genericDataCaptureResult" type="tns:genDataCaptRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cashSendTestApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="term_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cashSendTestAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cashSendTestAppResult" type="tns:genDataCaptRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpfrontBinCheckWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpfrontBinCheckWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpfrontBinCheckWebResult" type="tns:BinCheck" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BinCheck">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TermStatusCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchant_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminal_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TermStatusCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TermStatusCheckResult" type="tns:TermStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TermStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastUpdated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpfrontBinCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="term_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BinCheckTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpfrontBinCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpfrontBinCheckResult" type="tns:BinCheck" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tranIDQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID_Num" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contract_Num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tranIDQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tranIDQueryResult" type="tns:tranIDResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tranIDResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tranID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contract_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="account_type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tracking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date_adjust_rule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="aedo_auth_reqSoapIn">
+    <wsdl:part name="parameters" element="tns:aedo_auth_req" />
+  </wsdl:message>
+  <wsdl:message name="aedo_auth_reqSoapOut">
+    <wsdl:part name="parameters" element="tns:aedo_auth_reqResponse" />
+  </wsdl:message>
+  <wsdl:message name="aedo_naedo_auth_reqSoapIn">
+    <wsdl:part name="parameters" element="tns:aedo_naedo_auth_req" />
+  </wsdl:message>
+  <wsdl:message name="aedo_naedo_auth_reqSoapOut">
+    <wsdl:part name="parameters" element="tns:aedo_naedo_auth_reqResponse" />
+  </wsdl:message>
+  <wsdl:message name="miniStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:miniStatement" />
+  </wsdl:message>
+  <wsdl:message name="miniStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:miniStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="merchTermVerifyWebSoapIn">
+    <wsdl:part name="parameters" element="tns:merchTermVerifyWeb" />
+  </wsdl:message>
+  <wsdl:message name="merchTermVerifyWebSoapOut">
+    <wsdl:part name="parameters" element="tns:merchTermVerifyWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="printCustSlipSoapIn">
+    <wsdl:part name="parameters" element="tns:printCustSlip" />
+  </wsdl:message>
+  <wsdl:message name="printCustSlipSoapOut">
+    <wsdl:part name="parameters" element="tns:printCustSlipResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneCor_AEDO_Auth_ReqSoapIn">
+    <wsdl:part name="parameters" element="tns:OneCor_AEDO_Auth_Req" />
+  </wsdl:message>
+  <wsdl:message name="OneCor_AEDO_Auth_ReqSoapOut">
+    <wsdl:part name="parameters" element="tns:OneCor_AEDO_Auth_ReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABILCardRegSoapIn">
+    <wsdl:part name="parameters" element="tns:ABILCardReg" />
+  </wsdl:message>
+  <wsdl:message name="ABILCardRegSoapOut">
+    <wsdl:part name="parameters" element="tns:ABILCardRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="handshakeSoapIn">
+    <wsdl:part name="parameters" element="tns:handshake" />
+  </wsdl:message>
+  <wsdl:message name="handshakeSoapOut">
+    <wsdl:part name="parameters" element="tns:handshakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="genericDataCaptureConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:genericDataCaptureConfirm" />
+  </wsdl:message>
+  <wsdl:message name="genericDataCaptureConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:genericDataCaptureConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="genericDataCaptureSoapIn">
+    <wsdl:part name="parameters" element="tns:genericDataCapture" />
+  </wsdl:message>
+  <wsdl:message name="genericDataCaptureSoapOut">
+    <wsdl:part name="parameters" element="tns:genericDataCaptureResponse" />
+  </wsdl:message>
+  <wsdl:message name="cashSendTestAppSoapIn">
+    <wsdl:part name="parameters" element="tns:cashSendTestApp" />
+  </wsdl:message>
+  <wsdl:message name="cashSendTestAppSoapOut">
+    <wsdl:part name="parameters" element="tns:cashSendTestAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpfrontBinCheckWebSoapIn">
+    <wsdl:part name="parameters" element="tns:UpfrontBinCheckWeb" />
+  </wsdl:message>
+  <wsdl:message name="UpfrontBinCheckWebSoapOut">
+    <wsdl:part name="parameters" element="tns:UpfrontBinCheckWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="TermStatusCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:TermStatusCheck" />
+  </wsdl:message>
+  <wsdl:message name="TermStatusCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:TermStatusCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpfrontBinCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:UpfrontBinCheck" />
+  </wsdl:message>
+  <wsdl:message name="UpfrontBinCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:UpfrontBinCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="tranIDQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:tranIDQuery" />
+  </wsdl:message>
+  <wsdl:message name="tranIDQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:tranIDQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TermRCSoap">
+    <wsdl:operation name="aedo_auth_req">
+      <wsdl:input message="tns:aedo_auth_reqSoapIn" />
+      <wsdl:output message="tns:aedo_auth_reqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aedo_naedo_auth_req">
+      <wsdl:input message="tns:aedo_naedo_auth_reqSoapIn" />
+      <wsdl:output message="tns:aedo_naedo_auth_reqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="miniStatement">
+      <wsdl:input message="tns:miniStatementSoapIn" />
+      <wsdl:output message="tns:miniStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="merchTermVerifyWeb">
+      <wsdl:input message="tns:merchTermVerifyWebSoapIn" />
+      <wsdl:output message="tns:merchTermVerifyWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="printCustSlip">
+      <wsdl:input message="tns:printCustSlipSoapIn" />
+      <wsdl:output message="tns:printCustSlipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneCor_AEDO_Auth_Req">
+      <wsdl:input message="tns:OneCor_AEDO_Auth_ReqSoapIn" />
+      <wsdl:output message="tns:OneCor_AEDO_Auth_ReqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABILCardReg">
+      <wsdl:input message="tns:ABILCardRegSoapIn" />
+      <wsdl:output message="tns:ABILCardRegSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="handshake">
+      <wsdl:input message="tns:handshakeSoapIn" />
+      <wsdl:output message="tns:handshakeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCaptureConfirm">
+      <wsdl:input message="tns:genericDataCaptureConfirmSoapIn" />
+      <wsdl:output message="tns:genericDataCaptureConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCapture">
+      <wsdl:input message="tns:genericDataCaptureSoapIn" />
+      <wsdl:output message="tns:genericDataCaptureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cashSendTestApp">
+      <wsdl:input message="tns:cashSendTestAppSoapIn" />
+      <wsdl:output message="tns:cashSendTestAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheckWeb">
+      <wsdl:input message="tns:UpfrontBinCheckWebSoapIn" />
+      <wsdl:output message="tns:UpfrontBinCheckWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TermStatusCheck">
+      <wsdl:input message="tns:TermStatusCheckSoapIn" />
+      <wsdl:output message="tns:TermStatusCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheck">
+      <wsdl:input message="tns:UpfrontBinCheckSoapIn" />
+      <wsdl:output message="tns:UpfrontBinCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tranIDQuery">
+      <wsdl:input message="tns:tranIDQuerySoapIn" />
+      <wsdl:output message="tns:tranIDQuerySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TermRCSoap" type="tns:TermRCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="aedo_auth_req">
+      <soap:operation soapAction="http://tempuri.org/aedo_auth_req" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aedo_naedo_auth_req">
+      <soap:operation soapAction="http://tempuri.org/aedo_naedo_auth_req" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="miniStatement">
+      <soap:operation soapAction="http://tempuri.org/miniStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="merchTermVerifyWeb">
+      <soap:operation soapAction="http://tempuri.org/merchTermVerifyWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printCustSlip">
+      <soap:operation soapAction="http://tempuri.org/printCustSlip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneCor_AEDO_Auth_Req">
+      <soap:operation soapAction="http://tempuri.org/OneCor_AEDO_Auth_Req" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABILCardReg">
+      <soap:operation soapAction="http://tempuri.org/ABILCardReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="handshake">
+      <soap:operation soapAction="http://tempuri.org/handshake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCaptureConfirm">
+      <soap:operation soapAction="http://tempuri.org/genericDataCaptureConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCapture">
+      <soap:operation soapAction="http://tempuri.org/genericDataCapture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashSendTestApp">
+      <soap:operation soapAction="http://tempuri.org/cashSendTestApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheckWeb">
+      <soap:operation soapAction="http://tempuri.org/UpfrontBinCheckWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TermStatusCheck">
+      <soap:operation soapAction="http://tempuri.org/TermStatusCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheck">
+      <soap:operation soapAction="http://tempuri.org/UpfrontBinCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tranIDQuery">
+      <soap:operation soapAction="http://tempuri.org/tranIDQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TermRCSoap12" type="tns:TermRCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="aedo_auth_req">
+      <soap12:operation soapAction="http://tempuri.org/aedo_auth_req" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aedo_naedo_auth_req">
+      <soap12:operation soapAction="http://tempuri.org/aedo_naedo_auth_req" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="miniStatement">
+      <soap12:operation soapAction="http://tempuri.org/miniStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="merchTermVerifyWeb">
+      <soap12:operation soapAction="http://tempuri.org/merchTermVerifyWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printCustSlip">
+      <soap12:operation soapAction="http://tempuri.org/printCustSlip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneCor_AEDO_Auth_Req">
+      <soap12:operation soapAction="http://tempuri.org/OneCor_AEDO_Auth_Req" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABILCardReg">
+      <soap12:operation soapAction="http://tempuri.org/ABILCardReg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="handshake">
+      <soap12:operation soapAction="http://tempuri.org/handshake" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCaptureConfirm">
+      <soap12:operation soapAction="http://tempuri.org/genericDataCaptureConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genericDataCapture">
+      <soap12:operation soapAction="http://tempuri.org/genericDataCapture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cashSendTestApp">
+      <soap12:operation soapAction="http://tempuri.org/cashSendTestApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheckWeb">
+      <soap12:operation soapAction="http://tempuri.org/UpfrontBinCheckWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TermStatusCheck">
+      <soap12:operation soapAction="http://tempuri.org/TermStatusCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpfrontBinCheck">
+      <soap12:operation soapAction="http://tempuri.org/UpfrontBinCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tranIDQuery">
+      <soap12:operation soapAction="http://tempuri.org/tranIDQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TermRC">
+    <wsdl:port name="TermRCSoap" binding="tns:TermRCSoap">
+      <soap:address location="http://196.14.89.40/WS_TermRC/WS_TermRC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TermRCSoap12" binding="tns:TermRCSoap12">
+      <soap12:address location="http://196.14.89.40/WS_TermRC/WS_TermRC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

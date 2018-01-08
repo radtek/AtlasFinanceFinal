@@ -1,0 +1,33 @@
+﻿<div ng-controller="AccountClientHistoryController">
+  <section class="panel">
+    <section class="panel-body">
+        <div class="table-responsive">
+          <table ng-table="historyParams" class="table">
+            <tr ng-repeat="history in $data" style="cursor: pointer;">
+              <td data-title="'Account Id'">
+                <center> {{history.AccountId}}</center>
+              </td>
+              <td data-title="'Account Type'">
+                <center> {{history.AccountType}}</center>
+              </td>
+              <td data-title="'Account No'">
+                <center> {{history.AccountNo}}</center>
+              </td>
+              <td data-title="'Loan Amount'">
+                <center> {{history.LoanAmount}}</center>
+              </td>
+              <td data-title="'Balance'">
+                <center> {{history.Balance}}</center>
+              </td>
+              <td data-title="'OpenDate'">
+                <center> {{history.OpenDate | date:'yyyy-MM-dd HH:mm' }}</center>
+              </td>
+              <td data-title="'Create Date'" sortable="'CreateDate'">
+                <center> {{history.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </section>
+  </section>
+</div>

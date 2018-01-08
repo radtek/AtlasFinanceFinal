@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration.ScoreCard" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration.ScoreCard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd9" namespace="Atlas.Services.2015.Integration.AtlasProduct" />
+  <xs:complexType name="ScoreCardRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CellularNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNumberOrPassport" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPassport" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneAreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScoreCardRequest" nillable="true" type="tns:ScoreCardRequest" />
+  <xs:complexType name="ScoreCardResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="Atlas.Services.2015.Integration.AtlasProduct" minOccurs="0" name="AtlasProducts" nillable="true" type="q1:ArrayOfAtlasProductResult" />
+      <xs:element minOccurs="0" name="CodexScore" type="xs:int" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnquiryId" type="xs:long" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScoreCardResult" nillable="true" type="tns:ScoreCardResult" />
+</xs:schema>

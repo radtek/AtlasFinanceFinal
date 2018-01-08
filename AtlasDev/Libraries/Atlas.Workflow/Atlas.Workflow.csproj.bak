@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24554623-3F03-4766-B0FE-0A1FC01359A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Workflow</RootNamespace>
+    <AssemblyName>Atlas.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Desktop\LoanAdminSystem\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\Web\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\Services\Falcon.Gyrkin\Source\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Magnum">
+      <HintPath>..\..\Services\Falcon.Gyrkin\Source\packages\Magnum.2.1.3\lib\NET40\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId, Version=2.1.3.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\..\Web\packages\NewId.2.1.3\lib\net45\NewId.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\Services\Falcon.Gyrkin\Source\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Web\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging">
+      <HintPath>..\..\Services\Falcon.Gyrkin\Source\packages\Ninject.Extensions.Logging.3.2.3.0\lib\net45-full\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtlasOnline\Default.cs" />
+    <Compile Include="Common\Step.cs" />
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="Condition\Expression.cs" />
+    <Compile Include="ConnectionBuilder.cs" />
+    <Compile Include="DecisionGate\DecisionGate.cs" />
+    <Compile Include="Dynamic\Compiler.cs" />
+    <Compile Include="Handlers\RabbitHandler.cs" />
+    <Compile Include="Job.cs" />
+    <Compile Include="JobMonitor.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="Step.cs" />
+    <Compile Include="Interface\IJob.cs" />
+    <Compile Include="Interface\IStep.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6aecfad7-a17c-4fb0-9ab6-bfce0f3c5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Data\Atlas.Domain.csproj">
+      <Project>{42909e2d-45b8-44cc-9b2d-be40ce0d148f}</Project>
+      <Name>Atlas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Domain.DTO\Atlas.Domain.DTO.csproj">
+      <Project>{5aae8af7-90f0-4a58-8504-5dc7c55c7949}</Project>
+      <Name>Atlas.Domain.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.RabbitMQ.Messages\Atlas.RabbitMQ.Messages.csproj">
+      <Project>{c4b44803-02cc-4b6c-bf0c-372dac2617f7}</Project>
+      <Name>Atlas.RabbitMQ.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Workflow.ProcessDataExt\Atlas.Workflow.ProcessDataExt.csproj">
+      <Project>{3e9cba63-eee7-49e7-8345-fd1d9b2ac2c4}</Project>
+      <Name>Atlas.Workflow.ProcessDataExt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

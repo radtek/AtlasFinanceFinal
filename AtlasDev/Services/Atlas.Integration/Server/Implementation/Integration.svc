@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Atlas.Integration.Service1" CodeBehind="Integration.svc.cs" %>

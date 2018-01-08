@@ -1,0 +1,46 @@
+﻿  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="creditParams" class="table">
+            <tr ng-repeat="credit in $data" ng-click="changeSelection('csRowSelected',credit,'creditEnquiries')" ng-class="{selected: credit.$selected}" style="cursor: pointer;">
+              <td data-title="'Transaction Type'">
+                <center> {{credit.TransactionType}}</center>
+              </td>
+              <td data-title="'First Name'">
+                <center> {{credit.FirstName}}</center>
+              </td>
+              <td data-title="'Last Name'">
+                <center> {{credit.LastName}}</center>
+              </td>
+              <td data-title="'ID No'">
+                <center> {{credit.IdentityNum}}</center>
+              </td>
+              <td data-title="'Success'">
+                <center>
+                  <i class="fa fa-check" style="color:green;font-size:large;" ng-if="credit.IsSucess"></i>
+                  <i class="fa fa-times" style="color: red; font-size: large; " ng-if="!credit.IsSucess"></i>
+                </center>
+              </td>
+              <td data-title="'Score'">
+                <center> <div class="curved-border" style="background-color: rgb({{ credit.Colour }})" ng-if="credit.Score">{{credit.score}}</div></center>
+              </td>
+              <td data-title="'Enquiry Date'">
+                <center> {{credit.EnquiryDate | date:'yyyy-MM-dd HH:mm' }}</center>
+              </td>
+              <td data-title="'Create Date'">
+                <center> {{credit.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="button" class="btn btn-warning pull-left" data-toggle="modal" href="#creditDlg" ng-click="performEnquiry()">Perform Enquiry</button>
+            <button type="button" class="btn blue" ng-disabled="!row || row.IsSuccess" data-toggle="modal" href="#creditDlg" ng-click="report()">View Report</button>
+            <button type="button" class="btn green" ng-disabled="!row || !row.IsSuccess" data-toggle="modal" href="#creditDlg" ng-click="reSubmit()">Resubmit</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="DevExpressXpoProfiler" type="DevExpress.Xpo.Logger.ProfilerConfigSection, DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" allowLocation="true" allowDefinition="Everywhere" />
+  </configSections>
+
+  <system.serviceModel>
+    <bindings>
+      <netTcpBinding>
+        <!-- 5MB buffering limit (for Binary JSON datasets) -->
+        <binding name="portSharingBinding" maxBufferSize="5242880" maxReceivedMessageSize="5242880" maxConnections="100" portSharingEnabled="true" receiveTimeout="00:10:00" sendTimeout="00:10:00">
+          <security mode="None" />
+        </binding>
+      </netTcpBinding>
+    </bindings>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="stdBehaviour">
+          <serviceThrottling maxConcurrentCalls="10" maxConcurrentSessions="10" maxConcurrentInstances="10" />
+          <serviceTimeouts transactionTimeout="00:45:00" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <services>
+      <!-- Request of data sync files -->
+      <service behaviorConfiguration="stdBehaviour" name="ASSServer.WCF.Implementation.DataFileRequest.DataRequestServer">
+        <endpoint address="net.tcp://localhost:8200/LMSData/Sync/DataFile/Request" binding="netTcpBinding" bindingConfiguration="portSharingBinding" name="netTCPFileRequest" contract="Atlas.DataSync.WCF.Interface.IDataRequestServer" />
+      </service>
+      <!-- Data file chunking uploading/downloading -->
+      <service behaviorConfiguration="stdBehaviour" name="ASSServer.WCF.Implementation.DataFileChunk.DataFileServer">
+        <endpoint address="net.tcp://localhost:8200/LMSData/Sync/DataFile/Files" binding="netTcpBinding" bindingConfiguration="portSharingBinding" name="netTCPDataFileRequest" contract="Atlas.DataSync.WCF.Interface.IDataFileServer" />
+      </service>
+      <!-- General data sync services -->
+      <service behaviorConfiguration="stdBehaviour" name="ASSServer.WCF.Implementation.DataSync.DataSyncServer">
+        <endpoint address="net.tcp://localhost:8200/LMSData/Sync/DataServices/Request" binding="netTcpBinding" bindingConfiguration="portSharingBinding" name="netTCPDataSync" contract="Atlas.DataSync.WCF.Interface.IDataSyncServer" />
+      </service>
+      <!-- Admin data sync services -->
+      <service behaviorConfiguration="stdBehaviour" name="ASSServer.WCF.Implementation.Admin.AdminServer">
+        <endpoint address="net.tcp://localhost:8200/LMSData/Sync/Admin" binding="netTcpBinding" bindingConfiguration="portSharingBinding" name="netTCPAdmin" contract="Atlas.DataSync.WCF.Interface.IAdminServer" />
+      </service>
+    </services>
+  </system.serviceModel>
+  <connectionStrings configSource="connectionStrings.config" />
+  <appSettings configSource="appSettings.config" />
+  
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="AutoMapper" publicKeyToken="be96cd2c38ef1005" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.2.1.0" newVersion="4.2.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Topshelf" publicKeyToken="b800c4cfcdeea87b" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Serilog" publicKeyToken="24c2f752a8e58a10" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.0.0.0" newVersion="2.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Serilog.FullNetFx" publicKeyToken="24c2f752a8e58a10" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.5.0.0" newVersion="1.5.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Common.Logging" publicKeyToken="af08829b84f0328e" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.3.1.0" newVersion="3.3.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Common.Logging.Core" publicKeyToken="af08829b84f0328e" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.3.1.0" newVersion="3.3.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="SimpleInjector" publicKeyToken="984cb50dea722e99" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.3.1.0" newVersion="3.3.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Quartz" publicKeyToken="f6b8c98a402cc8a4" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.1.0" newVersion="2.4.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Npgsql" publicKeyToken="5d8b90d52f46fda7" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.1.9.0" newVersion="3.1.9.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="DevExpress.Xpo.v16.1" publicKeyToken="b88d1754d700e49a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-16.1.7.0" newVersion="16.1.7.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+  <DevExpressXpoProfiler serverType="DevExpress.Xpo.Logger.Transport.LogServer" serverAssembly="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" categories="SQL;Session;DataCache" port="52934" />
+</configuration>

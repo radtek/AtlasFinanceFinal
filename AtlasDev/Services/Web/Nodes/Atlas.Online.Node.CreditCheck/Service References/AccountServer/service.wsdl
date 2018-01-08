@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="AccountServer.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccountServer_GetActiveAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetActiveAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAccountInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAccountInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAllAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAllAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetActiveBankDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveBankDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetActiveBankDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveBankDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetPendingAVS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingAVS" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetPendingAVS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingAVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatement" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAVSFailureCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAVSFailureCount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAVSFailureCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAVSFailureCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAffordabilityOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAffordabilityOption" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAffordabilityOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAffordabilityOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_AcceptAffordabilityOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptAffordabilityOption" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_AcceptAffordabilityOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptAffordabilityOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_RejectAffordabilityOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectAffordabilityOption" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_RejectAffordabilityOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectAffordabilityOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuote" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_AcceptQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptQuote" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_AcceptQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_RejectQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectQuote" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_RejectQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetSettlementAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettlementAmount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetSettlementAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettlementAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetSettlementQuotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettlementQuotation" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetSettlementQuotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettlementQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetOverdueAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueAmount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetOverdueAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_PostSettlement_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSettlement" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_PostSettlement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSettlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_UpdateAccountStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_UpdateAccountStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_SaveAffordabilityItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAffordabilityItem" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_SaveAffordabilityItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAffordabilityItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_SaveAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_SaveAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_GetAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowStart" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowComplete" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowStepUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowStepUp" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_WorkflowStepUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowStepUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_UpdateBankDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAccountServer_UpdateBankDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccountServer">
+    <wsdl:operation name="GetActiveAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetActiveAccount" message="tns:IAccountServer_GetActiveAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetActiveAccountResponse" message="tns:IAccountServer_GetActiveAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetAccountInfo" message="tns:IAccountServer_GetAccountInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetAccountInfoResponse" message="tns:IAccountServer_GetAccountInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetAllAccounts" message="tns:IAccountServer_GetAllAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetAllAccountsResponse" message="tns:IAccountServer_GetAllAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveBankDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetActiveBankDetail" message="tns:IAccountServer_GetActiveBankDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetActiveBankDetailResponse" message="tns:IAccountServer_GetActiveBankDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetPendingAVS" message="tns:IAccountServer_GetPendingAVS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetPendingAVSResponse" message="tns:IAccountServer_GetPendingAVS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetStatement" message="tns:IAccountServer_GetStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetStatementResponse" message="tns:IAccountServer_GetStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSFailureCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetAVSFailureCount" message="tns:IAccountServer_GetAVSFailureCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetAVSFailureCountResponse" message="tns:IAccountServer_GetAVSFailureCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetAffordabilityOption" message="tns:IAccountServer_GetAffordabilityOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetAffordabilityOptionResponse" message="tns:IAccountServer_GetAffordabilityOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptAffordabilityOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/AcceptAffordabilityOption" message="tns:IAccountServer_AcceptAffordabilityOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/AcceptAffordabilityOptionResponse" message="tns:IAccountServer_AcceptAffordabilityOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectAffordabilityOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/RejectAffordabilityOption" message="tns:IAccountServer_RejectAffordabilityOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/RejectAffordabilityOptionResponse" message="tns:IAccountServer_RejectAffordabilityOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetQuote" message="tns:IAccountServer_GetQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetQuoteResponse" message="tns:IAccountServer_GetQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/AcceptQuote" message="tns:IAccountServer_AcceptQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/AcceptQuoteResponse" message="tns:IAccountServer_AcceptQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/RejectQuote" message="tns:IAccountServer_RejectQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/RejectQuoteResponse" message="tns:IAccountServer_RejectQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetSettlementAmount" message="tns:IAccountServer_GetSettlementAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetSettlementAmountResponse" message="tns:IAccountServer_GetSettlementAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementQuotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetSettlementQuotation" message="tns:IAccountServer_GetSettlementQuotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetSettlementQuotationResponse" message="tns:IAccountServer_GetSettlementQuotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetOverdueAmount" message="tns:IAccountServer_GetOverdueAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetOverdueAmountResponse" message="tns:IAccountServer_GetOverdueAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/PostSettlement" message="tns:IAccountServer_PostSettlement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/PostSettlementResponse" message="tns:IAccountServer_PostSettlement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/UpdateAccountStatus" message="tns:IAccountServer_UpdateAccountStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/UpdateAccountStatusResponse" message="tns:IAccountServer_UpdateAccountStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAffordabilityItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/SaveAffordabilityItem" message="tns:IAccountServer_SaveAffordabilityItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/SaveAffordabilityItemResponse" message="tns:IAccountServer_SaveAffordabilityItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/SaveAccount" message="tns:IAccountServer_SaveAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/SaveAccountResponse" message="tns:IAccountServer_SaveAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/GetAccount" message="tns:IAccountServer_GetAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/GetAccountResponse" message="tns:IAccountServer_GetAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/WorkflowStart" message="tns:IAccountServer_WorkflowStart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/WorkflowStartResponse" message="tns:IAccountServer_WorkflowStart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/WorkflowComplete" message="tns:IAccountServer_WorkflowComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/WorkflowCompleteResponse" message="tns:IAccountServer_WorkflowComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStepUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/WorkflowStepUp" message="tns:IAccountServer_WorkflowStepUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/WorkflowStepUpResponse" message="tns:IAccountServer_WorkflowStepUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountServer/UpdateBankDetail" message="tns:IAccountServer_UpdateBankDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountServer/UpdateBankDetailResponse" message="tns:IAccountServer_UpdateBankDetail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountServer.NET" type="tns:IAccountServer">
+    <wsp:PolicyReference URI="#AccountServer.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetActiveAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetActiveAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetAllAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveBankDetail">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetActiveBankDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVS">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetPendingAVS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSFailureCount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetAVSFailureCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityOption">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptAffordabilityOption">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/AcceptAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectAffordabilityOption">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/RejectAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuote">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuote">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/AcceptQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuote">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/RejectQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementAmount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetSettlementAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementQuotation">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetSettlementQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueAmount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetOverdueAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlement">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/PostSettlement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountStatus">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/UpdateAccountStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAffordabilityItem">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/SaveAffordabilityItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/SaveAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/GetAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStart">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/WorkflowStart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowComplete">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/WorkflowComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStepUp">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/WorkflowStepUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetail">
+      <soap12:operation soapAction="http://tempuri.org/IAccountServer/UpdateBankDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccountServer.HTTP" type="tns:IAccountServer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveAccount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetActiveAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAccounts">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetAllAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveBankDetail">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetActiveBankDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVS">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetPendingAVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSFailureCount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetAVSFailureCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityOption">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptAffordabilityOption">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/AcceptAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectAffordabilityOption">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/RejectAffordabilityOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuote">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptQuote">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/AcceptQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuote">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/RejectQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementAmount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetSettlementAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettlementQuotation">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetSettlementQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueAmount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetOverdueAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlement">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/PostSettlement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountStatus">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/UpdateAccountStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAffordabilityItem">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/SaveAffordabilityItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAccount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/SaveAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStart">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/WorkflowStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowComplete">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/WorkflowComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowStepUp">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/WorkflowStepUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetail">
+      <soap:operation soapAction="http://tempuri.org/IAccountServer/UpdateBankDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountServer">
+    <wsdl:port name="AccountServer.NET" binding="tns:AccountServer.NET">
+      <soap12:address location="net.tcp://localhost:8200/AccountServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/AccountServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="AccountServer.HTTP" binding="tns:AccountServer.HTTP">
+      <soap:address location="http://localhost:8201/AccountServer" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

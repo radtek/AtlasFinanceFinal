@@ -1,0 +1,40 @@
+﻿@model Falcon.Areas.Security.Models.LockOutViewModel
+@{
+  ViewBag.Title = "Lockout";
+}
+<body>
+  <div class="page-lock">
+    <div class="page-logo">
+    </div>
+    <div class="page-body">
+      <div class="lock-head">
+        Locked
+      </div>
+      <div class="lock-body">
+        <form class="lock-form">
+          <div class="form-group">
+            <center><input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /></center>
+          </div>
+          <div class="form-actions">
+            <center><button type="submit" class="btn btn-success uppercase">Login</button></center>
+          </div>
+        </form>
+      </div><div class="lock-bottom"></div>
+    </div>
+    <div class="page-footer-custom">
+      2014 &copy; Atlas Finance PTY (LTD). All Rights Reserved.
+    </div>
+  </div>
+</body>
+@section Scripts
+  {
+  <script>
+    jQuery(document).ready(function () {
+      Metronic.init();
+      Layout.init();
+    });
+  </script>
+}
+@section LockCSS{
+  @Styles.Render("~/LockOutCSS")
+}

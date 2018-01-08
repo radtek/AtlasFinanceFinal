@@ -1,0 +1,328 @@
+﻿@model Atlas.Online.Web.Models.ContactModel
+
+@using Atlas.Online.Web.Extensions.Ng
+
+@{
+    ViewBag.Title = "Questions";
+    ViewBag.NgApp = "atlas.core";    
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+
+<div class="container-outline">
+    <div class="pos-r">
+        <h1 class="hn-in-outline fc-beta">
+            <strong>Questions</strong>    
+        </h1>
+
+        <p class="fc-beta fw-b mt-none">
+            Below are our most commonly asked questions. <br/>If you have a question about Atlas Online or any of our products and you don’t find the answer here, please email us at <a href="mailto:info@atlasonline.co.za">info@atlasonline.co.za</a> and we’ll get back to you with an answer.
+        </p>
+
+        <div class="accordion">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+						What is an Atlas Online loan?
+					</a>
+				</div>
+				<div id="collapseOne" class="accordion-body collapse in">
+					<div class="accordion-inner">
+						Atlas Online is your solution to short term cash problems. We offer loans of up to R2500 with up to a month to pay. We’re here for you when you run into short term cash flow problems – we’re just a click away.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+						When would I need an Atlas Online Loan?
+					</a>
+				</div>
+				<div id="collapseTwo" class="accordion-body collapse">
+					<div class="accordion-inner">
+						We all run into problems - maybe your car has been damaged from a pothole, or the fridge has packed up suddenly. We all experience these unexpected emergencies where we need cash quickly. Atlas Online is here to assist you in a quick, simple and paperless way.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+						What makes Atlas Online better than the rest?
+					</a>
+				</div>
+				<div id="collapseThree" class="accordion-body collapse">
+					<div class="accordion-inner">
+                        Atlas Online’s process is totally paperless. You choose your loan amount and payment period and we calculate your repayment amount upfront so you know exactly how much you will owe on your chosen date of repayment. Best of all you will receive your money instantly.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+						What are the requirements in order to apply for a loan?
+					</a>
+				</div>
+				<div id="collapseFour" class="accordion-body collapse">
+					<div class="accordion-inner">
+                        In order to apply you need to meet the following requirements:
+                        <ul>
+                            <li>Be a South African Citizen.</li>
+                            <li>Be permanently employed.</li>
+                            <li>Have a valid bank account.</li>
+                            <li>Have your salary paid into your bank account.</li>              
+                            <li>Have a valid cell phone number.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+						How much can I apply for?
+					</a>
+				</div>
+				<div id="collapseFive" class="accordion-body collapse">
+					<div class="accordion-inner">
+						As a first time client, you can take a loan of up to R2500. 
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+						Which banks does Atlas recognise?
+					</a>
+				</div>
+				<div id="collapseSix" class="accordion-body collapse">
+					<div class="accordion-inner">
+						We work together with the five main banks including:
+                        <ul>
+                            <li>ABSA</li>
+                            <li>FNB</li>
+                            <li>Standard Bank</li>
+                            <li>Nedbank</li>
+                            <li>Capitec</li>
+                        </ul>
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+						How is the loan calculated?
+                    </a>
+				</div>
+				<div id="collapseSeven" class="accordion-body collapse">
+					<div class="accordion-inner">
+						The cost of of credit is breakdown as follows:<br />
+                        <ul>
+                            <li>Service fee</li>
+                            <li>Initiation fee </li>
+                            <li>Interest </li>
+                        </ul>
+                        All fees and interest are set by the National Credit Regulator (NCR).
+                    </div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
+						How long does it take to get my loan?
+					</a>
+				</div>
+				<div id="collapseEight" class="accordion-body collapse">
+					<div class="accordion-inner">
+                        Once your application has been approved, your loan will be in your account within a couple of minutes. If it is approved after 15:00 on a weekday, the money will be in your bank account the next morning. If it is approved on a weekend or public holiday, you’ll receive the money the very next working day.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
+						What is the appeal process?
+					</a>
+				</div>
+				<div id="collapseNine" class="accordion-body collapse">
+					<div class="accordion-inner">
+						We are fully online and paperless, however should you want to appeal your loan application, we will look at it manually.<br/><br/>
+                        For an appeal you need to send us your:
+                        <ul>
+                            <li>Latest payslip</li>
+                            <li>3 months bank statements</li>
+                            <li>Copy of your green bar coded ID book</li>
+                        </ul>
+                        We will do everything to assist you as best we can.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse10">
+						Can I apply on behalf of someone else?
+					</a>
+				</div>
+				<div id="collapse10" class="accordion-body collapse">
+					<div class="accordion-inner">
+						No, you may only apply for a loan for yourself.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse11">
+						Is my information protected on the Atlas Online site?
+					</a>
+				</div>
+				<div id="collapse11" class="accordion-body collapse">
+					<div class="accordion-inner">
+						Yes, we have gone to all lengths to ensure that our clients information is protected. Your connection to our servers is protected by Thawte, <a href="">click here</a> to find out more.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse12">
+						How do I pay back my Atlas Online loan?
+					</a>
+				</div>
+				<div id="collapse12" class="accordion-body collapse">
+					<div class="accordion-inner">
+						This process is fully automated. The money will be debited off your account on the agreed date.<br/>
+                        If you have chosen to settle your loan earlier than the agreed date, you will need to do a manual EFT into our bank account.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse13">
+						How will my credit score be affected if I take an Atlas Online Loan?
+					</a>
+				</div>
+				<div id="collapse13" class="accordion-body collapse">
+					<div class="accordion-inner">
+                        Adhering to the agreed repayment terms will reflect positively on your credit rating.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse14">
+						What happens if I can’t pay my loan back on time?
+					</a>
+				</div>
+				<div id="collapse14" class="accordion-body collapse">
+					<div class="accordion-inner">
+						If you run into problems, call us. We’ll do what we can to assist you by working out a repayment plan for you. Handing a client over to a debt collector is a last resort but if we can’t get hold of you, we won’t have a choice, so please ensure you communicate with us.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse17">
+						What happens if I don’t pay my loan?
+					</a>
+				</div>
+				<div id="collapse17" class="accordion-body collapse">
+					<div class="accordion-inner">
+						We will give you as much as 3 months to make payment to us. Should we not receive any money from you in that time, we will have no choice but to hand your account over to a legal collections firm. The collection firm adds extra interest and fees which makes your loan very expensive. This will also affect your credit record, as you will be blacklisted by the credit bureaus. This means that other credit providers may refuse to lend you money, it may also affect your finding a job as employers can check your credit record.
+					</div>
+				</div>
+			</div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse15">
+                        Who do i contact if i am handed over?
+                    </a>
+                </div>
+                <div id="collapse15" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        Please contact our call centre on {} who will provide you with the details of the debt collection agency who handled your account.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle fc-beta" data-toggle="collapse" data-parent="#accordion2" href="#collapse18">
+						How long is my Atlas quote valid for?
+					</a>
+				</div>
+				<div id="collapse18" class="accordion-body collapse">
+					<div class="accordion-inner">
+						Your quote is valid for XX days – we will even send you a daily reminder. Once the quote has expired you will have to go through the application process again.
+					</div>
+				</div>
+			</div>
+		</div>     
+        <div class="row cf">
+            <div class="col md-1-2">
+                <div class="pr-alpha xsm-no-padding">
+                    <h2 class="fc-beta">Send us a message</h2>
+                    @using (Html.NgBeginForm(
+                        htmlAttributes: new Dictionary<string, object>()
+                        {
+                            { "f8-initialize-model", null }, { "name", "form" }
+                        }
+                    ))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+
+                        <div class="row cf">
+                            <div class="field cf">
+                                <div class="col col-4 pr-alpha">
+                                    @Html.LabelFor(x => x.Name, new { @class = "field-label" })
+                                </div>
+                                <div class="col col-8">
+                                    @Html.NgTextBoxFor(x => x.Name, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(x => x.Name)
+                            </div>
+                            <div class="field cf">
+                                <div class="col col-4 pr-alpha">
+                                    @Html.LabelFor(x => x.Email, new { @class = "field-label" })
+                                </div>
+                                <div class="col col-8">
+                                    @Html.NgTextBoxFor(x => x.Email, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(x => x.Email)
+                            </div>
+                            <div class="field cf">
+                                <div class="col col-4 pr-alpha">
+                                    @Html.LabelFor(x => x.CellNo, new { @class = "field-label" })
+                                </div>
+                                <div class="col col-8">
+                                    @Html.NgTextBoxFor(x => x.CellNo, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(x => x.CellNo)
+                            </div>
+                        </div>
+
+                        @Html.TextAreaFor(x => x.Question, new { @class = "d-block", placeholder = "Question", rows = 6 })
+
+                        <div class="field">
+                            <strong class="mr-alpha">How should we reply to you?</strong>
+                            @Html.NgRadioButtonFor(x => x.PreferredContact, Atlas.Online.Web.Models.PreferredContact.Email, new { @class = "visuallyhidden", id = "PreferredContactEmail", @checked = "checked" })
+                            <label class="field-label mr-micro" for="PreferredContactEmail"><span class="icon radio-custom visuallyhidden-ie8"></span> Please email me</label>
+                            @Html.NgRadioButtonFor(x => x.PreferredContact, Atlas.Online.Web.Models.PreferredContact.Call, new { @class = "visuallyhidden", id = "PreferredContactCall" })
+                            <label class="field-label" for="PreferredContactCall"><span class="icon radio-custom visuallyhidden-ie8"></span> Please call me</label>
+                        </div>
+
+                        <div class="ar">
+                            <label for="submit" class="btn btn-right mb-none" ng-class="{disabled: form.$invalid}">
+                                <input id="submit" type="submit" value="Send Question">
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col xsm-padding-top-30 md-1-2">
+                <div class="bd-alpha-ltr brad-gamma bgc-alpha-ltst p-alpha ml-alpha xsm-no-margin">
+                    <img class="mb-alpha" src="@Url.Content("~/Assets/img/need-help.png")" alt="Need Help? 0800 204 679 - Customer Care hotline. Available week days 9am to 5pm" width="274" height="84">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

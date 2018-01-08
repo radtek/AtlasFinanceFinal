@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{29E99207-61D1-4A39-AA9A-D18E28F154A9}"
+	ProjectSection(SolutionItems) = preProject
+		WE2013-settings.xml = WE2013-settings.xml
+		WebEssentials-Settings.json = WebEssentials-Settings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FEF6F33B-1162-4624-BA54-5D20EDBC1533}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcon", "Falcon\Falcon.csproj", "{376675AC-C76F-4EBD-A1AC-C617370E6298}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MembershipReboot", "MembershipReboot", "{EE95D97E-8D9D-4AF9-957D-184CB5F87B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrockAllen.MembershipReboot.Nh", "BrockAllen.MembershipReboot.Nh\BrockAllen.MembershipReboot.Nh.csproj", "{E53D1E50-194F-445F-9477-FCBC3E6DA824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrockAllen.MembershipReboot", "BrockAllen.MembershipReboot\BrockAllen.MembershipReboot.csproj", "{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Atlas.Core", "Atlas.Core", "{B6FE1EFD-7CDA-4B1A-AF61-C74A223E2967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Enumerators", "..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj", "{07FC6272-5FA2-45A7-A99C-062EC5B0C205}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6C3B10B6-64B1-4641-BBAA-0627D10E69B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcon.Gyrkin.Library", "..\..\Libraries\Falcon\Falcon.Gyrkin.Library\Falcon.Gyrkin.Library.csproj", "{1D653E2F-376D-461D-BB5B-329B458D6BDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Common", "..\..\Libraries\Atlas.Common\Atlas.Common.csproj", "{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{376675AC-C76F-4EBD-A1AC-C617370E6298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376675AC-C76F-4EBD-A1AC-C617370E6298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376675AC-C76F-4EBD-A1AC-C617370E6298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376675AC-C76F-4EBD-A1AC-C617370E6298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53D1E50-194F-445F-9477-FCBC3E6DA824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53D1E50-194F-445F-9477-FCBC3E6DA824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53D1E50-194F-445F-9477-FCBC3E6DA824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53D1E50-194F-445F-9477-FCBC3E6DA824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D653E2F-376D-461D-BB5B-329B458D6BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D653E2F-376D-461D-BB5B-329B458D6BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D653E2F-376D-461D-BB5B-329B458D6BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D653E2F-376D-461D-BB5B-329B458D6BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E53D1E50-194F-445F-9477-FCBC3E6DA824} = {EE95D97E-8D9D-4AF9-957D-184CB5F87B76}
+		{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA} = {EE95D97E-8D9D-4AF9-957D-184CB5F87B76}
+		{07FC6272-5FA2-45A7-A99C-062EC5B0C205} = {B6FE1EFD-7CDA-4B1A-AF61-C74A223E2967}
+		{1D653E2F-376D-461D-BB5B-329B458D6BDE} = {6C3B10B6-64B1-4641-BBAA-0627D10E69B5}
+		{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391} = {B6FE1EFD-7CDA-4B1A-AF61-C74A223E2967}
+	EndGlobalSection
+EndGlobal

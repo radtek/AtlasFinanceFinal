@@ -1,0 +1,97 @@
+﻿@using Atlas.Online.Web.Helpers
+@using Atlas.Online.Web.Extensions.Flash
+@using Atlas.Online.Web.Security
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en" @Ng.App(this)><![endif]-->
+<!--[if IE 9]><html class="no-js ie9 oldie" lang="en" @Ng.App(this)>><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en" @Ng.App(this)><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+        <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+        <title>
+            @if (!String.IsNullOrEmpty(@ViewBag.Title))
+            {
+                @ViewBag.Title
+                @Html.Raw(" | ")
+            }
+            Atlas Online | Short-Term Loans | Online Loans
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="@ViewBag.MetaDescription">
+        <meta name="keywords" content="@ViewBag.MetaKeywords" />
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="msapplication-TileImage" content="apple-touch-icon-144x144-precomposed.png"/>
+        @* HTML5 shim, for IE6-8 support of HTML elements *@
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+        <!--[if ! lte IE 7]><!-->
+            @Styles.Render("~/assets/bundles/css")
+		<!--<![endif]-->
+        <link rel="SHORTCUT ICON" href="@Url.Content("~/Assets/img/favicon.ico")" type="image/x-icon" />
+        <!--[if lte IE 7]>
+		    <link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+		<![endif]-->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css" rel="stylesheet" />
+	</head>
+    <body>
+        @Html.Partial("_TagManager")
+        <!--[if lte IE 8]>
+		    <div class="wrap cf">
+			    <div class="alert alert-danger">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a modern browser</a> to experience this site.</div>
+		    </div>
+		<![endif]-->
+        @if (Html.HasAlerts())
+        {
+            <div class="fixed-alerts anim-slide anim-slide-top anim-slide-top-hide">
+                @Html.Alerts(classes: "wrap pr-beta", closeButton: true)
+            </div>
+        }
+        
+        <header class="bgc-beta bgi-gr-tb-alpha xptb-alpha">
+            <div class="wrap cf">
+
+                <div class="logo-container cf">
+                    <a href="/"><img class="logo" src="@Url.Content("~/Assets/img/atlas-online-logo.png")" alt="Atlas Online logo" width="143" height="95"></a>
+                </div>
+
+                @Html.Partial("_NavPartial")
+
+            </div>
+        </header>
+
+		<div class="sub-header sub-header-default"></div>
+
+		<div class="area-content bgi-gr-tb-ntrl-max">
+			<div class="wrap cf">
+				<div class="container-primary bgc-ntrl-min pos-r postn-kilo @ViewBag.classContainerPrimary">
+					@RenderBody()
+				</div>
+			</div>
+        </div>
+
+        <div class="area-footer bgc-alpha-ltst bgi-shadow-circle bdb-beta pt-beta">
+            <div class="wrap cf ac">
+                <p class="mb-beta">
+                    All Rights Reserved | &copy; @DateTime.Now.Year Atlas Finance PTY (Ltd). Company Reg No: 2007/028142/07.<br/>
+                    <a class="d-iblock ml-alpha" href="@Url.Action("TermsAndConditions", "Home")">Terms and Conditions</a>
+                    <a class="d-iblock ml-alpha" href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a>
+                </p>
+
+                <div class="mb-gamma">
+                    <a class="mr-alpha d-iblock va-b" href="http://mfsa.net"><img src="@Url.Content("~/Assets/img/footer/microfinance-sa-logo.png")"></a>
+					<a class="mr-alpha d-iblock va-b" href="http://ncr.org.za"><img src="@Url.Content("~/Assets/img/footer/national-credit-regulator-logo.png")"></a>
+                    <script type="text/javascript" src="https://seal.thawte.com/getthawteseal?host_name=www.atlasonline.co.za&amp;size=M&amp;lang=en"></script>
+                </div>
+
+            </div>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        @* StackExchange.Profiling.MiniProfiler.RenderIncludes() *@
+    </body>
+</html>

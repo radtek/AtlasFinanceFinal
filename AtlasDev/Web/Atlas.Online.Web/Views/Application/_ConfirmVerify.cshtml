@@ -1,0 +1,124 @@
+﻿@model Atlas.Online.Web.Models.Steps.ConfirmVerifyStep
+
+@using Atlas.Online.Web.Extensions;
+@using Atlas.Online.Web.Extensions.Ng;
+
+@using (Html.NgBeginForm(
+  method: FormMethod.Post,
+  prefixNgModel: "data",
+  htmlAttributes: new Dictionary<string, object>() {
+   { "name", "form" }, { "novalidate", "novalidate" }, { "autocomplete", "off" }
+  }))
+{  
+  
+  <p class="fc-beta mt-none fs-zeta">Please check the below information and confirm the details are correct.</p>
+  if(ViewBag.PassedCutOff) {
+    @Html.Raw("<strong class='ac d-block'>"+ViewBag.Application_PassedCutOff+"</strong>")  
+  }
+  <h4 class="fc-beta text-deco-sideline mb-alpha">Bank details</h4>
+  <div class="row cf mb-gamma">
+    <div class="col md-1-2 sm-no-padding pr-alpha">
+      <div class="row row-ib-cols row-ib-cols-va-m cf">
+        <div class="field cf">
+          <div class="col sm-1-3 pr-alpha">
+            @Html.LabelFor(m => m.BankDetail.BankName, new { @class = "field-label" })
+          </div><!-- .col -->
+          <div class="col sm-2-3 field-label">
+            @Html.DisplayTextFor(m => m.BankDetail.BankName)
+          </div><!-- .col -->
+        </div>
+        <div class="field cf">
+          <div class="col sm-1-3 pr-alpha">
+            @Html.LabelFor(m => m.BankDetail.AccountType, new { @class = "field-label" })
+          </div><!-- .col -->
+          <div class="col sm-2-3 field-label">
+            @Html.DisplayTextFor(m => m.BankDetail.AccountType)
+          </div><!-- .col -->
+        </div>
+        <div class="field cf">
+          <div class="col sm-1-3 pr-alpha">
+            @Html.LabelFor(m => m.BankDetail.AccountHolder, new { @class = "field-label" })
+          </div><!-- .col -->
+          <div class="col sm-2-3 field-label">
+            @Html.DisplayTextFor(m => m.BankDetail.AccountHolder)
+          </div><!-- .col -->
+        </div>
+      </div><!-- .row -->
+    </div><!-- .col -->
+
+    <div class="col md-1-2 sm-no-padding pl-alpha">
+      <div class="row row-ib-cols row-ib-cols-va-m cf">
+
+        <div class="field cf">
+          <div class="col sm-1-3 pr-alpha">
+            @Html.LabelFor(m => m.BankDetail.AccountNo, new { @class = "field-label" })
+          </div><!-- .col -->
+          <div class="col sm-2-3 field-label">
+            @Html.DisplayTextFor(m => m.BankDetail.AccountNo)
+          </div><!-- .col -->
+        </div>
+
+        <div class="field cf">
+          <div class="col sm-1-3 va-t pr-alpha">
+            <label for="BankPeriod" class="field-label">How long have you had the account?</label>
+          </div><!-- .col -->
+          <div class="col sm-2-3 field-label">
+            @Html.DisplayTextFor(m => m.BankDetail.BankPeriod)
+          </div><!-- .col -->
+        </div>
+      </div><!-- .row -->
+    </div>  <!-- .col -->
+    <div class="cf"></div>
+  </div><!-- .row -->
+  <h4 class="fc-beta text-deco-sideline mb-alpha">Loan</h4>
+  <div class="row cf mb-gamma">
+
+	  <div class="col md-1-2 sm-no-padding pr-alpha">
+		  <div class="row row-ib-cols cf">
+
+			  <div class="col sm-1-3 pr-alpha">
+				  <strong class="fc-beta-dk">Loan amount</strong>
+			  </div><!-- .col -->
+			  <div class="col sm-2-3 mb-beta">
+          @Html.DisplayFormatFor(m => m.Loan.Amount, "{0:C0}")
+			  </div><!-- .col -->
+
+			  <div class="col sm-1-3 pr-alpha">
+				  <strong class="fc-beta-dk">Repayment amount</strong>
+			  </div><!-- .col -->
+			  <div class="col sm-2-3 mb-beta ng-cloak">
+				  {{ repaymentAmount | f8currency:'R ':2 }}
+			  </div><!-- .col -->
+
+			  <div class="col sm-1-3 pr-alpha">
+				  <strong class="fc-beta-dk">Reason for loan</strong>
+			  </div><!-- .col -->
+			  <div class="col sm-2-3 mb-beta">
+				  @Html.DisplayEnumFor(m => m.Loan.Reason)
+			  </div><!-- .col -->
+
+		  </div><!-- .row -->
+	  </div><!-- .col -->
+
+	  <div class="col md-1-2 sm-no-padding pl-alpha">
+		  <div class="row row-ib-cols cf">
+
+			  <div class="col sm-1-3 pr-alpha">
+				  <strong class="fc-beta-dk">Repayment date</strong>
+			  </div><!-- .col -->
+			  <div class="col sm-2-3 mb-beta">
+				  @Html.DisplayDateTimeFor(m => m.Loan.RepaymentDate)
+			  </div><!-- .col -->
+
+			  <div class="col sm-1-3 pr-alpha">
+				  <strong class="fc-beta-dk">Loan period</strong>
+			  </div><!-- .col -->
+			  <div class="col sm-2-3 mb-beta">
+				  @Html.DisplayFormatFor(m => m.Loan.Period, "{0} Days")
+			  </div><!-- .col -->
+
+		  </div><!-- .row -->
+	  </div><!-- .col -->
+  </div><!-- .row -->
+
+}

@@ -1,0 +1,133 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Account Detail";
+}
+<style type="text/css">
+  .selected {
+    background-color: #fafcab !important;
+  }
+</style>
+
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="page-content" ng-controller="AccountController" ng-init="init(@Html.Raw(ViewBag.id), @Html.Raw(ViewBag.personId))" ng-cloak id="AccountDetail">
+  <div class="row" ng-show="!isLoaded">
+    <div class="col-lg-12">
+      <div class="">
+        <center><img src="~/assets/img/icon_loading.gif" /></center>
+      </div>
+    </div>
+  </div>
+  <div ng-show="isLoaded">
+    <div class="tabbable-custom">
+      <ul class="nav nav-tabs" id="accMainTab">
+        <li class="">
+          <a href="#ad" data-toggle="tab">
+            Account Details
+          </a>
+        </li>
+        <li class="">
+          <a href="#pd" data-toggle="tab">
+            Client Details
+          </a>
+        </li>
+        <li class="">
+          <a href="#af" data-toggle="tab">
+            Affordability
+          </a>
+        </li>
+        <li class="">
+          <a href="#qu" data-toggle="tab">
+            Quotation
+          </a>
+        </li>
+        <li class="">
+          <a href="#wf" data-toggle="tab">
+            Workflow
+          </a>
+        </li>
+        <li class="">
+          <a href="#be" data-toggle="tab">
+            Enquiries
+          </a>
+        </li>
+        <li class="">
+          <a href="#po" data-toggle="tab">
+            Payouts
+          </a>
+        </li>
+        <li class="">
+          <a href="#na" data-toggle="tab">
+            Naedo
+          </a>
+        </li>
+        <li class="">
+          <a href="#dc" data-toggle="tab">
+            Documents
+          </a>
+        </li>
+        <li class="">
+          <a href="#n" data-toggle="tab">
+            Notes
+          </a>
+        </li>
+        <li class="" ng-if="ao == true">
+          <a href="#rh" data-toggle="tab">
+            Route History 
+          </a>
+         
+        </li>
+       
+        <label for="cachUpdateDate" style="font-size:smaller;color:#C8C8C8;" class="pull-right pad-buffer-right">
+          Last Updated:
+          <span id="cachUpdateDate" class="time" style="font-size:smaller;color:#C8C8C8;" am-time-ago="account.CacheDate">
+            {{account.CacheDate}}
+          </span>
+        </label>
+
+</ul>
+      <div class="tab-content">
+        <div class="tab-pane" id="ad">
+          @{Html.RenderPartial("_AccountDetails");}
+        </div>
+        <div class="tab-pane" id="pd">
+          @{Html.RenderPartial("_PersonalDetails");}
+        </div>
+        <div class="tab-pane" id="af">
+          @{Html.RenderPartial("_Affordability");}
+        </div>
+        <div class="tab-pane" id="qu">
+          @{Html.RenderPartial("_Quotation");}
+        </div>
+        <div class="tab-pane" id="wf">
+          @{Html.RenderPartial("_Workflow");}
+        </div>
+        <div class="tab-pane" id="be">
+          @{Html.RenderPartial("_Enquiries");}
+        </div>
+        <div class="tab-pane" id="po">
+          @{Html.RenderPartial("_Payouts");}
+        </div>
+        <div class="tab-pane" id="na">
+          @{Html.RenderPartial("_Naedo");}
+        </div>
+        <div class="tab-pane" id="n">
+          @{Html.RenderPartial("_Notes");}
+        </div>
+        <div class="tab-pane" id="dc" ng-hide="true">
+          @{Html.RenderPartial("_Documents");}
+        </div>
+        <div class="tab-pane" id="dc" ng-hide="true">
+          @{Html.RenderPartial("_RouteHistory");}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@section Scripts {
+  
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+
+}
+@section AccountSearchCSS{
+  @Styles.Render("~/AccountSearchCSS")
+}

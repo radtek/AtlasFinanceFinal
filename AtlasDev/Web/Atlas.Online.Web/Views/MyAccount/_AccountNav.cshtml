@@ -1,0 +1,57 @@
+﻿<div id="AccountNavigation" class="bgc-ntrl-min bgi-gr-tb-alpha plr-beta bdb-alpha-ltr cf xsm-p-beta xsm-no-padding-top xsm-no-padding-bottom account-navigation">
+	<p class="fs-beta fc-beta ff-alpha mb-none">Logged in</p>
+	<strong class="fc-alpha-dk d-iblock mb-alpha">as @ViewBag.Client.Firstname @ViewBag.Client.Surname</strong>
+
+    <span class="trigger ion-navicon-round"></span>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a class="fc-alpha-lt d-block" href="#/" ng-class="navClass('CurrentLoan')">Current Loan</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/LoanHistory" ng-class="navClass('LoanHistory')">Loan History</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/PersonalDetails" ng-class="navClass('PersonalDetails')">Personal details</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/BankDetails" ng-class="navClass('BankDetails')">Bank details</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/Login" ng-class="navClass('Login')">Login details</a></li>
+            @if (ViewBag.CanApply)
+            {
+                <a href="@Url.Action("Index", "Application")" class="btn vertical-center btn-right d-block">Apply for loan</a>
+            }
+            @Html.Partial("_LogoutPartial", new Atlas.Online.Web.Models.MessageBoxModel.Button() { Classes = "btn btn-right vertical-center d-block" })
+        </ul>
+    </div>
+
+</div>
+
+<div class="bgc-ntrl-min bgi-gr-tb-alpha cf fs-zeta pt-alpha desktop-menu">
+    
+    <div class="plr-beta xsm-p-beta xsm-no-padding-top xsm-no-padding-bottom">
+        <ul class="list-reset lh-beta">        
+            <li><a class="fc-alpha-lt d-block" href="#/" ng-class="navClass('CurrentLoan')">Current Loan</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/LoanHistory" ng-class="navClass('LoanHistory')">Loan History</a></li>
+        </ul>
+    </div>
+
+    <hr class="hr-dotted">
+
+    <div class="plr-beta xsm-p-beta xsm-no-padding-top xsm-no-padding-bottom">
+        <ul class="list-reset mb-beta lh-beta">        
+            <li><a class="fc-alpha-lt d-block" href="#/PersonalDetails" ng-class="navClass('PersonalDetails')">Personal details</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/BankDetails" ng-class="navClass('BankDetails')">Bank details</a></li>
+            <li><a class="fc-alpha-lt d-block" href="#/Login" ng-class="navClass('Login')">Login details</a></li>
+        </ul>
+    </div>
+
+    @if (ViewBag.CanApply)
+    {
+        <hr class="hr-dotted">  
+        <div class="plr-beta xsm-p-beta xsm-no-padding-top xsm-no-padding-bottom">
+            <a href="@Url.Action("Index", "Application")" class="btn vertical-center btn-right d-block">Apply for loan</a>
+        </div>
+    }
+
+    <hr class="hr-dotted">
+
+    <div class="plr-beta xsm-p-beta xsm-no-padding-top xsm-no-padding-bottom">
+        @Html.Partial("_LogoutPartial", new Atlas.Online.Web.Models.MessageBoxModel.Button() { Classes = "btn btn-right vertical-center d-block" })
+    </div>
+
+</div>

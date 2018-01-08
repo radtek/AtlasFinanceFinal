@@ -1,0 +1,50 @@
+﻿<div ng-controller="AccountNotesController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="row ">
+          <div class="portlet">
+            <div class="portlet-title line">
+            </div>
+            <div class="portlet-body" id="chats" style="display: block;">
+              <div class="scrollDiv" style="position: relative; overflow: hidden; width: auto; height: 435px;">
+                <div scroll-glue ng-model="glued" class="scroller" style="height: 435px; overflow: hidden; width: auto; position:relative;" data-always-visible="1" data-rail-visible1="1" id="test">
+                  <ul class="chats">
+                    <li ng-repeat="note in notes | orderBy:'NoteId'" ng-class="personId == note.CreateUserId ? 'out' : 'in'" id="{{ note.NoteId }}">
+                      <div class="message" style="background-color : transparent;" ng-init="highlight()">
+                        <span class=" arrow">
+                        </span>
+                        <a href="#" class="name">
+                          {{ note.CreateUser }}
+                        </a>
+                        <span class="time" am-time-ago="note.CreateDate">
+                          {{ note.CreateDate }}
+                        </span>
+                        <span class="body">
+                          {{ note.Note }}
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chat-form">
+                <div class="input-cont">
+                  <input class="form-control" id="btnAddNote" ng-enter="addNote();" ng-model="newNote" type="text" placeholder="Type a message here...">
+                </div>
+                <div class="btn-cont" ng-click="addNote();">
+                  <span class="arrow">
+                  </span>
+                  <a href="" class="btn blue icn-only">
+                    <i class="fa fa-check icon-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+</div>
+

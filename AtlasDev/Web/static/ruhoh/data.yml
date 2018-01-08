@@ -1,0 +1,11 @@
+title : Blog Title
+tagline: Blog Tagline
+
+navigation :
+  - pages
+  - about
+
+footer_links :
+  - terms-and-conditions
+  - privacy-policy
+  - contact

@@ -1,0 +1,329 @@
+.btn, .btn-l-hint {
+	position: relative;
+	display: inline-block;
+	background: $clr-beta url(../img/sprite-buttons.png) repeat-x left 0;
+	@include px-and-rem(font-size, 1.5); // 18px
+	font-weight: normal;
+	letter-spacing: 1px;
+	color: $clr-ntrl-min;
+	text-align: center;
+	text-shadow: 0 1px 1px hsla(0, 0%, 0%, .5);
+	line-height: 1;
+	white-space: nowrap;
+	min-height: 40px;
+	height: 40px;
+	max-height: 40px;
+	vertical-align: top;
+	@include px-and-rem(margin-bottom, 1.5);
+	padding: .6em 1em;
+	border: 0;
+	@include transition(color 250ms ease-in-out);
+	cursor: pointer;
+	border-radius: $bradius-delta;
+	overflow: visible;
+}
+
+.btn-alpha {
+	background-color: $clr-alpha;
+	background-position: left -360px;
+}
+
+.btn:hover {
+	background-color: $clr-beta-lt;
+	background-position: left -120px;
+	color: $clr-ntrl-min;
+}
+
+.btn-alpha:hover {
+	background-color: $clr-alpha-lt;
+	background-position: left -480px;
+}
+
+.btn:active, .btn-selected, .btn-selected:hover {
+	background-color: $clr-beta-dk;
+	background-position: left -240px;
+	color: $clr-ntrl-min;
+	@include transition(all 0);
+}
+
+.btn-alpha:active, .btn-alpha.btn-selected, .btn-alpha.btn-selected:hover {
+	background-color: $clr-alpha-dk;
+	background-position: left -600px;
+}
+
+.btn-selected { cursor: default;}
+
+.btn[disabled], .btn.disabled,
+.btn[disabled]:hover, .btn.disabled:hover,
+.btn[disabled]:active, .btn.disabled:hover {
+	color: $clr-alpha-ltr;
+	color: transparentize($clr-alpha-ltr, .35);
+	text-shadow: none;
+	cursor: default;
+}
+.btn[disabled], .btn.disabled,
+.btn:hover[disabled], .btn.disabled:hover,
+.btn:active[disabled], .btn.disabled:active {
+	background-color: $clr-beta-lt;
+	background-position: left -120px;
+}
+.btn-alpha[disabled], .btn-alpha.disabled,
+.btn-alpha:hover[disabled], .btn-alpha.disabled:hover,
+.btn-alpha:active[disabled], .btn-alpha.disabled:active {
+	background-color: $clr-alpha-lt;
+	background-position: left -480px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 &mButtons
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* buttons with arrows */
+.btn-right {
+	right: .75em;
+	margin-left: .75em;
+}
+
+.btn-left {
+	margin-right: .75em;
+	left: .75em;
+}
+
+.btn-right:after,
+.btn-left:before {
+	position: absolute;
+	background: transparent url(../img/sprite-buttons.png) no-repeat;
+	content: "";
+	width: 11px;
+	top: 0;
+	bottom: 0;
+}
+
+.btn-right:after {
+	background-position: left -40px;
+	right: -9px;
+}
+
+.btn-right-alpha:after { background-position: left -400px;}
+
+.btn-left:before {
+	background-position: right -80px;
+	left: -9px;
+}
+
+.btn-right:hover:after { background-position: left -160px;}
+.btn-right:active:after { background-position: left -280px;}
+
+.btn-left:hover:before { background-position: right -200px;}
+.btn-left:active:before { background-position: right -320px;}
+
+.btn-right[disabled]:after, .btn-right.disabled:after,
+.btn-right:hover[disabled]:after, .btn-right.disabled:hover:after,
+.btn-right:active[disabled]:after, .btn-right.disabled:active:after {
+	background-position: left -160px;
+}
+.btn-left[disabled]:before, .btn-left.disabled:before,
+.btn-left:hover[disabled]:before, .btn-left.disabled:hover:before,
+.btn-left:active[disabled]:before, .btn-left.disabled:active:before {
+	background-position: right -200px;
+}
+
+/* alpha button arrows------------------------------------------------------ */
+.btn-left-alpha:before { background-position: right -440px;}
+
+.btn-right-alpha:hover:after { background-position: left -520px;}
+.btn-right-alpha:active:after { background-position: left -640px;}
+
+.btn-left-alpha:hover:before { background-position: right -560px;}
+.btn-left-alpha:active:before { background-position: right -680px;}
+
+.btn-right-alpha[disabled]:after, .btn-right-alpha.disabled:after,
+.btn-right-alpha:hover[disabled]:after, .btn-right-alpha.disabled:hover:after,
+.btn-right-alpha:active[disabled]:after, .btn-right-alpha.disabled:active:after {
+	background-position: left -520px;
+}
+.btn-left-alpha[disabled]:before, .btn-left-alpha.disabled:before,
+.btn-left-alpha:hover[disabled]:before, .btn-left-alpha.disabled:hover:before,
+.btn-left-alpha:active[disabled]:before, .btn-left-alpha.disabled:active:before {
+	background-position: right -560px;
+}
+
+/* large buttons ----------------------------------------------------------- */
+.btn-l, .btn-l-hint {
+	background-color: $clr-beta;
+	background-position: left -720px;
+	@include px-and-rem(font-size, 1.667); // 20px
+	min-height: 50px;
+	height: 50px;
+	max-height: 50px;
+	padding: .75em 1em;
+}
+
+.btn-l-right:after,
+.btn-l-left:before {
+	width: 16px;
+}
+
+.btn-l:hover { background-position: left -870px;}
+
+.btn-l:active, .btn-selected-l, .btn-selected-l:hover {	background-position: left -1020px;}
+
+.btn-l-left:before { background-position: left -700px;}
+
+.btn-l-right:after {
+	background-position: left -770px;
+	right: -14px;
+}
+.btn-l-left:before {
+	background-position: left -820px;
+	left: -14px;
+}
+
+.btn-l-right:hover:after { background-position: left -920px;}
+.btn-l-right:active:after { background-position: left -1070px;}
+
+.btn-l-left:hover:before { background-position: left -970px;}
+.btn-l-left:active:before { background-position: left -1120px;}
+
+.btn-l[disabled], .btn-l.disabled,
+.btn-l:hover[disabled], .btn-l.disabled:hover,
+.btn-l:active[disabled], .btn-l.disabled:active {
+	background-position: left -870px;
+}
+
+.btn-l-right[disabled]:after, .btn-l-right.disabled:after,
+.btn-l-right:hover[disabled]:after, .btn-l-right.disabled:hover:after,
+.btn-l-right:active[disabled]:after, .btn-l-right.disabled:active:after {
+	background-position: left -920px;
+}
+.btn-l-left[disabled]:before, .btn-l-left.disabled:before,
+.btn-l-left:hover[disabled]:before, .btn-l-left.disabled:hover:before,
+.btn-l-left:active[disabled]:before, .btn-l-left.disabled:active:before {
+	background-position: right -970px;
+}
+
+/* btn alpha large */
+.btn-l-alpha { background-position: left -1320px;}
+
+.btn-l-right-alpha:after { background-position: left -1370px;}
+.btn-l-alpha:hover { background-position: left -1470px;}
+
+.btn-l-alpha:active, .btn-l-alpha.btn-selected, .btn-l-alpha.btn-selected:hover {
+	background-position: left -1620px;
+}
+
+.btn-l-left-alpha:before { background-position: left -1420px;}
+
+.btn-l-right-alpha:hover:after { background-position: left -1520px;}
+.btn-l-right-alpha:active:after { background-position: left -1670px;}
+
+.btn-l-left-alpha:hover:before { background-position: left -1570px;}
+.btn-l-left-alpha:active:before { background-position: left -1720px;}
+
+.btn-l-alpha[disabled], .btn-l-alpha.disabled,
+.btn-l-alpha:hover[disabled], .btn-l-alpha.disabled:hover,
+.btn-l-alpha:active[disabled], .btn-l-alpha.disabled:active {
+	background-position: right -1470px;
+}
+
+.btn-l-right-alpha[disabled]:after, .btn-l-right-alpha.disabled:after,
+.btn-l-right-alpha:hover[disabled]:after, .btn-l-right-alpha.disabled:hover:after,
+.btn-l-right-alpha:active[disabled]:after, .btn-l-right-alpha.disabled:active:after {
+	background-position: left -1520px;
+}
+.btn-l-left-alpha[disabled]:before, .btn-l-left-alpha.disabled:before,
+.btn-l-left-alpha:hover[disabled]:before, .btn-l-left-alpha.disabled:hover:before,
+.btn-l-left-alpha:active[disabled]:before, .btn-l-left-alpha.disabled:active:before {
+	background-position: right -1570px;
+}
+
+/* button hints - large buttons only ---------------------------------------- */
+.btn-l-hint {
+	position: relative;
+	background-position: left -1170px;
+	margin-bottom: 0;
+	top: -.75em;
+}
+
+.btn-l-hint-alpha {	background-position: left -1770px;}
+
+.btn-l-hint-left { right: -1em;}
+.btn-l-hint-right { left: -1em;}
+
+.btn-l-hint-left:before,
+.btn-l-hint-right:after {
+	position: absolute;
+	background: transparent url(../img/sprite-buttons.png) no-repeat;
+	width: 16px;
+	content: "";
+	top: 0;
+	bottom: 0;
+}
+
+.btn-l-hint-right:after {
+	background-position: left -1220px;
+	right: -14px;
+}
+.btn-l-hint-left:before {
+	background-position: right -1270px;
+	left: -14px;
+}
+
+.btn-l-hint-right-alpha:after { background-position: left -1820px;}
+.btn-l-hint-left-alpha:before { background-position: right -1870px;}
+
+.disabled .btn-l-hint,
+[disabled] .btn-l-hint { cursor: default;}
+
+
+/* submit buttons ---------------------------------------------------------- */
+.btn input[type="submit"] {
+	line-height: 1.2;
+	background-color: transparent;
+	color: $clr-ntrl-min;
+	text-shadow: 0 1px 1px hsla(0, 0%, 0%, .5);
+	font-weight: normal;
+	letter-spacing: 1px;
+	margin: 0;
+	margin-top: -.15em;
+	padding: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+/* round buttons - separate from above buttons */
+.btn-round {
+	position: relative;
+	display: inline-block;
+	background: url(../img/button-round.png) no-repeat center center;
+	@include px-and-rem(font-size, 2.333); // 28px
+	color: $clr-ntrl-min;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-shadow: 0 1px 1px hsla(0, 0%, 0%, .5);
+	line-height: 1;
+	white-space: nowrap;
+	width: 144px;
+	height: 140px;
+	text-align: center;
+	@include px-and-rem(margin-bottom, 1.5);
+	padding: 1.6em 0 0;
+	border: 0;
+	@include transition(all 250ms ease-in-out);
+	cursor: pointer;
+}
+
+.btn-round:hover { color: $clr-beta-ltst;}
+.btn-round:active {
+	color: $clr-beta-ltr;
+	@include transition(all 0);
+}
+
+.btn-round.disabled,
+.btn-round.disabled:hover,
+.btn-round.disabled:active {
+	color: $clr-alpha-ltr;
+	color: transparentize($clr-alpha-ltr, .35);
+	opacity: .75;
+	cursor: default;
+}

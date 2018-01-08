@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{549E38DC-8D90-4CED-BF3F-48A53766823C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Online.Data</RootNamespace>
+    <AssemblyName>Atlas.Online.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Atlas.Online.Web.Service\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Web\Atlas.Online.Web\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Web\Atlas.Online.Web\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainMapper.cs" />
+    <Compile Include="Enumerators\General.cs" />
+    <Compile Include="Helpers\XpoHelper.cs" />
+    <Compile Include="Models\Definitions\Client.cs" />
+    <Compile Include="Models\Definitions\Application.cs" />
+    <Compile Include="Models\Definitions\Address.cs" />
+    <Compile Include="Models\Definitions\BankDetail.cs" />
+    <Compile Include="Models\Definitions\Contact.cs" />
+    <Compile Include="Models\Definitions\ContactType.cs" />
+    <Compile Include="Models\Definitions\Bank.cs" />
+    <Compile Include="Models\Definitions\BankAccountType.cs" />
+    <Compile Include="Models\Definitions\BankPeriod.cs" />
+    <Compile Include="Models\Definitions\AddressType.cs" />
+    <Compile Include="Models\Definitions\Affordability.cs" />
+    <Compile Include="Models\Definitions\ApplicationSettlement.cs" />
+    <Compile Include="Models\Definitions\Holiday.cs" />
+    <Compile Include="Models\Definitions\NotificationLog.cs" />
+    <Compile Include="Models\Definitions\OTPRequest.cs" />
+    <Compile Include="Models\Definitions\SalaryType.cs" />
+    <Compile Include="Models\Definitions\Industry.cs" />
+    <Compile Include="Models\Definitions\LoanReason.cs" />
+    <Compile Include="Models\Definitions\Employer.cs" />
+    <Compile Include="Models\Definitions\Ethnicity.cs" />
+    <Compile Include="Models\Definitions\MaritalStatus.cs" />
+    <Compile Include="Models\Definitions\NextOfKin.cs" />
+    <Compile Include="Models\Definitions\Province.cs" />
+    <Compile Include="Models\Definitions\Message.cs" />
+    <Compile Include="Models\Definitions\RouteHistory.cs" />
+    <Compile Include="Models\Definitions\SiteSurvey.cs" />
+    <Compile Include="Models\Definitions\UserProfile.cs" />
+    <Compile Include="Models\Dto\AddressDto.cs" />
+    <Compile Include="Models\Dto\AddressTypeDto.cs" />
+    <Compile Include="Models\Dto\ApplicationDto.cs" />
+    <Compile Include="Models\Dto\BankDto.cs" />
+    <Compile Include="Models\Dto\BankAccountTypeDto.cs" />
+    <Compile Include="Models\Dto\BankDetailDto.cs" />
+    <Compile Include="Models\Dto\BankPeriodDto.cs" />
+    <Compile Include="Models\Dto\ClientDto.cs" />
+    <Compile Include="Models\Dto\ContactDto.cs" />
+    <Compile Include="Models\Dto\ContactTypeDto.cs" />
+    <Compile Include="Models\Dto\AffordabilityDto.cs" />
+    <Compile Include="Models\Dto\ProvinceDto.cs" />
+    <Compile Include="Models\Dto\SiteSurveyDto.cs" />
+    <Compile Include="Models\Dto\LoanRulesDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Online.Web.Common\Atlas.Online.Web.Common.csproj">
+      <Project>{86009074-067c-425a-a14d-8cb05d5c2183}</Project>
+      <Name>Atlas.Online.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\..\..\Web\Atlas.Online.Web\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\..\Web\Atlas.Online.Web\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

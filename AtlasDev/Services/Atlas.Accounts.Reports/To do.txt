@@ -1,0 +1,46 @@
+1. The Daily Tabs are not required.  Only the first Month-To-Date tab is needed and it can be called ‘Aedo_Naedo’
+  a. Add the following columns
+	   i. Swop columns so CLIENT comes before LOAN
+	  ii. Add REGION (Look up the REGIONCODE column in ASBRANCH).  There is also a table REGIONS, which has a column REGIONDESC.  If not too tricky this is more meaningful.  Insert this after the ‘LOAN’ column.
+	 iii. Add the Loan Term after REGION.  This is the LOAN table column ‘LOANMETH’
+	  iv. Add the Quantity after Loan Term. This is the LOAN table column ‘PAYNO’
+	   v. Add the Loan date after the Loan Term.  This is the LOAN table column ‘LOANDATE’
+	  vi. Add the Operator at the end of the report after the LEGAL column (column is ‘OPER’ in trans table).  Look up the first name of the operator in the ASSTMAST table. Unfortunately the ASSTMAST columns OPER and FIRSTNAME are encrypted.
+	 vii. Add the Station at the end of the report after the operator (column is ‘USER’ in TRANS table)
+	viii. Instead of  trtype codes “P” or “G” or “F” show a description instead i.e.:
+			1. F = Refund
+			2. G = Refund
+			3. P = Payment
+	  ix. The GLBANK column is linked to a BANK_ACCT in the GLBANK table for each BRNUM.  If Simple, perhaps we should have a column BANK_ACCT, displayed after the GLBANK column.
+	   x. I noticed that the amounts had huge cent values when you clicked the column to show the ‘sum’ value (i.e. after decimal place).  Do they need to be rounded?
+		   
+2. A second tab called ‘Bank’
+
+  a. The format is the same as the first tab ‘Aedo_Naedo’
+  b. This must show all other Receipts/Refunds excluding:-
+       i. glbank = “NAD” and “NUP”
+	  ii. glbank = “C” for Cash.  Not sure if it is “CSH” in some branches?, but exclude it.
+	 iii. glbank = “ROL”
+	  iv. station = “63”  (this is the Hub) i.e. TRANS table column ‘USER’ must not be 63.
+
+3. A third tab called ‘Hub’
+  a. The format is the same as the first tab ‘Aedo_Naedo’
+  b. This tab must show all Receipts/Refunds done at the Hub (station 63’).  Same GLBANK exclusions as the second tab, but only for station of “63”
+
+4. Automate the delivery time at 4am for Joggie.
+
+5. The recipients must be (Exclude Norman):
+
+  a. All Admin managers
+  b. All Regional Executives
+  c. Anton
+  d. Phillip
+  e. Joggie
+  f. Internal Auditors
+  g. Minda
+  h. Anne
+
+6. They requested sub-totals, but this can be done by the excel user.
+
+ All the auditors, Norman & Minda are very excited to get this report.
+Hope I have listed the requirements easily?

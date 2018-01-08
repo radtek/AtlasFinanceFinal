@@ -1,0 +1,144 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Naedo Batches";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model=" token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="NaedoController" class="ng-cloak" ng-init="init()">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-info animated fadeIn" ng-show="infoBox">
+        <center>{{ message }}</center>
+      </div>
+      <div class="tabbable-custom">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#filter">Filter</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="filter" class="tab-pane active">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="clearfix">
+                  <div class="col-md-2">
+                    <label>Start Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                        <span class="input-group-btn">
+                          <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>End Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;"  comp-datepicker-trigger>
+                        <span class="input-group-btn">
+                          <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer clearfix">
+                <div>
+                  <button ng-click="refresh()" class="btn btn-info pull-right">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table ng-table="naedoParams" class="table ng-cloak">
+          <tr ng-repeat="naedo in $data" ng-click="changeSelection('csNaedoRowSelected',naedo,'naedoTransactions')" ng-class="{selected: naedo.$selected}">
+            <td data-title="'Batch'" class="hidden-sm hidden-xs">
+              <center> {{naedo.BatchId}}</center>
+            </td>
+          
+            <td data-title="'Transmission No'" class="hidden-sm hidden-xs">
+              <center> {{naedo.TransmissionNo}}</center>
+            </td>
+            <td data-title="'Transmission Accepted'" class="hidden-sm hidden-xs">
+              <div ng-show="naedo.TransmissionAccepted">
+                <center><span class="curved-border label label-success curved-border"><i class="fa fa-check"></i></span></center>
+              </div>
+              <div ng-show="!naedo.TransmissionAccepted && naedo.TransmissionAccepted !== null">
+                <center><span class="curved-border label label-danger"><i class="fa fa-times"></i></span></center>
+              </div>
+            </td>
+            <td data-title="'Status'" class="hidden-sm hidden-xs">
+              <center><span class="curved-border" falcon-label condition="naedo.StatusColour"> {{naedo.BatchStatusDescription}}</span></center>
+            </td>
+            <td data-title="'Submit Date'" class="hidden-sm hidden-xs">
+              <center>{{ naedo.SubmitDate | date:'yyyy-MM-dd HH:mm'}}</center>
+            </td>
+            <td data-title="'Create Date'" class="hidden-sm hidden-xs">
+              <center> {{naedo.CreateDate  | date:'yyyy-MM-dd HH:mm'}}</center>
+            </td>
+            <td data-title="'Manage'" class="hidden-sm hidden-xs">
+              <center>
+                <a ng-click="manage(naedo.BatchId)" rel="tooltip" title="Manage"><span class="curved-border label label-info">manage</span></a>
+
+                @if (User.IsInRole("Admin"))
+                  {
+                  <a ng-click="setBatchId(naedo.BatchId)" data-toggle="modal" href="#confirmDelete" rel="tooltip" title="Remove"><span class="curved-border label label-danger">remove</span></a>
+                  }
+                  else
+                  {
+                  <a data-toggle="modal" rel="tooltip" title="Remove"><span class="curved-border label label-danger">remove</span></a>
+                  }
+              </center>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div aria-hidden="true" aria-labelledby="confirmDelLabel" role="dialog" tabindex="-1" id="confirmDelete" class="modal fade" style="overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        @if (User.IsInRole("Admin"))
+        {
+          <text>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Confirm Deletion ?</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you wish to remove this debit order ? {{ batchId }}</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-danger" type="button" ng-click="confirmDeletion(batchId)">Yes</button>
+              <button data-dismiss="modal" class="btn btn-default" type="button">No</button>
+            </div>
+          </text>
+        }
+        else
+        {
+          <text>
+            <div class="modal-header-invalid">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Invalid Operation</h4>
+            </div>
+            <div class="modal-body">
+              <p>You do not have the rights to delete this record!</p>
+            </div>
+          </text>
+        }
+      </div>
+    </div>
+  </div>
+</div>

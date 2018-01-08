@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f0098247-6171-4c3d-a475-8be760affdbb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8200/EmailServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1210ebde-b16d-480a-89dd-8e91d03706fc" SourceId="1" SourceUrl="net.tcp://localhost:8200/EmailServer/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="299a35dd-9979-4532-9256-2fa9e81a4bf9" SourceId="1" SourceUrl="net.tcp://localhost:8200/EmailServer/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ed4d3001-d3aa-400d-b1e7-bdc1ff5b4ad7" SourceId="1" SourceUrl="net.tcp://localhost:8200/EmailServer/mex" />
+    <MetadataFile FileName="Atlas.EmailServer.WCF.Interface.xsd" MetadataType="Schema" ID="b30308f6-c90a-4c68-97f4-69ae7a11d8f9" SourceId="1" SourceUrl="net.tcp://localhost:8200/EmailServer/mex" />
+    <MetadataFile FileName="Atlas.xsd" MetadataType="Schema" ID="028b8041-bca1-4f93-869c-b2a53be551d1" SourceId="1" SourceUrl="net.tcp://localhost:8200/EmailServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

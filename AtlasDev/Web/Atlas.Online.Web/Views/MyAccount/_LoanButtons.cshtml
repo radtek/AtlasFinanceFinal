@@ -1,0 +1,28 @@
+﻿
+<a href="@Url.Action("PaidUpLetter", "Reports")/{{ selectedAppId }}" 
+  ng-click="preventClick($event)" target="_blank"
+  class="d-iblock ac mr-alpha" ng-class="{ disabled : !selectedRow || !canPaidUp }"
+  >
+	<i class="circle-icon-container fc-alpha-ltr fs-mega">
+		<i class="icon icon-mail fc-alpha fs-gamma" ng-class="{ 'fc-alpha-lt': !selectedRow || !canPaidUp }"></i>
+	</i>
+	<div>Paid up Letter</div>
+</a>
+
+<a href="@Url.Action("Contract", "Reports")/{{ selectedAppId }}" 
+  ng-click="preventClick($event)"
+  class="d-iblock ac mr-alpha" ng-class="{ disabled : !selectedRow || !canContract }" target="_blank">
+	<i class="circle-icon-container fc-alpha-ltr fs-mega">
+		<i class="icon icon-letter fc-alpha fs-gamma" ng-class="{ 'fc-alpha-lt': !selectedRow || !canContract }"></i>
+	</i>
+	<div>Contract</div>
+</a>
+
+<a href="@Url.Action("Statement", "Reports")/{{ selectedAppId }}" 
+  ng-click="preventClick($event)"
+  class="d-iblock ac mr-alpha" ng-class="{ disabled : !selectedRow || !canStatement }" target="_blank">
+	<i class="circle-icon-container fc-alpha-ltr fs-mega">
+		<i class="icon icon-notes fc-alpha fs-gamma" ng-class="{ 'fc-alpha-lt': !selectedRow || !canStatement }"></i>
+	</i>
+	<div>Statement</div>
+</a>

@@ -1,0 +1,274 @@
+﻿@model Atlas.Online.Web.Models.Steps.IncomeExpensesStep
+
+@using Atlas.Online.Web.Extensions.Ng;
+
+@using (Html.NgBeginForm(
+  method: FormMethod.Post,
+  prefixNgModel: "data",
+  htmlAttributes: new Dictionary<string, object>() {
+   { "name", "form" }, { "novalidate", "novalidate" }, { "autocomplete", "off" }
+  }))
+{  
+   
+<h4 class="fc-beta text-deco-sideline mb-alpha">Loan</h4>
+ 
+@Html.Partial("_SliderNotifications")
+  
+<div class="row cf mb-gamma" atl-loan-picker>  
+	<div class="col md-1-2 pr-alpha sm-no-padding">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.Loan.Amount, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					@Html.NgTextBoxFor(x => x.Loan.Amount, new Dictionary<string, object>() { 
+            { "class", "d-block"},            
+            {"ng-focus", "isAmountEditing=true"},
+            {"ng-blur", "isAmountEditing=false"},
+          })
+				</div><!-- .col -->
+        @Html.NgValidationMessagesFor(x => x.Loan.Amount)
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.Loan.RepaymentAmount, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					@Html.NgTextBoxFor(x => x.Loan.RepaymentAmount, new Dictionary<string, object>() { 
+            { "class", "d-block"},
+            {"readonly", null},
+            {"tabindex", "-1"}
+          })
+				</div><!-- .col -->
+        @Html.NgValidationMessagesFor(x => x.Loan.RepaymentAmount)
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.Loan.Reason, new { @class = "field-label" })
+          @Html.NgTooltip(title: "The National Credit Act requires this information for statistical purposes.<br>This information will not affect your credit application in any way.")
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+          @Html.NgDropDownListFor(x => x.Loan.Reason, new Dictionary<string, object>() {
+            { "class", "d-block" },
+          })
+				</div><!-- .col -->
+        @Html.NgValidationMessagesFor(x => x.Loan.Reason)
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .col -->
+
+	<div class="col md-1-2 pl-alpha sm-no-padding">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.Loan.Period, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+          @Html.NgTextBoxFor(x => x.Loan.Period,  new Dictionary<string, object>() { 
+            { "class", "d-block"},
+            { "change", "setWorkingDay(true)"},
+            {"ng-focus", "isPeriodEditing=true"},
+            {"ng-blur", "isPeriodEditing=false"},
+          })
+				</div><!-- .col -->
+        @Html.NgValidationMessagesFor(x => x.Loan.Period)
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.Loan.RepaymentDate, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					@Html.NgTextBoxFor(x => x.Loan.RepaymentDate, new Dictionary<string, object>() { 
+            { "class", "d-block"},
+            {"readonly", null},
+            {"ui-date", "dateOptions"}
+          })
+				</div><!-- .col -->     
+        @Html.NgValidationMessagesFor(x => x.Loan.RepaymentDate)   
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .col -->
+
+</div><!-- .row -->
+
+<h4 class="fc-beta text-deco-sideline">Income</h4>
+
+<div class="row cf mb-gamma">
+
+	<div class="col md-1-2 pr-alpha sm-no-padding">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.TotalNetIncome, new { @class = "field-label" })
+          @Html.NgTooltip(title: @"This is the salary amount that goes into your bank account every month. <br>
+                                  It is your basic salary plus overtime and bonuses, less deductions like tax, UIF, <br>
+                                  PAYE and other deductions taken by your payroll administrator.")
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+          @Html.NgTextBoxFor(x => x.TotalNetIncome, new { @class = "d-block" })					
+				</div><!-- .col -->
+				@Html.NgValidationMessagesFor(m => m.TotalNetIncome)
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.OtherIncome, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+          @Html.NgTextBoxFor(x => x.OtherIncome, new { @class = "d-block" })					
+				</div><!-- .col -->
+        @Html.NgValidationMessagesFor(x => x.OtherIncome)
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .col -->
+
+</div><!-- .row -->
+
+<h4 class="fc-beta text-deco-sideline">Expenses</h4>
+
+<div class="of-h">
+  <div class="row cf mb-gamma anim-margin" ng-class="{'anim-margin-top-hide': !showExpenses}">
+	  <div class="col md-1-2 pr-alpha sm-no-padding">
+		  <div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			  <div class="field cf">
+				  <div class="col sm-1-3 pr-alpha">
+					  <label for="Field_Rent" class="field-label">Rent</label>
+				  </div><!-- .col -->
+				  <div class="col sm-2-3">
+		        <input id="Field_Rent" class="d-block" ng-model="expense.Rent" f8-currency-field="{symbol:'R ', decimals: 0}">
+				  </div><!-- .col -->
+			  </div>
+
+			  <div class="field cf">
+				  <div class="col sm-1-3 pr-alpha">
+					  <label for="Field_WnE" class="field-label">Water &amp; lights</label>
+				  </div><!-- .col -->
+				  <div class="col sm-2-3">
+					  <input id="Field_WnE" class="d-block" ng-model="expense.WnE" f8-currency-field="{symbol:'R ', decimals: 0}">
+				  </div><!-- .col -->
+			  </div>
+
+			  <div class="field cf">
+				  <div class="col sm-1-3 pr-alpha">
+					  <label for="Field_Transport" class="field-label">Transport</label>
+				  </div><!-- .col -->
+				  <div class="col sm-2-3">
+					  <input id="Field_Transport" class="d-block" ng-model="expense.Transport" f8-currency-field="{symbol:'R ', decimals: 0}">
+				  </div><!-- .col -->
+			  </div>
+
+			  <div class="field cf">
+				  <div class="col sm-1-3 pr-alpha">
+					  <label for="Field_SchoolFees" class="field-label">School fees</label>
+				  </div><!-- .col -->
+				  <div class="col sm-2-3">
+					  <input id="Field_SchoolFees" class="d-block" ng-model="expense.SchoolFees" f8-currency-field="{symbol:'R ', decimals: 0}">
+				  </div><!-- .col -->
+			  </div>
+
+			  <div class="field cf">
+				  <div class="col sm-1-3 pr-alpha">
+					  <label for="Field_Other" class="field-label">Other</label>
+				  </div><!-- .col -->
+				  <div class="col sm-2-3">
+					  <input id="Field_Other" class="d-block" ng-model="expense.Other" f8-currency-field="{symbol:'R ', decimals: 0}">
+				  </div><!-- .col -->
+			  </div>
+
+		  </div><!-- .row -->
+	  </div><!-- .col -->
+
+    <div class="col md-1-2 pr-alpha sm-no-padding">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+					<label for="Field_Insurance" class="field-label">Insurance</label>
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					<input id="Field_Insurance" class="d-block" ng-model="expense.Insurance" f8-currency-field="{symbol:'R ', decimals: 0}">
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+					<label for="Field_Groceries" class="field-label">Groceries</label>
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					<input id="Field_Groceries" class="d-block" ng-model="expense.Groceries" f8-currency-field="{symbol:'R ', decimals: 0}">
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+					<label for="Field_MedicalAid" class="field-label">Medical aid</label>
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					<input id="Field_MedicalAid" class="d-block" ng-model="expense.MedicalAid" f8-currency-field="{symbol:'R ', decimals: 0}">
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col sm-1-3 pr-alpha">
+					<label for="Field_OtherLoans" class="field-label">Other loans</label>
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+					<input id="Field_OtherLoans" class="d-block" ng-model="expense.OtherLoans" f8-currency-field="{symbol:'R ', decimals: 0}">
+				</div><!-- .col -->
+			</div>     
+
+		</div><!-- .row -->
+
+	</div><!-- .col -->
+  </div><!-- .row -->
+</div>
+  
+<div class="row cf">
+	<div class="col md-1-2 pr-alpha sm-no-padding" ng-class="{'push-6': showExpenses}">
+		<div class="row row-ib-cols row-ib-cols-va-m cf">
+      <div class="field cf mb-gamma">
+				<div class="col sm-1-3 pr-alpha">
+          @Html.LabelFor(x => x.TotalExpenses, new { @class = "field-label" })
+				</div><!-- .col -->
+				<div class="col sm-2-3">
+          @Html.NgTextBoxFor(x => x.TotalExpenses, new Dictionary<string, object>() {
+            { "class", "d-block" },
+            { "ng-readonly", "showExpenses" }            
+          })
+				</div><!-- .col -->
+
+				<div class="col col-12">
+          @Html.NgValidationMessagesFor(x => x.TotalExpenses)
+        </div>
+				<div class="col col-1 xpush-4 col-float-right">
+          @Html.NgTooltip(title: "Don’t know what your monthly expenses are? Use our budgeting tool to assist you in working them out. ")
+        </div>
+				<div class="col sm-2-3 push-4">
+					<button class="btn d-block" ng-click="toggleExpenses($event)">{{ expensesToggleButtonText() }}</button>
+				</div><!-- .col -->
+			</div>
+
+			<div class="field cf">
+				<div class="col col-12">
+					@Html.NgCheckBoxFor(x => x.TrueAndCorrect, new { @class = "visuallyhidden" })
+					<label class="field-label fs-zeta fw-n" for="TrueAndCorrect"><span class="icon checkbox-custom visuallyhidden-ie8"></span> I declare all of the above to be true and correct.</label>
+				</div><!-- .col -->
+				<div class="col col-12">
+          @Html.NgValidationMessagesFor(x => x.TrueAndCorrect)
+				</div><!-- .col -->
+			</div>
+		</div><!-- .row -->
+	</div><!-- .col -->
+</div><!-- .row -->
+}

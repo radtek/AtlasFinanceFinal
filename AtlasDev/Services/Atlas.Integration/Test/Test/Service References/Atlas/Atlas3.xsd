@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration.Opportunity" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration.Opportunity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd11" namespace="Atlas.Services.2015.Integration.Vetting" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AddOpportunityRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerReferenceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CellularNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Completed" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FollowUpStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GPSLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScoreCardEnquiryId" type="xs:long" />
+      <xs:element minOccurs="0" name="Started" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Successful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="Atlas.Services.2015.Integration.Vetting" minOccurs="0" name="VettingParameters" nillable="true" type="q1:ArrayOfVettingParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOpportunityRequest" nillable="true" type="tns:AddOpportunityRequest" />
+  <xs:complexType name="AddOpportunityResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOpportunityResult" nillable="true" type="tns:AddOpportunityResult" />
+  <xs:complexType name="CheckOpportunityStatusRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AddOpportunityResultIds" nillable="true" type="q2:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckOpportunityStatusRequest" nillable="true" type="tns:CheckOpportunityStatusRequest" />
+  <xs:complexType name="CheckOpportunityStatusResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:ArrayOfOpportunityStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckOpportunityStatusResult" nillable="true" type="tns:CheckOpportunityStatusResult" />
+  <xs:complexType name="ArrayOfOpportunityStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpportunityStatus" nillable="true" type="tns:OpportunityStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpportunityStatus" nillable="true" type="tns:ArrayOfOpportunityStatus" />
+  <xs:complexType name="OpportunityStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddOpportunityResultId" type="xs:long" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrantedBranch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrantedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrantedLoanAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GrantedPeriodMonths" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="tns:OpportunityStates" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityStatus" nillable="true" type="tns:OpportunityStatus" />
+  <xs:simpleType name="OpportunityStates">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotFound" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Successful" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunityStates" nillable="true" type="tns:OpportunityStates" />
+</xs:schema>

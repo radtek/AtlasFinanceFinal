@@ -1,0 +1,44 @@
+---
+title : My Account
+title_secondary : Settlements
+description:
+page_list_description: Settlements
+layout: account
+---
+<form action="">
+	<p>date picker here</p>
+	<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="amount" class="field-label">Repayment amount</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="date" class="field-label">Date repayment is due</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				<div class="row row-ib-cols row-ib-cols-va-m cf">
+					<div class="col col-3 pr-micro">
+						{{> forms/select }}
+					</div><!-- .col -->
+					<div class="col col-7 pr-micro">
+						{{> forms/select }}
+					</div><!-- .col -->
+					<div class="col col-2">
+						<strong>2013</strong>
+					</div><!-- .col -->
+				</div>
+			</div><!-- .col -->
+		</div>
+
+	</div><!-- .row -->
+	<div class="ar">
+		<label for="submit" class="btn btn-right"><input id="submit" name="submit" type="submit" value="Update"></label>
+	</div>
+</form>

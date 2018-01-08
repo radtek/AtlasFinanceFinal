@@ -1,0 +1,100 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+    ViewBag.Title = "CI Report (NEW)";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="AssDashboardController_NEW" ng-init="init(@Html.Raw((object)ViewBag.PersonId))">
+    @*<div class="row" ng-show="!isLoaded">
+            <div class="col-lg-12">
+                <div class="">
+                    <center><img src="~/assets/img/icon_loading.gif" /></center>
+                </div>
+            </div>
+        </div>*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="clearfix">
+                        <div class="col-md-1">
+                            <label>Start Range</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                                    <input type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                                    <span class="input-group-btn">
+                                        <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <label>End Range</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                                    <input type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                                    <span class="input-group-btn">
+                                        <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label>Region</label>
+                        </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div isteven-multi-select input-model="regions" button-label="Description" item-label="Description" tick-property="Ticked" orientation="vertical" on-item-click="regionSelected(data)"
+                              on-select-all="regionSelectAll()"
+                              on-select-none="regionClearBranches()"
+                              on-reset="regionClearBranches()"
+                               group-property="MultiSelectGroup"
+                               helper-elements="all none filter"
+                               output-model="selectedRegions"
+                               max-labels="1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1">
+                        <label>Branch</label>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div isteven-multi-select input-model="selectedRegionBranches" output-model="selectedBranches" button-label="Name" item-label="Name" tick-property="Ticked" orientation="vertical" 
+                               group-property="MultiSelectGroup"
+                               helper-elements="all none filter"
+                               max-labels="1">
+                          </div>
+                        </div>
+                      </div>
+                      @*<div class="col-md-4">
+                            <div class="form-group">
+                                <div multi-select input-model="rBranches" button-label="Name" item-label="Name" tick-property="Ticked" orientation="vertical"
+                                     group-property="MultiSelectGroup">
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-actions right">
+                        <button ng-click="email()" ng-disabled="disableButtons" class="btn green">{{btnEmailText}}</button>
+                        <button ng-click="export()" ng-disabled="disableButtons" class="btn green">{{btnExportText}}</button>
+                        @*<button ng-click="refresh()" ng-disabled="disableButtons" class="btn green">{{btnApplyText}}</button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @*<h3>Cheque</h3>*@
+            @*<div id="chart" dx-chart="{ legend: amountChartSettings.legend, bindingOptions: {dataSource: 'amountChartSettings.dataSource', series: 'amountChartSettings.series', commonSeriesSettings: 'amountChartSettings.commonSeriesSettings' , tooltip: 'amountChartSettings.tooltip', valueAxis: 'amountChartSettings.valueAxis' }}"></div>*@
+        </div>
+    </div>
+</div><!-- page end-->

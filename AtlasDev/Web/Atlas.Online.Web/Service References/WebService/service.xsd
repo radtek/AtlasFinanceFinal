@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Otp" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Models.Dto" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="OTP_Send">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+        <xs:element minOccurs="0" name="sendFirst" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_SendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Otp" minOccurs="0" name="OTP_SendResult" nillable="true" type="q1:OtpSendResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_Verify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+        <xs:element minOccurs="0" name="otp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OTP_VerifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OTP_VerifyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_Submit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_SubmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AVS_SubmitResult" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AVS_GetResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="AVS_GetResponseResult" nillable="true" type="q2:AVS.Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CDV_VerifyAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bank" type="q3:General.BankName" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankAccountType" type="q4:General.BankAccountType" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CDV_VerifyAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CDV_VerifyAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_Submit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_SubmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APP_SubmitResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_GetAffordability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_GetAffordabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="APP_GetAffordabilityResult" nillable="true" type="q5:ApplicationAffordability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_AcceptAffordability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="optionId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_AcceptAffordabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APP_AcceptAffordabilityResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_SubmitSettlement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="settlement" nillable="true" type="q6:ApplicationSettlementSubmission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_SubmitSettlementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="APP_SubmitSettlementResult" nillable="true" type="q7:ApplicationSettlementResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_ApplyIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_ApplyInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="APP_ApplyInResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_GetDeclinedReason">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_GetDeclinedReasonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="APP_GetDeclinedReasonResult" nillable="true" type="q8:ApplicationDeclinedReason" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_SliderRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="APP_SliderRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Models.Dto" minOccurs="0" name="APP_SliderRulesResult" nillable="true" type="q9:LoanRulesDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_PreApprove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_PreApproveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QTE_PreApproveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_AcceptQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_AcceptQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QTE_AcceptQuoteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_RejectQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_RejectQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QTE_RejectQuoteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_GetQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QTE_GetQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" minOccurs="0" name="QTE_GetQuoteResult" nillable="true" type="q10:Quotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_GetQuestions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_GetQuestionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" minOccurs="0" name="VER_GetQuestionsResult" nillable="true" type="q11:ArrayOfQuestions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_SubmitQuestions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" minOccurs="0" name="questions" nillable="true" type="q12:ArrayOfQuestions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_SubmitQuestionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" minOccurs="0" name="VER_SubmitQuestionsResult" nillable="true" type="q13:VerificationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_CheckStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VER_CheckStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" minOccurs="0" name="VER_CheckStatusResult" nillable="true" type="q14:VerificationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetClientStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetClientStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" minOccurs="0" name="MYC_GetClientStatementResult" nillable="true" type="q15:AccountStatement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_CheckSettlement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_CheckSettlementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="MYC_CheckSettlementResult" nillable="true" type="q16:ApplicationSettlementResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetSettlementQuotation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetSettlementQuotationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" minOccurs="0" name="MYC_GetSettlementQuotationResult" nillable="true" type="q17:Settlement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" minOccurs="0" name="MYC_GetQuoteResult" nillable="true" type="q18:Quotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetPaidUpLetter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MYC_GetPaidUpLetterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" minOccurs="0" name="MYC_GetPaidUpLetterResult" nillable="true" type="q19:PaidUpLetter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NTF_Registration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NTF_RegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NTF_RegistrationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NTF_ForgotPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NTF_ForgotPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NTF_ForgotPasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UTL_GetHolidays">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UTL_GetHolidaysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UTL_GetHolidaysResult" nillable="true" type="q20:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

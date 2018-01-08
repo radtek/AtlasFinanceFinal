@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77D9E64A-BD91-4CCE-BA43-2AF61E667355}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stream.Framework</RootNamespace>
+    <AssemblyName>Stream.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContracts\Requests\AddOrUpdateAccountTransactionRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateAccountRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateCaseRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateCaseStreamActionRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateCaseStreamAllocationRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateCaseStreamEscalationRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateCaseStreamRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateDebtorAddressRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateDebtorContactRequest.cs" />
+    <Compile Include="DataContracts\Requests\AddOrUpdateDebtorRequest.cs" />
+    <Compile Include="DataContracts\Requests\ImportNewAccountsRequest.cs" />
+    <Compile Include="Enumerators\Stream.cs" />
+    <Compile Include="Repository\IStreamReportRepository.cs" />
+    <Compile Include="Repository\IStreamRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IStreamService.cs" />
+    <Compile Include="Structures\IAccountLastTransactionImportReference.cs" />
+    <Compile Include="Structures\IAccountStreamAction.cs" />
+    <Compile Include="Structures\IActionType.cs" />
+    <Compile Include="Structures\IActuator.cs" />
+    <Compile Include="Structures\IBudget.cs" />
+    <Compile Include="Structures\ICase.cs" />
+    <Compile Include="Structures\ICaseStatus.cs" />
+    <Compile Include="Structures\ICaseStream.cs" />
+    <Compile Include="Structures\IEscalatedCaseStream.cs" />
+    <Compile Include="Structures\ICaseStreamAction.cs" />
+    <Compile Include="Structures\ICaseStreamAllocation.cs" />
+    <Compile Include="Structures\ICaseStreamEscalation.cs" />
+    <Compile Include="Structures\ICategory.cs" />
+    <Compile Include="Structures\IComment.cs" />
+    <Compile Include="Structures\ICommentGroup.cs" />
+    <Compile Include="Structures\IDebtor.cs" />
+    <Compile Include="Structures\IDebtorAddress.cs" />
+    <Compile Include="Structures\IDebtorContact.cs" />
+    <Compile Include="Structures\IEscalation.cs" />
+    <Compile Include="Structures\IFrequency.cs" />
+    <Compile Include="Structures\IGetCaseStreamAction.cs" />
+    <Compile Include="Structures\IGroup.cs" />
+    <Compile Include="Structures\IGroupHost.cs" />
+    <Compile Include="Structures\IGroupStream.cs" />
+    <Compile Include="Structures\IStream.cs" />
+    <Compile Include="Structures\IStreamAccount.cs" />
+    <Compile Include="Structures\IStreamAccountNoteType.cs" />
+    <Compile Include="Structures\IStreamPriority.cs" />
+    <Compile Include="Structures\ISubCategory.cs" />
+    <Compile Include="Structures\ITransaction.cs" />
+    <Compile Include="Structures\ITransactionStatus.cs" />
+    <Compile Include="Structures\ITransactionType.cs" />
+    <Compile Include="Structures\IWorkItem.cs" />
+    <Compile Include="Structures\IWorkItemAccount.cs" />
+    <Compile Include="Structures\Reports\IPerformanceSummary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\Falcon\Common\Falcon.Interfaces\Falcon.Common.Interfaces.csproj">
+      <Project>{130e010c-66a1-4128-8f61-03118bce3b53}</Project>
+      <Name>Falcon.Common.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

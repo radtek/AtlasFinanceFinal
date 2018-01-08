@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration.OTP" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration.OTP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SendOTPRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellularNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtpTemplateId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendOTPRequest" nillable="true" type="tns:SendOTPRequest" />
+  <xs:complexType name="SendOTPResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OTP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendOTPResult" nillable="true" type="tns:SendOTPResult" />
+</xs:schema>

@@ -1,0 +1,55 @@
+﻿<div ng-controller="AccountWorkflowController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="workflowParams" class="table">
+            <tr ng-repeat="workflow in $data" ng-click="changeSelection('wfRowSelected',workflow,'workflows')" ng-class="{selected: workflow.$selected}" style="cursor: pointer;">
+              <td data-title="'Process'">
+                <center> {{workflow.Process}}</center>
+              </td>
+              <td data-title="'Process Step'">
+                <center> {{workflow.ProcessStep}}</center>
+              </td>
+              <td data-title="'Job State'">
+                <center><div class="curved-border" ng-class="{'label label-success': workflow.ProcessStepJobState === 'Completed', 'label label-info': workflow.ProcessStepJobState !== 'Completed'}">{{workflow.ProcessStepJobState}}</div> </center>
+              </td>
+              <td data-title="'Last State Date'">
+                <center> {{workflow.ProcessStepLastStateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+              <td data-title="'Complete Date'">
+                <center> {{workflow.ProcessStepCompleteDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn yellow" ng-disabled="!wfRowSelected.$selected || wfRowSelected.ProcessStepCompleteDate || !(wfRowSelected.ProcessStepId == 4 || wfRowSelected.ProcessStepId == 3 )" ng-click="wfDialgueHold = false;" data-toggle="modal" href="#WorkflowDialogue">Redirect</button>
+          </div>
+          </div>
+      </fieldset>
+    </section>
+  </section>
+
+  <!-- Workflow Modals -->
+  <div class="modal fade" id="WorkflowDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Redirect</h4>
+        </div>
+        <div class="modal-body">
+          You are about to redirect this account back into processing, are you sure you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn green" ng-click="redirectWorkflow(wfRowSelected);">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "My Account";
+    ViewBag.ngApp = "atlas.myaccount";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/atlas-myaccount")
+}
+
+<div class="container-outline" ng-controller="MyAccountController">
+    @Html.Hidden("clientId", (long)ViewBag.Client.ClientId, new Dictionary<string, object>() { { "ng-model", "clientId" } })
+    <h1 class="hn-in-outline fc-beta">
+        <strong>My Account</strong>
+        <span class="ng-cloak" ng-show="!!UI.title">
+            <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+            <span class="fc-alpha" ng-bind="UI.title"></span>
+        </span>         
+    </h1>
+    <div class="cf">
+        <div class="brad-delta bd-alpha-ltr account-menu-bg">
+            <div class="row cf">
+                <div class="col md-1-3">
+                    @Html.Partial("_AccountNav")
+                </div>
+                <div class="col md-2-3 loader"  ng-class="{loader: UI.loading}">
+                    <div class="plr-beta cf xsm-p-beta">
+                        <h2 class="fc-beta mb-gamma" ng-bind="UI.title"></h2>
+                        <div class="of-h ng-cloak">
+                            <div class="alert alert-error anim-margin" ng-class="{'anim-margin-top-hide': !UI.error}">
+                                {{ UI.error.message }} <a href="javascript:void(0)" ng-show="!!UI.error.retryHandler" ng-click="UI.error.retryHandler($event)">Retry</a>
+                            </div>
+                        </div>
+                        <div class="of-h ng-cloak">
+                            <div class="alert alert-success anim-margin" ng-class="{'anim-margin-top-hide': !UI.message}">
+                                {{ UI.message.text }} <button class="close">X</button>
+                            </div>
+                        </div>
+                        <div ng-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

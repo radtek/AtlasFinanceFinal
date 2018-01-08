@@ -1,0 +1,5 @@
+﻿@model Atlas.Online.Web.Models.MessageBoxModel.Button
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+  @Html.AntiForgeryToken()
+  <a href="javascript:document.getElementById('logoutForm').submit()" class="@Model.Classes fc-ntrl-min">@Html.Raw(!String.IsNullOrEmpty(Model.Text) ? Model.Text : "Logout")</a>
+}      

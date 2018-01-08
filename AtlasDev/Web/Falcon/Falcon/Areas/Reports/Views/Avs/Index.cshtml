@@ -1,0 +1,128 @@
+﻿@{
+  ViewBag.Title = "Account Holder Verification";
+}
+
+
+REMOVED
+
+
+
+<!-- page start-->
+@*<div ng-controller="AvsController" ng-init="init()">
+  <div class="token" @Html.RequestVerificationToken() />
+  <div class="row">
+    <div class="col-lg-12">
+      <span ng-show="!loaded" class="spinner" us-spinner="{radius:10, width:3, length: 10}"></span>
+    </div>
+  </div>
+  <div class="ng-cloak" ng-show="loaded">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="breadcrumb">
+          <li>
+            <a href="#"><i class="fa fa-home"></i> Dashboard</a>
+          </li>
+          <li class="active">AVS</li>
+        </ul>
+      </div>
+    </div>
+    <section class="panel">
+      <header class="panel-heading tab-bg-dark-navy-blue ">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#transaction"><strong>Transactions</strong></a>
+          </li>
+          <li class="">
+            <a data-toggle="tab" href="#filters"><strong>Filters</strong></a>
+          </li>
+        </ul>
+      </header>
+      <div class="panel-body">
+        <div class="tab-content">
+          <div id="transaction" class="tab-pane active">
+            <button title="" data-placement="top" data-toggle="tooltip" class="btn btn-success tooltips" type="button" data-original-title="Refresh transactions" ng-click="refresh()"><i class=" icon-refresh"></i> Refresh</button>
+          </div>
+          <div id="filters" class="tab-pane">
+            <form action="#" method="post">
+              <fieldset>
+                <legend>Filters</legend>
+                <div class='form-group'>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_startDate">Start Date</label>
+                    <input class="form-control form-control-inline input-medium default-date-picker" id="filters_startDate" size=" 16" type="text" value="">
+                  </div>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_endDate">End Date</label>
+                    <input class="form-control form-control-inline input-medium default-date-picker" id="filters_endDate" size="16" type="text" value="">
+                  </div>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_transactionId">Transaction ID</label>
+                    <input class="form-control" id="filters_transactionId" name="transactionId" size="30" type="text" />
+                  </div>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_iDNumber">ID Number</label>
+                    <input class="form-control" id="filters_iDNumber" name="IdNumber" size="30" type="text" />
+                  </div>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_Company">Company/Branch</label>
+                    <select class="form-control m-bot15" id="filters_Company">
+                      <option>Head Office</option>
+                      <option>Savoy</option>
+                    </select>
+                  </div>
+                  <div class='col-sm-6 space-buffer'>
+                    <label for="filters_Bank">Bank</label>
+                    <select class="form-control m-bot15" id="filters_Bank">
+                      <option>First National Bank</option>
+                      <option>Standard Bank</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend></legend>
+                <button data-placement="top" data-toggle="tooltip" class="btn btn-success tooltips pull-right" type="button" data-original-title="Filter results">Apply</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <table ng-table="tableParams" class="table table-striped table-advance table-hover" show-filter="true">
+      <tr ng-repeat="avs in $data">
+        <td data-title="'Initials'" filter="{ 'Initials': 'text' }" sortable="'Initials'">
+          <center> {{avs.Initials}}</center>
+        </td>
+        <td data-title="'Last Name'" filter="{ 'LastName': 'text' }" sortable="'LastName'">
+          <center> {{avs.LastName}}</center>
+        </td>
+        <td data-title="'Account No'" filter="{ 'AccountNo': 'text' }" sortable="'AccountNo'">
+          <center> {{avs.AccountNo}}</center>
+        </td>
+        <td data-title="'ID Number'" filter="{ 'IdNumber': 'text' }" sortable="'IdNumber'">
+          <center> {{avs.IdNumber}}</center>
+        </td>
+
+        <td data-title="'Bank'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+          <center> {{avs.Bank}}</center>
+        </td>
+        <td data-title="'Status'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+          <center> {{avs.Status}}</center>
+        </td>
+        <td data-title="'Result'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'Result'">
+
+            <center><span falcon-label condition="avs.ResultColour">{{avs.Result}}</span></center>
+        </td>
+        <td data-title="'CreateDate'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+          <center> {{avs.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>*@
+
+<!-- page end-->
+@section Scripts {
+  @Scripts.Render("~/AvsController")
+}

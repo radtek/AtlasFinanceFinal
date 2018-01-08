@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DEBBE56-EB8A-44CA-B4D9-5F9AA94CD1AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.WCF.FPServer</RootNamespace>
+    <AssemblyName>FPserver</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Atlas.WCF.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fingerprint.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Atlas.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Production\Atlas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Production\Atlas.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Enumerators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Production\Atlas.Enumerators.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Messages.Public, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Production\FP\Atlas.Messages.Public.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Mongo.FP.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Libraries\Production\FP\Atlas.Mongo.FP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Common.Logging.2.2.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>packages\Common.Logging.Core.2.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Magnum">
+      <HintPath>packages\Magnum.2.1.2\lib\NET40\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit">
+      <HintPath>packages\MassTransit.2.9.5\lib\net40\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.Transports.RabbitMq">
+      <HintPath>packages\MassTransit.RabbitMQ.2.9.5\lib\net40\MassTransit.Transports.RabbitMq.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.9.1.221, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.9.1.221, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Npgsql.2.1.3\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.1.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Npgsql.2.1.3\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.2.3.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Quartz.2.2.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>packages\RabbitMQ.Client.3.3.0\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>packages\Topshelf.3.1.3\lib\net40-full\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf.Log4Net">
+      <HintPath>packages\Topshelf.Log4Net.3.1.3\lib\net40-full\Topshelf.Log4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3rdParty\BioNetACSDLL.cs" />
+    <Compile Include="AtlasService.cs" />
+    <Compile Include="Fingerprints\FPGuiRequest.cs" />
+    <Compile Include="Fingerprints\FPHardware.cs" />
+    <Compile Include="Fingerprints\FPTemplateData.cs" />
+    <Compile Include="Fingerprints\FPThreadSafe.cs" />
+    <Compile Include="Fingerprints\TemplateType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuartzTasks\ExpiredFPUploadSessions.cs" />
+    <Compile Include="QuartzTasks\ExpiredLmsGuiSessions.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="QuartzTasks\GCLOHCompactRun.cs" />
+    <Compile Include="WCF\Implementation\Comms\CreatePerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\FPC_CheckForOpenSession_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\FPC_SetRequestDone_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\FPC_UploadClientFPStatus_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\FPC_UploadClientHWSWStatus_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\GetPersonEnrolledFingers_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\GetPersonViaIdOrPassport_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\GetPersonViaOperatorId_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\GetPersonViaPersonId_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\LMS_AddRequest_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\FPC_CheckForNewRequest_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\LMS_CheckRequestStatus_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\LMS_IsMachineFPReady_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\LMS_MachineToUseFP_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\LMS_UserCancelled_Impl.cs" />
+    <Compile Include="WCF\Implementation\Comms\Utils\CommsUtils.cs" />
+    <Compile Include="WCF\Implementation\FPComms.cs" />
+    <Compile Include="WCF\Implementation\FPServer.cs" />
+    <Compile Include="WCF\Implementation\Machine.cs" />
+    <Compile Include="WCF\Implementation\Server\Admin\DeleteData_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Enroll\CancelEnrollPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Enroll\EndEnrollPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Enroll\EnrollFingerprint_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Enroll\EnrollPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Enroll\StartEnrollPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Identify\IdentifyPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Options\GetPersonScanOptions_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Options\GetPersonVerifyOptions_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Templates\GetTemplatesForPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\Server\Verify\VerifyIsPerson_Impl.cs" />
+    <Compile Include="WCF\Implementation\User.cs" />
+    <Compile Include="WCF\Implementation\Utils\ServerUtils.cs" />
+    <Compile Include="WCF\Implementation\WCFUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AtlasLib.ico" />
+    <Content Include="fingerprint.ico" />
+    <Content Include="packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.FP.Comms\Atlas.FP.Comms\Atlas.FP.Comms.csproj">
+      <Project>{615418a8-f2ca-4d99-ba29-b4a545fd1a63}</Project>
+      <Name>Atlas.FP.Comms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>COPY "C:\Program Files\Integrated Biometrics\IBISDK_x64\Bin\BioNetAcsDll.dll" "$(TargetDir)" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

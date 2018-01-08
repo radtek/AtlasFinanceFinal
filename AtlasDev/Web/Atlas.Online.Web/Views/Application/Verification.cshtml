@@ -1,0 +1,93 @@
+﻿@using Atlas.Online.Web.Extensions;
+
+@{
+    ViewBag.Title = "Verification";
+
+    ViewBag.NgApp = "atlas.verification";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/core")
+  @Scripts.Render("~/bundles/atlas-verification")
+}
+
+<div class="container-outline" ng-controller="VerificationCtrl" ng-init="init('@Html.Raw(ViewBag.ApplicationId)')">
+  <div class="pos-r loader" ng-class="{ loader: UI.loading }">
+    <h1 class="hn-in-outline fc-beta">
+      <strong class="ng-cloak">Apply Now</strong>
+
+      <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+      <span class="fc-alpha">Security validation questions</span>
+    </h1>
+
+    @Html.Partial("_ApplyNowSteps")
+
+    <div class="cf">
+      <div class="alert alert-error ng-cloak" ng-show="UI.error">{{ UI.error.message }} <a href="javascript:void(0);" ng-show="!!UI.error.retryHandler" ng-click="UI.error.retryHandler()">Retry.</a></div>
+
+      <div class="row cf mb-alpha">
+
+        <div class="col col-8 push-2 pr-alpha" ng-show="state == 'questions'">
+          <div class="fc-beta fs-gamma mb-alpha">Please answer the security question below:</div>
+
+          <div class="field cf ng-cloak" ng-repeat="question in questions" ng-show="question.QuestionId == currentQuestion.QuestionId">
+            <p class="field-label" ng-bind="question.Question"></p>
+            <div ng-repeat="answer in question.Answers">
+              <input class="visuallyhidden" type="radio" name="answer-group-{{ question.QuestionId }}" id="answer-{{ answer.AnswerId }}" value="{{ answer.Id }}" ng-click="setAnswer(question.QuestionId, answer.AnswerId)">
+              <label class="field-label" for="answer-{{ answer.AnswerId }}"><span class="icon radio-custom visuallyhidden-ie8"></span> {{ answer.AnswerDescription }}</label>
+            </div><!-- .col -->
+          </div>
+
+        </div><!-- .col -->
+
+        <div class="col col-12 pr-alpha ng-cloak" ng-show="state == 'pending'">
+          <div class="ac mb-alpha">
+            <img src="@Url.Content("~/Assets/img/loader.gif")" alt="loading..." width="16" height="16"> <span class="d-iblock va-m"> We are processing your application. Please wait...</span>
+          </div>
+        </div>
+
+        <div class="col col-12 pr-alpha ng-cloak" ng-show="state == 'failed'">
+          <div class="row cf">
+            <div class="col col-8 col-push-pull push-2">
+              <div class="brad-delta p-beta bxsh-up-l mt-epsilon mb-beta bd-alpha-ltr ac">
+
+                <!-- image container -->
+                <div class="ac">
+                  <img class="mtn-message" src="@Url.Content("~/Assets/img/messages/message-cross.png")" width="94" height="94" alt="Image icon for message">
+                </div>
+
+                <!-- large text -->
+                <p class="fc-beta fs-epsilon mb-alpha">@Html.Raw(ViewBag.Verification_QuestionsFailed)</p>
+
+                <div class="row cf pt-alpha">
+                  <div class="col col-6 pr-alpha ar">
+                    <a href="@Url.Action("Index", "MyAccount")" class="btn btn-left btn-alpha btn-left-alpha d-block mb-none">No</a>
+                    &nbsp;
+                  </div><!-- .col -->
+                  <div class="col col-6 pl-alpha al">
+                    <a href="" class="btn btn-right d-block mb-none" ng-click="retry()">Yes</a>
+                    &nbsp;
+                  </div><!-- .col -->
+                </div><!-- .row -->
+
+              </div>
+            </div><!-- .col -->
+          </div><!-- .row -->
+
+        </div><!-- .col -->
+
+      </div><!-- .row -->
+
+      <hr class="hr-dotted">
+
+      <div class="row cf" ng-show="UI.showButtons">
+        <div class="col col-6">
+          <button class="btn btn-alpha btn-left btn-left-alpha mb-none" ng-show="hasPrevious()" ng-click="previous()" ng-bind-html-unsafe="previousLabel()"></button>&nbsp;
+        </div><!-- .col -->
+        <div class="col col-6 ar">
+          <button class="btn btn-right mb-none" ng-click="next()" ng-bind-html-unsafe="nextLabel()" ng-disabled="!answerSet"></button>
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </div>
+  </div>
+</div>

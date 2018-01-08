@@ -1,0 +1,24 @@
+﻿<section class="panel" ng-controller="AccountDetailController">
+  <div class="tabbable-custom">
+    <ul class="nav nav-tabs" id="accDetailTab">
+      <li class="">
+        <a href="#acovv" data-toggle="tab">
+          Overview
+        </a>
+      </li>
+      <li class="">
+        <a href="#acot" data-toggle="tab">
+          Transactions
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" id="acovv">
+        @{Html.RenderPartial("_AccountDetails_Overview");}
+      </div>
+      <div class="tab-pane" id="acot">
+        @{Html.RenderPartial("_AccountDetails_Transactions");}
+      </div>
+    </div>
+  </div>  
+</section>

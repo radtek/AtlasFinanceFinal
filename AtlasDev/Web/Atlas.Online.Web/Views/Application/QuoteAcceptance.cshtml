@@ -1,0 +1,373 @@
+﻿@model Atlas.Online.Web.Models.Steps.QuoteAcceptance
+
+@using Atlas.Online.Web.Extensions;
+@using Atlas.Online.Web.Extensions.Ng;
+
+@{
+    ViewBag.Title = "Quotation Acceptance";
+    ViewBag.NgApp = "atlas.quoteacceptance";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/core")
+  @Scripts.Render("~/bundles/atlas-quoteacceptance")
+}
+
+<div class="container-outline" ng-controller="QuoteAcceptanceCtrl" ng-init="init('@Html.Raw((object)ViewBag.ApplicationId)')">
+	<div class="pos-r">
+		<h1 class="hn-in-outline fc-beta">
+			<strong>Apply Now</strong>
+			<span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+			<span class="fc-alpha">Quotation Acceptance</span>
+		</h1>
+		<div class="cf" ng-form="form">
+
+      @Html.Partial("_ApplyNowSteps")
+
+      <div class="ac">
+	      <strong class="fc-beta fs-zeta">Congratulations, your loan has been pre-approved.<br /></strong><p class=fc-beta fs-zeta">To continue, please review and accept your quotation.</p>
+
+	      <p class="fs-gamma">Your reference number: @Model.LoanReference</p>
+      </div>
+
+      <h4 class="fc-beta text-deco-sideline">Pre-Agreement Quotation</h4>
+
+      <div class="row cf">
+
+	      <div class="col col-6 pr-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Name of credit provider</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      Atlas Finance (Pty) Ltd
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Name of loan originator</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				       Atlas Finance (Pty) Ltd
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">NCR registration number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      TODO: NCR reg no
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Physical address</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      Atlas Head Office<br />
+              123 Oxford Street, Cnr Cotswold Drive<br />
+              Saxonwold<br />
+              2196
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Contact Number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      0800 204 679
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+	      <div class="col col-6 pl-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-4 pr-alpha">
+				      <strong class="fc-beta-dk">Account No</strong>
+			      </div><!-- .col -->
+			      <div class="col col-8 mb-beta">
+				      @Html.DisplayFor(x => x.LoanReference)
+			      </div><!-- .col -->
+
+			      <div class="col col-4 pr-alpha">
+				      <strong class="fc-beta-dk">Quotation number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-8 mb-beta">
+				      @Html.DisplayFor(x => x.QuotationNo)
+			      </div><!-- .col -->
+
+			      <div class="col col-4 pr-alpha">
+				      <strong class="fc-beta-dk">Quotation date</strong>
+			      </div><!-- .col -->
+			      <div class="col col-8 mb-beta">
+               @String.Format("{0:d}", Model.QuotationDate)
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+      </div><!-- .row -->
+
+      <h4 class="fc-beta text-deco-sideline">Details Of Applicant</h4>
+
+      <div class="row cf">
+
+	      <div class="col col-6 pr-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Name</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.Firstname)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Surname</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.Surname)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">ID number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.IdNumber)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Contact number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.ContactNo)
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+	      <div class="col col-6 pl-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-4 pr-alpha">
+				      <strong class="fc-beta-dk">Residential address</strong>
+			      </div><!-- .col -->
+			      <div class="col col-8 mb-beta">
+				      @Html.DisplayFor(x => x.ResidentialAddress1)<br />
+				      @Html.DisplayFor(x => x.ResidentialAddress2)<br />
+				      @Html.DisplayFor(x => x.ResidentialAddress3)<br />
+				      @Html.DisplayFor(x => x.ResidentialCity)
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+      </div><!-- .row -->
+
+      <h4 class="fc-beta text-deco-sideline">Details Of Loan</h4>
+
+      <div class="row cf">
+
+	      <div class="col col-6 pr-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Loan amount</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFormatFor(x => x.Loan.Amount, "{0:C}")
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Initiation fee @Html.NgTooltip(options: "tooltipOptions", title: "This is charged upfront and includes VAT at 14%.")</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFormatFor(x => x.InitiationFee, "{0:C}")
+			      </div><!-- .col -->		
+            
+              <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Service fee @Html.NgTooltip(options: "tooltipOptions", title: "Included in Repayment Amount and inclusive of VAT at 14%.")</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFormatFor(x => x.ServiceFee, "{0:C}")
+			      </div><!-- .col -->				    
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Interest at 5% per month calculated</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.Interest) % daily
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Repayment amount @Html.NgTooltip(options: "tooltipOptions", title: "Ttotal amount repayable as one instalment on the Repayment Date.")</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFormatFor(x => x.Loan.RepaymentAmount, "{0:C}")
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Repayment date @Html.NgTooltip(options: "tooltipOptions", title: "Debit Order date and the date that your Repayment Amount is due.")</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+               @String.Format("{0:d}", Model.Loan.RepaymentDate)
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+      </div><!-- .row -->
+
+      <h4 class="fc-beta text-deco-sideline mb-alpha">Additional Information</h4>
+
+      <iframe class="d-block mb-alpha bd-alpha" src="@Url.Action("QA_AdditionalInformation", "Application")"></iframe>
+      
+      <div class="p-alpha bgc-alpha-ltst fs-milli">
+	      <h6 class="case-u m-none">Declarations</h6>
+	      <small>Once you have accepted this quote you acknowledge that you have entered into a loan agreement with Atlas Finance on the terms and conditions which you have read and understood and which are to be read with together with this question. <span class="case-u">This quotation is binding for 5 days.</span></small>
+	      <hr class="hr-dotted">
+	      <div class="row cf">
+		      <div class="col col-3">
+			      Atlas Finance (Pty) Ltd
+		      </div><!-- .col -->
+		      <div class="col col-9">
+			      By ticking "I accept" you agree that you will be deemed to have affixed your signature and you agree to be legally bounded by this Pre-Agreement Statement and Quotation. Please print a copy of this Pre-Agreement Statement and Quotation for your records.
+			      <p class="mb-none">
+				      <input class="visuallyhidden" type="checkbox" ng-model="acceptPasaq" id="accept-pasaq" required>
+				      <label class="field-label case-n mb-none fs-zeta" for="accept-pasaq">
+					      <i class="icon checkbox-custom visuallyhidden-ie8"></i> I accept
+				      </label>
+			      </p>
+		      </div><!-- .col -->
+	      </div><!-- .row -->
+      </div>
+
+      <h4 class="fc-beta text-deco-sideline">Terms and Conditions</h4>
+
+      <iframe class="d-block mb-alpha bd-alpha" src="@Url.Action("QA_TermsAndConditions", "Application")"></iframe>
+
+      <div class="p-alpha bgc-alpha-ltst fs-milli">
+
+	      <div class="row cf">
+		      <div class="col col-3">
+			      Atlas Finance (Pty) Ltd
+		      </div><!-- .col -->
+		      <div class="col col-9">
+			      By ticking "I accept" you agree that you will be deemed to have affixed your signature and you agree to be legally bounded by these Terms and Conditions. Please print a copy of these Terms and Conditions for your records.
+			      <p class="mb-none">
+				      <input class="visuallyhidden" type="checkbox" ng-model="acceptTnc" id="accept-tnc" name="accept-tnc" required>
+				      <label class="field-label case-n mb-none fs-zeta" for="accept-tnc">
+					      <i class="icon checkbox-custom visuallyhidden-ie8"></i> I accept
+				      </label>
+			      </p>
+		      </div><!-- .col -->
+	      </div><!-- .row -->
+
+      </div>
+
+      <h4 class="fc-beta text-deco-sideline">Debit Order Authorisation</h4>
+
+      <div class="row cf">
+
+	      <div class="col col-6 pr-alpha">
+		      <div class="row cf">
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Bank</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayEnumFor(x => x.Bank.BankName)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Debit amount</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFormatFor(x => x.DebitAmount, "{0:C}")
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Account name</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.Bank.AccountHolder)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Account number</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayFor(x => x.Bank.AccountNo)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Account type</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+				      @Html.DisplayEnumFor(x => x.Bank.AccountType)
+			      </div><!-- .col -->
+
+			      <div class="col col-6 pr-alpha">
+				      <strong class="fc-beta-dk">Date of debit</strong>
+			      </div><!-- .col -->
+			      <div class="col col-6 mb-beta">
+              @String.Format("{0:d}", Model.DateOfDebit)
+			      </div><!-- .col -->
+
+		      </div><!-- .row -->
+	      </div><!-- .col -->
+
+      </div><!-- .row -->
+
+      <h4 class="fc-beta text-deco-sideline">Direct Debit Authorisation</h4>
+
+      <iframe class="d-block mb-alpha bd-alpha" src="@Url.Action("QA_DirectDebitAuthorisation", "Application")"></iframe>
+
+      <div class="p-alpha bgc-alpha-ltst fs-milli">
+
+	      <div class="row cf">
+		      <div class="col col-3">
+			      Atlas Finance (Pty) Ltd
+		      </div><!-- .col -->
+		      <div class="col col-9">
+			      By ticking "I accept" you agree that you will be deemed to have affixed your signature and you agree to be legally bounded by this Direct Debit Authorisation. Please print a copy of this Direct Debit Authorisation for your records.
+			      <p class="mb-none">
+				      <input class="visuallyhidden" type="checkbox" ng-model="acceptDda" id="accept-dda" name="accept-dda" required>
+				      <label class="field-label case-n mb-none fs-zeta" for="accept-dda">
+					      <i class="icon checkbox-custom visuallyhidden-ie8"></i> I accept
+				      </label>
+			      </p>
+		      </div><!-- .col -->
+	      </div><!-- .row -->
+
+      </div>
+
+      <div class="p-alpha fs-milli">
+
+	      <div class="row cf">
+		      <div class="col col-3">
+			      Signature
+		      </div><!-- .col -->
+		      <div class="col col-9">
+			      By clicking the "Accept quote" button below you agree that you have read and understood and agree to be bound by the Pre-Agreement Statement and Quotation, Terms and Conditions, and Direct Debit Authorisation which constitutes the Loan agreement between you and Atlas Finance.
+		      </div><!-- .col -->
+	      </div><!-- .row -->
+
+      </div>
+
+      <div class="row cf">@Request.ServerVariables["REMOTE_ADDR"]</div>
+      <hr class="hr-dotted">
+
+      <div class="row cf">
+	      <div class="col col-6">
+		      <button class="btn btn-alpha btn-left btn-left-alpha mb-none" ng-disabled="UI.loading" ng-click="reject($event)">Reject</button>
+	      </div><!-- .col -->
+	      <div class="col col-6 ar">
+		      <button class="btn btn-right mb-none" ng-disabled="form.$invalid || UI.loading" ng-click="accept($event)">
+			      Accept quote
+		      </button>
+	      </div><!-- .col -->
+      </div><!-- .row -->
+
+      </div>
+	</div>
+</div>

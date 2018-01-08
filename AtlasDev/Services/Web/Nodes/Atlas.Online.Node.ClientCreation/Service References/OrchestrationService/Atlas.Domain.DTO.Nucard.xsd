@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="NUC_NuCardProfileDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="CreatedBy" nillable="true" type="q1:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="CreatedDT" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="DeletedBy" nillable="true" type="q2:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="DeletedDT" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="LastEditedBy" nillable="true" type="q3:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="LastEditedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NuCardProfileId" type="xs:long" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NUC_NuCardProfileDTO" nillable="true" type="tns:NUC_NuCardProfileDTO" />
+  <xs:complexType name="ArrayOfNUC_NuCardDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NUC_NuCardDTO" nillable="true" type="tns:NUC_NuCardDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNUC_NuCardDTO" nillable="true" type="tns:ArrayOfNUC_NuCardDTO" />
+  <xs:complexType name="NUC_NuCardDTO">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="AllocatedPerson" nillable="true" type="q4:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="CardNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientNum" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="CreatedBy" nillable="true" type="q5:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="CreatedDT" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="DeletedBy" nillable="true" type="q6:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="DeletedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpiryDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssueDT" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="IssuedByBranch" nillable="true" type="q7:BRN_BranchDTO" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" minOccurs="0" name="LastEditedBy" nillable="true" type="q8:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="LastEditedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LegacyBranchNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NuCardId" type="xs:long" />
+      <xs:element minOccurs="0" name="NuCardProfile" nillable="true" type="tns:NUC_NuCardProfileDTO" />
+      <xs:element minOccurs="0" name="SequenceNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDT" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="NUC_NuCardDTO" nillable="true" type="tns:NUC_NuCardDTO" />
+</xs:schema>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0"?>
+<connectionStrings>
+  <add name="DefaultConnection" connectionString="Data Source=VM2012;User Id=sa;Password=fabian832007;Initial Catalog=AtlasOnline;" providerName="System.Data.SqlClient" />
+</connectionStrings>

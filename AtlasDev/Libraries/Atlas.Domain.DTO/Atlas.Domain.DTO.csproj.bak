@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AAE8AF7-90F0-4A58-8504-5DC7C55C7949}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Domain.DTO</RootNamespace>
+    <AssemblyName>Atlas.Domain.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Npgsql, Version=3.1.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.3.1.7\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ACC_AccountDTO.cs" />
+    <Compile Include="Account\ACC_AccountFeeDTO.cs" />
+    <Compile Include="Account\ACC_AccountNoteDTO.cs" />
+    <Compile Include="Account\ACC_AccountPayRuleDTO.cs" />
+    <Compile Include="Account\ACC_AccountStatusDTO.cs" />
+    <Compile Include="Account\ACC_AccountTypeDTO.cs" />
+    <Compile Include="Account\ACC_AccountTypeFeeDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityCategoryDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityCategoryTypeDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityOptionDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityOptionFeeDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityOptionStatusDTO.cs" />
+    <Compile Include="Account\ACC_AffordabilityOptionTypeDTO.cs" />
+    <Compile Include="Account\ACC_ArrearageDTO.cs" />
+    <Compile Include="Account\ACC_DebitControlDTO.cs" />
+    <Compile Include="Account\ACC_DebitControlTransactionDTO.cs" />
+    <Compile Include="Account\ACC_PayDateDTO.cs" />
+    <Compile Include="Account\ACC_PayDateTypeDTO.cs" />
+    <Compile Include="Account\ACC_PayRuleDTO.cs" />
+    <Compile Include="Account\ACC_PeriodFrequencyDTO.cs" />
+    <Compile Include="Account\ACC_PolicyDTO.cs" />
+    <Compile Include="Account\ACC_QuickQuoteDTO.cs" />
+    <Compile Include="Account\ACC_QuotationDTO.cs" />
+    <Compile Include="Account\ACC_QuotationStatusDTO.cs" />
+    <Compile Include="Account\ACC_ScoreCardDTO.cs" />
+    <Compile Include="Account\ACC_ScoreResultDTO.cs" />
+    <Compile Include="Account\ACC_ScoreRiskLevelDTO.cs" />
+    <Compile Include="Account\ACC_SettlementDTO.cs" />
+    <Compile Include="Account\ACC_SettlementStatusDTO.cs" />
+    <Compile Include="Account\ACC_SettlementTypeDTO.cs" />
+    <Compile Include="Account\ACC_StatusDTO.cs" />
+    <Compile Include="Account\ACC_StatusReasonDTO.cs" />
+    <Compile Include="Account\ACC_StatusSubReasonDTO.cs" />
+    <Compile Include="Account\ACC_ThirdPartyPayoutDTO.cs" />
+    <Compile Include="Account\ACC_TopUpDTO.cs" />
+    <Compile Include="Account\ACC_TopUpStatusDTO.cs" />
+    <Compile Include="Address\AddressDTO.cs" />
+    <Compile Include="Address\AddressTypeDTO.cs" />
+    <Compile Include="AEDO\AEDOLoginDTO.cs" />
+    <Compile Include="AEDO\AEDOReportBatchDTO.cs" />
+    <Compile Include="AEDO\AEDOReportCancelledDTO.cs" />
+    <Compile Include="AEDO\AEDOReportFailedDTO.cs" />
+    <Compile Include="AEDO\AEDOReportFutureDTO.cs" />
+    <Compile Include="AEDO\AEDOReportNewTransactionDTO.cs" />
+    <Compile Include="AEDO\AEDOReportRetryDTO.cs" />
+    <Compile Include="AEDO\AEDOReportSettledDTO.cs" />
+    <Compile Include="AEDO\AEDOReportSuccessDTO.cs" />
+    <Compile Include="AEDO\AEDOReportUnmatchedDTO.cs" />
+    <Compile Include="AEDO\AEDOReportUnsettledDTO.cs" />
+    <Compile Include="ASS\ASS_BranchServerDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportCompuscanProductDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportHandoverInfoDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportPossibleHandoverDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportScoreDTO.cs" />
+    <Compile Include="ASS\ASS_CiReportVersionDTO.cs" />
+    <Compile Include="ASS\ASS_DbUpdateScriptDTO.cs" />
+    <Compile Include="AVS\AVS_BankAccountPeriodDTO.cs" />
+    <Compile Include="AVS\AVS_BatchDTO.cs" />
+    <Compile Include="AVS\AVS_ResponseCodeDTO.cs" />
+    <Compile Include="AVS\AVS_ResponseGroupDTO.cs" />
+    <Compile Include="AVS\AVS_ResponseResultDTO.cs" />
+    <Compile Include="AVS\AVS_ResultDTO.cs" />
+    <Compile Include="AVS\AVS_ServiceDTO.cs" />
+    <Compile Include="AVS\AVS_ServiceScheduleBankDTO.cs" />
+    <Compile Include="AVS\AVS_ServiceScheduleDTO.cs" />
+    <Compile Include="AVS\AVS_ServiceTypeDTO.cs" />
+    <Compile Include="AVS\AVS_StatusDTO.cs" />
+    <Compile Include="AVS\AVS_TransactionDTO.cs" />
+    <Compile Include="Bank\BankAccountTypeDTO.cs" />
+    <Compile Include="Bank\BankBranchDTO.cs" />
+    <Compile Include="Bank\BankCDVDTO.cs" />
+    <Compile Include="Bank\BankDetailDTO.cs" />
+    <Compile Include="Bank\BankDTO.cs" />
+    <Compile Include="BIO\BIO_SettingDTO.cs" />
+    <Compile Include="Branch\BRN_BranchDTO.cs" />
+    <Compile Include="Branch\BRN_ConfigDTO.cs" />
+    <Compile Include="Bureau\BUR_AccountsDTO.cs" />
+    <Compile Include="Bureau\BUR_AccountStatusCodeDTO.cs" />
+    <Compile Include="Bureau\BUR_AccountTypeCodeDTO.cs" />
+    <Compile Include="Bureau\BUR_BandDTO.cs" />
+    <Compile Include="Bureau\BUR_BandRangeDTO.cs" />
+    <Compile Include="Bureau\BUR_BatchDto.cs" />
+    <Compile Include="Bureau\BUR_EnquiryDTO.cs" />
+    <Compile Include="Bureau\BUR_ServiceDTO.cs" />
+    <Compile Include="Bureau\BUR_StorageDTO.cs" />
+    <Compile Include="Company\CPY_CompanyDTO.cs" />
+    <Compile Include="Config\ConfigDTO.cs" />
+    <Compile Include="Contact\ContactDTO.cs" />
+    <Compile Include="Contact\ContactTypeDTO.cs" />
+    <Compile Include="Debit\DBT_AVSCheckTypeDTO.cs" />
+    <Compile Include="Debit\DBT_BatchDTO.cs" />
+    <Compile Include="Debit\DBT_BatchStatusDTO.cs" />
+    <Compile Include="Debit\DBT_ControlDTO.cs" />
+    <Compile Include="Debit\DBT_ControlStatusDTO.cs" />
+    <Compile Include="Debit\DBT_ControlTypeDTO.cs" />
+    <Compile Include="Debit\DBT_ControlValidationDTO.cs" />
+    <Compile Include="Debit\DBT_DebitTypeDTO.cs" />
+    <Compile Include="Debit\DBT_FailureTypeDTO.cs" />
+    <Compile Include="Debit\DBT_HostServiceDTO.cs" />
+    <Compile Include="Debit\DBT_ReplyCodeDTO.cs" />
+    <Compile Include="Debit\DBT_ResponseCodeDTO.cs" />
+    <Compile Include="Debit\DBT_ServiceDTO.cs" />
+    <Compile Include="Debit\DBT_ServiceMessageDTO.cs" />
+    <Compile Include="Debit\DBT_ServiceScheduleBankDTO.cs" />
+    <Compile Include="Debit\DBT_ServiceScheduleDTO.cs" />
+    <Compile Include="Debit\DBT_StatusDTO.cs" />
+    <Compile Include="Debit\DBT_TransactionDTO.cs" />
+    <Compile Include="Debit\DBT_TransmissionDTO.cs" />
+    <Compile Include="Debit\DBT_TransmissionSetDTO.cs" />
+    <Compile Include="Debit\DBT_TransmissionTransactionDTO.cs" />
+    <Compile Include="Debit\DBT_ValidationDTO.cs" />
+    <Compile Include="Document\DOC_CategoryDTO.cs" />
+    <Compile Include="Document\DOC_FileFormatTypeDTO.cs" />
+    <Compile Include="Document\DOC_FileStoreDTO.cs" />
+    <Compile Include="Document\DOC_TemplateStoreDTO.cs" />
+    <Compile Include="Document\DOC_TemplateTypeDTO.cs" />
+    <Compile Include="DomainMapper.cs" />
+    <Compile Include="ETL\ETL_DebitOrderBatchDTO.cs" />
+    <Compile Include="ETL\ETL_DebitOrderDTO.cs" />
+    <Compile Include="ETL\ETL_StageDTO.cs" />
+    <Compile Include="FPM\FPM_AddressFrequencyDTO.cs" />
+    <Compile Include="FPM\FPM_AuthenticationDTO.cs" />
+    <Compile Include="FPM\FPM_AuthenticationProcessStoreDTO.cs" />
+    <Compile Include="FPM\FPM_ConsumerCellphoneValidationDTO.cs" />
+    <Compile Include="FPM\FPM_ConsumerTelephoneDTO.cs" />
+    <Compile Include="FPM\FPM_DecisionCodeDTO.cs" />
+    <Compile Include="FPM\FPM_FraudScoreDTO.cs" />
+    <Compile Include="FPM\FPM_FraudScore_Reason.cs" />
+    <Compile Include="FPM\FPM_HawkAlertDTO.cs" />
+    <Compile Include="FPM\FPM_HawkIDVDTO.cs" />
+    <Compile Include="FPM\FPM_PhoneDTO.cs" />
+    <Compile Include="FPM\FPM_PhoneTypeMapDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPSDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_AddressDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_BankDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_EmploymentDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_IncidentDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_OtherIdDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_PersonalDetailDTO.cs" />
+    <Compile Include="FPM\FPM_SAFPS_TelephoneDetailDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_FeeDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_FeeRangeTypeDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_TransactionDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_TransactionTypeDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_TransactionTypeGroupDTO.cs" />
+    <Compile Include="GeneralLedger\LGR_TypeDTO.cs" />
+    <Compile Include="Host\HostDTO.cs" />
+    <Compile Include="Language\LNG_LanguageDTO.cs" />
+    <Compile Include="Log\LogCoreEventsDTO.cs" />
+    <Compile Include="Log\LogHWStatusDTO.cs" />
+    <Compile Include="Log\LogProductEventDTO.cs" />
+    <Compile Include="NAEDO\NAEDOLoginDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportBatchDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportCancelledDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportDisputedDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportFailedDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportFutureDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportInProcessDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportSuccessDTO.cs" />
+    <Compile Include="NAEDO\NAEDOReportTransactionUploadedDTO.cs" />
+    <Compile Include="Note\NTE_NoteDTO.cs" />
+    <Compile Include="NTF\NTF_GroupDTO.cs" />
+    <Compile Include="NTF\NTF_GroupTemplateDTO.cs" />
+    <Compile Include="NTF\NTF_NotificationDTO.cs" />
+    <Compile Include="NTF\NTF_PriorityDTO.cs" />
+    <Compile Include="NTF\NTF_StatusDTO.cs" />
+    <Compile Include="NTF\NTF_TemplateDTO.cs" />
+    <Compile Include="NTF\NTF_TemplateTypeDTO.cs" />
+    <Compile Include="NTF\NTF_TypeDTO.cs" />
+    <Compile Include="Nucard\NUC_NuCardBatchDTO.cs" />
+    <Compile Include="Nucard\NUC_NuCardDTO.cs" />
+    <Compile Include="Nucard\NUC_NuCardProcessDTO.cs" />
+    <Compile Include="Nucard\NUC_NuCardProfileDTO.cs" />
+    <Compile Include="Nucard\NUC_NuCardStatusDTO.cs" />
+    <Compile Include="Nucard\NUC_TransactionDTO.cs" />
+    <Compile Include="Payout\PYT_BatchDTO.cs" />
+    <Compile Include="Payout\PYT_BatchStatusDTO.cs" />
+    <Compile Include="Payout\PYT_HostServiceDTO.cs" />
+    <Compile Include="Payout\PYT_PayoutDTO.cs" />
+    <Compile Include="Payout\PYT_PayoutStatusDTO.cs" />
+    <Compile Include="Payout\PYT_PayoutValidationDTO.cs" />
+    <Compile Include="Payout\PYT_ReplyCodeDTO.cs" />
+    <Compile Include="Payout\PYT_ReplyCodeTypeDTO.cs" />
+    <Compile Include="Payout\PYT_ResultCodeDTO.cs" />
+    <Compile Include="Payout\PYT_ResultQualifierDTO.cs" />
+    <Compile Include="Payout\PYT_ServiceDTO.cs" />
+    <Compile Include="Payout\PYT_ServiceScheduleBankDTO.cs" />
+    <Compile Include="Payout\PYT_ServiceScheduleDTO.cs" />
+    <Compile Include="Payout\PYT_ServiceTypeDTO.cs" />
+    <Compile Include="Payout\PYT_TransmissionDTO.cs" />
+    <Compile Include="Payout\PYT_TransmissionSetDTO.cs" />
+    <Compile Include="Payout\PYT_TransmissionTransactionDTO.cs" />
+    <Compile Include="Payout\PYT_ValidationDTO.cs" />
+    <Compile Include="Person\PER_PersonDto.cs" />
+    <Compile Include="Person\PER_RelationDto.cs" />
+    <Compile Include="Person\PER_RelationTypeDTO.cs" />
+    <Compile Include="Person\PER_RolesDto.cs" />
+    <Compile Include="Person\PER_SecurityDto.cs" />
+    <Compile Include="Person\PER_TypeDto.cs" />
+    <Compile Include="Product\ProductBatchDTO.cs" />
+    <Compile Include="Product\ProductDTO.cs" />
+    <Compile Include="Product\ProductTypeDTO.cs" />
+    <Compile Include="Product\ProvinceDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicHolidayDTO.cs" />
+    <Compile Include="RegionDTO.cs" />
+    <Compile Include="Role\RoleTypeDTO.cs" />
+    <Compile Include="Security\COR_AppUsageDTO.cs" />
+    <Compile Include="Security\COR_MachineDTO.cs" />
+    <Compile Include="Security\COR_SoftwareDTO.cs" />
+    <Compile Include="Target\TAR_BranchCIMonthlyDTO.cs" />
+    <Compile Include="Target\TAR_DailySaleDTO.cs" />
+    <Compile Include="Target\TAR_HandoverTargetDTO.cs" />
+    <Compile Include="Target\TAR_LoanMixDTO.cs" />
+    <Compile Include="TCC\TCCTerminalDto.cs" />
+    <Compile Include="Transaction\TransactionSourceDTO.cs" />
+    <Compile Include="Transaction\TransactionTypeDTO.cs" />
+    <Compile Include="TSP\TSPReportBatchDTO.cs" />
+    <Compile Include="TSP\TSPReportCancelledDTO.cs" />
+    <Compile Include="TSP\TSPReportFailedDTO.cs" />
+    <Compile Include="TSP\TSPReportFutureDTO.cs" />
+    <Compile Include="TSP\TSPReportInProcessDTO.cs" />
+    <Compile Include="TSP\TSPReportSuccessDTO.cs" />
+    <Compile Include="TSP\TSPReportTransactionUploadedDTO.cs" />
+    <Compile Include="Workflow\WFL_BusinessDayDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionClassDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionClassPropertyDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionGroupDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionGroupResultDTO.cs" />
+    <Compile Include="Workflow\WFL_ConditionPrimaryKeyDTO.cs" />
+    <Compile Include="Workflow\WFL_DataExtTypeDTO.cs" />
+    <Compile Include="Workflow\WFL_DecisionDTO.cs" />
+    <Compile Include="Workflow\WFL_EscalationGroupDTO.cs" />
+    <Compile Include="Workflow\WFL_EscalationGroupPersonDTO.cs" />
+    <Compile Include="Workflow\WFL_EscalationLevelDTO.cs" />
+    <Compile Include="Workflow\WFL_EscalationTemplateDTO.cs" />
+    <Compile Include="Workflow\WFL_JobStateDTO.cs" />
+    <Compile Include="Workflow\WFL_PeriodFrequencyDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessJobDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepEscalationDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepEscalationGroupDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepJobAccountDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepJobDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepJobEscalationDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepJobEscalationNotificationDTO.cs" />
+    <Compile Include="Workflow\WFL_ProcessStepUserGroupDTO.cs" />
+    <Compile Include="Workflow\WFL_ScheduleFrequencyDTO.cs" />
+    <Compile Include="Workflow\WFL_ScheduleProcessDayDTO.cs" />
+    <Compile Include="Workflow\WFL_ScheduleProcessDTO.cs" />
+    <Compile Include="Workflow\WFL_ScheduleProcessStatusDTO.cs" />
+    <Compile Include="Workflow\WFL_ScheduleProcessStepDTO.cs" />
+    <Compile Include="Workflow\WFL_TriggerDTO.cs" />
+    <Compile Include="Workflow\WFL_UserGroupDTO.cs" />
+    <Compile Include="Workflow\WFL_UserGroupLinkDTO.cs" />
+    <Compile Include="Workflow\WFL_WorkflowDTO.cs" />
+    <Compile Include="Workflow\WFL_WorkflowHostDTO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Machine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6aecfad7-a17c-4fb0-9ab6-bfce0f3c5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Data\Atlas.Domain.csproj">
+      <Project>{42909e2d-45b8-44cc-9b2d-be40ce0d148f}</Project>
+      <Name>Atlas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

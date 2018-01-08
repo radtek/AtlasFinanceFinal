@@ -1,0 +1,1227 @@
+﻿@{
+  ViewBag.Title = "Stream - Manage Work Items";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" ng-controller="StreamManageController" ng-init="init();">
+  <div class="col-md-12">
+    <div id="filter" class="tab-pane active">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Category</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.value as c.name for c in categories" ng-model="categoryType" ng-change="selectCategory(categoryType)">
+                  <option selected="true" value='' disabled>
+                    Select Category...
+                  </option>
+                </select>
+                <div class="col-md-1 col-center">
+                </div>
+              </div>
+            </div>
+            @*<div class="col-md-6">
+                  <div class="col-md-2 col-center">
+                      <label>Stream</label>
+                  </div>
+                  <div class="col-md-4">
+                      <select class="form-control" ng-options="c.StreamId as c.Description for c in streams" ng-model="streamType">
+                          <option selected="true" value='' disabled>
+                              Select Stream...
+                          </option>
+                      </select>
+                      <div class="col-md-1 col-center">
+                      </div>
+                  </div>
+              </div>*@
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Case Status</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.CaseStatusId as c.Description for c in caseStatuses" ng-model="filterCaseStatus">
+                  <option selected="true" value='' disabled>
+                    Select Status...
+                  </option>
+                </select>
+                <div class="col-md-1 col-center">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Branch</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.BranchId as c.Name for c in branches" ng-model="branch" ng-disabled="branchLoading" ng-change="getConsultants()">
+                  <option selected="true" value='' disabled>
+                    Select a Branch...
+                  </option>
+                </select>
+                @*<div class="input-group">
+                    <input type="text" class="form-control" ng-model="branchName" ng-disabled="true" value="X">
+                  </div>*@
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Consultant</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.PersonId as c.FullName for c in consultants" ng-model="consultant" ng-disabled="consultantLoading">
+                  <option selected="true" value='' disabled>
+                    Select a Consultant...
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Action Start Date</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                    <input type="text" class="form-control" ng-model="filterActionStartDate" readonly="" style="cursor: pointer !important;"
+                           comp-datepicker-trigger ng-disabled="loading">
+                    <span class="input-group-btn">
+                      <button class="btn" ng-click="filterActionStartDate=''" ng-disabled="loading"><i class="fa fa-times"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Action End Date</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                    <input type="text" class="form-control" ng-model="filterActionEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                    <span class="input-group-btn">
+                      <button class="btn" ng-click="filterActionEndDate=''"><i class="fa fa-times"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Case No.</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="caseNo" ng-disabled="loading">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Account No.</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="accountReferenceNo" ng-disabled="loading">
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>ID No.</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="idNumber" ng-disabled="loading">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Stream Type</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.StreamId as c.Description for c in streams" ng-model="filterStreamType">
+                  <option selected="true" value='' disabled>
+                    Select Stream Type...
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Created Start Date</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                    <input type="text" class="form-control" ng-model="filterCreateStartDate" readonly="" style="cursor: pointer !important;"
+                           comp-datepicker-trigger ng-disabled="loading">
+                    <span class="input-group-btn">
+                      <button class="btn" ng-click="filterCreateStartDate=''" ng-disabled="loading"><i class="fa fa-times"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Created End Date</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                    <input type="text" class="form-control" ng-model="filterCreateEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                    <span class="input-group-btn">
+                      <button class="btn" ng-click="filterCreateEndDate=''"><i class="fa fa-times"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer clearfix">
+          <div>
+            <div class="btn-group pull-left">
+              <button type="button" class="btn btn-info dropdown round-all-corners" data-toggle="dropdown" ng-show="transferMultiButtonView">
+                {{transferringMulti}} <i class="fa fa-angle-down"></i>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="c in consultants">
+                  <a ng-click="transferMultipleToConsultant(c.PersonId)">
+                    {{c.FullName}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="btn btn-info pull-right component-well" ng-disabled="manualSearch" ng-click="search()" button-loading="manualSearch" data-loading-text="Processing Request...">Search</button>
+            <button class="btn grey-cascade pull-right component-well" ng-disabled="consultantLoading" ng-click="init()" button-loading="consultantLoading" data-loading-text="Processing Request...">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div ng-if="escalatedView"><center><h4><strong>Escalated Cases</strong></h4></center>
+  </div>
+    <div id="resultsGrid">
+      <table si-table class="table table-striped ng-cloak">
+        <tr>
+          <th width="20px"></th>
+          <th class="col-align-center">#</th>
+          <th>Client Reference.</th>
+          <th>Client Name</th>
+          <th>ID No.</th>
+          <th class="col-align-center">Priority</th>
+          <th class="col-align-center">Status</th>
+          <th class="col-align-center">Allocated User</th>
+          <th class="col-align-center">Manage</th>
+        </tr>
+        <tbody>
+          <tr si-sortable ng-repeat="case in streamData">
+            <td><input type="checkbox" id="chkRegionalManager" ng-model="case.transfer" ng-checked="multiTransferSelected()" /></td>
+            <td class="col-align-center">{{ case.CaseId }}</td>
+            <td>{{case.AccountReference}}</td>
+            <td>{{case.DebtorFullName}}</td>
+            <td>{{case.DebtorIdNumber }}</td>
+            <td class="col-align-center">{{case.Priority}}</td>
+            <td class="col-align-center">{{case.CaseStatus}}</td>
+            <td class="col-align-center">{{case.AllocatedUserFullName }}</td>
+            <td class="col-align-center"><center> <a ng-click="manage(case)" button-loading="button_loading_{{case.CaseStreamActionId}}" rel="tooltip" title="View" style="cursor: pointer;" id="button_{{case.CaseStreamActionId}}"><span class="curved-border label label-info">manage</span></a></center></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="10">
+              <button class="btn btn-info pull-right" ng-click="printResults()">
+                Print Results
+              </button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="dropdown position-fixed total-top-most" id="menu-cell">
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a class="pointer" role="menuitem" tabindex="1"
+             ng-click="showContactType('Cell')">Add</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown position-fixed total-top-most" id="menu-fax">
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a class="pointer" role="menuitem" tabindex="1" ng-click="showContactType('FaxNo')">Add</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown position-fixed total-top-most" id="menu-work-no">
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a class="pointer" role="menuitem" tabindex="1"
+             ng-click="showContactType('WorkNo')">Add</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown position-fixed total-top-most" id="menu-email">
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a class="pointer" role="menuitem" tabindex="1"
+             ng-click="showContactType('Email')">Add</a>
+        </li>
+      </ul>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewAllocateDlg" role="dialog" tabindex="-1" id="allocateDialog" class="modal bs-modal-lg" style="overflow-y: auto;z-index:1040" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header modal-header-primary">
+            <center>
+              <h4 class="modal-title" ng-show="currentWorkItem.StreamId ===1">New Stream - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info " aria-hidden="true" data-dismiss="modal" anchor-prevent-propagation>X</a></h4>
+              <h4 class="modal-title" ng-show="currentWorkItem.StreamId===3">Promise to Come - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" anchor-prevent-propagation>X</a></h4>
+              <h4 class="modal-title" ng-show="currentWorkItem.StreamId===4">Follow Up - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" anchor-prevent-propagation>X</a></h4>
+              <h4 class="modal-title" ng-show="currentWorkItem.StreamId===2">Promise to Pay Stream - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" ng-show="isManagedItem === true" aria-hidden="true" data-dismiss="modal" anchor-prevent-propagation>X</a></h4>
+              <h4 class="modal-title" ng-show="currentWorkItem.StreamId===5">Broken Promise to Pay - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" ng-show="isManagedItem === true" aria-hidden="true" data-dismiss="modal" anchor-prevent-propagation>X</a></h4>
+            </center>
+          </div>
+          <div class="modal-header modal-header-info" ng-show="currentWorkItem.StreamId != 1">
+            <center>
+              Previous Action Complete Comment: {{ previousCompleteNote }}
+            </center>
+          </div>
+          <div class="modal-header modal-header-info" ng-show="currentWorkItem.ActionTypeId === 3 && currentWorkItem.StreamId===3">
+            <center>
+              This client has promised to come at <strong>{{ currentWorkItem.ActionDate | date: 'EEEE, MMMM d, y HH:mm' }}</strong>.
+            </center>
+          </div>
+          <div class="modal-header modal-header-danger" ng-show="currentWorkItem.NoActionCount>0 ">
+            <center>
+              Please note there has been <strong>{{ currentWorkItem.NoActionCount }}</strong> no action's performed on this case.
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="tabbable-custom">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a data-toggle="tab" href="#details" anchor-prevent-propagation>Details</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#linkedAccounts" anchor-prevent-propagation>Accounts</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#history" anchor-prevent-propagation>History</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#transactions" anchor-prevent-propagation>Transactions</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="details" class="tab-pane active">
+                  <div class="row">
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Name</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorFirstname" readonly="true">
+                    </div>
+                    <div class="col-md-4">
+                      <label>LastName</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorLastname" readonly="true">
+                    </div>
+                    <div class="col-md-4">
+                      <label>ID No.</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorIdNumber" readonly="true">
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-md-3 ng-cloak" ng-cloak>
+                      <label>Cell No</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorCell[0].Value" ng-if=" !currentWorkItem.DebtorCell.IsArray" readonly="true" context-menu="onRightClick(message)"
+                             class="panel panel-default"
+                             data-target="menu-cell"
+                             ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                      <select class="form-control" ng-options="c.ContactId as c.Value for c in currentWorkItem.DebtorCell | orderBy:'ContactId':true" ng-model="debtorCell" ng-if="currentWorkItem.DebtorCell.IsArray" context-menu="onRightClick(message)"
+                              class="panel panel-default"
+                              data-target="menu-cell"
+                              ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                        <option selected="true" value='' disabled>
+                          Select Cell...
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 ng-cloak" ng-cloak>
+                      <label>Fax No.</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorFax[0].Value"
+                             ng-if="!currentWorkItem.DebtorFax.IsArray" readonly="true" context-menu="onRightClick(message)"
+                             class="panel panel-default"
+                             data-target="menu-fax"
+                             ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                      <select class="form-control" ng-options="c.ContactId as c.Value for c in currentWorkItem.DebtorFax | orderBy:'ContactId':true" ng-model="debtorFax" ng-if="currentWorkItem.DebtorFax.IsArray" context-menu="onRightClick(message)"
+                              class="panel panel-default"
+                              data-target="menu-fax"
+                              ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                        <option selected="true" value='' disabled>
+                          Select Stream...
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 ng-cloak" ng-cloak>
+                      <label>Work No.</label>
+                      <input type="text" class="form-control" placeholder="" ng-model="currentWorkItem.DebtorWorkNo[0].Value"
+                             ng-if="!currentWorkItem.DebtorWorkNo.IsArray" readonly="true" context-menu="onRightClick(message)"
+                             class="panel panel-default"
+                             data-target="menu-work-no"
+                             ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                      <select class="form-control" ng-options="c.ContactId as c.Value for c in currentWorkItem.DebtorWorkNo | orderBy:'ContactId':true" ng-model="debtorWorkNo" ng-if="currentWorkItem.DebtorWorkNo.IsArray" context-menu="onRightClick(message)"
+                              class="panel panel-default"
+                              data-target="menu-work-no"
+                              ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                        <option selected="true" value='' disabled>
+                          Select Work No...
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 ng-cloak" ng-cloak>
+                      <label>Email</label>
+                      <input type="text" class="form-control" readonly="true" placeholder="" ng-model="currentWorkItem.DebtorEmail[0].Value" ng-if="!currentWorkItem.DebtorEmail.IsArray" context-menu="onRightClick(message)"
+                             class="panel panel-default"
+                             data-target="menu-email"
+                             ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                      <select class="form-control" ng-options="c.ContactId as c.Value for c in currentWorkItem.DebtorEmail | orderBy:'ContactId':true" ng-model="debtorEmail" ng-if="currentWorkItem.DebtorEmail.IsArray"
+                              context-menu="onRightClick(message)"
+                              class="panel panel-default"
+                              data-target="menu-email"
+                              ng-class="{ 'highlight': panel.highlight, 'expanded': panel.expanded }">
+                        <option selected="true" value='' disabled>
+                          Select Email...
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <hr />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Last Receipt Date</label>
+                      <input type="text" class="form-control" value="{{currentWorkItem.LastReceiptDate | date: 'yyyy-MM-dd'}}" readonly="true">
+                    </div>
+                    <div class="col-md-4">
+                      <label>Last Receipt Amount</label>
+                      <input type="text" class="form-control" ng-model="currentWorkItem.LastReceiptAmount" readonly="true">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                  </div>
+                </div>
+                <div id="linkedAccounts" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-striped ng-cloak" id="accounts" name="accounts" si-table>
+                        <thead>
+                          <tr>
+                            <th>Account Reference</th>
+                            <th>Arrears</th>
+                            <th>Instalments Remaining</th>
+                            <th>Loan Frequency</th>
+                            <th>Last Receipt Date</th>
+                            <th>Last Receipt Amount</th>
+                            <th>In Arrears?</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr si-sortable ng-repeat="account in currentWorkItem.LinkedAccounts" id="{{account.AccountId}}">
+                            <td>{{ account.Reference}}</td>
+                            <td>{{ account.Arrears | currency}}</td>
+                            <td>{{account.InstalmentsOutstanding}} of {{account.LoanTerm}}</td>
+                            <td>{{ account.Frequency}}</td>
+                            <td class="col-align-center">{{ account.LastReceiptDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td>{{ account.LastReceiptAmount | currency}}</td>
+                            <td>{{account.InArrears}}</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="9">
+                              <si-table-pagination limit="10" indices="5" />
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div id="history" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table si-table class="table table-striped ng-cloak" id="notes" name="notes">
+                        <tr>
+                          <th class="col-align-center">#</th>
+                          <th>Note</th>
+                          <th class="col-align-center">Created</th>
+                          <th class="col-align-center">Comment</th>
+                        </tr>
+                        <tbody>
+                          <tr ng-show="showNewComment">
+                            <td colspan="4">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="panel panel-default">
+                                    <div class="panel-body">
+                                      <div class="row">
+                                        <div class="form-group component-well">
+                                          <textarea class="form-control text-area-resize-restrict clearfix" rows="3" ng-model="newComment" id="text_NewNote" ng-disabled="savingComment"></textarea>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel-footer clearfix">
+                                    <div>
+                                      <button class="btn btn-info pull-right" ng-disabled="savingComment" ng-click="addComment()" button-loading="savingComment" data-loading-text="Processing Request...">Save</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr si-sortable ng-repeat="note in notes" id="{{note.NoteId}}">
+                            <td class="col-align-center">{{ note.NoteId}}</td>
+                            <td>{{ note.Note}}</td>
+                            <td class="col-align-center">{{ note.CreateDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td class="col-align-center"><span class="label label-default" ng-click="commentRow(note)"><i class="fa fa-comment-o" style="cursor: pointer;"></i></span></td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="9">
+                              <button class="btn btn-info pull-right" ng-click="printHistory()">
+                                Print History
+                              </button>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div id="transactions" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-striped ng-cloak" id="accountTranaction" name="notes" si-table>
+                        <thead>
+                          <tr>
+                            <th class="col-align-center">#</th>
+                            <th>Account</th>
+                            <th sort-by="CreateDate" sort-init="desc" class="col-align-center">Transaction Date</th>
+                            <th>Instalment Number</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr si-sortable ng-repeat="transaction in currentWorkItem.Transactions" id="{{transaction.TransactionId}}">
+                            <td class="col-align-center">{{ transaction.TransactionId}}</td>
+                            <td class="col-align-center">{{ transaction.AccountReference}}</td>
+                            <td class="col-align-center">{{ transaction.TransactionDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td>{{ transaction.InstalmentNumber}}</td>
+                            <td>{{ transaction.TransactionTypeDescription}}</td>
+                            <td>{{ transaction.TransactionStatusDescription}}</td>
+                            <td>{{ transaction.Amount | currency}}</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="9">
+                              <si-table-pagination limit="10" indices="5" />
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row" ng-show="currentWorkItem.GroupId === 1">
+              <div class="col-md-12" ng-if="currentWorkItem.StreamId ===1 || currentWorkItem.StreamId===4 || currentWorkItem.StreamId===5">
+                <a class="pull-right btn btn-danger component-well" href="!#noActionDlg" data-toggle="modal" anchor-prevent-propagation>No Action</a>
+                <a class="pull-right btn btn-primary component-well" href="!#followUpDlg" data-toggle="modal" anchor-prevent-propagation>Follow Up</a>
+                <a class="pull-right btn btn-primary component-well" href="!#promiseToPayDlg" data-toggle="modal" anchor-prevent-propagation>Promise to Pay</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferCaseTo" data-toggle="modal" anchor-prevent-propagation>Transfer To</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferBackEscalation" ng-show="currentWorkItem.EscalationId > 1" data-toggle="modal" anchor-prevent-propagation>Transfer Back</a>
+              </div>
+              <div class="col-md-12" ng-if="currentWorkItem.ActionTypeId === 3 && currentWorkItem.StreamId===2">
+                <a class="pull-right btn btn-danger component-well" href="!#noActionDlg" data-toggle="modal" anchor-prevent-propagation>No Action</a>
+                <a class="pull-right btn btn-primary component-well" href="!#promiseToPayDlg" data-toggle="modal" anchor-prevent-propagation>Change Promise to Pay</a>
+                <a class="pull-left btn green-meadow component-well" anchor-prevent-propagation ng-click="syncPayment()" button-loading="synch" data-loading-text="Processing Request...">Sync Payment</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferCaseTo" data-toggle="modal" anchor-prevent-propagation>Transfer To</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferBackEscalation" ng-show="currentWorkItem.EscalationId > 1" data-toggle="modal" anchor-prevent-propagation>Transfer Back</a>
+              </div>
+            </div>
+            <div class="row" ng-show="currentWorkItem.GroupId === 2">
+              <div class="col-md-12" ng-if="currentWorkItem.StreamId===3">
+                <a class="pull-right btn btn-danger component-well" href="!#forceCloseDlg" data-toggle="modal" anchor-prevent-propagation>Force Close Case</a>
+                <a class="pull-right btn btn-primary component-well" href="!#promiseToComeDlg" data-toggle="modal" anchor-prevent-propagation>Promise to Come</a>
+                <a class="pull-left btn green-meadow component-well" href="!#completeDlg" data-toggle="modal" anchor-prevent-propagation>Complete</a>
+
+                <a class="pull-left btn blue-madison component-well" href="!#notInterestedDlg" data-toggle="modal" anchor-prevent-propagation>Not Interested</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferCaseTo" data-toggle="modal" anchor-prevent-propagation>Transfer To</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferBackEscalation" ng-show="currentWorkItem.EscalationId > 1" data-toggle="modal" anchor-prevent-propagation>Transfer Back</a>
+              </div>
+              <div class="col-md-12" ng-if="currentWorkItem.StreamId!==3">
+                <a class="pull-right btn btn-danger component-well" href="!#forceCloseDlg" data-toggle="modal" anchor-prevent-propagation>Force Close Case</a>
+                <a class="pull-right btn btn-primary component-well" href="!#followUpDlg" data-toggle="modal" anchor-prevent-propagation>Follow Up</a>
+                <a class="pull-right btn btn-primary component-well" href="!#promiseToComeDlg" data-toggle="modal" anchor-prevent-propagation>Promise to Come</a>
+                <a class="pull-left btn yellow-crusta component-well" href="!#notInterestedDlg" data-toggle="modal" anchor-prevent-propagation>Not Interested</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferCaseTo" data-toggle="modal" anchor-prevent-propagation>Transfer To</a>
+                <a class="pull-left btn blue-madison component-well" href="!#transferBackEscalation" ng-show="currentWorkItem.EscalationId > 1" data-toggle="modal" anchor-prevent-propagation>Transfer Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewPromiseToPay" role="dialog" tabindex="-1" id="promiseToPayDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="promiseForm" id="promiseForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Promise to Pay - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Promise Date</label>
+                  <div class="input-group date form_datetime">
+                    <input type="text" size="16" readonly class="form-control" data-format="yyyy-mm-dd HH:mm" comp-date-time-picker disable-previous-dates="true" disable-weekends="true" disable-sundays="true" ng-change="dateChanged()" ng-model="date" name="promiseToPayDate" id="promiseToPayDate">
+                    <span class="input-group-btn">
+                      <button class="btn default date-set" ng-click="date=''" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-show="dateTooFar">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    Promise date is too far ahead! Max Date: {{maxDate | date: 'yyyy-MM-dd'}}
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-if="date==='' && promiseForm.promiseToPayDate.$dirty">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    A promise date is required!
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label class="control-label ">Amount</label>
+                  <input currency-input ng-model="amount" class="form-control" id="promiseAmount" name="promiseAmount" type="text" ng-required>
+                </div>
+              </div>
+              <div class="row" ng-if="amount==='R 0.00' && promiseForm.promiseAmount.$dirty || amount===undefined && promiseForm.promiseAmount.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A promise amount is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <div ng-show="currentWorkItem.StreamId === 5">
+                    <label>Reason for Broken PTP</label>
+                    <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsPTPBroken" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsPTPBroken)" required>
+                      <option selected="true" value='' disabled>
+                        Select Reason..
+                      </option>
+                    </select>
+                  </div>
+                  <div ng-show="currentWorkItem.StreamId !== 5">
+                    <label>Reason</label>
+                    <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsPTP" id="promiseToPayReason" name="promiseToPayReason" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsPTP)" required>
+                      <option selected="true" value='' disabled>
+                        Select Reason..
+                      </option>
+                    </select>
+                  </div>
+                  @*<select class="form-control" ng-model="reason" id="promiseToPayReason" name="promiseToPayReason" ng-init="reason = options[0]">
+                      <option selected="true" value='' disabled>
+                        Select Reason..
+                      </option>
+                      <option value="1">Reason 1</option>
+                      <option>Reason 2</option>
+                      <option>None</option>
+                    </select>*@
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && promiseForm.promiseToPayReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" ng-show="currentWorkItem.StreamId===2" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('PTPReschedule', date , amount, reason, 'promiseToPayDlg', true, true);" ng-disabled="reason===undefined || saving || amount===undefined || date===undefined">Save</a>
+              <a class="pull-right btn btn-primary component-well" ng-show="currentWorkItem.StreamId!==2" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('PTP', date , amount, reason, 'promiseToPayDlg', true, true);" ng-disabled="reason===undefined || saving || amount===undefined || date===undefined">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewPromiseToCome" role="dialog" tabindex="-1" id="promiseToComeDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="promiseForm" id="promiseForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Promise to Come - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Promise Date</label>
+                  <div class="input-group date form_datetime">
+                    <input type="text" size="16" readonly class="form-control" data-format="yyyy-mm-dd HH:mm" comp-date-time-picker disable-previous-dates="true" disable-weekends="true" disable-sundays="true" ng-change="dateChanged()" ng-model="date" name="promiseToPayDate" id="promiseToPayDate">
+                    <span class="input-group-btn">
+                      <button class="btn default date-set" ng-click="date=''" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-show="dateTooFar">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    Promise date is too far ahead! Max Date: {{maxDate | date: 'yyyy-MM-dd'}}
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-if="date==='' && promiseForm.promiseToPayDate.$dirty">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    A promise date is required!
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsPTC" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsPTC)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && promiseForm.promiseToComeReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('PTC', date , null, reason, 'promiseToComeDlg', true, true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewFollowUpDlg" role="dialog" tabindex="-1" id="followUpDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="followUpForm" id="followUpForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Follow Up - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Follow Up Date</label>
+                  <div class="input-group date form_datetime">
+                    <input type="text" size="16" readonly class="form-control" data-format="yyyy-mm-dd hh:mm" comp-date-time-picker disable-previous-dates="true" disable-weekends="true" disable-sundays="true" ng-change="dateChanged()" ng-model="date" id="followUpDate" name="followUpDate">
+                    <span class="input-group-btn">
+                      <button class="btn default date-set" ng-click="date=''" type="button"><i class="fa fa-calendar"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-show="dateTooFar">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    Promise date is too far ahead! Max Date: {{maxDate | date: 'yyyy-MM-dd'}}
+                  </div>
+                </div>
+              </div>
+              <div class="row" ng-if="date==='' && followUpForm.followUpDate.$dirty">
+                <div class="col-md-12">
+                  <div class="alert alert-danger">
+                    A follow up date is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsFollowUps" id="followUpReason" name="followUpReason" ng-init=" reason=options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsFollowUps)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && promiseForm.followUpReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{ reasonDescription }}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('FollowUp', date, null, reason, 'followUpDlg', true, true);" ng-disabled="saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewNoActionDlg" role="dialog" tabindex="-1" id="noActionDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="noActionForm" id="noAction">
+            <div class="modal-header modal-header-red-sunglo">
+              <center>
+                <h4 class="modal-title">No Action - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsNoAction" id="noActionReason" name="noActionReason" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsNoAction)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && noActionForm.noActionReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-click="test();" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('NoAction', null, null, reason, 'noActionDlg', true, true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewEscalateDlg" role="dialog" tabindex="-1" id="escalateDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="escalateForm" id="escalateForm">
+            <div class="modal-header modal-header-yellow-crusta">
+              <center>
+                <h4 class="modal-title">Escalate - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Escalation Level</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>
+                        <input type="checkbox" value="chkBranchManager" ng-model="chkBranchManager"> Branch Manager
+                      </label>
+                    </div>
+                    <div class="col-md-4">
+                      <label>
+                        <input type="checkbox" id="chkAdminManager" ng-model="chkAdminManager"> Admin Manager
+                      </label>
+                    </div>
+                    <div class="col-md-4">
+                      <label>
+                        <input type="checkbox" id="chkRegionalManager" ng-model="chkRegionalManager" disabled> Regional Manager
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsEscalate" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsEscalate)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && escalateForm.escalateReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-click="test();" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="escalating" data-loading-text="Processing Request..." ng-click="escalate(reason, true, true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewForceCloseDlg" role="dialog" tabindex="-1" id="forceCloseDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="forceCloseForm" id="forceClose">
+            <div class="modal-header modal-header-red-sunglo">
+              <center>
+                <h4 class="modal-title">Force Close - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsForceClosed" id="forceCloseReason" name="forceCloseReason" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsForceClosed)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && forceCloseForm.forceCloseReason.$dirty && reason===undefined && forceCloseForm.forceCloseReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-click="test();" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveAction('ForceClose', null, null, reason, 'forceCloseDlg', true, true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div aria-hidden="true" aria-labelledby="viewCompleteDlg" role="dialog" tabindex="-1" id="completeDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="completeForm" id="completeForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Complete - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Outcome</label>
+                  <select class="form-control" ng-model="outcome" ng-init="outcome = options[0]" id="completeOutcome" name="completeOutcome" required>
+                    <option selected="true" value='' disabled>
+                      Select Outcome..
+                    </option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsDeEscalate" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsDeEscalate)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && completeForm.completeReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveOutcome(outcome,reason, 'completeDlg', true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewContactAddDlg" role="dialog" tabindex="-1" id="contactAddDlg" class="modal bs-modal-sm" style="overflow-y: auto;z-index:2147483647">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <form name="contactForm" id="contactForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Add {{contactType}}</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12 ng-cloak" ng-cloak>
+                  <input class="form-control" ng-model="contactNo" numbers-only char-limit="10" ng-show="contactType !== 'Email'" />
+                  <input class="form-control" ng-model="contactNo" ng-show="contactType === 'Email'" type="email" />
+                </div><div class="col-md-6"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Close</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="savingContact" data-loading-text="Processing Request..." ng-click="addContact(contactType,contactNo);" ng-disabled="contactNo===undefined || savingContact">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewNotInterestedDlg" role="dialog" tabindex="-1" id="notInterestedDlg" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="notInterestedForm" id="notInterestedForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Not Interested - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsNotInterested" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsNotInterested)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason==='' && notInterestedForm.completeReason.$dirty">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{reasonDescription}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveNotInterested(true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div aria-hidden="true" aria-labelledby="viewTransferBackEscalation" role="dialog" tabindex="-1" id="transferBackEscalation" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="notInterestedForm" id="transferBackEscalationForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Transfer Back - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsDeEscalate" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsDeEscalate)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason===''">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{transferBackEscalationReason}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="saveTransferBack(true);" ng-disabled="reason===undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="viewtransferCaseTo" role="dialog" tabindex="-1" id="transferCaseTo" class="modal" style="overflow-y: auto;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="notInterestedForm" id="transferBackEscalationForm">
+            <div class="modal-header modal-header-primary">
+              <center>
+                <h4 class="modal-title">Transfer - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.CaseReference}}</strong>]</h4>
+              </center>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Consultant</label>
+                  <select class="form-control" ng-model="transferToConsultant" ng-options="c.PersonId as c.FullName for c in consultants" id="transferTo" name="transferTo" required>
+                    <option selected="true" value='' disabled>
+                      Select Consultant..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="transferToConsultant===''">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Reason</label>
+                  <select class="form-control" ng-options="c.CommentId as c.Description for c in reasonsTransferCase" ng-init="reason = options[0]" ng-model="reason" ng-change="setReasonDescription(reason,reasonsNotInterested)" required>
+                    <option selected="true" value='' disabled>
+                      Select Reason..
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="row" ng-if="reason===''">
+                <div class="col-md-8 col-center">
+                  <div class="alert alert-danger">
+                    A reason is required!
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Comment</label>
+                  <textarea class="form-control text-area-resize-restrict" rows="4" disabled>{{transferBackEscalationReason}}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+              <a class="pull-right btn btn-primary component-well" button-loading="saving" data-loading-text="Processing Request..." ng-click="transferTo(true);" ng-disabled="reason===undefined||transferToConsultant === undefined || saving">Save</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div modal-stack></div>
+  </div>
+</div>

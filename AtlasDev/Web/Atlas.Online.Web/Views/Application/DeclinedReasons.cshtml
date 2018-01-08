@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Declined Reasons";
+    ViewBag.NgApp = "atlas.core";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/core")
+}
+
+<div class="container-outline">
+	<div class="pos-r">
+		<h1 class="hn-in-outline fc-beta">
+			<strong>Declined</strong>
+			<span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+			<span class="fc-alpha">Possible reasons</span>
+		</h1>
+		<div class="cf">
+      <div class="ac">
+	      <p class="fc-beta fs-delta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+      </div>
+
+      <h5>Lorem ipsum dolor sit</h5>
+      <p>@ViewBag.Reason</p>
+
+      @if (ViewBag.Submitted == null) {
+      <p class="fc-beta fs-delta">Still unsure why your application was denied? Please submit a review.</p>
+
+      using (Html.BeginForm("DeclinedReasons", "Application", FormMethod.Post, new { id = ViewBag.ApplicationId, name = "form" })) {
+        @Html.AntiForgeryToken();
+      <div class="row cf">
+	      <div class="col col-8 pr-beta">
+		      <textarea class="d-block" rows="5" ng-model="review" name="review" required></textarea>
+	      </div>
+	      <div class="col col-4">
+		      <span class="fc-alpha-dk fs-alpha case-u">REF# @ViewBag.RefNo</span>
+		      <label for="submit-1" class="btn btn-right d-block" ng-class="{disabled: form.$invalid }"><input id="submit-4" type="submit" ng-disabled="form.$invalid" value="Submit a review request"></label>
+	      </div>
+      </div>
+      }
+      }
+      else
+      {
+        <div class="alert alert-success">Thank you! Your review has been submitted.</div>
+        <div class="ar">
+          <a href="@Url.Action("Index", "MyAccount")" class="btn btn-right">My Account</a>
+        </div>
+      }
+    </div>
+	</div>
+</div>

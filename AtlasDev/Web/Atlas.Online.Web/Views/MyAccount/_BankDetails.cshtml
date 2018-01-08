@@ -1,0 +1,68 @@
+﻿@model Atlas.Online.Web.Models.Dto.BankDetailDto
+
+@using Atlas.Online.Web.Extensions.Ng
+
+@Html.Partial("_BankDetailNotifications")
+
+@using (Html.NgBeginForm(htmlAttributes: new Dictionary<string, object>() { { "name", "form" }, { "novalidate", "novalidate" }, {"f8-initialize-model", null} }))
+{
+    <div class="row row-ib-cols row-ib-cols-va-m cf">
+        <div class="field cf">
+            <div class="col sm-1-3">
+                @Html.LabelFor(x => x.BankName, new { @class = "field-label" })
+                @Html.NgTooltip(title: "This is the account that your salary goes into and your loan repayment will come off.")
+            </div>
+			<div class="col sm-2-3">
+                @Html.NgDropDownListFor(x => x.BankName, new Dictionary<string, object>() { { "class", "d-block"}, { "ng-readonly", "bankReadOnly()" }  })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.BankName)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3">
+                @Html.LabelFor(x => x.AccountHolder, new { @class = "field-label" })
+            </div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.AccountHolder, new Dictionary<string, object>() { { "class", "d-block"}, { "ng-readonly", "bankReadOnly()" } })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.AccountHolder)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3">
+				@Html.LabelFor(x => x.AccountType, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgDropDownListFor(x => x.AccountType, new Dictionary<string, object>() { { "class", "d-block"}, { "ng-readonly", "bankReadOnly()" } })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.AccountType)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3">
+				@Html.LabelFor(x => x.AccountNo, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.AccountNo, new Dictionary<string, object>() { { "class", "d-block"}, { "ng-readonly", "bankReadOnly()" } })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.AccountNo)
+		</div>  
+        <div class="field cf">
+			<div class="col sm-1-3">
+				@Html.LabelFor(x => x.BankPeriod, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgDropDownListFor(x => x.BankPeriod, new Dictionary<string, object>() { { "class", "d-block"}, { "ng-readonly", "bankReadOnly()" } })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.BankPeriod)
+		</div>
+    </div>
+	<div>
+		<input class="visuallyhidden" type="checkbox" id="banking-agree" name="agree" ng-model="agree" required>
+		<label class="field-label case-n" for="banking-agree" ng-class="{disabled: bankReadOnly()}">
+			<i class="icon checkbox-custom visuallyhidden-ie8"></i> I confirm that my salary is paid to the bank account provided
+		</label>
+	</div>
+	<div class="ar">
+        <label for="banking-submit" class="btn" ng-class="{disabled: form.$invalid || bankReadOnly()}">
+            <input id="banking-submit" ng-disabled="form.$invalid || bankReadOnly()" ng-click="update($event)" name="submit" type="submit" value="Update">
+		</label>
+	</div>
+}

@@ -1,0 +1,16 @@
+---
+layout : default
+---
+<div class="container-outline">
+	<div class="pos-r">
+		<h1 class="hn-in-outline fc-beta">
+			<strong>{{ page.title }}</strong>
+			{{# page.title_additional }}
+			<span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+			<span class="fc-alpha">{{ . }}</span>{{/ page.title_additional }}
+		</h1>
+		<div class="cf">
+			{{{ page.content }}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,2122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FalconService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="FalconService.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.Ass" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Avs" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Branch" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.General" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFalconService_AssReporting_GetCheque_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetCheque" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetCheque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInsurancePercentiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInsurancePercentiles" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInsurancePercentiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInsurancePercentilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInterestPercentiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInterestPercentiles" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInterestPercentiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInterestPercentilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInsuranceFees_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInsuranceFees" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInsuranceFees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInsuranceFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInterestFees_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInterestFees" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetInterestFees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetInterestFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetLoanMix_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetLoanMix" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetLoanMix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetLoanMixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetAverageNewClientLoan_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetAverageNewClientLoan" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetAverageNewClientLoan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetAverageNewClientLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetAverageLoan_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetAverageLoan" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetAverageLoan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetAverageLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_ExportCIReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_ExportCIReport" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_ExportCIReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_ExportCIReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssInt_AddUserOverride_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssInt_AddUserOverride" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssInt_AddUserOverride_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssInt_AddUserOverrideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_LocatebyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_LocatebyId" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_LocatebyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_LocatebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_LocateByPersonId_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_LocateByPersonId" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_LocateByPersonId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_LocateByPersonIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetWebRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetWebRoles" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetWebRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetWebRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetPersonList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetPersonList" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Operations_GetPersonList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Operations_GetPersonListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_ResendTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_ResendTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_ResendTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_ResendTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_CancelTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_CancelTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_CancelTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_CancelTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetBanks_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetBanks" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetBanks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetServiceSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetServiceSchedules" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_GetServiceSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetServiceSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_UpdateServicesSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_UpdateServicesSchedules" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AVS_UpdateServicesSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_UpdateServicesSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetBanks_InputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetBanks" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetBanks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_GetAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_GetAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_PlaceOnHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_PlaceOnHold" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_PlaceOnHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_PlaceOnHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_RemoveFromHold_InputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_RemoveFromHold" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Payout_RemoveFromHold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Payout_RemoveFromHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_Get" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_MarkAsRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_MarkAsRead" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_MarkAsRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_MarkAsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_Gets_InputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_Gets" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Notification_Gets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Notification_GetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_Get" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_GetProcessSteps_InputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_GetProcessSteps" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_GetProcessSteps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_GetProcessStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_RedirectAccountToProcessStep_InputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_RedirectAccountToProcessStep" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Workflow_RedirectAccountToProcessStep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Workflow_RedirectAccountToProcessStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Host_GetAccessible_InputMessage">
+    <wsdl:part name="parameters" element="tns:Host_GetAccessible" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Host_GetAccessible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Host_GetAccessibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_PublicHolidays_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublicHolidays_Get" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_PublicHolidays_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublicHolidays_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_Send_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_Send" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_Send_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_Verify_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_Verify" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_Verify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_VerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_VerifyToHash_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_VerifyToHash" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_VerifyToHash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_VerifyToHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_StoreToHash_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_StoreToHash" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_OTP_StoreToHash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_StoreToHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Search" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_GetDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_GetDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_GetDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_GetDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_UpdateStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_UpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_UpdateStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_UpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_AddNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_AddNote" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_AddNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_AddNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_EditNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_EditNote" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_EditNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_EditNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_DeleteNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_DeleteNote" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_DeleteNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_DeleteNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_AdjustLoan_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_AdjustLoan" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_AdjustLoan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_AdjustLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_AcceptOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_AcceptOption" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_AcceptOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_AcceptOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_AddItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_AddItem" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_AddItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_AddItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_DeleteItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_DeleteItem" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_Affordability_DeleteItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_Affordability_DeleteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_QuotationAccept_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_QuotationAccept" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_QuotationAccept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_QuotationAcceptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_QuotationReject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Account_QuotationReject" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Account_QuotationReject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Account_QuotationRejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ledger_GetPastPaymentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ledger_GetPastPaymentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ledger_GetPastPaymentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ledger_GetPastPaymentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ledger_AddPastPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ledger_AddPastPayment" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Ledger_AddPastPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ledger_AddPastPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_AddContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_AddContact" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_AddContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_AddContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_DisableContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_DisableContact" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_DisableContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_DisableContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_AddAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_AddAddress" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_AddAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_AddAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_DisableAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_DisableAddress" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_DisableAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_DisableAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_NewRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_NewRelation" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_NewRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_NewRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_UpdateRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_UpdateRelation" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_UpdateRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_UpdateRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_LocateByIdentityNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_LocateByIdentityNo" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_LocateByIdentityNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_LocateByIdentityNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_GetByIdentityNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_GetByIdentityNo" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_GetByIdentityNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_GetByIdentityNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_GetByPrimaryKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_GetByPrimaryKey" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_GetByPrimaryKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_GetByPrimaryKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_VerifyIsValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_VerifyIsValid" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_VerifyIsValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_VerifyIsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_ValidatePasswordReset_InputMessage">
+    <wsdl:part name="parameters" element="tns:Person_ValidatePasswordReset" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Person_ValidatePasswordReset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Person_ValidatePasswordResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Fraud_OverrideResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fraud_OverrideResult" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Fraud_OverrideResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fraud_OverrideResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Authentication_ResetAttempts_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authentication_ResetAttempts" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Authentication_ResetAttempts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Authentication_ResetAttemptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Authentication_OverrideResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authentication_OverrideResult" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Authentication_OverrideResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Authentication_OverrideResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Credit_ReSubmit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Credit_ReSubmit" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Credit_ReSubmit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Credit_ReSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Credit_FetchCreditReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:Credit_FetchCreditReport" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_Credit_FetchCreditReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Credit_FetchCreditReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetPersonRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetPersonRegions" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetPersonRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetPersonRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetRegionBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetRegionBranches" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetRegionBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetRegionBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetPersonRegionBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetPersonRegionBranches" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetPersonRegionBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetPersonRegionBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetMainSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetMainSummary" />
+  </wsdl:message>
+  <wsdl:message name="IFalconService_AssReporting_GetMainSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssReporting_GetMainSummaryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFalconService">
+    <wsdl:operation name="AssReporting_GetCheque">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetCheque" message="tns:IFalconService_AssReporting_GetCheque_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetChequeResponse" message="tns:IFalconService_AssReporting_GetCheque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsurancePercentiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInsurancePercentiles" message="tns:IFalconService_AssReporting_GetInsurancePercentiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInsurancePercentilesResponse" message="tns:IFalconService_AssReporting_GetInsurancePercentiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestPercentiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInterestPercentiles" message="tns:IFalconService_AssReporting_GetInterestPercentiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInterestPercentilesResponse" message="tns:IFalconService_AssReporting_GetInterestPercentiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsuranceFees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInsuranceFees" message="tns:IFalconService_AssReporting_GetInsuranceFees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInsuranceFeesResponse" message="tns:IFalconService_AssReporting_GetInsuranceFees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestFees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInterestFees" message="tns:IFalconService_AssReporting_GetInterestFees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetInterestFeesResponse" message="tns:IFalconService_AssReporting_GetInterestFees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetLoanMix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetLoanMix" message="tns:IFalconService_AssReporting_GetLoanMix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetLoanMixResponse" message="tns:IFalconService_AssReporting_GetLoanMix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageNewClientLoan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetAverageNewClientLoan" message="tns:IFalconService_AssReporting_GetAverageNewClientLoan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetAverageNewClientLoanResponse" message="tns:IFalconService_AssReporting_GetAverageNewClientLoan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageLoan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetAverageLoan" message="tns:IFalconService_AssReporting_GetAverageLoan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetAverageLoanResponse" message="tns:IFalconService_AssReporting_GetAverageLoan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_ExportCIReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_ExportCIReport" message="tns:IFalconService_AssReporting_ExportCIReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_ExportCIReportResponse" message="tns:IFalconService_AssReporting_ExportCIReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssInt_AddUserOverride">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssInt_AddUserOverride" message="tns:IFalconService_AssInt_AddUserOverride_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssInt_AddUserOverrideResponse" message="tns:IFalconService_AssInt_AddUserOverride_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocatebyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Operations_LocatebyId" message="tns:IFalconService_Operations_LocatebyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Operations_LocatebyIdResponse" message="tns:IFalconService_Operations_LocatebyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocateByPersonId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Operations_LocateByPersonId" message="tns:IFalconService_Operations_LocateByPersonId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Operations_LocateByPersonIdResponse" message="tns:IFalconService_Operations_LocateByPersonId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Operations_GetPermissions" message="tns:IFalconService_Operations_GetPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Operations_GetPermissionsResponse" message="tns:IFalconService_Operations_GetPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetWebRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Operations_GetWebRoles" message="tns:IFalconService_Operations_GetWebRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Operations_GetWebRolesResponse" message="tns:IFalconService_Operations_GetWebRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPersonList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Operations_GetPersonList" message="tns:IFalconService_Operations_GetPersonList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Operations_GetPersonListResponse" message="tns:IFalconService_Operations_GetPersonList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_GetTransactions" message="tns:IFalconService_AVS_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_GetTransactionsResponse" message="tns:IFalconService_AVS_GetTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_ResendTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_ResendTransactions" message="tns:IFalconService_AVS_ResendTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_ResendTransactionsResponse" message="tns:IFalconService_AVS_ResendTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_CancelTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_CancelTransactions" message="tns:IFalconService_AVS_CancelTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_CancelTransactionsResponse" message="tns:IFalconService_AVS_CancelTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetBanks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_GetBanks" message="tns:IFalconService_AVS_GetBanks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_GetBanksResponse" message="tns:IFalconService_AVS_GetBanks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetServiceSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_GetServiceSchedules" message="tns:IFalconService_AVS_GetServiceSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_GetServiceSchedulesResponse" message="tns:IFalconService_AVS_GetServiceSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_UpdateServicesSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AVS_UpdateServicesSchedules" message="tns:IFalconService_AVS_UpdateServicesSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AVS_UpdateServicesSchedulesResponse" message="tns:IFalconService_AVS_UpdateServicesSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Ping" message="tns:IFalconService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/PingResponse" message="tns:IFalconService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Payout_GetTransactions" message="tns:IFalconService_Payout_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Payout_GetTransactionsResponse" message="tns:IFalconService_Payout_GetTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetBanks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Payout_GetBanks" message="tns:IFalconService_Payout_GetBanks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Payout_GetBanksResponse" message="tns:IFalconService_Payout_GetBanks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Payout_GetAlerts" message="tns:IFalconService_Payout_GetAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Payout_GetAlertsResponse" message="tns:IFalconService_Payout_GetAlerts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Payout_PlaceOnHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Payout_PlaceOnHold" message="tns:IFalconService_Payout_PlaceOnHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Payout_PlaceOnHoldResponse" message="tns:IFalconService_Payout_PlaceOnHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Payout_RemoveFromHold">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Payout_RemoveFromHold" message="tns:IFalconService_Payout_RemoveFromHold_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Payout_RemoveFromHoldResponse" message="tns:IFalconService_Payout_RemoveFromHold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Notification_Get" message="tns:IFalconService_Notification_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Notification_GetResponse" message="tns:IFalconService_Notification_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Notification_MarkAsRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Notification_MarkAsRead" message="tns:IFalconService_Notification_MarkAsRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Notification_MarkAsReadResponse" message="tns:IFalconService_Notification_MarkAsRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Gets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Notification_Gets" message="tns:IFalconService_Notification_Gets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Notification_GetsResponse" message="tns:IFalconService_Notification_Gets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Workflow_Get" message="tns:IFalconService_Workflow_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Workflow_GetResponse" message="tns:IFalconService_Workflow_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_GetProcessSteps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Workflow_GetProcessSteps" message="tns:IFalconService_Workflow_GetProcessSteps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Workflow_GetProcessStepsResponse" message="tns:IFalconService_Workflow_GetProcessSteps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_RedirectAccountToProcessStep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Workflow_RedirectAccountToProcessStep" message="tns:IFalconService_Workflow_RedirectAccountToProcessStep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Workflow_RedirectAccountToProcessStepResponse" message="tns:IFalconService_Workflow_RedirectAccountToProcessStep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Host_GetAccessible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Host_GetAccessible" message="tns:IFalconService_Host_GetAccessible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Host_GetAccessibleResponse" message="tns:IFalconService_Host_GetAccessible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublicHolidays_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/PublicHolidays_Get" message="tns:IFalconService_PublicHolidays_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/PublicHolidays_GetResponse" message="tns:IFalconService_PublicHolidays_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Send">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/OTP_Send" message="tns:IFalconService_OTP_Send_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/OTP_SendResponse" message="tns:IFalconService_OTP_Send_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/OTP_Verify" message="tns:IFalconService_OTP_Verify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/OTP_VerifyResponse" message="tns:IFalconService_OTP_Verify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OTP_VerifyToHash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/OTP_VerifyToHash" message="tns:IFalconService_OTP_VerifyToHash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/OTP_VerifyToHashResponse" message="tns:IFalconService_OTP_VerifyToHash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OTP_StoreToHash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/OTP_StoreToHash" message="tns:IFalconService_OTP_StoreToHash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/OTP_StoreToHashResponse" message="tns:IFalconService_OTP_StoreToHash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_Search" message="tns:IFalconService_Account_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_SearchResponse" message="tns:IFalconService_Account_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_GetDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_GetDetail" message="tns:IFalconService_Account_GetDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_GetDetailResponse" message="tns:IFalconService_Account_GetDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_UpdateStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_UpdateStatus" message="tns:IFalconService_Account_UpdateStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_UpdateStatusResponse" message="tns:IFalconService_Account_UpdateStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_AddNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_AddNote" message="tns:IFalconService_Account_AddNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_AddNoteResponse" message="tns:IFalconService_Account_AddNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_EditNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_EditNote" message="tns:IFalconService_Account_EditNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_EditNoteResponse" message="tns:IFalconService_Account_EditNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_DeleteNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_DeleteNote" message="tns:IFalconService_Account_DeleteNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_DeleteNoteResponse" message="tns:IFalconService_Account_DeleteNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_AdjustLoan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_AdjustLoan" message="tns:IFalconService_Account_AdjustLoan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_AdjustLoanResponse" message="tns:IFalconService_Account_AdjustLoan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_GetCategories" message="tns:IFalconService_Account_Affordability_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_GetCategoriesResponse" message="tns:IFalconService_Account_Affordability_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AcceptOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_AcceptOption" message="tns:IFalconService_Account_Affordability_AcceptOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_AcceptOptionResponse" message="tns:IFalconService_Account_Affordability_AcceptOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AddItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_AddItem" message="tns:IFalconService_Account_Affordability_AddItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_AddItemResponse" message="tns:IFalconService_Account_Affordability_AddItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_DeleteItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_DeleteItem" message="tns:IFalconService_Account_Affordability_DeleteItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_Affordability_DeleteItemResponse" message="tns:IFalconService_Account_Affordability_DeleteItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationAccept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_QuotationAccept" message="tns:IFalconService_Account_QuotationAccept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_QuotationAcceptResponse" message="tns:IFalconService_Account_QuotationAccept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationReject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Account_QuotationReject" message="tns:IFalconService_Account_QuotationReject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Account_QuotationRejectResponse" message="tns:IFalconService_Account_QuotationReject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_GetPastPaymentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Ledger_GetPastPaymentTypes" message="tns:IFalconService_Ledger_GetPastPaymentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Ledger_GetPastPaymentTypesResponse" message="tns:IFalconService_Ledger_GetPastPaymentTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_AddPastPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Ledger_AddPastPayment" message="tns:IFalconService_Ledger_AddPastPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Ledger_AddPastPaymentResponse" message="tns:IFalconService_Ledger_AddPastPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_AddContact" message="tns:IFalconService_Person_AddContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_AddContactResponse" message="tns:IFalconService_Person_AddContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_DisableContact" message="tns:IFalconService_Person_DisableContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_DisableContactResponse" message="tns:IFalconService_Person_DisableContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_AddAddress" message="tns:IFalconService_Person_AddAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_AddAddressResponse" message="tns:IFalconService_Person_AddAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_DisableAddress" message="tns:IFalconService_Person_DisableAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_DisableAddressResponse" message="tns:IFalconService_Person_DisableAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_NewRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_NewRelation" message="tns:IFalconService_Person_NewRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_NewRelationResponse" message="tns:IFalconService_Person_NewRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_UpdateRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_UpdateRelation" message="tns:IFalconService_Person_UpdateRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_UpdateRelationResponse" message="tns:IFalconService_Person_UpdateRelation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_LocateByIdentityNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_LocateByIdentityNo" message="tns:IFalconService_Person_LocateByIdentityNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_LocateByIdentityNoResponse" message="tns:IFalconService_Person_LocateByIdentityNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByIdentityNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_GetByIdentityNo" message="tns:IFalconService_Person_GetByIdentityNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_GetByIdentityNoResponse" message="tns:IFalconService_Person_GetByIdentityNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByPrimaryKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_GetByPrimaryKey" message="tns:IFalconService_Person_GetByPrimaryKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_GetByPrimaryKeyResponse" message="tns:IFalconService_Person_GetByPrimaryKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_VerifyIsValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_VerifyIsValid" message="tns:IFalconService_Person_VerifyIsValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_VerifyIsValidResponse" message="tns:IFalconService_Person_VerifyIsValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Person_ValidatePasswordReset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Person_ValidatePasswordReset" message="tns:IFalconService_Person_ValidatePasswordReset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Person_ValidatePasswordResetResponse" message="tns:IFalconService_Person_ValidatePasswordReset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fraud_OverrideResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Fraud_OverrideResult" message="tns:IFalconService_Fraud_OverrideResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Fraud_OverrideResultResponse" message="tns:IFalconService_Fraud_OverrideResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_ResetAttempts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Authentication_ResetAttempts" message="tns:IFalconService_Authentication_ResetAttempts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Authentication_ResetAttemptsResponse" message="tns:IFalconService_Authentication_ResetAttempts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_OverrideResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Authentication_OverrideResult" message="tns:IFalconService_Authentication_OverrideResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Authentication_OverrideResultResponse" message="tns:IFalconService_Authentication_OverrideResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Credit_ReSubmit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Credit_ReSubmit" message="tns:IFalconService_Credit_ReSubmit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Credit_ReSubmitResponse" message="tns:IFalconService_Credit_ReSubmit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Credit_FetchCreditReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/Credit_FetchCreditReport" message="tns:IFalconService_Credit_FetchCreditReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/Credit_FetchCreditReportResponse" message="tns:IFalconService_Credit_FetchCreditReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetPersonRegions" message="tns:IFalconService_AssReporting_GetPersonRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetPersonRegionsResponse" message="tns:IFalconService_AssReporting_GetPersonRegions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetRegionBranches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetRegionBranches" message="tns:IFalconService_AssReporting_GetRegionBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetRegionBranchesResponse" message="tns:IFalconService_AssReporting_GetRegionBranches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegionBranches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetPersonRegionBranches" message="tns:IFalconService_AssReporting_GetPersonRegionBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetPersonRegionBranchesResponse" message="tns:IFalconService_AssReporting_GetPersonRegionBranches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetMainSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetMainSummary" message="tns:IFalconService_AssReporting_GetMainSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFalconService/AssReporting_GetMainSummaryResponse" message="tns:IFalconService_AssReporting_GetMainSummary_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FalconService.NET" type="tns:IFalconService">
+    <wsp:PolicyReference URI="#FalconService.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AssReporting_GetCheque">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetCheque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsurancePercentiles">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInsurancePercentiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestPercentiles">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInterestPercentiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsuranceFees">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInsuranceFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestFees">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInterestFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetLoanMix">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetLoanMix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageNewClientLoan">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetAverageNewClientLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageLoan">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetAverageLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_ExportCIReport">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_ExportCIReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssInt_AddUserOverride">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssInt_AddUserOverride" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocatebyId">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Operations_LocatebyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocateByPersonId">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Operations_LocateByPersonId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Operations_GetPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetWebRoles">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Operations_GetWebRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPersonList">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Operations_GetPersonList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetTransactions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_GetTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_ResendTransactions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_ResendTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_CancelTransactions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_CancelTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetBanks">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_GetBanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetServiceSchedules">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_GetServiceSchedules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_UpdateServicesSchedules">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AVS_UpdateServicesSchedules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetTransactions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Payout_GetTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetBanks">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Payout_GetBanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Payout_GetAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_PlaceOnHold">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Payout_PlaceOnHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_RemoveFromHold">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Payout_RemoveFromHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Get">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Notification_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_MarkAsRead">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Notification_MarkAsRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Gets">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Notification_Gets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_Get">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Workflow_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_GetProcessSteps">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Workflow_GetProcessSteps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_RedirectAccountToProcessStep">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Workflow_RedirectAccountToProcessStep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Host_GetAccessible">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Host_GetAccessible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublicHolidays_Get">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/PublicHolidays_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Send">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/OTP_Send" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/OTP_Verify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_VerifyToHash">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/OTP_VerifyToHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_StoreToHash">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/OTP_StoreToHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Search">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_GetDetail">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_GetDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_UpdateStatus">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_AddNote">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_AddNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_EditNote">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_EditNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_DeleteNote">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_DeleteNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_AdjustLoan">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_AdjustLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_GetCategories">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_GetCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AcceptOption">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_AcceptOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AddItem">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_AddItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_DeleteItem">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_DeleteItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationAccept">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_QuotationAccept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationReject">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Account_QuotationReject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_GetPastPaymentTypes">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Ledger_GetPastPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_AddPastPayment">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Ledger_AddPastPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddContact">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_AddContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableContact">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_DisableContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddAddress">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_AddAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableAddress">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_DisableAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_NewRelation">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_NewRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_UpdateRelation">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_UpdateRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_LocateByIdentityNo">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_LocateByIdentityNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByIdentityNo">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_GetByIdentityNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByPrimaryKey">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_GetByPrimaryKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_VerifyIsValid">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_VerifyIsValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_ValidatePasswordReset">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Person_ValidatePasswordReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fraud_OverrideResult">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Fraud_OverrideResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_ResetAttempts">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Authentication_ResetAttempts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_OverrideResult">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Authentication_OverrideResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credit_ReSubmit">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Credit_ReSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credit_FetchCreditReport">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/Credit_FetchCreditReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegions">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetPersonRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetRegionBranches">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetRegionBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegionBranches">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetPersonRegionBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetMainSummary">
+      <soap12:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetMainSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FalconService.HTTP" type="tns:IFalconService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AssReporting_GetCheque">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsurancePercentiles">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInsurancePercentiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestPercentiles">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInterestPercentiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInsuranceFees">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInsuranceFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetInterestFees">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetInterestFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetLoanMix">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetLoanMix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageNewClientLoan">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetAverageNewClientLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetAverageLoan">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetAverageLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_ExportCIReport">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_ExportCIReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssInt_AddUserOverride">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssInt_AddUserOverride" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocatebyId">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Operations_LocatebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_LocateByPersonId">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Operations_LocateByPersonId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPermissions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Operations_GetPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetWebRoles">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Operations_GetWebRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Operations_GetPersonList">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Operations_GetPersonList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_ResendTransactions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_ResendTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_CancelTransactions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_CancelTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetBanks">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_GetBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetServiceSchedules">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_GetServiceSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_UpdateServicesSchedules">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AVS_UpdateServicesSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Payout_GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetBanks">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Payout_GetBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_GetAlerts">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Payout_GetAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_PlaceOnHold">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Payout_PlaceOnHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payout_RemoveFromHold">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Payout_RemoveFromHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Get">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Notification_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_MarkAsRead">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Notification_MarkAsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notification_Gets">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Notification_Gets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_Get">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Workflow_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_GetProcessSteps">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Workflow_GetProcessSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Workflow_RedirectAccountToProcessStep">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Workflow_RedirectAccountToProcessStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Host_GetAccessible">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Host_GetAccessible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublicHolidays_Get">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/PublicHolidays_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Send">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/OTP_Send" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/OTP_Verify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_VerifyToHash">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/OTP_VerifyToHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_StoreToHash">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/OTP_StoreToHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Search">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_GetDetail">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_GetDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_UpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_UpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_AddNote">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_AddNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_EditNote">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_EditNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_DeleteNote">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_DeleteNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_AdjustLoan">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_AdjustLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_GetCategories">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AcceptOption">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_AcceptOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_AddItem">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_AddItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_Affordability_DeleteItem">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_Affordability_DeleteItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationAccept">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_QuotationAccept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Account_QuotationReject">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Account_QuotationReject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_GetPastPaymentTypes">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Ledger_GetPastPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ledger_AddPastPayment">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Ledger_AddPastPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddContact">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_AddContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableContact">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_DisableContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_AddAddress">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_AddAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_DisableAddress">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_DisableAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_NewRelation">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_NewRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_UpdateRelation">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_UpdateRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_LocateByIdentityNo">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_LocateByIdentityNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByIdentityNo">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_GetByIdentityNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_GetByPrimaryKey">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_GetByPrimaryKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_VerifyIsValid">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_VerifyIsValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Person_ValidatePasswordReset">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Person_ValidatePasswordReset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fraud_OverrideResult">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Fraud_OverrideResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_ResetAttempts">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Authentication_ResetAttempts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_OverrideResult">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Authentication_OverrideResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credit_ReSubmit">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Credit_ReSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credit_FetchCreditReport">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/Credit_FetchCreditReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegions">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetPersonRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetRegionBranches">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetRegionBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetPersonRegionBranches">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetPersonRegionBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssReporting_GetMainSummary">
+      <soap:operation soapAction="http://tempuri.org/IFalconService/AssReporting_GetMainSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FalconService">
+    <wsdl:port name="FalconService.NET" binding="tns:FalconService.NET">
+      <soap12:address location="net.tcp://localhost:8200/FalconService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/FalconService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="FalconService.HTTP" binding="tns:FalconService.HTTP">
+      <soap:address location="http://localhost:8201/FalconService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

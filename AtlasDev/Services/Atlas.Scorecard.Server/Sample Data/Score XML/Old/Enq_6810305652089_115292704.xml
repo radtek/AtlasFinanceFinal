@@ -1,0 +1,3119 @@
+<ROOT>
+  <EnqCC_ENQ_COUNTS>
+    <ROW num="1">
+      <ADDR>5</ADDR>
+      <ADMORDS>0</ADMORDS>
+      <COLLECTIONS>0</COLLECTIONS>
+      <DMATCHES>1</DMATCHES>
+      <JUDGE>0</JUDGE>
+      <NOTICES>0</NOTICES>
+      <LOANS>2</LOANS>
+      <PMATCHES>2</PMATCHES>
+      <PREV_ENQ>5</PREV_ENQ>
+      <TPHONE>5</TPHONE>
+      <EMPLOYERS>5</EMPLOYERS>
+      <FRAUDALERT>1</FRAUDALERT>
+      <CPACC>9</CPACC>
+      <PUB_DEF>0</PUB_DEF>
+      <CS_ADVERSE>1</CS_ADVERSE>
+    </ROW>
+  </EnqCC_ENQ_COUNTS>
+  <EnqCC_ADDRESS>
+    <ROW num="1">
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1 NULL="YES"/>
+      <LINE_2>131929 BRIAN MAZIBUKO ST</LINE_2>
+      <LINE_3 NULL="YES"/>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <DATE_CREATED>04/04/2015</DATE_CREATED>
+      <ADDR_DATE_CREATED>28/02/2015</ADDR_DATE_CREATED>
+    </ROW>
+    <ROW num="2">
+      <ADDRESS_TYPE>R</ADDRESS_TYPE>
+      <LINE_1 NULL="YES"/>
+      <LINE_2>131929 BRIAN MAZIBUKO ST</LINE_2>
+      <LINE_3 NULL="YES"/>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <DATE_CREATED>04/04/2015</DATE_CREATED>
+      <ADDR_DATE_CREATED>28/02/2015</ADDR_DATE_CREATED>
+    </ROW>
+    <ROW num="3">
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>NO 203</LINE_1>
+      <LINE_2>JOHANNESBURG</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <DATE_CREATED>04/04/2015</DATE_CREATED>
+      <ADDR_DATE_CREATED>10/02/2015</ADDR_DATE_CREATED>
+    </ROW>
+    <ROW num="4">
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>203 STONE COURT BUILDING</LINE_1>
+      <LINE_2>11 KING GEORGE STREET</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <DATE_CREATED>04/04/2015</DATE_CREATED>
+      <ADDR_DATE_CREATED>12/02/2015</ADDR_DATE_CREATED>
+    </ROW>
+    <ROW num="5">
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>207 STONE COURT</LINE_1>
+      <LINE_2>CORNER PLEIN STREET AND K</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <DATE_CREATED>04/04/2015</DATE_CREATED>
+      <ADDR_DATE_CREATED>19/02/2015</ADDR_DATE_CREATED>
+    </ROW>
+  </EnqCC_ADDRESS>
+  <EnqCC_HP/>
+  <EnqCC_LOANS>
+    <ROW num="1">
+      <DATE_DUE>2014/03/31</DATE_DUE>
+      <DATE_ISSUED>2013/12/06 00:00</DATE_ISSUED>
+      <INSTALL_AMT>835</INSTALL_AMT>
+      <REF_NO>02394 0002</REF_NO>
+      <TOT_AMT_REPAYABLE>3339</TOT_AMT_REPAYABLE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+      <STATUS>Closed</STATUS>
+    </ROW>
+    <ROW num="2">
+      <DATE_DUE>2014/09/30</DATE_DUE>
+      <DATE_ISSUED>2014/04/02 00:00</DATE_ISSUED>
+      <INSTALL_AMT>507</INSTALL_AMT>
+      <REF_NO>02394 0003</REF_NO>
+      <TOT_AMT_REPAYABLE>3045</TOT_AMT_REPAYABLE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+      <STATUS>Closed</STATUS>
+    </ROW>
+  </EnqCC_LOANS>
+  <EnqCC_DMATCHES>
+    <ROW num="1">
+      <ID_NUMBER>6810305652089</ID_NUMBER>
+      <COUNTRY_CODE>South Africa</COUNTRY_CODE>
+      <NAME>JABULANI</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+    </ROW>
+  </EnqCC_DMATCHES>
+  <EnqCC_PMATCHES>
+    <ROW num="1">
+      <ID_NUMBER>6810305571081</ID_NUMBER>
+      <COUNTRY_CODE>South Africa</COUNTRY_CODE>
+      <NAME>SIPHO</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+    </ROW>
+    <ROW num="2">
+      <ID_NUMBER>6810305569085</ID_NUMBER>
+      <COUNTRY_CODE>South Africa</COUNTRY_CODE>
+      <NAME>CYPRIAH</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+    </ROW>
+  </EnqCC_PMATCHES>
+  <EnqCC_PREVENQ>
+    <ROW num="1">
+      <ENQUIRY_DATE>03-12-2014 11:56</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+    </ROW>
+    <ROW num="2">
+      <ENQUIRY_DATE>08-09-2014 08:47</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+    </ROW>
+    <ROW num="3">
+      <ENQUIRY_DATE>02-04-2014 11:36</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+    </ROW>
+    <ROW num="4">
+      <ENQUIRY_DATE>05-12-2013 14:13</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT_PERSON>Pelnine</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>(011) 337 2828</TELEPHONE_NUMBER>
+    </ROW>
+    <ROW num="5">
+      <ENQUIRY_DATE>04-06-2013 10:44</ENQUIRY_DATE>
+      <BRANCH_NAME>Capitec</BRANCH_NAME>
+      <CONTACT_PERSON>The Manager</CONTACT_PERSON>
+      <TELEPHONE_NUMBER>TBA</TELEPHONE_NUMBER>
+    </ROW>
+  </EnqCC_PREVENQ>
+  <EnqCC_TELEPHONE>
+    <ROW num="1">
+      <TEL_NUMBER_TYPE>C</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0733863251</TEL_NUMBER>
+      <DATE_CREATED>04-04-2015</DATE_CREATED>
+      <TEL_DATE_CREATED>28-02-2015</TEL_DATE_CREATED>
+    </ROW>
+    <ROW num="2">
+      <TEL_NUMBER_TYPE>H</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <DATE_CREATED>04-04-2015</DATE_CREATED>
+      <TEL_DATE_CREATED>19-02-2015</TEL_DATE_CREATED>
+    </ROW>
+    <ROW num="3">
+      <TEL_NUMBER_TYPE>H</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <DATE_CREATED>04-04-2015</DATE_CREATED>
+      <TEL_DATE_CREATED>12-02-2015</TEL_DATE_CREATED>
+    </ROW>
+    <ROW num="4">
+      <TEL_NUMBER_TYPE>W</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <DATE_CREATED>04-04-2015</DATE_CREATED>
+      <TEL_DATE_CREATED>12-02-2015</TEL_DATE_CREATED>
+    </ROW>
+    <ROW num="5">
+      <TEL_NUMBER_TYPE>W</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <DATE_CREATED>04-04-2015</DATE_CREATED>
+      <TEL_DATE_CREATED>19-02-2015</TEL_DATE_CREATED>
+    </ROW>
+  </EnqCC_TELEPHONE>
+  <EnqCC_SRCHCRITERIA>
+    <ROW num="1">
+      <CRIT_IDNUMBER>6810305652089</CRIT_IDNUMBER>
+      <CRIT_NAME>JABULANI  </CRIT_NAME>
+      <CRIT_SURNAME>MSIMANGO</CRIT_SURNAME>
+      <ENQ_CNT_NAME>South Africa</ENQ_CNT_NAME>
+      <ENQ_DATE>2015-04-04 13:53:17</ENQ_DATE>
+      <DOB>1968-10-30</DOB>
+      <GENDER>MALE</GENDER>
+      <PASSPORT_FLAG>NO</PASSPORT_FLAG>
+      <ADDRESS>203 STONE COURT CNR LEIN &amp; KING GEORGE JOHANNESBURG  2001</ADDRESS>
+      <LOAN_AMOUNT NULL="YES"/>
+      <NET_INCOME NULL="YES"/>
+      <ENQUIRY_PURPOSE>Affordability Assessment</ENQUIRY_PURPOSE>
+      <HOMETEL/>
+      <WORK_TEL>011 5489500</WORK_TEL>
+      <CRIT_CELL_NUM>0733863251</CRIT_CELL_NUM>
+    </ROW>
+  </EnqCC_SRCHCRITERIA>
+  <EnqCC_EMPLOYER>
+    <ROW num="1">
+      <EMP_NAME>ANALITIC RISK MANAGEMENT SECURITY</EMP_NAME>
+      <EMP_DATE>2015-02-10</EMP_DATE>
+      <OCCUPATION/>
+      <EMP_TYPE/>
+      <SALARY_FREQ/>
+      <PAYSLIP_REF/>
+      <EMPLOYEE_NO/>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="2">
+      <EMP_NAME>ARMED SECURITY</EMP_NAME>
+      <EMP_DATE>2015-02-09</EMP_DATE>
+      <OCCUPATION/>
+      <EMP_TYPE/>
+      <SALARY_FREQ/>
+      <PAYSLIP_REF/>
+      <EMPLOYEE_NO/>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="3">
+      <EMP_NAME>GARDEN SERVICES</EMP_NAME>
+      <EMP_DATE>2015-01-07</EMP_DATE>
+      <OCCUPATION/>
+      <EMP_TYPE/>
+      <SALARY_FREQ/>
+      <PAYSLIP_REF/>
+      <EMPLOYEE_NO/>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="4">
+      <EMP_NAME>THE GARDEN PATH</EMP_NAME>
+      <EMP_DATE>2014-04-06</EMP_DATE>
+      <OCCUPATION>SECURITY GUARD</OCCUPATION>
+      <EMP_TYPE/>
+      <SALARY_FREQ/>
+      <PAYSLIP_REF/>
+      <EMPLOYEE_NO/>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="5">
+      <EMP_NAME>ANALYTICAL RISK MANAGEMENT  PTY LTD</EMP_NAME>
+      <EMP_DATE>2013-12-07</EMP_DATE>
+      <OCCUPATION/>
+      <EMP_TYPE/>
+      <SALARY_FREQ/>
+      <PAYSLIP_REF/>
+      <EMPLOYEE_NO/>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+  </EnqCC_EMPLOYER>
+  <EnqCC_ACTIVITIES>
+    <ROW num="1">
+      <ENQUIRIES>0</ENQUIRIES>
+      <LOANS>0</LOANS>
+      <JUDGEMENTS>0</JUDGEMENTS>
+      <NOTICES>0</NOTICES>
+      <COLLECTIONS>0</COLLECTIONS>
+      <ADMINORDERS>0</ADMINORDERS>
+      <BALANCE>0</BALANCE>
+      <INSTALLMENT>0</INSTALLMENT>
+    </ROW>
+  </EnqCC_ACTIVITIES>
+  <EnqCC_Fraud>
+    <EnqCC_Fraud_SUMM>
+      <ROW num="1">
+        <SUBJECTNO>172880</SUBJECTNO>
+        <CATEGORY>MISUSE OF ACCOUNT, THROUGH FRAUDULENT CONDUCT</CATEGORY>
+        <CAT_NUM>6</CAT_NUM>
+        <SUBCAT>7 - EVADING LIABILITY (I.E. CONFIRMED FRAUD, NOT BAD DEBT)</SUBCAT>
+        <SUBJECT>JABULANI MSIMANGO</SUBJECT>
+        <PASSPORT/>
+        <INCIDENTDATE>23-09-2014</INCIDENTDATE>
+        <VICTIM>NO</VICTIM>
+        <DATE_CREATED>2015-04-04 13:53:16.0</DATE_CREATED>
+      </ROW>
+    </EnqCC_Fraud_SUMM>
+    <Detail>
+      <EnqCC_Fraud_PersonalDetail>
+        <ROW num="1">
+          <FRAUD_PERSONAL_TITLE>MR</FRAUD_PERSONAL_TITLE>
+          <FRAUD_PERSONAL_SURNAME>MSIMANGO</FRAUD_PERSONAL_SURNAME>
+          <FRAUD_PERSONAL_FIRSTNAME>JABULANI</FRAUD_PERSONAL_FIRSTNAME>
+          <FRAUD_PERSONAL_ID>6810305652089</FRAUD_PERSONAL_ID>
+          <FRAUD_PERSONAL_PASSPORT/>
+          <FRAUD_PERSONAL_DATEOFBIRTH>30-10-1968</FRAUD_PERSONAL_DATEOFBIRTH>
+          <FRAUD_PERSONAL_GENDER>M</FRAUD_PERSONAL_GENDER>
+          <FRAUD_PERSONAL_EMAIL/>
+        </ROW>
+      </EnqCC_Fraud_PersonalDetail>
+      <EnqCC_Fraud_IncidentDetail>
+        <ROW num="1">
+          <FRAUD_INCIDENT_VICTIM>NO</FRAUD_INCIDENT_VICTIM>
+          <FRAUD_INCIDENT_MEMBERSREF>172880</FRAUD_INCIDENT_MEMBERSREF>
+          <FRAUD_INCIDENT_CATEGORY>6 - MISUSE OF ACCOUNT, THROUGH FRAUDULENT CONDUCT</FRAUD_INCIDENT_CATEGORY>
+          <FRAUD_INCIDENT_SUBCAT>7 - EVADING LIABILITY (I.E. CONFIRMED FRAUD, NOT BAD DEBT)</FRAUD_INCIDENT_SUBCAT>
+          <FRAUD_INCIDENT_DATE>23-SEP-14</FRAUD_INCIDENT_DATE>
+          <FRAUD_INCIDENT_SUBROLE/>
+          <FRAUD_INCIDENT_CITY>BLOEMFONTEIN</FRAUD_INCIDENT_CITY>
+          <FRAUD_INCIDENT_DETAIL>STOLEN &quot;NOT TRANSFERABLE&quot; CHEQUE DEPOSITED INTO NEW ACCOUNT</FRAUD_INCIDENT_DETAIL>
+          <FRAUD_INCIDENT_FORENSIC>NO</FRAUD_INCIDENT_FORENSIC>
+        </ROW>
+      </EnqCC_Fraud_IncidentDetail>
+      <EnqCC_Fraud_TelDetail>
+        <ROW num="1">
+          <FRAUD_OTHERTEL_TYPE>PERSONAL</FRAUD_OTHERTEL_TYPE>
+          <FRAUD_OTHERTEL_NUMBER>0838877143</FRAUD_OTHERTEL_NUMBER>
+          <FRAUD_OTHERTEL_CITY/>
+          <FRAUD_OTHERTEL_COUNTRY/>
+        </ROW>
+      </EnqCC_Fraud_TelDetail>
+      <EnqCC_Fraud_BankDetail>
+        <ROW num="1">
+          <FRAUD_BANK_NO>9294421641</FRAUD_BANK_NO>
+          <FRAUD_BANK_TYPE>SAVINGS</FRAUD_BANK_TYPE>
+          <FRAUD_BANK_BANK>ABSA</FRAUD_BANK_BANK>
+          <FRAUD_BANK_DATEFROM>23-04-2014</FRAUD_BANK_DATEFROM>
+          <FRAUD_BANK_DATETO>08-09-2014</FRAUD_BANK_DATETO>
+        </ROW>
+      </EnqCC_Fraud_BankDetail>
+    </Detail>
+  </EnqCC_Fraud>
+  <EnqCC_CPA_ACCOUNTS>
+    <ROW num="1">
+      <SUBSCRIBER_CODE>197</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>TRUWORTHS - TRUWORTHS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10101558190093</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-07-09</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-03-08</LAST_PAYMENT_DATE>
+      <OPEN_BAL>4860</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>4629</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1750</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>523</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>4</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>43211100000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-19</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="2">
+      <SUBSCRIBER_CODE>174</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>THE FOSCHINI GROUP - FOSCHINI</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10010001023977775</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-04-29</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-03-08</LAST_PAYMENT_DATE>
+      <OPEN_BAL>8842</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>7438</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>2061</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>860</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>33321100100001000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-----------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-12</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="3">
+      <SUBSCRIBER_CODE>5291</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>TENACITY - ACKERMANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10201322080021897140</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-08-22</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-11-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>3625</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>3227</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1110</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>345</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>3210210000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-10</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="4">
+      <SUBSCRIBER_CODE>5263</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>JABBA CONNECT</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>1701110100027152</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2012-11-09</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-24</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>569</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>569</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>569</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>1</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>100000?00000000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>------?-----------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-09</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="5">
+      <SUBSCRIBER_CODE>5492</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>JDG - MORKELS FURNITURE LOANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>6365290060705749</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>I </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Instalment</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-08-13</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>5953</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>14308</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>667</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>1067</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>1</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS>30</TERMS>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>1000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-07</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="6">
+      <SUBSCRIBER_CODE>151</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>MR PRICE WEEKEND</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>222831703</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-07-16</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-02-04</LAST_PAYMENT_DATE>
+      <OPEN_BAL>2430</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>2544</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1400</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>280</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>32321100</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-07</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="7">
+      <SUBSCRIBER_CODE>1345</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>THE UNLIMITED WORLD</SUBSCRIBER_NAME>
+      <BRANCH_CODE>13028</BRANCH_CODE>
+      <ACCOUNT_NO>PVV014458</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>S </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Short Term Insurance</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-11-12</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-23</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>99</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>99</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>0000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>----</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-02-28</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="8">
+      <SUBSCRIBER_CODE>5489</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>MULTICHOICE</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>50248641</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-12-13</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-02-02</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>193</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>193</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>00</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-02-28</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="9">
+      <SUBSCRIBER_CODE>159</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>NEDBANK - PERSONAL LOANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>8894323000000</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>P </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Personal Cash Loans</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-02-04</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-03-01</LAST_PAYMENT_DATE>
+      <OPEN_BAL>6308</OPEN_BAL>
+      <OPEN_BAL_IND/>
+      <CURRENT_BAL>0</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND/>
+      <INSTALMENT_AMOUNT>0</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS>12</TERMS>
+      <STATUS_CODE>C </STATUS_CODE>
+      <STATUS_CODE_DESC>ACCOUNT CLOSED</STATUS_CODE_DESC>
+      <STATUS_DATE>2014-03-01</STATUS_DATE>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>00000100000110</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>C-------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2014-04-06</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+  </EnqCC_CPA_ACCOUNTS>
+  <EnqCC_Warnings>
+    <ROW NUM="0">
+      <REASON_CODE>4</REASON_CODE>
+      <REASON_DESC>SA FRAUD PREVENTION SERVICES (POTENTIAL FRAUD) NOTIFICATION.</REASON_DESC>
+    </ROW>
+    <ROW NUM="1">
+      <REASON_CODE>13</REASON_CODE>
+      <REASON_DESC>CONSUMER HAS ONE OR MORE ADVERSE ACCOUNTS.</REASON_DESC>
+    </ROW>
+  </EnqCC_Warnings>
+  <EnqCC_ADVERSE>
+    <ROW num="1">
+      <SUBSCRIBER_CODE>156</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>M-TEL SERVICE PROVIDER - MTN</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>A4490671</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2012-12-22</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-09-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>1972</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1972</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>1972</INSTALMENT_AMOUNT>
+      <LOAD_INDICATOR>B</LOAD_INDICATOR>
+      <ARREARS_PERIOD>4</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>432000000000000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>LLL---------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-01-31</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+      <ADVERSE_CODE>L </ADVERSE_CODE>
+      <ADVERSE_CODE_DESC>HANDED OVER</ADVERSE_CODE_DESC>
+      <ADVERSE_DATE>2014-11-17</ADVERSE_DATE>
+      <ADVERSE_OVERDUE_AMOUNT NULL="YES"/>
+    </ROW>
+  </EnqCC_ADVERSE>
+  <EnqCC_CompuSCORE>
+    <ROW num="1">
+      <RISK_TYPE>MINIMUM RISK</RISK_TYPE>
+      <RISK_COLOUR_R>25</RISK_COLOUR_R>
+      <RISK_COLOUR_G>188</RISK_COLOUR_G>
+      <RISK_COLOUR_B>86</RISK_COLOUR_B>
+      <SCORE>614</SCORE>
+      <DECLINE_R_1>NA10-Negative Event within Last 12 Months</DECLINE_R_1>
+      <DECLINE_R_2>NA17-High Arrears Level on Selected Accounts</DECLINE_R_2>
+      <DECLINE_R_3>NA24-Poor recent Payment History on Unsecured Accounts</DECLINE_R_3>
+      <THIN_FILE_INDICATOR>N</THIN_FILE_INDICATOR>
+      <VERSION>2</VERSION>
+      <SCORE_TYPE>NLR</SCORE_TYPE>
+    </ROW>
+  </EnqCC_CompuSCORE>
+  <EnqCC_STATS>
+    <ROW num="1">
+      <CC_JUDGE_12_CNT>0</CC_JUDGE_12_CNT>
+      <CC_JUDGE_24_CNT>0</CC_JUDGE_24_CNT>
+      <CC_JUDGE_36_CNT>0</CC_JUDGE_36_CNT>
+      <CC_NOTICE_12_CNT>0</CC_NOTICE_12_CNT>
+      <CC_NOTICE_24_CNT>0</CC_NOTICE_24_CNT>
+      <CC_NOTICE_36_CNT>0</CC_NOTICE_36_CNT>
+      <CC_ADVERSE_12_CNT>0</CC_ADVERSE_12_CNT>
+      <CC_ADVERSE_24_CNT>0</CC_ADVERSE_24_CNT>
+      <CC_ADVERSE_36_CNT>0</CC_ADVERSE_36_CNT>
+      <CC_EVO_ADVERSE_12_CNT>0</CC_EVO_ADVERSE_12_CNT>
+      <CC_EVO_ADVERSE_24_CNT>0</CC_EVO_ADVERSE_24_CNT>
+      <CC_EVO_ADVERSE_36_CNT>0</CC_EVO_ADVERSE_36_CNT>
+      <CC_ADVERSE_TOT>0</CC_ADVERSE_TOT>
+    </ROW>
+  </EnqCC_STATS>
+  <Enquiry_ID>115292704</Enquiry_ID>
+  <EnqNLR_ACTIVITIES>
+    <ROW num="1">
+      <ENQUIRIES>0</ENQUIRIES>
+      <LOANS>0</LOANS>
+      <JUDGEMENTS/>
+      <COLLECTIONS/>
+      <ADMINORDERS/>
+      <BALANCE>0</BALANCE>
+      <INSTALLMENT>0</INSTALLMENT>
+    </ROW>
+  </EnqNLR_ACTIVITIES>
+  <ConsumerEnquiry>
+    <Session>
+      <User_ID/>
+      <FullName>CSNLR</FullName>
+      <GroupName/>
+      <Subscriber_ID/>
+      <Group_ID/>
+      <RequestType>NLR</RequestType>
+      <Environment>PROD</Environment>
+      <Version>1.0.0.1</Version>
+      <GUID/>
+    </Session>
+    <InputData>
+      <First_Name_1>JABULANI</First_Name_1>
+      <Surname>MSIMANGO</Surname>
+      <National_ID>6810305652089</National_ID>
+      <RSA_ID>YES</RSA_ID>
+      <Birthday>19681030</Birthday>
+    </InputData>
+    <SubscriberInfo>
+      <Name/>
+      <BusinessType>99</BusinessType>
+      <LegalName/>
+      <Phone>9999999999</Phone>
+      <ParentSubscriber/>
+      <SAFPSMemberRegNbr/>
+      <LastUpdateDate>00000000</LastUpdateDate>
+    </SubscriberInfo>
+    <ReturnData>
+      <Match>1</Match>
+      <Name>JABULANI ZINDOGA MSIMANGO</Name>
+      <Title/>
+      <Surname>MSIMANGO</Surname>
+      <FirstName1>JABULANI</FirstName1>
+      <FirstName2>ZINDOGA</FirstName2>
+      <ID>6810305652089</ID>
+      <Birthday>30 OCT 1968</Birthday>
+      <Address>
+        <Relation>Postal</Relation>
+        <ReportDate>28 FEB 2015</ReportDate>
+        <StreetNameNumber> 131929 BRIAN MAZIBUKO ST</StreetNameNumber>
+        <CityArea/>
+        <City/>
+        <ZipCode>1585</ZipCode>
+      </Address>
+      <ReferenceNo>20150404135316305</ReferenceNo>
+      <NLR_ReferenceNo>19096380000</NLR_ReferenceNo>
+      <Date>2015-04-04</Date>
+      <Time>13:53</Time>
+      <ExecTime>508</ExecTime>
+      <SessionID>150404135316782</SessionID>
+    </ReturnData>
+    <DataCount>
+      <Accounts>23</Accounts>
+      <Enquiries>4</Enquiries>
+      <Judgements>0</Judgements>
+      <Notices>0</Notices>
+      <BankDefaults>0</BankDefaults>
+      <Defaults>1</Defaults>
+      <Collections>0</Collections>
+      <Directors>0</Directors>
+      <Addresses>6</Addresses>
+      <Telephones>6</Telephones>
+      <Occupants>0</Occupants>
+      <Employers>6</Employers>
+    </DataCount>
+    <Detect/>
+    <ScoreBlock/>
+    <Enquiries>
+      <Enquiry>
+        <EnquiryDate>03 DEC 2014</EnquiryDate>
+        <SubscriberName>Atlas - Medical Towers</SubscriberName>
+        <SubscriberTel>---</SubscriberTel>
+      </Enquiry>
+      <Enquiry>
+        <EnquiryDate>08 SEP 2014</EnquiryDate>
+        <SubscriberName>Atlas - Medical Towers</SubscriberName>
+        <SubscriberTel>---</SubscriberTel>
+      </Enquiry>
+      <Enquiry>
+        <EnquiryDate>02 APR 2014</EnquiryDate>
+        <SubscriberName>Atlas - Medical Towers</SubscriberName>
+        <SubscriberTel>---</SubscriberTel>
+      </Enquiry>
+      <Enquiry>
+        <EnquiryDate>05 DEC 2013</EnquiryDate>
+        <SubscriberName>Atlas - Medical Towers</SubscriberName>
+        <SubscriberTel>---</SubscriberTel>
+      </Enquiry>
+    </Enquiries>
+    <Accounts>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>6878122         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='00'>OPEN/CURRENT</Status>
+        <StatusDate/>
+        <OpenDate>31 OCT 2014</OpenDate>
+        <OpenBalance>R6100</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R3530</CurrentBalance>
+        <BalanceDate>06 MAR 2015</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 JAN 2015</LastPaymentDate>
+        <Installment>R1287</Installment>
+        <PaymentStatus>1 months in arrears</PaymentStatus>
+        <OverdueAmount>R1287</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>10000</Summary>
+          <Months>5</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>7396465006      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='00'>OPEN/CURRENT</Status>
+        <StatusDate/>
+        <OpenDate>04 MAR 2014</OpenDate>
+        <OpenBalance>R16550</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R15714</CurrentBalance>
+        <BalanceDate>28 FEB 2015</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 JAN 2015</LastPaymentDate>
+        <Installment>R814</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R716</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>48</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000000000000</Summary>
+          <Months>12</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>3125933         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>07 JUL 2014</StatusDate>
+        <OpenDate>31 MAY 2014</OpenDate>
+        <OpenBalance>R5856</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 AUG 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>04 JUL 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000</Summary>
+          <Months>3</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>5943315         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>31 OCT 2014</StatusDate>
+        <OpenDate>30 SEP 2014</OpenDate>
+        <OpenBalance>R6100</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 DEC 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 OCT 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000</Summary>
+          <Months>3</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPITEC BANK LIMITED</Subscriber>
+        <AccountNo>3001131338119093</AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>02 APR 2013</StatusDate>
+        <OpenDate>30 JAN 2013</OpenDate>
+        <OpenBalance>R99</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>30 APR 2013</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>02 APR 2013</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>1</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1229</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0000</Summary>
+          <Months>4</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPITEC BANK LIMITED</Subscriber>
+        <AccountNo>2904131338119093</AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>31 MAY 2013</StatusDate>
+        <OpenDate>29 APR 2013</OpenDate>
+        <OpenBalance>R99</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 MAY 2013</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>31 MAY 2013</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>1</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1229</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00</Summary>
+          <Months>2</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>3761643         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>03 SEP 2014</StatusDate>
+        <OpenDate>07 JUL 2014</OpenDate>
+        <OpenBalance>R6200</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 SEP 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>01 SEP 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000</Summary>
+          <Months>3</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>W. R. W. FINANCE CC</Subscriber>
+        <AccountNo>3125933         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>07 JUL 2014</StatusDate>
+        <OpenDate/>
+        <OpenBalance>R0</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>08 JUL 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate/>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode/>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod/>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1629</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0</Summary>
+          <Months>1</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPITEC BANK LIMITED</Subscriber>
+        <AccountNo>0701131338118747</AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>04 FEB 2013</StatusDate>
+        <OpenDate>07 JAN 2013</OpenDate>
+        <OpenBalance>R1990</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>28 FEB 2013</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>04 FEB 2013</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>3</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1229</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00</Summary>
+          <Months>2</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>ST JOHN FINANCE (BRAAMFONTEIN) CC</Subscriber>
+        <AccountNo>7867    02394           2</AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>27 MAR 2014</StatusDate>
+        <OpenDate>06 DEC 2013</OpenDate>
+        <OpenBalance>R2050</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 MAR 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>27 MAR 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>3</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1108</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0000</Summary>
+          <Months>4</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>W. R. W. FINANCE CC</Subscriber>
+        <AccountNo>2458236         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>04 MAY 2014</StatusDate>
+        <OpenDate/>
+        <OpenBalance>R0</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>04 MAY 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate/>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode/>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod/>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1629</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0</Summary>
+          <Months>1</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>W. R. W. FINANCE CC</Subscriber>
+        <AccountNo>1941589         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>04 MAR 2014</StatusDate>
+        <OpenDate/>
+        <OpenBalance>R0</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>05 MAR 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate/>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode/>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod/>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1629</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0</Summary>
+          <Months>1</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>2934537         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>02 JUN 2014</StatusDate>
+        <OpenDate>03 MAY 2014</OpenDate>
+        <OpenBalance>R4900</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 JUN 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>31 MAY 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00</Summary>
+          <Months>2</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>2458236         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>03 MAY 2014</StatusDate>
+        <OpenDate>03 MAR 2014</OpenDate>
+        <OpenBalance>R4649</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 MAY 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>02 MAY 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000</Summary>
+          <Months>3</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>W. R. W. FINANCE CC</Subscriber>
+        <AccountNo>2934537         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>03 JUN 2014</StatusDate>
+        <OpenDate/>
+        <OpenBalance>R0</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>04 JUN 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate/>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode/>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod/>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1629</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0</Summary>
+          <Months>1</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>1941589         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>03 MAR 2014</StatusDate>
+        <OpenDate>03 JAN 2014</OpenDate>
+        <OpenBalance>R4000</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 MAR 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>01 MAR 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>000</Summary>
+          <Months>3</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>CAPFIN</Subscriber>
+        <AccountNo>5062582         </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>30 SEP 2014</StatusDate>
+        <OpenDate>02 SEP 2014</OpenDate>
+        <OpenBalance>R6200</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>06 OCT 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 SEP 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>5864</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00</Summary>
+          <Months>2</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>ST JOHN FINANCE (BRAAMFONTEIN) CC</Subscriber>
+        <AccountNo>7867    02394           3</AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='03'>ACCOUNT CLOSED</Status>
+        <StatusDate>30 SEP 2014</StatusDate>
+        <OpenDate>02 APR 2014</OpenDate>
+        <OpenBalance>R1550</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 OCT 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 SEP 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus>Current</PaymentStatus>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>6</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1108</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0000000</Summary>
+          <Months>7</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>7396465001      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='33'>EARLY SETTLEMENT</Status>
+        <StatusDate>31 OCT 2012</StatusDate>
+        <OpenDate>05 MAY 2009</OpenDate>
+        <OpenBalance>R3000</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 OCT 2012</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>31 OCT 2012</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>24</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>002467999999999999999999999998765433</Summary>
+          <Months>36</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>7396465004      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='33'>EARLY SETTLEMENT</Status>
+        <StatusDate>31 MAR 2014</StatusDate>
+        <OpenDate>04 JUN 2013</OpenDate>
+        <OpenBalance>R9550</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 MAR 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>01 MAR 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>58</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0000000000</Summary>
+          <Months>10</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>000000007396465002      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='33'>EARLY SETTLEMENT</Status>
+        <StatusDate>04 JUN 2013</StatusDate>
+        <OpenDate>04 FEB 2013</OpenDate>
+        <OpenBalance>R1500</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>10 JUN 2013</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate/>
+        <Installment>R0</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode/>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod/>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00000</Summary>
+          <Months>5</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>7396465003      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='33'>EARLY SETTLEMENT</Status>
+        <StatusDate>31 JUL 2013</StatusDate>
+        <OpenDate>03 APR 2013</OpenDate>
+        <OpenBalance>R2000</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 JUL 2013</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>28 JUN 2013</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Short Term Loan</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>3</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>0000</Summary>
+          <Months>4</Months>
+        </PaymentCycle>
+      </Account>
+      <Account>
+        <Subscriber>AFRICAN BANK LIMITED</Subscriber>
+        <AccountNo>7396465005      </AccountNo>
+        <AccountType code='34'>Micro loan</AccountType>
+        <Status code='33'>EARLY SETTLEMENT</Status>
+        <StatusDate>31 MAR 2014</StatusDate>
+        <OpenDate>01 NOV 2013</OpenDate>
+        <OpenBalance>R2850</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R0</CurrentBalance>
+        <BalanceDate>31 MAR 2014</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>01 MAR 2014</LastPaymentDate>
+        <Installment>R0</Installment>
+        <PaymentStatus/>
+        <OverdueAmount>R0</OverdueAmount>
+        <BureauFlag/>
+        <LoadIndicator/>
+        <LoanType>Term Loan direct collection</LoanType>
+        <EndUseCode>Other</EndUseCode>
+        <SettlementDate/>
+        <InterestRateType/>
+        <DataSubmissionCategory/>
+        <RepaymentPeriod>54</RepaymentPeriod>
+        <RepaymentPeriodType>MONTHS</RepaymentPeriodType>
+        <SUBSCRIBER_CODE>1349</SUBSCRIBER_CODE>
+        <PaymentCycle>
+          <Summary>00000</Summary>
+          <Months>5</Months>
+        </PaymentCycle>
+      </Account>
+    </Accounts>
+    <Notices/>
+    <Judgements/>
+    <BankDefaults/>
+    <Defaults>
+      <Default>
+        <Subscriber>M-TEL SERVICE PROVIDER - MTN</Subscriber>
+        <AccountNo>A4490671        </AccountNo>
+        <AccountType code='15'>Service Related without limit</AccountType>
+        <Status code='11'>HANDED OVER</Status>
+        <StatusDate>17 NOV 2014</StatusDate>
+        <OpenDate>22 DEC 2012</OpenDate>
+        <OpenBalance>R0</OpenBalance>
+        <CreditLimit>R0</CreditLimit>
+        <HighLimit>R0</HighLimit>
+        <CurrentBalance>R1972</CurrentBalance>
+        <BalanceDate>31 JAN 2015</BalanceDate>
+        <LastPayment>R0</LastPayment>
+        <LastPaymentDate>30 SEP 2014</LastPaymentDate>
+        <Installment>R1972</Installment>
+        <PaymentStatus>4 months in arrears</PaymentStatus>
+        <OverdueBalance>R</OverdueBalance>
+        <PaymentCycle>
+          <Summary>432000000000000000000000</Summary>
+          <Months>24</Months>
+        </PaymentCycle>
+      </Default>
+    </Defaults>
+    <Collections/>
+    <Directors/>
+    <Addresses>
+      <Address>
+        <Relation>Postal</Relation>
+        <ReportDate>28 FEB 2015</ReportDate>
+        <StreetNameNumber> 131929 BRIAN MAZIBUKO ST</StreetNameNumber>
+        <CityArea/>
+        <City/>
+        <ZipCode>1585</ZipCode>
+      </Address>
+      <Address>
+        <Relation>Residential</Relation>
+        <ReportDate>28 FEB 2015</ReportDate>
+        <StreetNameNumber> 131929 BRIAN MAZIBUKO ST</StreetNameNumber>
+        <CityArea/>
+        <City/>
+        <ZipCode>1585</ZipCode>
+      </Address>
+      <Address>
+        <Relation>Postal</Relation>
+        <ReportDate>19 FEB 2015</ReportDate>
+        <StreetNameNumber>207 STONE COURT CORNER PLEIN STREET AND K</StreetNameNumber>
+        <CityArea>JOHANNESBURG</CityArea>
+        <City/>
+        <ZipCode>2001</ZipCode>
+      </Address>
+      <Address>
+        <Relation>Postal</Relation>
+        <ReportDate>12 FEB 2015</ReportDate>
+        <StreetNameNumber>203 STONE COURT BUILDING 11 KING GEORGE STREET</StreetNameNumber>
+        <CityArea>JOHANNESBURG</CityArea>
+        <City/>
+        <ZipCode>2001</ZipCode>
+      </Address>
+      <Address>
+        <Relation>Postal</Relation>
+        <ReportDate>10 FEB 2015</ReportDate>
+        <StreetNameNumber>NO 203 JOHANNESBURG</StreetNameNumber>
+        <CityArea>JOHANNESBURG</CityArea>
+        <City/>
+        <ZipCode>2001</ZipCode>
+      </Address>
+      <Address>
+        <Relation>Residential</Relation>
+        <ReportDate>10 FEB 2015</ReportDate>
+        <StreetNameNumber>203 STONE COURT PLEIN STREET</StreetNameNumber>
+        <CityArea>JOHANNESBURG</CityArea>
+        <City/>
+        <ZipCode>2001</ZipCode>
+      </Address>
+    </Addresses>
+    <Telephones>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0733863251</PhoneNumber>
+        <FirstReportedDate>28 FEB 2015</FirstReportedDate>
+        <PhoneType>Cell</PhoneType>
+      </Telephone>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0115489500</PhoneNumber>
+        <FirstReportedDate>19 FEB 2015</FirstReportedDate>
+        <PhoneType>Residential</PhoneType>
+      </Telephone>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0113339574</PhoneNumber>
+        <FirstReportedDate>19 FEB 2015</FirstReportedDate>
+        <PhoneType>Work</PhoneType>
+      </Telephone>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0115489500</PhoneNumber>
+        <FirstReportedDate>12 FEB 2015</FirstReportedDate>
+        <PhoneType>Work</PhoneType>
+      </Telephone>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0113339574</PhoneNumber>
+        <FirstReportedDate>12 FEB 2015</FirstReportedDate>
+        <PhoneType>Residential</PhoneType>
+      </Telephone>
+      <Telephone>
+        <PhonePrefix/>
+        <PhoneNumber>0825706845</PhoneNumber>
+        <FirstReportedDate>10 FEB 2015</FirstReportedDate>
+        <PhoneType>Work</PhoneType>
+      </Telephone>
+    </Telephones>
+    <Occupants/>
+    <Employers>
+      <Employer>
+        <Name>ANALITIC RISK MANAGEMENT SECURITY</Name>
+        <Occupation/>
+        <EmpDateCreated>10 FEB 2015</EmpDateCreated>
+      </Employer>
+      <Employer>
+        <Name>ARMED SECURITY</Name>
+        <Occupation/>
+        <EmpDateCreated>09 FEB 2015</EmpDateCreated>
+      </Employer>
+      <Employer>
+        <Name>GARDEN SERVICES</Name>
+        <Occupation/>
+        <EmpDateCreated>07 JAN 2015</EmpDateCreated>
+      </Employer>
+      <Employer>
+        <Name>THE GARDEN PATH</Name>
+        <Occupation>SECURITY GUARD</Occupation>
+        <EmpDateCreated>06 APR 2014</EmpDateCreated>
+      </Employer>
+      <Employer>
+        <Name>ANALYTICAL RISK MANAGEMENT  PTY LTD</Name>
+        <Occupation/>
+        <EmpDateCreated>07 DEC 2013</EmpDateCreated>
+      </Employer>
+      <Employer>
+        <Name>ANALYTICAL RISK MANAGEMENT PTY LTD</Name>
+        <Occupation/>
+        <EmpDateCreated>31 MAY 2013</EmpDateCreated>
+      </Employer>
+    </Employers>
+    <Summary>
+      <NLR_Past_12_Months>
+        <Enquiries_by_client>2</Enquiries_by_client>
+        <Enquiries_by_other>0</Enquiries_by_other>
+        <Positive_loans>2</Positive_loans>
+        <Highest_months_in_arrears>1</Highest_months_in_arrears>
+      </NLR_Past_12_Months>
+      <NLR_Past_24_Months>
+        <Enquiries_by_client>5</Enquiries_by_client>
+        <Enquiries_by_other>2</Enquiries_by_other>
+        <Positive_loans>2</Positive_loans>
+        <Highest_months_in_arrears>1</Highest_months_in_arrears>
+      </NLR_Past_24_Months>
+      <NLR_Past_36_Months>
+        <Enquiries_by_client>5</Enquiries_by_client>
+        <Enquiries_by_other>2</Enquiries_by_other>
+        <Positive_loans>2</Positive_loans>
+        <Highest_months_in_arrears>7</Highest_months_in_arrears>
+      </NLR_Past_36_Months>
+      <NLR_WorstMonthsArrears>7</NLR_WorstMonthsArrears>
+      <NLR_ActiveAccounts>2</NLR_ActiveAccounts>
+      <NLR_BalanceExposure>19244</NLR_BalanceExposure>
+      <NLR_MonthlyInstallment>2101</NLR_MonthlyInstallment>
+      <NLR_CumulativeArrears>2003</NLR_CumulativeArrears>
+      <NLR_ClosedAccounts>21</NLR_ClosedAccounts>
+      <CCA_Past_12_Months>
+        <Enquiries_by_client>2</Enquiries_by_client>
+        <Enquiries_by_other>0</Enquiries_by_other>
+        <Positive_loans>8</Positive_loans>
+        <Highest_months_in_arrears>4</Highest_months_in_arrears>
+      </CCA_Past_12_Months>
+      <CCA_Past_24_Months>
+        <Enquiries_by_client>5</Enquiries_by_client>
+        <Enquiries_by_other>1</Enquiries_by_other>
+        <Positive_loans>8</Positive_loans>
+        <Highest_months_in_arrears>4</Highest_months_in_arrears>
+      </CCA_Past_24_Months>
+      <CCA_Past_36_Months>
+        <Enquiries_by_client>5</Enquiries_by_client>
+        <Enquiries_by_other>1</Enquiries_by_other>
+        <Positive_loans>8</Positive_loans>
+        <Highest_months_in_arrears>4</Highest_months_in_arrears>
+      </CCA_Past_36_Months>
+      <CCA_WorstMonthsArrears>4</CCA_WorstMonthsArrears>
+      <CCA_ActiveAccounts>8</CCA_ActiveAccounts>
+      <CCA_BalanceExposure>33007</CCA_BalanceExposure>
+      <CCA_MonthlyInstallment>3936</CCA_MonthlyInstallment>
+      <CCA_CumulativeArrears>7557</CCA_CumulativeArrears>
+      <CCA_ClosedAccounts>1</CCA_ClosedAccounts>
+      <AdverseAccounts>1</AdverseAccounts>
+      <RevolvingAccounts>4</RevolvingAccounts>
+      <InstalmentAccounts>1</InstalmentAccounts>
+      <OpenAccounts>0</OpenAccounts>
+      <HighestJudgement>0</HighestJudgement>
+    </Summary>
+  </ConsumerEnquiry>
+  <EnqDEF_MATCH>
+    <ROW num="1">
+      <ID_NUMBER>6810305652089</ID_NUMBER>
+      <CNTNAME>South Africa</CNTNAME>
+      <NAME>JABULANI</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+      <COUNTRY_CODE>710</COUNTRY_CODE>
+    </ROW>
+  </EnqDEF_MATCH>
+  <EnqPOS_MATCH>
+    <ROW num="1">
+      <ID_NUMBER>6810305569085</ID_NUMBER>
+      <CNTNAME>South Africa</CNTNAME>
+      <NAME>CYPRIAH</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+      <COUNTRY_CODE>710</COUNTRY_CODE>
+    </ROW>
+    <ROW num="2">
+      <ID_NUMBER>6810305571081</ID_NUMBER>
+      <CNTNAME>South Africa</CNTNAME>
+      <NAME>SIPHO</NAME>
+      <SURNAME>MSIMANGO</SURNAME>
+      <STATUS>Verified</STATUS>
+      <COUNTRY_CODE>710</COUNTRY_CODE>
+    </ROW>
+  </EnqPOS_MATCH>
+  <EnqLOANS>
+    <ROW num="1">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-10-31</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>6878122</ACC_NUM>
+      <STATUS_CODE>OPEN/CURRENT</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R3530</CURRENT_BALANCE>
+      <INSTALLMENT>R1287</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2015-01-30</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE/>
+    </ROW>
+    <ROW num="2">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-09-30</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>5943315</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-10-30</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-10-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="3">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-09-02</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>5062582</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-09-30</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-09-30</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="4">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-07-07</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>3761643</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-09-01</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-09-03</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="5">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-05-31</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>3125933</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-07-04</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-07-07</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="6">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-05-03</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>2934537</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-05-31</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-06-02</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="7">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-04-02</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>ST JOHN FINANCE (BRAAMFONTEIN) CC</SUB_NAME>
+      <ACC_NUM>7867    02394           3</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-09-30</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-09-30</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="8">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-03-04</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>7396465006</ACC_NUM>
+      <STATUS_CODE>OPEN/CURRENT</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R15714</CURRENT_BALANCE>
+      <INSTALLMENT>R814</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2015-01-30</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE/>
+    </ROW>
+    <ROW num="9">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-03-03</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>2458236</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-05-02</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-05-03</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="10">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2014-01-03</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPFIN</SUB_NAME>
+      <ACC_NUM>1941589</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-03-01</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-03-03</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="11">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-12-06</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>ST JOHN FINANCE (BRAAMFONTEIN) CC</SUB_NAME>
+      <ACC_NUM>7867    02394           2</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-03-27</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-03-27</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="12">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-11-01</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>7396465005</ACC_NUM>
+      <STATUS_CODE>EARLY SETTLEMENT</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-03-01</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-03-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="13">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-06-04</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>7396465004</ACC_NUM>
+      <STATUS_CODE>EARLY SETTLEMENT</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2014-03-01</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2014-03-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="14">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-04-29</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPITEC BANK LIMITED</SUB_NAME>
+      <ACC_NUM>2904131338119093</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2013-05-31</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2013-05-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="15">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-04-03</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>7396465003</ACC_NUM>
+      <STATUS_CODE>EARLY SETTLEMENT</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2013-06-28</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2013-07-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="16">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-02-04</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>000000007396465002</ACC_NUM>
+      <STATUS_CODE>EARLY SETTLEMENT</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE/>
+      <LAST_UPDATED_DATE>2013-06-04</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="17">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-01-30</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPITEC BANK LIMITED</SUB_NAME>
+      <ACC_NUM>3001131338119093</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2013-04-02</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2013-04-02</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="18">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2013-01-07</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>CAPITEC BANK LIMITED</SUB_NAME>
+      <ACC_NUM>0701131338118747</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2013-02-04</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2013-02-04</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="19">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE>2009-05-05</ACC_OPEN_DATE>
+      <REF_NO/>
+      <SUB_NAME>AFRICAN BANK LIMITED</SUB_NAME>
+      <ACC_NUM>7396465001</ACC_NUM>
+      <STATUS_CODE>EARLY SETTLEMENT</STATUS_CODE>
+      <LOAN_TYPE>Term Loan direct collection</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE>2012-10-31</LAST_PAYMNET_DATE>
+      <LAST_UPDATED_DATE>2012-10-31</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="20">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE/>
+      <REF_NO/>
+      <SUB_NAME>W. R. W. FINANCE CC</SUB_NAME>
+      <ACC_NUM>1941589</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE/>
+      <LAST_UPDATED_DATE>2014-03-04</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="21">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE/>
+      <REF_NO/>
+      <SUB_NAME>W. R. W. FINANCE CC</SUB_NAME>
+      <ACC_NUM>2458236</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE/>
+      <LAST_UPDATED_DATE>2014-05-04</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="22">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE/>
+      <REF_NO/>
+      <SUB_NAME>W. R. W. FINANCE CC</SUB_NAME>
+      <ACC_NUM>2934537</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE/>
+      <LAST_UPDATED_DATE>2014-06-03</LAST_UPDATED_DATE>
+    </ROW>
+    <ROW num="23">
+      <SOURCE>NLR</SOURCE>
+      <CLOSURE_DATE/>
+      <ACC_OPEN_DATE/>
+      <REF_NO/>
+      <SUB_NAME>W. R. W. FINANCE CC</SUB_NAME>
+      <ACC_NUM>3125933</ACC_NUM>
+      <STATUS_CODE>ACCOUNT CLOSED</STATUS_CODE>
+      <LOAN_TYPE>Short Term Loan</LOAN_TYPE>
+      <CURRENT_BALANCE>R0</CURRENT_BALANCE>
+      <INSTALLMENT>R0</INSTALLMENT>
+      <LAST_PAYMNET_DATE/>
+      <LAST_UPDATED_DATE>2014-07-07</LAST_UPDATED_DATE>
+    </ROW>
+  </EnqLOANS>
+  <EnqNLRCCA>
+    <ROW num="1">
+      <COM_OUTSTANDING>19244</COM_OUTSTANDING>
+      <COM_INSTALL>2101</COM_INSTALL>
+      <CCA_CUM_ARR_AMNT NULL="YES"/>
+      <WORST_ARREARS>7</WORST_ARREARS>
+    </ROW>
+  </EnqNLRCCA>
+  <EnqHPS/>
+  <EnqADDRESS>
+    <ROW num="1">
+      <SOURCE>CreditCheck</SOURCE>
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>203 STONE COURT BUILDING</LINE_1>
+      <LINE_2>11 KING GEORGE STREET</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="2">
+      <SOURCE>CreditCheck</SOURCE>
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>207 STONE COURT</LINE_1>
+      <LINE_2>CORNER PLEIN STREET AND K</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="3">
+      <SOURCE>CreditCheck</SOURCE>
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1>NO 203</LINE_1>
+      <LINE_2>JOHANNESBURG</LINE_2>
+      <LINE_3>JOHANNESBURG</LINE_3>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="4">
+      <SOURCE>CreditCheck</SOURCE>
+      <ADDRESS_TYPE>P</ADDRESS_TYPE>
+      <LINE_1 NULL="YES"/>
+      <LINE_2>131929 BRIAN MAZIBUKO ST</LINE_2>
+      <LINE_3 NULL="YES"/>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="5">
+      <SOURCE>CreditCheck</SOURCE>
+      <ADDRESS_TYPE>R</ADDRESS_TYPE>
+      <LINE_1 NULL="YES"/>
+      <LINE_2>131929 BRIAN MAZIBUKO ST</LINE_2>
+      <LINE_3 NULL="YES"/>
+      <LINE_4 NULL="YES"/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="6">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Postal</ADDRESS_TYPE>
+      <LINE_1>131929 BRIAN MAZIBUKO ST</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <ACTIVE_DATE>28-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="7">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Postal</ADDRESS_TYPE>
+      <LINE_1>203 STONE COURT BUILDING 11 KING GEORGE STREETJOHANNESBURG</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>12-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="8">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Postal</ADDRESS_TYPE>
+      <LINE_1>207 STONE COURT CORNER PLEIN STREET AND KJOHANNESBURG</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>19-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="9">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Postal</ADDRESS_TYPE>
+      <LINE_1>NO 203 JOHANNESBURGJOHANNESBURG</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>10-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="10">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Residential</ADDRESS_TYPE>
+      <LINE_1>131929 BRIAN MAZIBUKO ST</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>1585</POSTAL_CODE>
+      <ACTIVE_DATE>28-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="11">
+      <SOURCE>NLR</SOURCE>
+      <ADDRESS_TYPE>Residential</ADDRESS_TYPE>
+      <LINE_1>203 STONE COURT PLEIN STREETJOHANNESBURG</LINE_1>
+      <LINE_2/>
+      <LINE_3/>
+      <LINE_4/>
+      <POSTAL_CODE>2001</POSTAL_CODE>
+      <ACTIVE_DATE>10-02-2015</ACTIVE_DATE>
+    </ROW>
+  </EnqADDRESS>
+  <EnqTELNO>
+    <ROW num="1">
+      <SOURCE>CreditCheck</SOURCE>
+      <TEL_NUMBER_TYPE>C</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0733863251</TEL_NUMBER>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="2">
+      <SOURCE>CreditCheck</SOURCE>
+      <TEL_NUMBER_TYPE>H</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="3">
+      <SOURCE>CreditCheck</SOURCE>
+      <TEL_NUMBER_TYPE>H</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="4">
+      <SOURCE>CreditCheck</SOURCE>
+      <TEL_NUMBER_TYPE>W</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="5">
+      <SOURCE>CreditCheck</SOURCE>
+      <TEL_NUMBER_TYPE>W</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <ACTIVE_DATE>04-04-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="6">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Cell</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0733863251</TEL_NUMBER>
+      <ACTIVE_DATE>28-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="7">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Residential</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <ACTIVE_DATE>12-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="8">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Residential</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <ACTIVE_DATE>19-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="9">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Work</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0113339574</TEL_NUMBER>
+      <ACTIVE_DATE>19-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="10">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Work</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0115489500</TEL_NUMBER>
+      <ACTIVE_DATE>12-02-2015</ACTIVE_DATE>
+    </ROW>
+    <ROW num="11">
+      <SOURCE>NLR</SOURCE>
+      <TEL_NUMBER_TYPE>Work</TEL_NUMBER_TYPE>
+      <TEL_NUMBER>0825706845</TEL_NUMBER>
+      <ACTIVE_DATE>10-02-2015</ACTIVE_DATE>
+    </ROW>
+  </EnqTELNO>
+  <EnqCHKHISTORY>
+    <ROW num="1">
+      <SOURCE>CreditCheck</SOURCE>
+      <ENQUIRY_DATE>2014-12-03 11:56</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT>Pelnine : (011) 337 2828</CONTACT>
+      <AMOUNT/>
+    </ROW>
+    <ROW num="2">
+      <SOURCE>NLR</SOURCE>
+      <ENQUIRY_DATE>2014-12-03</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT/>
+      <AMOUNT NULL="YES"/>
+    </ROW>
+    <ROW num="3">
+      <SOURCE>CreditCheck</SOURCE>
+      <ENQUIRY_DATE>2014-09-08 08:47</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT>Pelnine : (011) 337 2828</CONTACT>
+      <AMOUNT/>
+    </ROW>
+    <ROW num="4">
+      <SOURCE>NLR</SOURCE>
+      <ENQUIRY_DATE>2014-09-08</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT/>
+      <AMOUNT NULL="YES"/>
+    </ROW>
+    <ROW num="5">
+      <SOURCE>CreditCheck</SOURCE>
+      <ENQUIRY_DATE>2014-04-02 11:36</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT>Pelnine : (011) 337 2828</CONTACT>
+      <AMOUNT/>
+    </ROW>
+    <ROW num="6">
+      <SOURCE>NLR</SOURCE>
+      <ENQUIRY_DATE>2014-04-02</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT/>
+      <AMOUNT NULL="YES"/>
+    </ROW>
+    <ROW num="7">
+      <SOURCE>CreditCheck</SOURCE>
+      <ENQUIRY_DATE>2013-12-05 14:13</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT>Pelnine : (011) 337 2828</CONTACT>
+      <AMOUNT/>
+    </ROW>
+    <ROW num="8">
+      <SOURCE>NLR</SOURCE>
+      <ENQUIRY_DATE>2013-12-05</ENQUIRY_DATE>
+      <BRANCH_NAME>Atlas - Medical Towers</BRANCH_NAME>
+      <CONTACT/>
+      <AMOUNT NULL="YES"/>
+    </ROW>
+    <ROW num="9">
+      <SOURCE>CreditCheck</SOURCE>
+      <ENQUIRY_DATE>2013-06-04 10:44</ENQUIRY_DATE>
+      <BRANCH_NAME>Capitec</BRANCH_NAME>
+      <CONTACT>The Manager : TBA</CONTACT>
+      <AMOUNT/>
+    </ROW>
+  </EnqCHKHISTORY>
+  <EnqEMPLOYMENT>
+    <ROW num="1">
+      <SOURCE>COMPUSCAN</SOURCE>
+      <EMPLOYER_1>ANALITIC RISK MANAGEMENT SECURITY</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE NULL="YES"/>
+      <PAYSLIP_REF NULL="YES"/>
+      <EMP_NUM NULL="YES"/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE>2015-02-10</ACTIVE_DATE>
+    </ROW>
+    <ROW num="2">
+      <SOURCE>COMPUSCAN</SOURCE>
+      <EMPLOYER_1>ANALYTICAL RISK MANAGEMENT  PTY LTD</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE NULL="YES"/>
+      <PAYSLIP_REF NULL="YES"/>
+      <EMP_NUM NULL="YES"/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE>2013-12-07</ACTIVE_DATE>
+    </ROW>
+    <ROW num="3">
+      <SOURCE>COMPUSCAN</SOURCE>
+      <EMPLOYER_1>ARMED SECURITY</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE NULL="YES"/>
+      <PAYSLIP_REF NULL="YES"/>
+      <EMP_NUM NULL="YES"/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE>2015-02-09</ACTIVE_DATE>
+    </ROW>
+    <ROW num="4">
+      <SOURCE>COMPUSCAN</SOURCE>
+      <EMPLOYER_1>GARDEN SERVICES</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE NULL="YES"/>
+      <PAYSLIP_REF NULL="YES"/>
+      <EMP_NUM NULL="YES"/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE>2015-01-07</ACTIVE_DATE>
+    </ROW>
+    <ROW num="5">
+      <SOURCE>COMPUSCAN</SOURCE>
+      <EMPLOYER_1>THE GARDEN PATH</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE NULL="YES"/>
+      <PAYSLIP_REF NULL="YES"/>
+      <EMP_NUM NULL="YES"/>
+      <OCCUPATION>SECURITY GUARD</OCCUPATION>
+      <ACTIVE_DATE>2014-04-06</ACTIVE_DATE>
+    </ROW>
+    <ROW num="6">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>ANALITIC RISK MANAGEMENT SECURITY</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE/>
+    </ROW>
+    <ROW num="7">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>ANALYTICAL RISK MANAGEMENT  PTY LTD</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE/>
+    </ROW>
+    <ROW num="8">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>ANALYTICAL RISK MANAGEMENT PTY LTD</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE/>
+    </ROW>
+    <ROW num="9">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>ARMED SECURITY</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE/>
+    </ROW>
+    <ROW num="10">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>GARDEN SERVICES</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION NULL="YES"/>
+      <ACTIVE_DATE/>
+    </ROW>
+    <ROW num="11">
+      <SOURCE>NLR</SOURCE>
+      <EMPLOYER_1>THE GARDEN PATH</EMPLOYER_1>
+      <EMPLOYER_2/>
+      <TYPE/>
+      <PAYSLIP_REF/>
+      <EMP_NUM/>
+      <OCCUPATION>SECURITY GUARD</OCCUPATION>
+      <ACTIVE_DATE/>
+    </ROW>
+  </EnqEMPLOYMENT>
+  <EnqSRCHCRITERIA>
+    <ROW num="1">
+      <CRIT_IDNUMBER>6810305652089</CRIT_IDNUMBER>
+      <CRIT_NAME>JABULANI</CRIT_NAME>
+      <CRIT_SURNAME>MSIMANGO</CRIT_SURNAME>
+      <ENQ_CNT_NAME>South Africa</ENQ_CNT_NAME>
+      <ENQ_DATE>2015-04-04 13:53:17</ENQ_DATE>
+      <ID_VERIFIED>ID Number has been verified</ID_VERIFIED>
+    </ROW>
+  </EnqSRCHCRITERIA>
+  <EnqActivities>
+    <ROW num="1">
+      <ENQUIRIES>0</ENQUIRIES>
+      <LOANS>0</LOANS>
+      <JUDGEMENTS>0</JUDGEMENTS>
+      <NOTICES>0</NOTICES>
+      <COLLECTIONS>0</COLLECTIONS>
+      <ADMINORDERS>0</ADMINORDERS>
+      <BALANCE>0</BALANCE>
+      <INSTALLMENT>0</INSTALLMENT>
+      <INFOTYPE>CC + NLR COMBINED</INFOTYPE>
+    </ROW>
+  </EnqActivities>
+  <EnqFraud>
+    <EnqFraud_SUMM>
+      <ROW num="1">
+        <SUBJECTNO>172880</SUBJECTNO>
+        <CATEGORY>MISUSE OF ACCOUNT, THROUGH FRAUDULENT CONDUCT</CATEGORY>
+        <CAT_NUM>6</CAT_NUM>
+        <SUBCAT>7 - EVADING LIABILITY (I.E. CONFIRMED FRAUD, NOT BAD DEBT)</SUBCAT>
+        <SUBJECT>JABULANI MSIMANGO</SUBJECT>
+        <PASSPORT/>
+        <INCIDENTDATE>23-09-2014</INCIDENTDATE>
+        <VICTIM>NO</VICTIM>
+        <DATE_CREATED>2015-04-04 13:53:16.0</DATE_CREATED>
+      </ROW>
+    </EnqFraud_SUMM>
+    <Detail>
+      <EnqFraud_PersonalDetail>
+        <ROW num="1">
+          <FRAUD_PERSONAL_TITLE>MR</FRAUD_PERSONAL_TITLE>
+          <FRAUD_PERSONAL_SURNAME>MSIMANGO</FRAUD_PERSONAL_SURNAME>
+          <FRAUD_PERSONAL_FIRSTNAME>JABULANI</FRAUD_PERSONAL_FIRSTNAME>
+          <FRAUD_PERSONAL_ID>6810305652089</FRAUD_PERSONAL_ID>
+          <FRAUD_PERSONAL_PASSPORT/>
+          <FRAUD_PERSONAL_DATEOFBIRTH>30-10-1968</FRAUD_PERSONAL_DATEOFBIRTH>
+          <FRAUD_PERSONAL_GENDER>M</FRAUD_PERSONAL_GENDER>
+          <FRAUD_PERSONAL_EMAIL/>
+        </ROW>
+      </EnqFraud_PersonalDetail>
+      <EnqFraud_IncidentDetail>
+        <ROW num="1">
+          <FRAUD_INCIDENT_VICTIM>NO</FRAUD_INCIDENT_VICTIM>
+          <FRAUD_INCIDENT_MEMBERSREF>172880</FRAUD_INCIDENT_MEMBERSREF>
+          <FRAUD_INCIDENT_CATEGORY>6 - MISUSE OF ACCOUNT, THROUGH FRAUDULENT CONDUCT</FRAUD_INCIDENT_CATEGORY>
+          <FRAUD_INCIDENT_SUBCAT>7 - EVADING LIABILITY (I.E. CONFIRMED FRAUD, NOT BAD DEBT)</FRAUD_INCIDENT_SUBCAT>
+          <FRAUD_INCIDENT_DATE>23-SEP-14</FRAUD_INCIDENT_DATE>
+          <FRAUD_INCIDENT_SUBROLE/>
+          <FRAUD_INCIDENT_CITY>BLOEMFONTEIN</FRAUD_INCIDENT_CITY>
+          <FRAUD_INCIDENT_DETAIL>STOLEN &quot;NOT TRANSFERABLE&quot; CHEQUE DEPOSITED INTO NEW ACCOUNT</FRAUD_INCIDENT_DETAIL>
+          <FRAUD_INCIDENT_FORENSIC>NO</FRAUD_INCIDENT_FORENSIC>
+        </ROW>
+      </EnqFraud_IncidentDetail>
+      <EnqFraud_TelDetail>
+        <ROW num="1">
+          <FRAUD_OTHERTEL_TYPE>PERSONAL</FRAUD_OTHERTEL_TYPE>
+          <FRAUD_OTHERTEL_NUMBER>0838877143</FRAUD_OTHERTEL_NUMBER>
+          <FRAUD_OTHERTEL_CITY/>
+          <FRAUD_OTHERTEL_COUNTRY/>
+        </ROW>
+      </EnqFraud_TelDetail>
+      <EnqFraud_BankDetail>
+        <ROW num="1">
+          <FRAUD_BANK_NO>9294421641</FRAUD_BANK_NO>
+          <FRAUD_BANK_TYPE>SAVINGS</FRAUD_BANK_TYPE>
+          <FRAUD_BANK_BANK>ABSA</FRAUD_BANK_BANK>
+          <FRAUD_BANK_DATEFROM>23-04-2014</FRAUD_BANK_DATEFROM>
+          <FRAUD_BANK_DATETO>08-09-2014</FRAUD_BANK_DATETO>
+        </ROW>
+      </EnqFraud_BankDetail>
+    </Detail>
+  </EnqFraud>
+  <EnqCCCPAAccounts>
+    <ROW num="1">
+      <SUBSCRIBER_CODE>197</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>TRUWORTHS - TRUWORTHS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10101558190093</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-07-09</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-03-08</LAST_PAYMENT_DATE>
+      <OPEN_BAL>4860</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>4629</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1750</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>523</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>4</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>43211100000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-19</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="2">
+      <SUBSCRIBER_CODE>174</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>THE FOSCHINI GROUP - FOSCHINI</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10010001023977775</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-04-29</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-03-08</LAST_PAYMENT_DATE>
+      <OPEN_BAL>8842</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>7438</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>2061</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>860</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>33321100100001000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-----------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-12</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="3">
+      <SUBSCRIBER_CODE>5291</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>TENACITY - ACKERMANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>10201322080021897140</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-08-22</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-11-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>3625</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>3227</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1110</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>345</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>3210210000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-10</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="4">
+      <SUBSCRIBER_CODE>5263</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>JABBA CONNECT</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>1701110100027152</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2012-11-09</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-24</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>569</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>569</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>569</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>1</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>100000?00000000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>------?-----------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-09</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="5">
+      <SUBSCRIBER_CODE>5492</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>JDG - MORKELS FURNITURE LOANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>6365290060705749</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>I </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Instalment</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-08-13</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>5953</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>14308</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>667</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>1067</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>1</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS>30</TERMS>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS>0</JOINT_LOAN_PARTICIPANTS>
+      <PAYMENT_HISTORY>1000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>-------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-07</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="6">
+      <SUBSCRIBER_CODE>151</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>MR PRICE WEEKEND</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>222831703</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>R </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Revolving Credit Account</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-07-16</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-02-04</LAST_PAYMENT_DATE>
+      <OPEN_BAL>2430</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>2544</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1400</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>280</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>3</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>32321100</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-03-07</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="7">
+      <SUBSCRIBER_CODE>1345</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>THE UNLIMITED WORLD</SUBSCRIBER_NAME>
+      <BRANCH_CODE>13028</BRANCH_CODE>
+      <ACCOUNT_NO>PVV014458</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>S </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Short Term Insurance</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-11-12</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-01-23</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>99</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>99</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>0000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>----</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-02-28</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="8">
+      <SUBSCRIBER_CODE>5489</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>MULTICHOICE</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>50248641</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2014-12-13</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2015-02-02</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>193</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>193</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>00</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>--</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-02-28</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+    <ROW num="9">
+      <SUBSCRIBER_CODE>159</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>NEDBANK - PERSONAL LOANS</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>8894323000000</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>P </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Personal Cash Loans</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2013-02-04</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-03-01</LAST_PAYMENT_DATE>
+      <OPEN_BAL>6308</OPEN_BAL>
+      <OPEN_BAL_IND/>
+      <CURRENT_BAL>0</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>0</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND/>
+      <INSTALMENT_AMOUNT>0</INSTALMENT_AMOUNT>
+      <ARREARS_PERIOD>0</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS>12</TERMS>
+      <STATUS_CODE>C </STATUS_CODE>
+      <STATUS_CODE_DESC>ACCOUNT CLOSED</STATUS_CODE_DESC>
+      <STATUS_DATE>2014-03-01</STATUS_DATE>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>00000100000110</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>C-------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2014-04-06</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+    </ROW>
+  </EnqCCCPAAccounts>
+  <EnqCCWarnings>
+    <ROW NUM="0">
+      <REASON_CODE>4</REASON_CODE>
+      <REASON_DESC>SA FRAUD PREVENTION SERVICES (POTENTIAL FRAUD) NOTIFICATION.</REASON_DESC>
+    </ROW>
+    <ROW NUM="1">
+      <REASON_CODE>13</REASON_CODE>
+      <REASON_DESC>CONSUMER HAS ONE OR MORE ADVERSE ACCOUNTS.</REASON_DESC>
+    </ROW>
+  </EnqCCWarnings>
+  <EnqCCAdverse>
+    <ROW num="1">
+      <SUBSCRIBER_CODE>156</SUBSCRIBER_CODE>
+      <SUBSCRIBER_NAME>M-TEL SERVICE PROVIDER - MTN</SUBSCRIBER_NAME>
+      <BRANCH_CODE NULL="YES"/>
+      <ACCOUNT_NO>A4490671</ACCOUNT_NO>
+      <SUB_ACCOUNT_NO NULL="YES"/>
+      <OWNERSHIP_TYPE>00</OWNERSHIP_TYPE>
+      <OWNERSHIP_TYPE_DESC>OTHER</OWNERSHIP_TYPE_DESC>
+      <REASON NULL="YES"/>
+      <REASON_DESC NULL="YES"/>
+      <PAYMENT_TYPE>00</PAYMENT_TYPE>
+      <PAYMENT_TYPE_DESC>OTHER</PAYMENT_TYPE_DESC>
+      <ACCOUNT_TYPE>F </ACCOUNT_TYPE>
+      <ACCOUNT_TYPE_DESC>Service Related without limit</ACCOUNT_TYPE_DESC>
+      <OPEN_DATE>2012-12-22</OPEN_DATE>
+      <DEFERRED_PAYMENT_DATE NULL="YES"/>
+      <LAST_PAYMENT_DATE>2014-09-30</LAST_PAYMENT_DATE>
+      <OPEN_BAL>0</OPEN_BAL>
+      <OPEN_BAL_IND>O</OPEN_BAL_IND>
+      <CURRENT_BAL>1972</CURRENT_BAL>
+      <CURRENT_BAL_IND>D</CURRENT_BAL_IND>
+      <OVERDUE_AMOUNT>1972</OVERDUE_AMOUNT>
+      <OVERDUE_AMOUNT_IND>D</OVERDUE_AMOUNT_IND>
+      <INSTALMENT_AMOUNT>1972</INSTALMENT_AMOUNT>
+      <LOAD_INDICATOR>B</LOAD_INDICATOR>
+      <ARREARS_PERIOD>4</ARREARS_PERIOD>
+      <REPAYMENT_FREQ>3</REPAYMENT_FREQ>
+      <REPAYMENT_FREQ_DESC>MONTHLY</REPAYMENT_FREQ_DESC>
+      <TERMS NULL="YES"/>
+      <STATUS_CODE NULL="YES"/>
+      <STATUS_CODE_DESC>OPEN/CURRENT</STATUS_CODE_DESC>
+      <STATUS_DATE NULL="YES"/>
+      <THIRD_PARTY_NAME NULL="YES"/>
+      <THIRD_PARTY_SOLD>0</THIRD_PARTY_SOLD>
+      <THIRD_PARTY_SOLD_DESC NULL="YES"/>
+      <JOINT_LOAN_PARTICIPANTS NULL="YES"/>
+      <PAYMENT_HISTORY>432000000000000000000000</PAYMENT_HISTORY>
+      <PAYMENT_HISTORY_STATUS>LLL---------------------</PAYMENT_HISTORY_STATUS>
+      <MONTH_END_DATE>2015-01-31</MONTH_END_DATE>
+      <DATE_CREATED>2015-04-04</DATE_CREATED>
+      <ADVERSE_CODE>L </ADVERSE_CODE>
+      <ADVERSE_CODE_DESC>HANDED OVER</ADVERSE_CODE_DESC>
+      <ADVERSE_DATE>2014-11-17</ADVERSE_DATE>
+      <ADVERSE_OVERDUE_AMOUNT NULL="YES"/>
+    </ROW>
+  </EnqCCAdverse>
+  <EnqCompuSCORE>
+    <ROW num="1">
+      <RISK_TYPE>MINIMUM RISK</RISK_TYPE>
+      <RISK_COLOUR_R>25</RISK_COLOUR_R>
+      <RISK_COLOUR_G>188</RISK_COLOUR_G>
+      <RISK_COLOUR_B>86</RISK_COLOUR_B>
+      <SCORE>614</SCORE>
+      <DECLINE_R_1>NA10-Negative Event within Last 12 Months</DECLINE_R_1>
+      <DECLINE_R_2>NA17-High Arrears Level on Selected Accounts</DECLINE_R_2>
+      <DECLINE_R_3>NA24-Poor recent Payment History on Unsecured Accounts</DECLINE_R_3>
+      <THIN_FILE_INDICATOR>N</THIN_FILE_INDICATOR>
+      <VERSION>2</VERSION>
+      <SCORE_TYPE>NLR</SCORE_TYPE>
+    </ROW>
+  </EnqCompuSCORE>
+  <ATLAS_CODIX>
+    <version>4.0</version>
+    <PRODUCTS>
+      <PRODUCT num="1">
+        <product_type>PROD1</product_type>
+        <product_description>1M Thin</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Client Does Not Meet Age Requirement</reason>
+          <reason num="2">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+      <PRODUCT num="2">
+        <product_type>PROD2</product_type>
+        <product_description>1M Capped</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+      <PRODUCT num="3">
+        <product_type>PROD3</product_type>
+        <product_description>1 Month</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+      <PRODUCT num="4">
+        <product_type>PROD4</product_type>
+        <product_description>2 To 4 Month</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+      <PRODUCT num="5">
+        <product_type>PROD5</product_type>
+        <product_description>5 To 6 Month</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Compuscore Less  Or Equal To 614 And Less Than 2 Previous Atlas Loans (Terms Of 5 Months Or More), Updated Within The Last 2 Years</reason>
+          <reason num="2">Adverse Accounts Greater Than Or Equal To 1 In The Last 1 Year</reason>
+          <reason num="3">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+      <PRODUCT num="6">
+        <product_type>PROD6</product_type>
+        <product_description>12 Month</product_description>
+        <outcome>N</outcome>
+        <reasons>
+          <reason num="1">Compuscore Less 614</reason>
+          <reason num="2">Compuscore Less  Or Equal To 614 And Less Than 2 Previous Atlas Loans (Terms Of 5 Months Or More), Updated Within The Last 2 Years</reason>
+          <reason num="3">Adverse Accounts Greater Than Or Equal To 1 In The Last 1 Year</reason>
+          <reason num="4">Listed With SAFPS As A Perpetrator</reason>
+        </reasons>
+      </PRODUCT>
+    </PRODUCTS>
+  </ATLAS_CODIX>
+</ROOT>

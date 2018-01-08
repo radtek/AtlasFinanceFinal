@@ -1,0 +1,20 @@
+﻿@{
+  ViewBag.Title = String.Empty;
+  ViewBag.MetaDescription = "Atlas Online provides short-term loans online. No papers, no fuss, immediate loans. Apply Online Today.";
+  ViewBag.MetaKeywords = "Loans, online loans, short-term loans, payday loans";
+    
+  ViewBag.ngApp = "atlas.slider";
+  ViewBag.classContainerPrimary = "p-none";
+  
+  Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/jquery-ui")
+  @Scripts.Render("~/bundles/core")
+  @Scripts.Render("~/bundles/atlas-home")
+}
+
+<div class="row cf">
+  @Html.Partial("_SliderPartial")
+</div><!-- .row -->

@@ -1,0 +1,160 @@
+﻿<div ng-controller="AccountNaedoController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <legend>Control</legend>
+        <div class="table-responsive">
+          <table ng-table="naedoControlParams" class="table">
+            <tr ng-repeat="naedoControl in $data" ng-click="changeSelection('ncRowSelected',naedoControl,'naedoControls');" ng-class="{selected: naedoControl.$selected}" style="cursor: pointer;">
+              <td data-title="'No.'" filter="{ 'ControlId': 'text' }" sortable="'ControlId'">
+                <center> {{naedoControl.ControlId}}</center>
+              </td>
+              <td data-title="'Status'" filter="{ 'ControlStatus': 'text' }" sortable="'ControlStatus'">
+                <center><label class="curved-border" ng-class="naedoControl.ControlStatusColor"> {{naedoControl.ControlStatus}}</label></center>
+              </td>
+              <td data-title="'Bank'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedoControl.Bank.BankName}}</center>
+              </td>
+              <td data-title="'Bank Account Type'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedoControl.BankAccountType}}</center>
+              </td>
+              <td data-title="'Bank Account Name'" filter="{ 'BankAccountName': 'text' }" sortable="'BankAccountName'">
+                <center> {{naedoControl.BankAccountName}}</center>
+              </td>
+              <td data-title="'Bank Account No'" filter="{ 'BankAccountName': 'text' }" sortable="'BankAccountName'">
+                <center> {{naedoControl.BankAccountNo}}</center>
+              </td>
+              <td data-title="'Bank Branch Code'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedoControl.BankBranchCode}}</center>
+              </td>
+              <td data-title="'Bank Statement Reference'" filter="{ 'BankStatementReference': 'text' }" sortable="'BankStatementReference'">
+                <center> {{naedoControl.BankStatementReference}}</center>
+              </td>
+              <td data-title="'Repetition'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedoControl.CurrentRepetition}} of {{naedoControl.Repetitions}}</center>
+              </td>
+              <td data-title="'First Instalment Date'" filter="{ 'FirstInstalmentDate': 'text' }" sortable="'FirstInstalmentDate'">
+                <center> {{naedoControl.FirstInstalmentDate | date:'yyyy-MM-dd'}}</center>
+              </td>
+              <td data-title="'Instalment'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedoControl.Instalment | currency}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn red" ng-disabled="!ncRowSelected.$selected || (ncRowSelected.ControlStatusId != 1 && ncRowSelected.ControlStatusId != 2)" ng-click="naDialogueAdd = true;" data-toggle="modal" href="#NaedoDialogue">Add Additional Debit</button>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Transactions</legend>
+        <div ng-show="!transactionNgShow()">
+          Select a control to view its transactions
+        </div>
+        <div class="table-responsive" ng-show="transactionNgShow()">
+          <table ng-table="naedoParams" class="table">
+            <tr ng-repeat="naedo in $data" ng-click="changeSelection('naRowSelected',naedo,'naedo_' + ncRowSelected.ControlId)" ng-class="{selected: naedo.$selected}" style="cursor: pointer;">
+              <td data-title="'No.'" filter="{ 'TransactionId': 'text' }" sortable="'TransactionId'">
+                <center> {{naedo.TransactionId}}</center>
+              </td>
+              <td data-title="'Status'" filter="{ 'Status': 'text' }" sortable="'Status'">
+                <center><label class="curved-border"  ng-class="naedo.StatusColor"> {{naedo.Status}}</label></center>
+              </td>
+              <td data-title="'Type'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedo.DebitType}}</center>
+              </td>
+              <td data-title="'Batch No.'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedo.BatchId}}</center>
+              </td>
+              <td data-title="'Batch Status'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedo.BatchStatus}}</center>
+              </td>
+              <td data-title="'Response'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedo.ResponseCodeDescription}}</center>
+              </td>
+              <td data-title="'Response Date'" filter="{ 'ResponseDate': 'text' }" sortable="'ResponseDate'">
+                <center> {{naedo.ResponseDate | date:'yyyy-MM-dd'}}</center>
+              </td>
+              <td data-title="'Action Date'" filter="{ 'ActionDate': 'text' }" sortable="'ActionDate'">
+                <center> {{naedo.ActionDate | date:'yyyy-MM-dd'}}</center>
+              </td>
+              <td data-title="'Amount'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+                <center> {{naedo.Amount | currency}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right" ng-show="ncRowSelected.$selected">
+            <button type="submit" class="btn yellow" ng-disabled="!naRowSelected.$selected || naRowSelected.StatusId != 1 || naRowSelected.DebitTypeId != 2 || naRowSelected.BatchId != 0" ng-click="naDialogueAdd = false;" data-toggle="modal" href="#NaedoDialogue">Cancel Additional Debit</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+
+  <!-- Naedo Modals -->
+  <div class="modal fade" id="NaedoDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger" ng-if="naDialogueAdd === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Add Additional Debit Order</h4>
+        </div>
+        <div class="modal-header label-warning" ng-if="naDialogueAdd === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Cancel Additional Debit</h4>
+        </div>
+        <div class="modal-body form" ng-if="naDialogueAdd === true">
+          <div class="centered">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group">
+                  <label class="col-md-2 control-label"></label>
+                  <label class="col-md-3 control-label">Action Date</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-small date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input type="text" class="form-control" ng-model="$parent.additonalDebitActionDate" date-picker="yyyy-mm-dd" readonly="">
+                        <span popover data-trigger="hover" ng-show="naShowActionDateValidation == true" data-html="true" data-placement="right" data-title="Validation Error" data-content="Date needs to be in 3 days time!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-2 control-label"></label>
+                  <label class="col-md-3 control-label">Amount</label>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input class="form-control input-small" currency-input ng-model="$parent.additonalDebitAmount" name="additonalDebitAmountId" type="text" />
+                      <span popover data-trigger="hover" ng-show="naShowAmountValidation == true" data-html="true" data-placement="right" data-title="Validation Error" data-content="Amount needs to be greater than R 5.00!"><span class="btn btn-warning"><i class="fa fa-exclamation"></i></span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-body" ng-if="naDialogueAdd === false">
+          You are about to cancel this debit order, are you sure you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn red" ng-click="addAdditionalDebit(ncRowSelected.ControlId);" ng-if="naDialogueAdd === true">Confirm</button>
+          <button type="button" class="btn green" ng-click="cancelAdditionalDebit(ncRowSelected.ControlId, naRowSelected.TransactionId);" ng-if="naDialogueAdd === false">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>
+
+<script>
+  function OpenModalDialogue() {
+    $("#dtePicker").datepicker({ format: 'yyyy-mm-dd' });
+    $("#dtePicker").css("z-index:9999 !important;");
+  }
+</script>

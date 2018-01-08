@@ -1,0 +1,6 @@
+1. Download wsdl and generate contract:   
+  svcutil /sc http://196.14.89.40/WS_TermRC_UAT/WS_TermRC.asmx /noLogo /directory:C:\temp /language:C#
+  
+  (client + config files: svcutil /mc http://196.14.89.40/WS_TermRC/WS_TermRC.asmx?wsdl /noLogo /directory:"C:\temp" /language:C#)
+
+ 

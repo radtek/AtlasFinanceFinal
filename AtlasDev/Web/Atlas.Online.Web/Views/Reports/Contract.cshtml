@@ -1,0 +1,1836 @@
+﻿@model Atlas.Online.Web.Models.ContractModel
+
+@{
+    ViewBag.Title = "Contract";
+    Layout = null;// "~/Views/Reports/Layout.cshtml";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+ <style>
+        body{font-family:Verdana;font-size:9pt;}
+        h1{padding:20px 0 20px 0;margin: 0 0 0 0;font-size:12pt;}
+    </style>
+</head>
+
+<body onload="javascript:window.print();">
+<table width="100%" border="0">
+  <tr>
+    <td width="20%">&nbsp;</td>
+    <td width="22%">&nbsp;</td>
+    <td width="37%">&nbsp;</td>
+    <td width="8%">&nbsp;</td>
+    <td width="13%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="vertical-align:top;"> Atlas Finance (Pty) Ltd<br />
+      Company Reg No: XXXX/XXXXXXX/XX<br />
+      Vat Reg No: XXXXXXXX<br />
+    NCR Reg No: XXXXXXXX </td>
+    <td>&nbsp;</td>
+    <td colspan="2" align="left"> Loan Originator: Atlas Finance (Pty) Ltd<br />
+      Customer Care: 0861 XXX XXX<br />
+      E-mail: info@atlasonline.co.za<br />
+    Website: www.atlasonline.co.za </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Pre-Agreement Statement And Quotation</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table  style=" border:1px solid black;" width="100%" border="0">
+      <tr>
+        <td><table width="100%" border="0" style="border:#000;thin;">
+          <tr>
+            <td width="28%"><strong>Name of Credit Provider:</strong></td>
+            <td width="32%">Atlas Finance (Pty) Ltd</td>
+            <td width="18%"><strong>Loan Reference:</strong></td>
+            <td width="22%">@Html.DisplayFor(x => x.AccountNo)</td>
+          </tr>
+          <tr>
+            <td><strong>Name of Loan Originator:</strong></td>
+            <td>Atlas Finance (Pty) Ltd</td>
+            <td><strong>Quotation No:</strong></td>
+            <td>@Html.DisplayFor(x => x.QuotationNo)</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><strong>Quote Date:</strong></td>
+            <td>@String.Format("{0:d}", Model.QuoteDate)</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><strong>NCR Registration Number:</strong></td>
+            <td>NCRCP408</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top"><strong>Physical Address:</strong></td>
+            <td>Atlas Head Office<br />
+              123 Oxford Street, Cnr Cotswold Drive<br />
+              Saxonwold<br />
+              2196</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><strong>Contact Number:</strong></td>
+            <td>087 701 8665</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="5" style="vertical-align:top;"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Details of Applicant</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><strong>Personal Details</strong></td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table style=" border:1px solid black;" width="100%" border="0">
+      <tr>
+        <td width="28%" style="vertical-align:top;"><strong>First Name:</strong></td>
+        <td width="20%" style="vertical-align:top;">@Html.DisplayFor(x => x.FirstName)</td>
+        <td width="23%" style="vertical-align:top;"><strong>Residential Address:</strong></td>
+        <td width="29%" style="vertical-align:top;" rowspan="4">  @Html.DisplayFor(x => x.ResidentialAddressLine1)<br />
+				      @Html.DisplayFor(x => x.ResidentialAddressLine2)<br />
+				      @Html.DisplayFor(x => x.ResidentialAddressLine3)<br />
+				      @Html.DisplayFor(x => x.ResidentialAddressLine4)</td>
+      </tr>
+      <tr>
+        <td style="vertical-align:top;"><strong>Surname: </strong></td>
+        <td style="vertical-align:top;">@Html.DisplayFor(x => x.LastName)</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <td style="vertical-align:top;"><strong>ID Number:</strong></td>
+        <td style="vertical-align:top;">@Html.DisplayFor(x => x.IdNumber)</td>
+        <td>&nbsp;</td>
+        </tr>
+      <tr>
+        <td style="vertical-align:top;"><strong>Contact Number:</strong></td>
+        <td style="vertical-align:top;">@Html.DisplayFor(x => x.ContactNumber)</td>
+        <td>&nbsp;</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Details of Loan</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="vertical-align:top;"><table style=" border:1px solid black;" width="100%" border="0">
+      <tr>
+        <td width="28%"><strong>Loan Amount</strong>:</td>
+        <td width="72%" colspan="3">@String.Format("{0:c}",Model.Amount)</td>
+        </tr>
+      <tr>
+        <td><strong>Initiation Fee:</strong></td>
+        <td colspan="3">@String.Format("{0:c}",Model.InitiationFeeAndServiceFee)</td>
+        </tr>
+      <tr>
+        <td><strong>Service Fee:</strong></td>
+        <td colspan="3">aa</td>
+        </tr>
+      <tr>
+        <td><strong>Interest at 5% per month calculated at &lt;%&gt;% per day for &lt;x&gt; days&gt;:</strong></td>
+        <td colspan="3">@Html.DisplayFor(x => x.InterestRate)</td>
+        </tr>
+      <tr>
+        <td><strong>Total Cost of Credit:</strong></td>
+        <td colspan="3">xx</td>
+        </tr>
+      <tr>
+        <td><strong>Repayment Amount:</strong></td>
+        <td colspan="3">@String.Format("{0:c}",Model.RepaymentAmount)</td>
+        </tr>
+      <tr>
+        <td><strong>Repayment Date:</strong></td>
+        <td colspan="3">@String.Format("{0:d}", Model.RepaymentDate)</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Additional Information</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><div>
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><b><u><span
+style='font-size:8.0pt;font-family:Verdana;color:black'>Part A: Additional Charges</span></u></b><b><span style='font-size:8.0pt;font-family:
+Verdana;color:black'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><b><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>Initiation Fee<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>An initiation fee is payable by the 
+    Borrower for the making of the loan upon the conclusion of the Loan Agreement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:8.0pt;font-family:Verdana;
+color:black'>Part B: Repayment arrangements<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>Payment will be made to Atlas Finance by 
+    way of Debit Order and/or NAEDO in terms of the Payment Instruction signed by 
+    You as selected by You in the Application and will take place on the morning of 
+    the Repayment Date. You must complete the Payment Instruction as part of the 
+    Application for Us to collect Your repayments.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:8.0pt;font-family:Verdana;
+color:black'>Part C: Further information on rights and obligations <o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>For purposes of this Quotation You should 
+    take note of the following fees, charges and values:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><u><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>Settlement Value</span></u><span
+style='font-size:8.0pt;font-family:Verdana;color:black'><span
+style='mso-spacerun:yes'>&nbsp; </span>- the amount of the Settlement Value that You will 
+    be required to pay to settle the total indebtedness to Atlas Finance will 
+    consist of the Loan Amount, interest and all other fees, charges and/or costs 
+    payable in terms of the Loan Agreement and any applicable Law as at the date on 
+    which repayment is due<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><u><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>Interest rate</span></u><span
+style='font-size:8.0pt;font-family:Verdana;color:black'> – the interest rate is a 
+    fixed interest rate of 5% per month.<span
+style='mso-spacerun:yes'>&nbsp; </span>The interest rate will be added to the Total 
+    Repayment Amount on your chosen Repayment Date.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;border:none;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-padding-alt:1.0pt 1.0pt 1.0pt 1.0pt'><u><span style='font-size:
+8.0pt;font-family:Verdana;color:black'>Enforcement expenses/collection costs</span></u><span style='font-size:8.0pt;font-family:Verdana;
+color:black'> – If You fail to repay Atlas Finance in full on the Repayment Date, 
+    You will have to pay legal expenses and costs on the attorney and client scale, 
+    which Atlas Finance has incurred in order to enforce its rights under the Loan 
+    Agreement and which it may recover in accordance with prevailing Law from time 
+    to time. Atlas Finance will continue to charge interest on any outstanding 
+    balance at the rate of interest as shown above.<span style='mso-spacerun:yes'>&nbsp;
+</span>Interest after default is calculated daily and applied to the outstanding 
+    balance every 30 (thirty) days (or when the Settlement Value is paid in full, if 
+    earlier). Atlas Finance may also charge all the costs and expenses (including 
+    tracing agents, debt collecting fees and legal costs) as allowed by the Law and 
+    reasonably incurred by it in enforcing the Loan Agreement. A Default 
+    Administration Fee of R75.00 will be payable on default.<o:p></o:p></span></p>
+        </div>     <table style="width:100%;">
+            <tr style="height:20px;"><td></td></tr>
+            <tr style="height:30px;vertical-align:top;">
+                <td style="font-size:7pt;">
+                    <strong>DECLARATIONS</strong><br /><br />
+                    Once You have accepted this Quotation, You acknowledge that You have entered 
+                    into a Loan Agreement with Atlas Finance on the Terms and Conditions which You 
+                    have read and understood and which are to be read together with this Quotation. <strong>
+                    THIS QUOTE IS BINDING FOR 5 DAYS.</strong><br />
+                </td>
+            </tr>
+        </table><hr />
+        <h1>Terms &amp; Conditions</h1>
+        <div>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>1.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> INTRODUCTION AND INTERPRETATION</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>The party listed as applicant 
+    (&quot;Applicant&quot;) in the application form (“Application”) to which these Terms and 
+    Conditions (&quot;Terms and Conditions&quot;) are attached wishes to borrow funds on a 
+    short-term basis and has duly completed the Application to apply for a loan 
+    (&quot;Loan&quot;). </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>For purposes of this document, the 
+    Borrower will be referred to herein as “You, Your or Yourself”. “Law” means 
+    common law, statutes, and regulations and any subsidiary legislation prevailing 
+    from time to time in the Republic of South Africa; “Working Day” means any day 
+    other than Saturday, Sunday or official public holiday in the Republic of South 
+    Africa.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>2.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>APPLICATION 
+  AND APPROVAL</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>2.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>After assessing the Application duly 
+    completed by You and being satisfied that You are not over-indebted Atlas Finance may approve your Application and agree to lend You the amount set out in 
+    the Pre-Agreement Statement and Quotation (“the Quotation”) to which these terms 
+    and conditions (“Terms and Conditions”) are attached and form part, Atlas Finance will send you an SMS or email to advise You if Your application was 
+    successful or not. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">2.2<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">If and when </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Atlas Finance </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">approve</span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>s</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'> </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">our </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>A</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">pplication, actual </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> transfer </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">of the </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>L</span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">oan </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>A</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">mount </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>to 
+    You </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">is subject to: </span></p>
+  <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">2.2.1<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">ensuring that the information </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">ou gave </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>it </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">was not inaccurate or deficient in any respect (if </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">discover</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>s</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru"> that it was, then the Agreement will be void and </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>where appropriate </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'></span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>may </span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">be reported to credit 
+    reference and fraud agencies); </span></p>
+  <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">2.2.2<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">checking </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> and assessing </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">the affordability of the </span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>L</span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">oan</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>; and </span></p>
+  <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">2.2.3<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>completion of the payment instruction 
+    (&quot;Payment Instruction&quot;) in favour of Atlas Finance.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>3.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>ACCEPTANCE 
+  OF QUOTATION</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>3.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You have 5 (five) working days to accept 
+    the Quotation. Should your financial/personal circumstances or information 
+    provided by You change from the day the Quotation was given but before the Loan 
+    is paid to You, Atlas Finance may in its sole and absolute discretion either 
+    refuse to give You the Loan or provide You with a revised Quotation.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>3.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You are the only person who has the right 
+    to accept the Loan Agreement. If You 
+    accept the Loan Agreement, You must click the Quotation by clicking on the &quot;<i>I 
+      Accept</i>&quot; box on Your screen. By typing 
+    your name in the relevant box and clicking &quot;<i>I 
+      Accept</i>&quot; You will be deemed to have signed and accepted the Quotation and be 
+    legally bound by the Quotation, Terms and Conditions and the Application (“Loan 
+    Agreement”). </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>3.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Your acceptance of the Quotation, serves 
+    as a written confirmation of Your acceptance of the Loan Agreement. You should print a copy of the electronic Loan 
+    Agreement for Your records.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>4.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>LOAN 
+  PAYMENT RECEIVED BY YOU</span></b></p>
+<blockquote>
+  <p class="Lev2Flo"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Once You have accepted 
+    the Quotation and the Terms and Conditions and Atlas Finance is satisfied that 
+    there has been no material change in circumstances, Atlas Finance will pay the 
+    Loan Amount into the bank account/s nominated by You in the Application. Atlas Finance will not be responsible for any damages or loss caused whatsoever if the 
+    bank account details provided by You are incorrect.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>5.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>REPAYMENT 
+  OF LOAN</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You agree that you are indebted to Atlas Finance for the Total Amount Repayable as set out in the Quotation. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You agree to repay Atlas Finance the Total 
+    Amount Repayable on the date on which You have chosen in the Application to 
+    repay same (“Repayment Date”). </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance will collect this payment on 
+    the Repayment Date by way of direct debit from Your bank account in terms of the 
+    Payment Instruction. You must ensure that 
+    there are sufficient funds in the bank account to recover payment on the 
+    Repayment Date. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If Atlas Finance is unsuccessful in 
+    collecting the Total Amount Repayable on the Repayment Date, it may try to debit 
+    Your bank account at a later stage and on more than one occasion on the 
+    Repayment Date for all or any part of the Total Amount Repayable as it 
+    determines necessary until the Total Amount Repayable has been paid. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">5.5<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">Your </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> payment to Atlas Finance will be allocated on the day it is received and applied 
+    in the following order: fees, then charges, then interest and finally to the 
+    capital (being the Loan Amount). </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You may not withhold or deduct any payment 
+    owing to Atlas Finance for any reason whatsoever.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You will not be entitled to set-off any 
+    counterclaim that You may have against Atlas Finance or any other person as a 
+    reason for non-payment of the Total Amount Repayable or any part thereof. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>5.8<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Should You default, the period of the Loan 
+    may further be extended to allow You to settle your indebtedness over the 
+    additional period at Atlas Finance’s sole and absolute discretion and this 
+    indulgence will not be construed as a waiver of any of Atlas Finance’s rights to 
+    enforce the Loan Agreement.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>6.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>FEES AND 
+  CHARGES </span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>6.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In addition to the Loan Amount You will be 
+    responsible to pay to Atlas Finance the fees, charges and interest referred to 
+    in the Quotation. We will notify You of any changes to the fees or charges in 
+    writing within 5 working days of when such changes will apply.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>7.<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></strong></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>INTEREST</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>7.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You will pay interest on any amount still 
+    due to Atlas Finance from when it is due until it is actually paid at the 
+    interest rate shown in the Quotation (&quot;Interest Rate&quot;).</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>7.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Interest at the Interest Rate will be 
+    calculated from the date of payment of the Loan Amount, capitalised monthly over 
+    the repayment period and debited on the last day of each month, (thus being 
+    calculated in arrears). Should the Borrower fail to pay any amount which is due 
+    under the Loan Agreement by the due date and/or should Atlas Finance grant the 
+    Borrower an extension for repayment, interest calculated at the Interest Rate 
+    aforesaid will be charged on such unpaid amount/s in arrears or default interest 
+    until such time as all amounts owing by You to Atlas Finance are repaid in full. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">7.3<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In addition, Atlas Finance will claim 
+    interest at the Interest Rate, or as prescribed by a Court, in respect of all 
+    collection costs, enforcement expenses, due and payable by You to it if it 
+    proceeds with a legal action. </span></p>
+</blockquote>
+<p class="Level1"><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>8.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>DEFAULT 
+  ADMINISTRATION, COLLECTION COSTS AND ENFORCEMENT EXPENSES</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>8.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If You default in any of Your obligations 
+    under the Loan Agreement You will be responsible for Enforcement Expenses and 
+    Collection Costs allowed in terms of applicable Law that are incurred by Atlas Finance in the enforcement of this Loan Agreement, and specifically for all 
+    legal costs on the attorney and client scale. Such Expenses and Costs will form part of the 
+    Settlement Value. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>8.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Subject to any Law to the contrary, all 
+    expenses and charges referred to in this clause<span
+style='&quot; REF _Ref305414759 \\n \\h  \\* MERGEFORMAT &quot;'>8</span> will bear interest at the Interest Rate from the date on 
+    which they are due until the date of actual payment thereof.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>9.<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></strong></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>EARLY 
+  SETTLEMENT</span></b></p>
+<blockquote>
+  <p class="Lev2Flo"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You may settle the loan 
+    in full at any time before the Repayment Date, with or without notice, by paying 
+    the Settlement Value to Atlas Finance. No penalty will be charged for early settlement of the Loan.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>10.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>STATEMENTS 
+  OF ACCOUNT </span></b></p>
+<blockquote>
+  <p class="Level1"><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>Statements of Account will be sent via email and can be 
+    found on the “<i>My Account</i>” section of 
+    the Website. Non receipt of a statement 
+    by You will not be a cause to withhold any payment due. </span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>11.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>REPAYMENT 
+  EVENT</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Notwithstanding anything to the contrary 
+    contained herein, Atlas Finance may at any time terminate this Loan Agreement 
+    and claim payment of the Settlement Value from You if:</span></p>
+  <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You commit any act of insolvency 
+    contemplated in the Insolvency Act, 1936 or are sequestrated [whether 
+    provisionally or finally] or are placed under administration in terms of section 
+    74 of the Magistrates’ Courts Act, 1944 or become subject to debt review in 
+    terms of the National Credit Act (“the Act”); or </span></p>
+  <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You are in default of this Loan Agreement 
+    and have failed to rectify the default as required in clause<span
+style='&quot; REF _Ref292791233 \\n \\h  \\* MERGEFORMAT &quot;'>12</span>; or</span></p>
+  <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.1.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Your employment by the employer is terminated for any reason; or</span></p>
+  <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.1.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You retire prior to payment of the 
+    Settlement Value to Atlas Finance </span></p>
+  <p class="Lev2Flo"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>(each of the 
+    aforementioned events will constitute a “Repayment Event”).</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>11.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Upon the occurrence of a Repayment Event 
+    the full Settlement Value under the Loan Agreement, whether or not such amount 
+    is then due and payable shall immediately become payable to Atlas Finance. </span></p>
+</blockquote>
+<p class="Level1" style='page-break-after:auto;'><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru"><strong>12.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>DEFAULT</span></b></p>
+<blockquote>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">12.1<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You are in default of the Loan Agreement if You: </span></p>
+  <blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>do something You have agreed not to do or 
+      do not do something You have agreed to do, under the Loan Agreement; </span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>give Atlas Finance incorrect, misleading 
+      or deceptive information in connection with this Loan Agreement in a way which 
+      would have affected Atlas Finance’s decision to lend You money; </span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>have acted fraudulently or dishonestly in 
+      connection with this Loan Agreement; or</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>commit a breach of any of the declarations 
+      provided by You to Atlas Finance;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>die; or</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.1.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>fail to make payment of any amount due in 
+      terms of this Loan Agreement.</span></p>
+  </blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If You are in default, Atlas Finance will 
+    give You a written notice (“Default Notice”) as required by Section 129 of the 
+    Act electronically advising You of the default and advising You that You may 
+    refer the matter to an alternative dispute resolution mechanism, ombud or 
+    consumer court, or resolve it with Atlas Finance. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If You have been in default for 20 
+    (twenty) Working Days and at least 10 (ten) Working Days have expired since 
+    Atlas Finance gave You Default Notice and You have not responded to the Default 
+    Notice, or rejected Atlas Finance’s proposals, Atlas Finance will be able to 
+    take action for payment of the Settlement Value and You will be liable to pay us 
+    Enforcement Expenses and Collection Costs as allowed in Law and referred to in 
+    the Quotation.</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Where You cannot pay Your debts and if You 
+    do not consult, or refuse to consult with a debt counsellor, then Atlas Finance 
+    will be entitled but not obliged to hand the Loan Agreement over to its 
+    attorneys or a debt collector registered in terms of the Debt Collectors Act of 
+    1998 for the collection of the Settlement Value.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In addition, upon the occurrence of a 
+    default Atlas Finance will charge interest at the Interest Rate set out in the 
+    Quotation on any amounts due, owing and payable to Atlas Finance from the date 
+    that it became due for payment, to the date of actual payment thereof.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You have also agreed that Atlas Finance 
+    may submit an adverse report of Your default to a credit bureau, setting out 
+    particulars thereof. If this is the case at least 20 (twenty) Working Days’ 
+    notice will be given to You prior to reporting any adverse information to a 
+    credit bureau and You will be entitled to a copy of the adverse report upon 
+    request. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>12.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If You experience difficulty in meeting 
+    Your repayments, You are invited to contact Atlas Finance without delay. You also have a right to apply to a debt counsellor to be considered for in 
+    terms of Section 86 of the Act to be declared over-indebted. A fee might be payable to such debt counsellor who will then evaluate the extent 
+    of Your indebtedness and may attempt to assist in the re-arrangement of Your 
+    debt if You are in fact over indebted.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>13. </strong></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>TEMPORARY 
+  DISABILITY</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>13.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If, as a result of Your temporary 
+    disablement, or for any other reason, payment of Your salary by your employer is 
+    temporarily suspended, then, if applicable, You shall ensure that any insurer or 
+    third party which is paying a benefit in lieu of the suspended salary to You or 
+    on Your behalf, deducts from such benefit and pays to Atlas Finance any amount 
+    due in terms of the Loan Agreement during the period concerned.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>13.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Should such insurer or third party fail to 
+    make payment to Atlas Finance, then Atlas Finance will be entitled to act 
+    pursuant to clause<span style='&quot; REF _Ref292791233 \\r \\h  \\* MERGEFORMAT &quot;'>12</span> above.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>14.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>APPOINTMENT 
+  OF PRODUCT CREDIT SOLUTIONS</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>14.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>The Borrower hereby authorises Atlas Finance to appoint Product Credit Solutions (Pty) Ltd (“PCS”) (Reg no: 
+    2008/023231/07) (VAT No: 435025 5990) 
+    [or its successors-in-title] to administer any Loan under this Loan Agreement 
+    and to collect and pay over any initiation and service fees, insurance premiums 
+    and/or default administration and other charges in respect of this Loan to Atlas Finance or any party Atlas Finance may in its sole discretion elect.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>14.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In order to fulfil its functions as 
+    administrator of the Loan, the Borrower understands and agrees that PCS shall be 
+    empowered by Atlas Finance to do all such things and take all such action as may 
+    be legally allowed in order to comply with its obligations as administrator of 
+    the Loan.</span></p>
+</blockquote>
+<p class="Level1"><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru"><strong>15.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>PERSONAL 
+  INFORMATION</span></b></p>
+<blockquote>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance is in possession of 
+    information </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">that identifies </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">ou (</span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">our </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>“P</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ersonal </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Information</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">”) </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>to </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">: </span></p>
+  <blockquote>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="EN-US" xml:lang="EN-US">verify Your identity and accuracy and completeness of the information You to 
+      provide to Atlas Finance; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="EN-US" xml:lang="EN-US">open, administer and service this Loan Agreement;</span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">statistical analysis; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">to develop and improve our products; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">update </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">our records; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.1.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">to identify which of </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Atlas Finance&#39;s</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">, or others&#39; products might interest </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>.</span></p>
+  </blockquote>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You hereby agree that Atlas Finance may 
+    use Your Personal Information in terms of its Privacy Policy set out in the 
+    Application (&quot;Privacy Policy&quot;). </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'></span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+'
+lang="EN-US" xml:lang="EN-US">15.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">will keep your Personal Information confidential and only give it to others for 
+    the </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> above </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">purposes, including:</span></p>
+  <blockquote>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.3.1<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">to share information </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> with PCS as administrator of the Loan Agreement</span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.3.2<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>to financial institutions or payment 
+      distribution agencies for purposes of payment processing; </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.3.3<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>with Your prior written consent, </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">to reputable, licensed credit </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>providers </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">in the event that </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou apply to borrow money at </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'><a href="http://www.atlasfinance.co.za/"> www.altasfinance.co.za</a> and Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">our </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> A</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">pplication is declined or the loan monies are otherwise unavailable and </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">reasonably believe</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>s</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru"> that a </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> third party credit provider </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">may be able to </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>assist Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>to </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">obtain a </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>L</span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">oan</span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>;</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru"> </span></p>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.3.4<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>in connection with certain business 
+      transactions involving Atlas Finance&#39;s assets or business as further described 
+      in the Privacy Policy.</span></p>
+  </blockquote>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.4<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">Your </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Personal Information </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">may also be used for other purposes for which </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou give </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">our permission or, in very limited circumstances, when required by </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>any relevant L</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">aw</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>.</span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.5<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Your Personal Information is held subject 
+    the Privacy Policy of Atlas Finance which You hereby confirm that You have read, 
+    understood and agree to. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">15.6<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You may edit or change the Personal 
+    Information you have supplied to us, via the “My Account” section of the 
+    Website.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>16. </strong></span> <span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'></span><b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>AUTHORISATION FOR FINANCIAL, CREDIT AND EMPLOYMENT INFORMATION</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In addition to the provisions regarding 
+    personal information referred to in clause<span
+style='&quot; REF _Ref305411387 \\n \\h  \\* MERGEFORMAT &quot;'>15</span> and the Privacy Policy, You hereby specifically consent to 
+    Atlas Finance having access to your financial, credit and employment 
+    information, as stipulated in this clause, whilst you fully understand that all 
+    your financial, credit and employment information is confidential.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <u><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Financial information</span></u></p>
+  <blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You, by your acceptance of these Terms and 
+      Conditions, hereby direct and instruct your bank to release any financial 
+      information that Atlas Finance may require relating to your banking account and 
+      such information includes, but is not limited to, the following:</span></p>
+    <blockquote>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>confirmation of whether you are the holder 
+        of the banking account;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>confirmation of the banking account 
+        number, type of account and the branch at which the account is held;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the time period during which the banking 
+        account was active;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the balance and turnover of the account;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the transaction or history of the account;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>a statement relating to the transactions 
+        that were conducted through the banking account;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>a reconciliation report and an item 
+        analysis indicating the date on which the funds are deposited into or withdrawn 
+        from the banking account; and</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.2.1.8<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>information relating to any other banking 
+        account/s held at the bank.</span></p>
+    </blockquote>
+  </blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <u><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Employment information</span></u></p>
+  <p class="Lev2Flo"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You, by Your acceptance 
+    of these Terms and Conditions, hereby direct and instruct Your employer to 
+    release any information that Atlas Finance may require relating to Your 
+    employment relationship with Your employer, and such information includes, but 
+    is not limited to, the following :</span></p>
+  <blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>confirmation of Your employment;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the date upon which You are paid;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>details of Your remuneration;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>details of the bank account into which 
+      Your remuneration is being paid;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>copies of Your payslip (both historical 
+      and current); and</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.3.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the status of Your employment.</span></p>
+  </blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <u><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Credit information</span></u></p>
+  <blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You, by your acceptance of these Terms and 
+      Conditions, hereby direct and instruct the National Loans Register (“NLR”) 
+      and/or any credit bureau, or other similar organization that has any information 
+      pertaining to you or your credit worthiness, to release such information to 
+      Atlas Finance.</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In addition to the aforesaid, by accepting 
+      these Terms and Conditions, you acknowledge and agree that:</span></p>
+    <blockquote>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance may obtain any information 
+        of any nature whatsoever which relates to You and which may have an effect upon 
+        Your being granted the Loan;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance may obtain from and disclose 
+        to any credit bureau, the National Loans Register, South African Fraud 
+        Prevention Services and/or any of its agents or successors-in-title information 
+        with regard to this Loan Agreement, your credit profile and history or any 
+        incorrect or false information given by you to Atlas Finance:</span></p>
+      <blockquote>
+        <p class="Level4" style="line-height:
+normal"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2.2.1<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>where it is in 
+          the public interest to do so;</span></p>
+        <p class="Level4" style="line-height:
+normal"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2.2.2<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>where it is 
+          legally compelled to do so; and/or</span></p>
+        <p class="Level4" style="line-height:
+normal"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.2.2.3<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>where disclosure 
+          is made with your written consent.</span></p>
+      </blockquote>
+    </blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You also confirm that Atlas Finance may 
+      transmit to a registered credit bureau information concerning:</span></p>
+    <blockquote>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.3.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>this Loan Agreement and Your account with 
+        Atlas Finance. In return, You understand 
+        Atlas Finance obtains information from the credit bureaux supplied by other 
+        credit providers and shares information with other credit providers and third 
+        parties with whom You may have financial relations so that valid credit 
+        assessment procedures can be followed. Default of the Loan Agreement will be given to credit bureaux and such third 
+        parties. The credit bureaux will also 
+        provide a credit profile reflecting Your assessed ability to repay the credit 
+        being applied for according to the information on their database/s;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.3.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>any default by You of the Loan Agreement, 
+        in which event We will give You required notice first;</span></p>
+      <p class="Level4"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.3.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>the Application, opening, operation and 
+        termination of an account.</span></p>
+    </blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You understand and agree that such credit 
+      bureau will provide a credit profile and possibly a credit score on Your credit 
+      worthiness.</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>16.4.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>It is Your right, should You so wish, to 
+      make contact with the abovementioned credit bureaux in order to have Your credit 
+      record disclosed, and to have any inaccurate information held by the credit 
+      bureaux corrected. This is however Your 
+      responsibility, not Atlas Finance&#39;s. The credit bureau details are as follows:</span></p>
+  </blockquote>
+</blockquote>
+<div align="center"><br/>
+  <table border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="266" valign="top"><p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>TransUnion Credit Bureau (Pty) Ltd</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Wanderers Office Park</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>32 Corlett Drive</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Illovo, 2196</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>P O Box 7112</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Johannesburg, 2000</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Tel (011) 214-6000</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Fax (011) 388-3565</span></p></td>
+      <td width="266" valign="top"><p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>Compuscan Credit Bureau (Pty) Ltd</span></p>
+        <p><span style='font-size:8.0pt;
+  font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>3 Neutron Avenue</span></p>
+        <p><span style='font-size:8.0pt;
+  font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>Techno Park<br />
+          Stellenbosch, 7600</span></p>
+        <p><span style='font-size:8.0pt;
+  font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>PO Box 1028<br />
+          Stellenbosch, 7599</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>Tel (021) 888-6000</span></p>
+        <p class="Level2"><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;;color:#434343'>Fax (021) 413-2424</span></p></td>
+    </tr>
+  </table>
+</div>
+<blockquote>
+  <blockquote>
+    <p class="Level3"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">16.4.6<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Any incorrect or false information 
+      supplied by You will be reported to the South African Fraud Prevention Services 
+      and the Police. </span></p>
+  </blockquote>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>17.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>CONTACT 
+  DETAILS </span></b></p>
+<blockquote>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">17.1<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">You agree that any notices </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>and statements </span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">given to </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou in relation to </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> this Loan </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">Agreement can be delivered </span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>or served </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">to the email address supplied by </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">ou </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>in the Application</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">. </span></p>
+  <p class="Level2"><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">Any notices </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>and statements </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">may also be put on </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> the ‘My Account’ section on the Atlas Finance Website</span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">. In such cases, </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou will also receive by email to </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">our email address a 
+    prompt to refer to </span><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">our online account. At </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance’s </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">discretion, </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>it </span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">may also </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>deliver or </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">serve any notice or demand on </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">ou personally, or 
+        send it by prepaid </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> registered post </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+' lang="ru" xml:lang="ru">to </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">ou at </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Y</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">our last known address. You may </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>deliver or </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">serve any written notices on </span><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance </span><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;' lang="ru" xml:lang="ru">by email to</span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;' lang="ru" xml:lang="ru"> </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'><a
+href="mailto:info@atlasfinance.co.za">info@altasfinance.co.za</a>. </span><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:red;
+'
+lang="ru" xml:lang="ru"></span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>17.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You may change Your contact details by 
+    delivering to Atlas Finance notice of the new contact details by emailing or by 
+    editing these details via the ‘My Account’ section of the Atlas Finance Website.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>17.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You agree that notwithstanding anything to 
+    the contrary herein contained, a written notice of communication actually 
+    received by You will be adequate written notice or communication to You 
+    notwithstanding that it was not sent or delivered to Your chosen address. </span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>18.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>AUTHORITY 
+  TO DEDUCT</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You, by Your acceptance of these Terms and 
+    Conditions, hereby request, instruct and authorise Atlas Finance to draw against 
+    the bank account nominated by You in the Application and conclusion of the 
+    Payment Instruction, or against any other bank account that You may subsequently 
+    open or have opened, held at any bank, the Total Amount Repayable as reflected 
+    on the Quotation on the Repayment Date.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>While Atlas Finance will submit the debit 
+    order instruction to your bank to deduct the Total Amount Repayable on the 
+    Repayment Date, the deduction may occur on a different date as the deduction can 
+    only be effected once funds become available in your nominated bank account.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>When a deduction is requested from your 
+    bank account and there are insufficient funds available, You hereby agree that 
+    Atlas Finance may collect the Total Amount Repayable, as well as default 
+    administration charges, in partial amounts from my account on any other date 
+    that Atlas Finance may deem necessary, alternatively Atlas Finance shall be 
+    entitled to continue requesting such deduction each and every day after the date 
+    on which the bank originally requested the deduction, until the Total Amount 
+    Repayable, as well as all default administration charges, has been collected, in 
+    partial deductions or otherwise. By Your acceptance of these Terms and 
+    Conditions, You undertake and agree that this date may be different to the 
+    Repayment Date.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>All withdrawals by Atlas Finance shall be 
+    treated as if they had been authorized and signed by you personally. You 
+    understand that the withdrawals hereby authorised will be processed using the 
+    payment service system provided by Your bank. The details of each withdrawal 
+    will be printed on Your bank statement or any accompanying voucher. Any bank 
+    charges relating to this debit order instruction will be paid by You. You 
+    understand that You will not be entitled to any refund of amounts which You have 
+    withdrawn while this authority was in force or there existed an outstanding 
+    balance owed by you to Atlas Finance.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You hereby indemnify Atlas Finance against 
+    all costs, charges, expenses, losses and damages, which You may suffer as a 
+    result of Your bank acting in accordance with this authority and against any 
+    claim by any third party arising from the performance or non-performance, as the 
+    case may be, in terms of this authority.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You will be responsible for ensuring that 
+    the bank account nominated for such deduction shall not be closed or be 
+    inaccessible for any reason.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>18.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Should You change your banking details, 
+    You must immediately notify Atlas Finance and Atlas Finance shall be entitled to 
+    run the debit order against the new banking details.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>19.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>COMPLAINTS</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>19.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Contact Atlas Finance Customer Care on 
+    0861 33 11 33 If Atlas Finance has not helped you or you are still dissatisfied, 
+    contact the NCR on 0860 100 406.</span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'
+lang="ru" xml:lang="ru">19.2<span
+style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In the event of a dispute or a complaint, 
+    You should first refer the matter to Atlas Finance. A dispute can be lodged with Atlas Finance via 
+    email to <a href="mailto:customercare@atlasfinance.co.za"> customercare@altasfinance.co.za</a> or telephonically on 086133 11 33 with brief details of Your dispute or 
+    complaint and Your account reference number.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>19.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance’s customer service staff 
+    will acknowledge your complaint and/or dispute by email within 3 working days. 
+    Atlas Finance will try to sort out Your complaint and/or dispute quickly once 
+    you have contacted it. If Atlas Finance cannot do this, it will tell You about 
+    the procedures it has for sorting out complaints and/or disputes. These 
+    procedures are set out below. If Atlas Finance needs to investigate Your 
+    complaint and/or dispute further to respond fully, it will tell You and keep You 
+    regularly updated.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>19.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If Atlas Finance is not able to resolve 
+    Your dispute or complaint, the matter may be referred to independent 
+    conciliation, mediation or arbitration.</span></p>
+  <p class="Level2"><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> If You are not satisfied with the resolution/conclusion received from Atlas Finance, You are invited to take the matter further and contact the applicable 
+    regulatory or dispute resolution body on the contact details below:</span></p>
+</blockquote>
+<div align="center"><br /><br/><br/><br/><br/><br/>
+  <table border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="300" valign="top"><p class="Lev2Flo"><b><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>National Credit Regulator</span></b></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Telephone (011) 554-2600 
+          or 0860 627 627</span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Fax (011) 484-6122</span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Email <a
+  href="mailto:info@NCR.org.za">info@NCR.org.za</a></span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Post Address 127, 15<sup>th</sup> Road, Randjespark, Midrand</span></p></td>
+      <td width="300" valign="top"><p class="Lev2Flo"><b><span style='font-size:8.0pt;font-family:
+  &quot;Verdana&quot;,&quot;sans-serif&quot;'>Credit Ombud</span></b></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Telephone 0861 662 837</span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Fax 086 683 4644</span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Email <a
+  href="mailto:ombud@creditombud.org.za">ombud@creditombud.org.za</a></span></p>
+        <p class="Lev2Flo"><span
+  style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Post Address Suite 444, 
+          Private Bag 1, Jukskei Park, 2153</span></p></td>
+    </tr>
+  </table>
+</div>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>20.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>CESSION </span></b></p>
+<blockquote>
+  <p class="Level1"><span style='font-size:8.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;'>By Your signature hereto you agree that:</span></p>
+  <p class="Level2"><span style='font-size:8.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>20.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance may (or any person to whom 
+    its rights are ceded and/or its obligations are delegated) without notice to 
+    You, cede any or all of its rights and/or delegate its obligations under this 
+    Loan Agreement either absolutely or as security to any other person or persons 
+    (notwithstanding that a cession and/or delegation to more than one person may 
+    result in a splitting of claims against You which splitting of claims You hereby 
+    agrees to) and on any such cession and/or delegation taking place, You shall, if 
+    so required by any cessionary, make all payments direct to such cessionary.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>20.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance may disclose any 
+    information, including documents, which it holds about You including any 
+    information about the performance of Your obligations under the Loan Agreement, 
+    to any third party to facilitate the rights referred to in clause <span
+style='&quot; REF _Ref306178381 \\r \\h  \\* MERGEFORMAT &quot;'>20.1</span>.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>20.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You may not cede or encumber any of Your 
+    rights nor delegate any of Your obligations under this Loan Agreement without 
+    Atlas Finance’s prior written consent.</span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>21.</strong> </span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>DECLARATION 
+  AND AUTHORIZATION </span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You declare and agree that You:</span></p>
+  <blockquote>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>agree to be bound by all of the 
+      declarations and terms contained in the Quotation and those contained in the 
+      Application;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>declare that all of the information that 
+      You have given Atlas Finance now and previously is true, accurate and correct in 
+      all respects and is not misleading or deceptive in any way;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>acknowledge that Atlas Finance relies on 
+      the information that You have given it;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>acknowledge that You had sight of an 
+      electronic version or were told and carefully considered the Terms and 
+      Conditions and all other documents related to the Loan Agreement before You 
+      accepted them; </span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>unconditionally absolve and indemnify 
+      Atlas Finance from and against any loss, damage, costs or expenses which either 
+      Atlas Finance or You may sustain or incur, either directly or indirectly as a 
+      result of Atlas Finance relying on and using the banking details and or any 
+      information supplied to it by You or on Your behalf, in order to pay the proceeds or collect amounts owing in respect of 
+      the Loan Agreement;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>agree that Atlas Finance will not be 
+      liable in respect of any errors or omissions from any particulars given to it by 
+      You or on Your behalf;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>understand and accept that the Application 
+      and all annexures thereto and the Quotation forms part of the Loan Agreement, as 
+      if it had been specifically incorporated herein;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.8<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>agree and consent to Your personal 
+      information being dealt with in terms of the provisions of this Loan Agreement 
+      and to the Privacy Policy which You have read and agreed to. </span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.9<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>all references to Atlas Finance include 
+      its lawful successors and permitted assigns and where PCS has been appointed as 
+      its administrator, includes PCS;</span></p>
+    <p class="Level3"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.1.10<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>will inform Atlas Finance if You are at 
+      any time placed under administration order, debt review, sequestration or any 
+      other form of insolvency. </span></p>
+  </blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You have selected the marketing options 
+    you require as set out in the Application Form;</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You will notify Atlas Finance as soon as 
+    possible of any changes to Your personal details or financial circumstances in 
+    light of the information provided by You in the Application. A failure to do this will be a breach of this 
+    Agreement for purposes of clause<span style='&quot; REF _Ref292791233 \\n \\h  \\* MERGEFORMAT &quot;'>12</span>.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Where Your Employer and You have agreed to 
+    have instalments deducted from Your salary by Your Employer and paid over to 
+    Atlas Finance, You understand that You may not cancel that deduction until the 
+    Settlement Value has been repaid in full, as per the Loan Agreement. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You confirm that You are currently 
+    employed and bear no knowledge of any retrenchment or other proceedings pending 
+    that could jeopardise such employment and You specifically state that You have 
+    not given nor intend to give notice to terminate Your employment with Your 
+    Employer. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You declare that there are no reasons or 
+    financial obligations in Your current circumstances which would cause You to 
+    apply for an administration order or debt review or have such administration 
+    order or debt review granted, nor do You intend to apply for either for the 
+    duration of this Loan Agreement. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>21.7<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You understand that You have authorised 
+    Atlas Finance to appoint PCS to administer any loan under this Loan Agreement 
+    and to pay over any initiation and service fees or collection and enforcement 
+    costs in respect of this loan to the administrator or any party Atlas Finance 
+    may in its sole discretion elect. </span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>22. </strong></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>GENERAL</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>The Application, Terms and Conditions and 
+    the Quotation must be read together as one document which together makes up the 
+    Loan Agreement between Atlas Finance and the Borrower. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If Atlas Finance does not take action 
+    against You when you are in default of the Loan Agreement, it will not mean that 
+    Atlas Finance has waived its right to take legal action or to exercise any other 
+    right it may have against You.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Except as otherwise provided in the Loan 
+    Agreement, no changes and/or cancellation of any provision of this Loan 
+    Agreement can be effected unless agreed to by Atlas Finance and You in 
+    accordance with the Act, the ECT Act or any other applicable Law.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>If there is any change to a Law that 
+    requires Atlas Finance to conduct its business of providing loans differently 
+    from that contemplated under this Loan Agreement, Atlas Finance will be entitled 
+    to make such changes to this Loan Agreement as are required to comply with the 
+    Law. Atlas Finance will give You 
+    appropriate written notice of such changes.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.5<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You hereby acknowledge and agree that 
+    Atlas Finance will be entitled, without restriction and in its sole and absolute 
+    discretion to replace Atlas Finance as credit provider with any subsidiary 
+    company or associate company (present or future), provided that such replacement 
+    credit provider shall upon such replacement acquire all the rights and assume 
+    all the obligations of Atlas Finance in terms of this Loan Agreement. </span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>22.6<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>In the event of any one or more of the 
+    provisions of this Loan Agreement being unenforceable then such provisions shall 
+    be severed from the remaining provisions of this Loan Agreement which shall in 
+    no way be affected and shall remain in full force and effect. </span></p>
+</blockquote>
+<p class="Level1"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>23.</strong><span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>GOVERNING 
+  LAW AND JURISDICTION</span></b></p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>23.1<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>This Agreement shall be governed by the 
+    laws of the Republic of South Africa.</span></p>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>23.2<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>Atlas Finance will be entitled, but not 
+    obliged to institute any proceedings arising out of or in connection herewith in 
+    the appropriate Magistrates Court (or High Court where necessary) with 
+    jurisdiction. </span></p>
+</blockquote>
+<p class="Level2">    <span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'><strong>23.3<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></strong></span> <b><span style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'> PRE-AGREEMENT DISCLOSURE</span></b>  </p>
+<blockquote>
+  <p class="Level2"><span
+style='font-size:8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;'>23.4<span style='font:7.0pt &quot;Times New Roman&quot;'> </span></span> <span style='font-size:
+8.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;'>You (the Borrower) understand that You 
+    have 5 (five) business days to decide if You want to accept the loan as 
+    reflected in this Loan Agreement, which incorporates the Quotation. You 
+    acknowledge that by signing the Terms and Conditions and the Quotation to which 
+    it is attached, You have accepted the Quotation and understand that this will 
+    become a binding Loan Agreement between Yourself and Atlas Finance. Should Your 
+    financial situation or any other information provided, differ from what Atlas Finance used in providing the Quotation, You accept that Atlas Finance may 
+    refuse to grant You the Loan and/or may provide You with a revised Quotation. </span></p>
+</blockquote>
+        </div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Direct Debit Authorisation Form</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><table style=" border:1px solid black;"  width="100%" border="0" cellpadding="0">
+      <tr>
+        <td width="37%"><span ><strong>Bank:</strong></span></td>
+        <td width="63%">@Html.DisplayFor(x => x.Bank)</td>
+      </tr>
+      <tr>
+        <td><strong>Branch Code:</strong></td>
+        <td>@Html.DisplayFor(x => x.BankBranch)</td>
+      </tr>
+      <tr>
+        <td><strong>Amount:</strong></td>
+        <td>@String.Format("{0:c}",Model.DebitAmount)</td>
+      </tr>
+      <tr>
+        <td><strong>Account Name:</strong></td>
+        <td>@Html.DisplayFor(x => x.BankAccountName)</td>
+      </tr>
+      <tr>
+        <td><strong>Account Number:</strong></td>
+        <td>@Html.DisplayFor(x => x.BankAccountNo)</td>
+      </tr>
+      <tr>
+        <td><strong>Account Type:</strong></td>
+        <td>@Html.DisplayFor(x => x.BankAccountType)</td>
+      </tr>
+      <tr>
+        <td><strong>Date of Debit:</strong></td>
+        <td>@Html.DisplayFor(x => x.DateOfDebit)</td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="font-size:17px;"><strong>Direct Debit Authorisation</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><div>
+<p class=MsoNormal style='text-align:justify'><span style='font-size:8.0pt;
+line-height:115%;font-family:Verdana'>I hereby request and authorize Atlas Finance 
+    (Proprietary) Ltd, its successors in title or assigns, (herein referred to 
+    as “Atlas Finance”) to withdraw funds from my abovementioned account into its 
+    account subject to the under mentioned conditions:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>A.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby authorize Atlas Finance to levy debits against 
+    my above-mentioned account (or any other bank, or branch office of a bank to 
+    which the account may be transferred) [&quot;the debit account&quot;] in respect of all 
+    amounts which are now or may from time to time in the future be due and payable 
+    by me or the abovementioned debtor to Atlas Finance arising from my present and 
+    future obligations in terms of all agreements already entered into or still to 
+    be entered into by me.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>B.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby authorize my above-named bank to accept all 
+    debits levied by Atlas Finance in terms of this authorization and to debit the 
+    debit account and to regard such debits as if given and signed by me personally 
+    and any such withdrawals shall have the same effect as if I/we personally made 
+    them.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>C.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby authorize Atlas Finance to give notice to the 
+    above-named bank of the agreement(s) referred to in (A.) above, on my behalf, 
+    which notice is to be regarded as if having been given by me personally.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>D.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>Should the day on which payment is due fall on a 
+    Saturday, Sunday or public holiday , then payment will take place on the 
+    business day immediately preceding the Saturday, Sunday or public holiday 
+    concerned.<span style='mso-spacerun:yes'>&nbsp; </span>This authorization will not be 
+    regarded as a substitution, an alteration or renewal of my obligation arising 
+    from the preceding business day.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>E.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I acknowledge that the withdrawals hereby authorized may 
+    be processed my means of the computer system known as the ACB Magnetic Tape 
+    System and we understand that no voucher will be issued to me but details of 
+    such withdrawal will be printed on my bank statement or document accompanying my 
+    bank statement.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>F.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I undertake to pay any costs, including bank charges, 
+    which may result from this debit order authorization.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>G.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>This debit order authorization will remain in force 
+    despite any transfer of the debit account to any other branch.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>H.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>Payment in terms hereof will only cease after I have 
+    given 30 days’ notice in writing sent to Atlas Finance and my bank by prepaid 
+    registered post, provided that my indebtedness to Atlas Finance in terms of the 
+    agreements referred to in A has been repaid in full. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>I.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I understand that I will not be entitled to any refund of 
+    amounts which Atlas Finance has withdrawn while this debit order authorization 
+    is in force or there exists an outstanding balance owed by myself to Atlas Finance.<span style='mso-spacerun:yes'>&nbsp; </span>I hereby consent that I shall 
+    not be entitled to repayment of any amount withdrawn by Atlas Finance while this 
+    authorization was valid.<span style='mso-spacerun:yes'>&nbsp; </span>I hereby consent 
+    that the onus to prove that any amount withdrawn in terms hereof, was not due to 
+    Atlas Finance shall rest on me.<span
+style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>J.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby acknowledge that I shall not hold Atlas Finance 
+    liable for any loss, damages or liability that may arise as a result of any 
+    default or late payment by Atlas Finance in terms of this debit order 
+    authorisation.<span style='mso-spacerun:yes'>&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>K.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby indemnify Atlas Finance against all costs, 
+    charges, expenses, losses and damages which Atlas Finance may suffer as a result 
+    of my bank acting in accordance with this debit order authorization and against 
+    any claim by any party arising from the performance or non-performance, as the 
+    case may be, in terms of this debit order authorisation. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>L.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby indemnify Atlas Finance against any interest, 
+    costs or losses and/or other damages that Atlas Finance may suffer/incur arising 
+    from refusal by me or our above-named bank to accept a debit levied in terms of 
+    this debit order authorization.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>M.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I also indemnify Atlas Finance against any losses and/or 
+    damages that Atlas Finance may suffer as a result of the execution of this debit 
+    order authorization.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>N.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I shall be responsible for ensuring that the debit 
+    account nominated for deduction in terms of debit order authorization shall not 
+    be closed or inaccessible for any reason. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>O.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I consent that the debit order amount initially stated 
+    has to be reduced/increased from time to time, Atlas Finance may amend the 
+    amount debited against the debit account accordingly. Atlas Finance shall 
+    furthermore have the right to withdraw from time to time larger/smaller amounts 
+    than those authorized in terms hereof against the debit account to cover such 
+    amounts which are due and payable to Atlas Finance.<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>P.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>When a deduction is requested from the debit account and 
+    there are insufficient funds available, I hereby agree that Atlas Finance may 
+    collect the due amount and partial amounts from the debit account on any other 
+    date that Atlas Finance may deem necessary, alternatively, Atlas Finance shall 
+    be entitled to continue requesting such deduction each and every day after the 
+    date on which the deduction was originally requested, until the full instalment 
+    has been collected, in partial deductions or otherwise.<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>I, by my signature hereto hereby authorize that 
+    the date of deduction may be different to the initial date specified. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:54.0pt;margin-bottom:.0001pt;text-align:justify;text-indent:-36.0pt;
+line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 54.0pt'><![if !supportLists]><span
+style='font-size:8.0pt;font-family:Verdana'><span style='mso-list:
+Ignore'>Q.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span style='font-size:
+8.0pt;font-family:Verdana'>I hereby authorize Atlas Finance immediately to initiate 
+    a one-time debit to the debit account specified in respect of all amounts owing 
+    to Atlas Finance by me, if I exercise my right to cancel the Agreement in terms 
+    of the Electronic Communications Transactions Act 25 of 2002. <o:p></o:p></span></p>
+        </div>
+        <hr />
+        <table style="width:100%;">
+            <tr style="height:30px;"><td colspan="3"></td></tr>
+            <tr style="height:30px;vertical-align:top;">
+                <td style="font-size:7pt;white-space:nowrap;width:25%;"><asp:Literal ID="Signature" runat="server" Text="Signature"></asp:Literal></td>
+                <td style="width:5%;"></td>
+                <td style="font-size:7pt;">By Accepting, you agree that You 
+                    have read and understood and agree to be bound by the Pre-Agreement Statement 
+                    and Quotation, Terms and Conditions and Debit Order Authorisation.</td>
+            </tr>
+            <tr style="height:30px;"><td colspan="3"></td></tr>
+        </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>

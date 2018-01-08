@@ -1,0 +1,66 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"sass",
+				"--update",
+				"$file:../${file_base_name}.css",
+				"--style",
+				"expanded"
+			],
+			"line_regex": "Line ([0-9]+):",
+			"name": "Atlas Sass",
+			"selector":
+			[
+				"source.sass",
+				"source.scss"
+			]
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"config.rb"
+			],
+			"folder_exclude_patterns":
+			[
+				".sass-cache"
+			],
+			"path": "../../../src/Atlas.Online.Web/Atlas.Online.Web"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				"style.css"
+			],
+			"folder_exclude_patterns":
+			[
+				"css",
+				"img",
+				"fnt",
+				"js"
+			],
+			"path": "../../../src/static/styleguide"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				"style.css"
+			],
+			"folder_exclude_patterns":
+			[
+				"img",
+				"fnt",
+				"js"
+			],
+			"path": "../../../src/static/ruhoh"
+		},
+		{
+			"path": "../../../src/Atlas.Online.Web/Atlas.Enumerators"
+		}
+	]
+}

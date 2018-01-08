@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;WebServer.HTTP&quot; /&gt;" bindingType="basicHttpBinding" name="WebServer.HTTP" />
+    <binding digest="System.ServiceModel.Configuration.NetTcpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;WebServer.NET&quot;&gt;&lt;security mode=&quot;None&quot; /&gt;&lt;/Data&gt;" bindingType="netTcpBinding" name="WebServer.NET" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;net.tcp://localhost:8200/WebServer&quot; binding=&quot;netTcpBinding&quot; bindingConfiguration=&quot;WebServer.NET&quot; contract=&quot;WebService.IWebService&quot; name=&quot;WebServer.NET&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;net.tcp://localhost:8200/WebServer&quot; binding=&quot;netTcpBinding&quot; bindingConfiguration=&quot;WebServer.NET&quot; contract=&quot;WebService.IWebService&quot; name=&quot;WebServer.NET&quot; /&gt;" contractName="WebService.IWebService" name="WebServer.NET" />
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:8201/WebServer&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;WebServer.HTTP&quot; contract=&quot;WebService.IWebService&quot; name=&quot;WebServer.HTTP&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:8201/WebServer&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;WebServer.HTTP&quot; contract=&quot;WebService.IWebService&quot; name=&quot;WebServer.HTTP&quot; /&gt;" contractName="WebService.IWebService" name="WebServer.HTTP" />
+  </endpoints>
+</configurationSnapshot>

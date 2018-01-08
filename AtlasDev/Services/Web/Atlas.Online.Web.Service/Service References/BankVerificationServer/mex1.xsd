@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Bank.Verification.Server" elementFormDefault="qualified" targetNamespace="Atlas.Bank.Verification.Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:import schemaLocation="http://localhost:9001/BankVerificationServer/mex?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" />
+  <xs:element name="IsCDV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bankId" type="xs:long" />
+        <xs:element minOccurs="0" name="bankAccountTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="bankAccountNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCDVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCDVResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCDVWithBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bankId" type="xs:long" />
+        <xs:element minOccurs="0" name="bankAccountTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="bankAccountNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCDVWithBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCDVWithBranchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoAVSEnquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankName" type="q1:General.BankName" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoAVSEnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" minOccurs="0" name="DoAVSEnquiryResult" nillable="true" type="q2:AVSReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoAVSEnquiryWithHost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="personId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankName" type="q3:General.BankName" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="host" type="q4:General.Host" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankPeriod" type="q5:General.BankPeriod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoAVSEnquiryWithHostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" minOccurs="0" name="DoAVSEnquiryWithHostResult" nillable="true" type="q6:AVSReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoEnquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankName" type="q7:General.BankName" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="forceCheck" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoEnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" minOccurs="0" name="DoEnquiryResult" nillable="true" type="q8:AVSReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoLegacyEnquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="bankName" type="q9:General.BankName" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="legacyBranchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="forceCheck" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoLegacyEnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" minOccurs="0" name="DoLegacyEnquiryResult" nillable="true" type="q10:AVSReply" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAVSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAVSResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Atlas.WCF.Interface" minOccurs="0" name="GetAVSResponseResult" nillable="true" type="q11:AVSResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

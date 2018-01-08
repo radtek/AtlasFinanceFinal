@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A33FE01F-AE9B-4BDE-B521-AB13916B1CFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrockAllen.MembershipReboot</RootNamespace>
+    <AssemblyName>BrockAllen.MembershipReboot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.4.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.4.3\lib\net35\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountService\DebuggerEventHandler.cs" />
+    <Compile Include="AccountService\PasswordResetQuestionAnswer.cs" />
+    <Compile Include="AccountService\UserAccountCommands.cs" />
+    <Compile Include="AccountService\UserAccountValidator.cs" />
+    <Compile Include="Account\LinkedAccountClaim.cs" />
+    <Compile Include="Account\Relational\RelationalLinkedAccountClaim.cs" />
+    <Compile Include="Account\Relational\RelationalLinkedAccount.cs" />
+    <Compile Include="Account\Relational\RelationalUserCertificate.cs" />
+    <Compile Include="Account\Relational\RelationalTwoFactorAuthToken.cs" />
+    <Compile Include="Account\Relational\RelationalPasswordResetSecret.cs" />
+    <Compile Include="Account\Relational\RelationalUserClaim.cs" />
+    <Compile Include="Account\Relational\RelationalUserAccount.cs" />
+    <Compile Include="Account\Hierarchical\HierarchicalUserAccount.cs" />
+    <Compile Include="Account\TwoFactorAuthToken.cs" />
+    <Compile Include="Account\PasswordResetSecret.cs" />
+    <Compile Include="Authentication\AuthenticationService.cs" />
+    <Compile Include="Bus\CommandBus.cs" />
+    <Compile Include="Bus\Commands.cs" />
+    <Compile Include="Bus\GenericMethodActionBuilder.cs" />
+    <Compile Include="Configuration\RelativePathApplicationInformation.cs" />
+    <Compile Include="Crypto\DefaultCrypto.cs" />
+    <Compile Include="Crypto\ICrypto.cs" />
+    <Compile Include="Extensions\ClaimsIdentityExtensions.cs" />
+    <Compile Include="Extensions\ConfigurationExtensions.cs" />
+    <Compile Include="Extensions\UserAccountExtensions.cs" />
+    <Compile Include="Extensions\UserAccountServiceExtensions.cs" />
+    <Compile Include="Extensions\X509Certificate2Extensions.cs" />
+    <Compile Include="Account\TwoFactorAuthMode.cs" />
+    <Compile Include="Groups\Group.cs" />
+    <Compile Include="Account\UserCertificate.cs" />
+    <Compile Include="Groups\GroupChild.cs" />
+    <Compile Include="Groups\GroupService.cs" />
+    <Compile Include="Groups\Hierarchical\HierarchicalGroup.cs" />
+    <Compile Include="Groups\Relational\RelationalGroup.cs" />
+    <Compile Include="Query\IGroupQuery.cs" />
+    <Compile Include="Query\GroupQueryResult.cs" />
+    <Compile Include="Query\IUserAccountQuery`1.cs" />
+    <Compile Include="Query\UserAccountQueryResult.cs" />
+    <Compile Include="Repository\IGroupRepository.cs" />
+    <Compile Include="Query\IUserAccountQuery.cs" />
+    <Compile Include="Repository\QueryableGroupRepository.cs" />
+    <Compile Include="Repository\QueryableUserAccountRepository.cs" />
+    <Compile Include="Resources\ValidationMessages.ru-ru.Designer.cs">
+      <DependentUpon>ValidationMessages.ru-ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ValidationMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TwoFactorAuthPolicy\CookieBasedTwoFactorAuthPolicy.cs" />
+    <Compile Include="Configuration\MembershipRebootConfiguration.cs" />
+    <Compile Include="Extensions\ClaimsExtensions.cs" />
+    <Compile Include="Extensions\ClaimsPrincipalExtensions.cs" />
+    <Compile Include="Constants\MembershipRebootConstants.cs" />
+    <Compile Include="Extensions\DisposableExtensions.cs" />
+    <Compile Include="Account\LinkedAccount.cs" />
+    <Compile Include="AccountService\UserAccountEvents.cs" />
+    <Compile Include="Account\VerificationKeyPurpose.cs" />
+    <Compile Include="Account\UserClaim.cs" />
+    <Compile Include="Notification\IMessageFormatter.cs" />
+    <Compile Include="Notification\Email\EmailMessageFormatter.cs" />
+    <Compile Include="Notification\SMS\SmsNotificationEventHandler.cs" />
+    <Compile Include="Notification\SMS\SmsMessageFormatter.cs" />
+    <Compile Include="Repository\EventBusUserAccountRepository.cs" />
+    <Compile Include="AccountService\UserAccountValidation.cs" />
+    <Compile Include="Bus\EventBus.cs" />
+    <Compile Include="Bus\Events.cs" />
+    <Compile Include="Crypto\System.Web.Helpers.Crypto.cs" />
+    <Compile Include="Configuration\ApplicationInformation.cs" />
+    <Compile Include="Notification\Message.cs" />
+    <Compile Include="Notification\IMessageDelivery.cs" />
+    <Compile Include="Repository\IUserAccountRepository.cs" />
+    <Compile Include="Account\UserAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuration\SecuritySettings.cs" />
+    <Compile Include="Notification\Email\SmtpMessageDelivery.cs" />
+    <Compile Include="AccountService\UserAccountService.cs" />
+    <Compile Include="Notification\Email\EmailNotificationEventHandlers.cs" />
+    <Compile Include="Tracing\Tracing.cs" />
+    <Compile Include="TwoFactorAuthPolicy\ITwoFactorAuthenticationPolicy.cs" />
+    <Compile Include="TwoFactorAuthPolicy\TwoFactorAuthPolicyCommandHandler.cs" />
+    <Compile Include="Validation\AggregateValidator.cs" />
+    <Compile Include="Validation\DelegateValidator.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\PasswordComplexityValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrockAllen.MembershipReboot.Nh\BrockAllen.MembershipReboot.Nh.csproj">
+      <Project>{E53D1E50-194F-445F-9477-FCBC3E6DA824}</Project>
+      <Name>BrockAllen.MembershipReboot.Nh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountReopenedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountReopenedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\LinkedAccountRemovedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\LinkedAccountRemovedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\LinkedAccountAddedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\LinkedAccountAddedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\CertificateRemovedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\CertificateRemovedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\CertificateAddedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\CertificateAddedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\MobilePhoneRemovedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\MobilePhoneRemovedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\MobilePhoneChangedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\MobilePhoneChangedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\SMS\SmsTemplates\Code.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountClosedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\PasswordChangedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\PasswordResetRequestedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\UsernameChangedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\UsernameReminderRequestedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailChangeRequestedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailChangedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\PasswordChangedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\UsernameReminderRequestedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountClosedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailChangeRequestedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailChangedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\UsernameChangedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\PasswordResetRequestedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailVerifiedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\EmailVerifiedEvent_Body.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountCreatedEvent_Subject.txt" />
+    <EmbeddedResource Include="Notification\Email\EmailTemplates\AccountCreatedEvent_Body.txt" />
+    <EmbeddedResource Include="Resources\ValidationMessages.de.resx" />
+    <EmbeddedResource Include="Resources\ValidationMessages.nl-nl.resx" />
+    <EmbeddedResource Include="Resources\ValidationMessages.ru-ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationMessages.ru-ru.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

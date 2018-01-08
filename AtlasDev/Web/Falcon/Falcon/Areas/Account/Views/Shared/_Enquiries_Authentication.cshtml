@@ -1,0 +1,127 @@
+﻿<div ng-controller="AccountEnquiriesAuthenticationController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="xdsParams" class="table">
+
+            <tr ng-repeat="xds in $data" ng-click="changeSelection('xsRowSelected',xds,'authentication');" ng-class="{selected: xds.$selected}" style="cursor: pointer;">
+
+              <td data-title="'Id'">
+                <center> {{xds.AuthenticationId}}</center>
+              </td>
+              <td data-title="'First Name'">
+                <center> {{xds.FirstName}}</center>
+              </td>
+              <td data-title="'Last Name'">
+                <center> {{xds.LastName}}</center>
+              </td>
+              <td data-title="'ID No'">
+                <center> {{xds.IdNo}}</center>
+              </td>
+              <td data-title="'Bank Account No'">
+                <center> {{xds.BankAccountNo}}</center>
+              </td>
+              <td data-title="'Authenticated %'">
+                <center>
+                  <div class="curved-border label label-success" ng-if="xds.AuthenticatedPercentage > xds.RequiredPercentage && xds.AuthenticatedPercentage">{{ xds.AuthenticatedPercentage | number:0 }}</div>
+                  <div class="curved-border label label-warning" ng-if="xds.AuthenticatedPercentage === xds.RequiredPercentage && xds.AuthenticatedPercentage">{{xds.AuthenticatedPercentage | number:0}}</div>
+                  <div class="curved-border label label-danger" ng-if="xds.authenticatedpercentage < xds.RequiredPercentage && xds.AuthenticatedPercentage">{{xds.AuthenticatedPercentage | number:0}}</div>
+                </center>
+              </td>
+              <td data-title="'Required %'">
+                <center> {{xds.RequiredPercentage | number:0 }}</center>
+              </td>
+              <td data-title="'Completed'">
+                <center>
+                  <i class="fa fa-check" style="color:green;font-size:large;" ng-if="xds.Completed"></i>
+                  <i class="fa fa-times" style="color: red; font-size: large; " ng-if="!xds.Completed"></i>
+                </center>
+              </td>
+              <td data-title="'Authenticated'">
+                <center>
+                  <i class="fa fa-check" style="color:green;font-size:large;" ng-if="xds.Authenticated"></i>
+                  <i class="fa fa-times" style="color: red; font-size: large; " ng-if="!xds.Authenticated"></i>
+                </center>
+              </td>
+              <td data-title="'Enabled'">
+                <center> {{xds.Enabled }}</center>
+              </td>
+              <td data-title="'Override User'">
+                <center> {{xds.OverrideUser }}</center>
+              </td>
+              <td data-title="'Override Date'">
+                <center> {{xds.OverrideDate | date:'yyyy-MM-dd HH:mm' }}</center>
+              </td>
+              <td data-title="'Create Date'" sortable="'CreateDate'">
+                <center> {{xds.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="button" class="btn yellow" ng-disabled="!row.$selected || !row || !row.Enabled" ng-click="resetAuthenticationAttempts(true)" data-toggle="modal" href="#OverrideAuthenticationDialogue">Reset Attempts</button>
+            <button type="button" class="btn red" ng-disabled="!row.$selected || !row || !row.Enabled" ng-click="resetAuthenticationAttempts(false)" data-toggle="modal" href="#OverrideAuthenticationDialogue">Override</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+  <!-- Modals -->
+  <div class="modal fade" id="OverrideAuthenticationDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-danger" ng-if="authenticationResetAttempts === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Override result</h4>
+        </div>
+        <div class="modal-header label-warning" ng-if="authenticationResetAttempts === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Reset attempts</h4>
+        </div>
+        <div class="modal-body" ng-if="authenticationResetAttempts === false">
+          <div class="col-md-12">
+            <p>
+              You are about to override the authentication result to <div class="curved-border label label-success">Passed</div>, are you sure you wish to continue?
+            </p>
+          </div>
+        </div>
+        <div class="modal-body" ng-if="authenticationResetAttempts === true">
+          <div class="col-md-12">
+            <p>
+              You are about to reset the authentication attempts, are you sure you wish to continue?
+            </p>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-12">
+            <h5>Reason:</h5>
+            <p>
+              <textarea class="col-md-12 form-control" rows="3" maxlength="500" ng-model="authentication.OverrideReason" style="resize: vertical;">{{ authentication.OverrideReason.length }}</textarea>
+            </p>
+            <span class="help-block pull-right">
+              {{500 - authentication.OverrideReason.length}} characters left
+            </span>
+            <div class="clearfix"></div>
+            <div class="alert alert-danger" ng-show="authentication.OverrideReason == 0">
+              Please enter a reason
+            </div>
+            <div class="alert alert-warning" ng-show="authentication.OverrideReason.length <= 20 && authentication.OverrideReason.length !== 0">
+              Reason entered is to short.
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn red" button-loading="is_processing" data-loading-text="Processing..." ng-click="authentcationDlgFn(@ViewBag.PersonId, 'override');" ng-if="authenticationResetAttempts === false">Confirm</button>
+          <button type="button" class="demo-loading-btn btn green" button-loading="is_processing" data-loading-text="Processing..." ng-click="authentcationDlgFn(@ViewBag.PersonId, 'reset');" ng-if="authenticationResetAttempts === true" ng-disabled="!authentication.OverrideReason || authentication.OverrideReason.length < 20">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.modal-content -->
+  <!-- /.modal-dialog -->
+</div>

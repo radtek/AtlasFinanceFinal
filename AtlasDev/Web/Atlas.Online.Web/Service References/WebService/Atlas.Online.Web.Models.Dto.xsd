@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Models.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Models.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LoanRulesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultTerm" type="xs:int" />
+      <xs:element minOccurs="0" name="InterestRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxLoanAmount" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxLoanPeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="MinLoanAmount" type="xs:int" />
+      <xs:element minOccurs="0" name="MinLoanPeriod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanRulesDto" nillable="true" type="tns:LoanRulesDto" />
+</xs:schema>

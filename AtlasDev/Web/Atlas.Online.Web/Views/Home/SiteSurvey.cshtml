@@ -1,0 +1,154 @@
+﻿@model Atlas.Online.Data.Models.DTO.SiteSurveyDto
+
+@using Atlas.Online.Web.Extensions.Ng;
+
+@{
+    ViewBag.Title = "Site Survey";
+    ViewBag.NgApp = "atlas.core";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/core")
+}
+
+<div class="container-outline">
+  <div class="pos-r">
+    <h1 class="hn-in-outline fc-beta">
+      <strong>Atlas Online</strong>    
+        
+      <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+      <span class="fc-alpha">Site Survey</span>
+    </h1>
+
+    <p class="fs-zeta fw-b">
+      We want to hear from you what you liked or didn’t like about applying for a loan on Atlas Online.
+      To say thanks for the feedback, we enter you into a draw to win one of 20 pairs of Superga takkies, valued at R420 each.
+    </p>
+
+    @using (Html.BeginForm("SiteSurvey", "Home", FormMethod.Post, new Dictionary<string, object>() { 
+      { "name", "form" },
+      { "f8-initialize-model", null }
+    })) {
+      @Html.AntiForgeryToken();
+    
+      <p class="fw-b">1. In order to enter the draw please supply your name and email address.</p>
+      <div class="row row-ib-cols row-ib-cols-va-m cf">
+        <div class="field cf">
+				  <div class="col col-2">
+					  @Html.LabelFor(m => m.Name, new { @class = "field-label" })
+				  </div><!-- .col -->
+				  <div class="col col-4">
+					  @Html.NgTextBoxFor(m => m.Name, new { @class = "d-block"})
+				  </div><!-- .col -->
+          @Html.NgValidationMessagesFor(m => m.Name)
+			  </div>  
+
+   		  <div class="field cf">
+				  <div class="col col-2">
+					  @Html.LabelFor(m => m.Email, new { @class = "field-label" })
+				  </div><!-- .col -->
+				  <div class="col col-4">
+					  @Html.NgTextBoxFor(m => m.Email, new { @class = "d-block" })
+				  </div><!-- .col -->
+          @Html.NgValidationMessagesFor(m => m.Email)
+			  </div>      
+      </div>
+
+      <p class="fw-b">2. The Atlas Online site was easy to navigate</p>
+      <div class="row cf">
+        <div class="col col-3">        
+          <input class="visuallyhidden" type="radio" ng-model="Q1Option" name="Q1Option" id="Q1Option-1" value="1" required>
+          <label class="field-label" for="Q1Option-1"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q1Option" name="Q1Option" id="Q1Option-2" value="2" required>
+          <label class="field-label" for="Q1Option-2"><span class="icon radio-custom visuallyhidden-ie8"></span> Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q1Option" name="Q1Option" id="Q1Option-3" value="3" required>
+          <label class="field-label" for="Q1Option-3"><span class="icon radio-custom visuallyhidden-ie8"></span> Disagree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q1Option" name="Q1Option" id="Q1Option-4" value="4" required>
+          <label class="field-label" for="Q1Option-4"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Disagree</label>
+        </div>
+      </div>
+
+      <p class="fw-b">3. The loan process was simple</p>
+      <div class="row cf">
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q2Option" name="Q2Option" id="Q2Option-1" value="1" required>
+          <label class="field-label" for="Q2Option-1"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q2Option" name="Q2Option" id="Q2Option-2" value="2" required>
+          <label class="field-label" for="Q2Option-2"><span class="icon radio-custom visuallyhidden-ie8"></span> Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q2Option" name="Q2Option" id="Q2Option-3" value="3" required>
+          <label class="field-label" for="Q2Option-3"><span class="icon radio-custom visuallyhidden-ie8"></span> Disagree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q2Option" name="Q2Option" id="Q2Option-4" value="4" required>
+          <label class="field-label" for="Q2Option-4"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Disagree</label>
+        </div>
+      </div>
+
+      <p class="fw-b">
+        4. How long did it take for your application to be completed (this is the time it took from the time you started to enter your 
+        first name details until the time that you were sent an email to say your loan was declined or approved)
+      </p>
+      <div class="row cf">
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q3Option" name="Q3Option" id="Q3Option-1" value="1" required>
+          <label class="field-label" for="Q3Option-1"><span class="icon radio-custom visuallyhidden-ie8"></span> 10-20 minutes</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q3Option" name="Q3Option" id="Q3Option-2" value="2" required>
+          <label class="field-label" for="Q3Option-2"><span class="icon radio-custom visuallyhidden-ie8"></span> 20-30 minutes</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q3Option" name="Q3Option" id="Q3Option-3" value="3" required>
+          <label class="field-label" for="Q3Option-3"><span class="icon radio-custom visuallyhidden-ie8"></span> 30-45 minutes</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q3Option" name="Q3Option" id="Q3Option-4" value="4" required>
+          <label class="field-label" for="Q3Option-4"><span class="icon radio-custom visuallyhidden-ie8"></span> longer than 45 minutes</label>
+        </div>
+      </div>
+
+      <p class="fw-b">
+        5. Atlas Online is a site that I would feel happy and safe to use again
+      </p>
+      <div class="row cf">
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q4Option" name="Q4Option" id="Q4Option-1" value="1" required>
+          <label class="field-label" for="Q4Option-1"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q4Option" name="Q4Option" id="Q4Option-2" value="2" required>
+          <label class="field-label" for="Q4Option-2"><span class="icon radio-custom visuallyhidden-ie8"></span> Agree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q4Option" name="Q4Option" id="Q4Option-3" value="3" required>
+          <label class="field-label" for="Q4Option-3"><span class="icon radio-custom visuallyhidden-ie8"></span> Disagree</label>
+        </div>
+        <div class="col col-3">
+          <input class="visuallyhidden" type="radio" ng-model="Q4Option" name="Q4Option" id="Q4Option-4" value="4" required>
+          <label class="field-label" for="Q4Option-4"><span class="icon radio-custom visuallyhidden-ie8"></span> Strongly Disagree</label>
+        </div>
+      </div>
+  
+      <p class="fw-b">
+        6. Please supply us with any comments that you feel we should know about to make your online loan experience better. (optional)
+      </p>
+      <textarea rows="6" class="d-block" ng-model="Comments" name="Comments"></textarea>
+    
+      <div class="ar">
+		    <label for="submit-1" class="btn btn-right disabled" ng-class="{disabled: form.$invalid }">
+          <input id="submit-4" type="submit" ng-disabled="form.$invalid || form.$submitted" value="Submit" disabled>
+		    </label>
+      </div>
+    }
+  </div>
+</div>

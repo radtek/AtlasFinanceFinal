@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Atlas/ASS/DocServer/Admin/2014/05" elementFormDefault="qualified" targetNamespace="urn:Atlas/ASS/DocServer/Admin/2014/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.DocServer.WCF.Interface" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:element name="GetDocumentFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentId" type="xs:long" />
+        <xs:element minOccurs="0" name="destCompress" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDocumentFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.DocServer.WCF.Interface" minOccurs="0" name="GetDocumentInfoResult" nillable="true" type="q1:DocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.DocServer.WCF.Interface" minOccurs="0" name="info" nillable="true" type="q2:DocumentInfo" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="fileFormat" type="q3:Document.FileFormat" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isCompressed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StoreDocumentResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

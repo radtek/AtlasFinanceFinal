@@ -1,0 +1,262 @@
+﻿<div ng-controller="AccountClientPersonalController">
+  <section class="panel">
+    <section class="panel-body">
+      <div class="horizontal-form">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="control-label">First Name</label>
+              <input type="text" id="firstName" class="form-control" value="{{ account.Firstname}}" disabled>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="control-label">Middlename</label>
+              <input type="text" id="middlename" class="form-control" value="{{ account.Middlename }}" disabled>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="control-label">Last Name</label>
+              <input type="text" id="lastName" class="form-control" value="{{ account.Lastname }}" disabled>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="control-label">Gender</label>
+              <select class="form-control" ng-model="account.Gender" disabled>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="control-label">Date of Birth</label>
+              <input type="text" class="form-control" value="{{account.DateOfBirth| date:'yyyy-MM-dd'}}" disabled>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"><h3 class="panel-title"><strong>Address Details</strong></h3></div>
+              <div class="panel-body">
+                <div class="form-horizontal">
+                  <fieldset>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Choose Type</label>
+                      <div class="col-md-4">
+                        <select class="form-control" ng-model="filterAddressType" ng-options="a.AddressId as a.AddressType for a in accountAddressTypes" ng-change="accountAddressSelectionChanged()" options-class="{'bg-danger': !IsActive}"></select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Address Line 1</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.AddressLine1 }}">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Address Line 2</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.AddressLine2 }}" ng-readonly="true">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Town</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.AddressLine3 }}" ng-readonly="true">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">City</label>
+                      <div class="col-md-10">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.AddressLine4 }}" ng-readonly="true">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label">Province</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.Province }}" ng-readonly="true">
+                      </div>
+                      <label class="col-md-2 control-label">Code</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control btn default disabled left-text" ng-class="{'btn-danger': !selectedAccountAddress.IsActive}" value="{{ selectedAccountAddress.PostalCode }}" ng-readonly="true">
+                      </div>
+                    </div>
+                    <div class="form">
+                    <div class="form-actions right">
+                      <button type="submit" class="btn yellow" ng-click="addressDialgueNew = true;" data-toggle="modal" href="#AddressDialogue">New</button>
+                      <button type="submit" class="btn red" ng-disabled="!selectedAccountAddress.IsActive" ng-click="addressDialgueNew = false;" data-toggle="modal" href="#AddressDialogue">Delete</button>
+                    </div>
+                      </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"><h3 class="panel-title"><strong>Contact Details</strong></h3></div>
+              <div class="panel-body">
+                <div class="form-horizontal">
+                  <fieldset>
+                    <div class="table-responsive">
+                      <table ng-table="contactParams" class="table">
+                        <tr ng-repeat="contact in $data" ng-click="changeSelection('coRowSelected',contact,'contacts')" ng-class="{selected: contact.$selected}" style="cursor: pointer;">
+                          <td data-title="'Contact Type'">
+                            <center> {{contact.ContactType}}</center>
+                          </td>
+                          <td data-title="'Value'" ng-class="{'bg-danger':!contact.IsActive}" >
+                            <center> {{contact.Value}}</center>
+                          </td>
+                          <td data-title="'Create Date'">
+                            <center> {{contact.CreateDate | date:'yyyy-MM-dd'}}</center>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="form">
+                      <div class="form-actions right">
+                        <button type="submit" class="btn yellow" ng-click="contactDialgueNew = true;" data-toggle="modal" href="#ContactDialogue">New</button>
+                        <button type="submit" class="btn red" ng-disabled="!coRowSelected.$selected || !coRowSelected.IsActive" ng-click="contactDialgueNew  = false;" data-toggle="modal" href="#ContactDialogue">Delete</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section> 
+  <!-- Address Modals -->
+  <div class="modal fade" ng-class="{'bs-modal-lg in':addressDialgueNew===true}" id="AddressDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal>
+    <div class="modal-dialog" ng-class="{'modal-lg':addressDialgueNew===true}">
+      <div class="modal-content">
+        <div class="modal-header label-warning" ng-if="addressDialgueNew === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Add Address</h4>
+        </div>
+        <div class="modal-header label-danger" ng-if="addressDialgueNew === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Delete Address</h4>
+        </div>
+        <div class="modal-body form" ng-if="addressDialgueNew === true">
+          <div class="centered">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Type</label>
+                  <div class="col-md-8">
+                    <select ng-init="getAddressTypes()" class="form-control input" ng-model="$parent.newAddressTypeId" ng-options="a.AddressTypeId as a.Description for a in addressTypes"></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Address Line 1</label>
+                  <div class="col-md-8">
+                    <input class="form-control input" ng-model="$parent.newAddressLine1" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Address Line 2</label>
+                  <div class="col-md-8">
+                    <input class="form-control input" ng-model="$parent.newAddressLine2" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Town</label>
+                  <div class="col-md-8">
+                    <input class="form-control input" ng-model="$parent.newAddressLine3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">City</label>
+                  <div class="col-md-8">
+                    <input class="form-control input" ng-model="$parent.newAddressLine4" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Province</label>
+                  <div class="col-md-3">
+                    <select ng-init="getProvinces()" class="form-control input-medium" ng-model="$parent.newAddressProvinceId" ng-options="a.ProvinceId as a.Description for a in provinces"></select>
+                  </div>
+                  <label class="col-md-2 control-label">Code</label>
+                  <div class="col-md-3">
+                    <input class="form-control input" ng-model="$parent.newAddressCode" type="text" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-body" ng-if="addressDialgueNew === false">
+          You are about to delete this address, are you sure you want to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn green" ng-click="addAddress();" ng-if="addressDialgueNew === true">Confirm</button>
+          <button type="button" class="btn red" ng-click="deleteAddress();" ng-if="addressDialgueNew === false">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>  
+  <!-- Contact Modals -->
+  <div class="modal fade" id="ContactDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-warning" ng-if="contactDialgueNew === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Add Contact</h4>
+        </div>
+        <div class="modal-header label-danger" ng-if="contactDialgueNew === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Delete Contact</h4>
+        </div>
+        <div class="modal-body form" ng-if="contactDialgueNew === true">
+          <div class="centered">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Type</label>
+                  <div class="col-md-3">
+                    <select ng-init="getContactTypes()" class="form-control input-medium" ng-model="$parent.newContactTypeId" ng-options="a.ContactTypeId as a.Description for a in contactTypes"></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Value</label>
+                  <div class="col-md-3">
+                    <input class="form-control input-medium" ng-model="$parent.newContactValue" type="text" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-body" ng-if="contactDialgueNew === false">
+          You are about to delete this contact, are you sure you want to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn green" ng-click="addContact();" ng-if="contactDialgueNew === true">Confirm</button>
+          <button type="button" class="btn red" ng-click="deleteContact();" ng-if="contactDialgueNew === false">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

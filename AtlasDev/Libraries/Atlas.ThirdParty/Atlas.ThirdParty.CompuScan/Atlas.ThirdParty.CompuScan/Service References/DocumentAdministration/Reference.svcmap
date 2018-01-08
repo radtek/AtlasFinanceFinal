@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e7576cd2-3019-435d-8436-f8f3c81d9510" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://172.31.75.38:8204/Doc/Admin/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="05.wsdl" MetadataType="Wsdl" ID="fa0b26fc-53d6-47fb-b965-d29ed54d8f0f" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d748851c-1de4-4ff8-b1f2-3b7ffab93259" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+    <MetadataFile FileName="05.xsd" MetadataType="Schema" ID="dea7cef8-d19c-4466-a8ce-83a7d734572f" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="6301c4e7-97bd-4064-83c2-ad998c188288" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+    <MetadataFile FileName="Atlas.DocServer.WCF.Interface.xsd" MetadataType="Schema" ID="dbe3a2f7-49e0-475f-a12c-e96c52367695" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+    <MetadataFile FileName="Atlas.Enumerators.xsd" MetadataType="Schema" ID="2ab730a3-0a34-4b11-9e44-20ff10dcae0c" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8204/Doc/Admin/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

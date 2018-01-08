@@ -1,0 +1,112 @@
+﻿@model Atlas.Online.Web.Models.Dto.AffordabilityDto
+
+@using Atlas.Online.Web.Extensions;
+
+@{
+    ViewBag.Title = "Affordability";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+
+    ViewBag.NgApp = "atlas.affordability";
+}
+
+@section scripts {
+  @Scripts.Render("~/bundles/core")
+  @Scripts.Render("~/bundles/atlas-affordability")
+}
+
+<div class="container-outline" ng-controller="AffordabilityCtrl" ng-init="init(@Html.Json((object)ViewBag.Data))" ng-class="{loader: UI.loading}">
+  <div class="pos-r">
+    <h1 class="hn-in-outline fc-beta">
+      <strong class="ng-cloak">{{ UI.heading }}</strong>    
+        
+        <span class="ng-cloak" ng-show="!!UI.title">
+          <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+          <span class="fc-alpha" ng-bind="UI.title"></span>
+        </span>
+    </h1>
+
+    @Html.Partial("_ApplyNowSteps")
+
+    <div class="cf">
+      <div class="alert alert-error ng-cloak" ng-show="UI.error">{{ UI.error.message }} <a href="javascript:void(0);" ng-show="!!UI.error.retryHandler" ng-click="UI.error.retryHandler()">Retry.</a></div>
+      
+      <div class="row cf">
+      <center><p class="fs-eta mt-none fc-beta">
+        <strong>Our system has calculated your income and expenses and has approved you for a loan of @Html.DisplayFormatFor(m => m.Afford.Amount, "{0:C2}")</strong><br /></p>
+       </div></center>
+      <!--</p> -->
+
+      <div class="row cf">
+         <div class="col col-3">
+           <p>
+             <strong class="fc-beta-dk">Your new repayment date</strong><br />
+              @Html.DisplayDateTimeFor(m => m.Diff.RepaymentDate)
+           </p>
+
+            <p>
+				      <strong class="fc-beta-dk">Your new loan period</strong><br />
+              @Html.DisplayFormatFor(m => m.Afford.Period, "{0} Days") 
+              @Html.AffordabilityDiffFor(m => m.Diff.Period, posFormat: "({0:#,##0;0} days later)", negFormat: "({0:#,##0;0} days sooner)", negClass: "fc-beta")
+            </p>
+			   </div><!-- .col -->
+
+        <div class="col col-6">
+          <table >        
+            <tr>
+              <td style="width:50%"></td>
+              <td style="width:25%">Chosen Value</td>
+              <td style="width:25%">Allowed Value</td>                
+            </tr>
+            
+            <tr>
+              <td>Loan amount</td>
+              <td>@Html.DisplayFormatFor(m => m.Loan.Amount, "{0:C0}")</td>
+              <td class="fc-beta">@Html.DisplayFormatFor(m => m.Afford.Amount, "{0:C0}")</td>
+            </tr>
+
+            <tr>
+              <td>Interest</td>
+              <td></td>
+              <td>@Html.DisplayFormatFor(m => m.Afford.InterestCharges, "{0:C2}")</td>
+            </tr>
+
+            <tr>
+              <td>Fees</td>
+              <td></td>
+              <td>@Html.DisplayFormatFor(m => m.Afford.Fees, "{0:C2}")</td>
+            </tr>
+
+            <tr>
+              <td>Repayment Amount</td>
+              <td>@Html.DisplayFormatFor(m => m.Loan.RepaymentAmount, "{0:C2}")</td>
+              <td class="fc-beta">@Html.DisplayFormatFor(m => m.Afford.RepaymentAmount, "{0:C2}")</td>
+            </tr>
+
+          </table>
+        </div> 
+      </div><!-- .row -->
+    <div class="row cf"> <p class="fs-milli mt-none fc-beta">
+         We have carefully looked at your income and expenses and calculated what would be a comfortable amount for you to repay, without putting you under financial pressure.
+        The National Credit Act stipulates that we do these checks to ensure that you don’t find yourself in a situation where you are over indebted.</p></div>
+      <div class="row cf mb-gamma">
+	      <div class="col col-8 pr-alpha">
+          
+        </div>
+      </div><!-- .row -->
+	     
+    </div>
+
+    <hr class="hr-dotted">
+
+    <div class="row cf ng-cloak anim-margin" ng-show="!booting">
+      <div class="col col-3">
+        <button class="btn btn-l btn-alpha btn-l-alpha btn-left btn-l-left btn-left-alpha btn-l-left-alpha mb-none d-block" ng-click="reject()" ng-disabled="UI.loading">Reject Offer</button>
+          &nbsp;
+      </div><!-- .col -->
+
+      <div class="col col-3 push-6">
+        <button class="btn btn-l btn-right btn-l-right mb-none d-block" ng-click="accept()" ng-disabled="UI.loading">Accept Offer</button>
+      </div><!-- .col -->
+    </div><!-- .row --> 
+  </div>
+</div>

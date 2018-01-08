@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+  <xs:complexType name="NUC_NuCardProfileDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="q1:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_DeletedBy_x003E_k__BackingField" nillable="true" type="q2:PER_PersonDTO" />
+      <xs:element name="_x003C_DeletedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_LastEditedBy_x003E_k__BackingField" nillable="true" type="q3:PER_PersonDTO" />
+      <xs:element name="_x003C_LastEditedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_NuCardProfileId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Password_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ProfileNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_TerminalId_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NUC_NuCardProfileDTO" nillable="true" type="tns:NUC_NuCardProfileDTO" />
+  <xs:complexType name="ArrayOfNUC_NuCardDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NUC_NuCardDTO" nillable="true" type="tns:NUC_NuCardDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNUC_NuCardDTO" nillable="true" type="tns:ArrayOfNUC_NuCardDTO" />
+  <xs:complexType name="NUC_NuCardDTO">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_AllocatedPerson_x003E_k__BackingField" nillable="true" type="q4:PER_PersonDTO" />
+      <xs:element name="_x003C_CardNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ClientNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="q5:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_DeletedBy_x003E_k__BackingField" nillable="true" type="q6:PER_PersonDTO" />
+      <xs:element name="_x003C_DeletedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_ExpiryDT_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_IssueDT_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_IssuedByBranch_x003E_k__BackingField" nillable="true" type="q7:BRN_BranchDTO" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" name="_x003C_LastEditedBy_x003E_k__BackingField" nillable="true" type="q8:PER_PersonDTO" />
+      <xs:element name="_x003C_LastEditedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_LegacyBranchNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_NuCardId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_NuCardProfile_x003E_k__BackingField" nillable="true" type="tns:NUC_NuCardProfileDTO" />
+      <xs:element name="_x003C_SequenceNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Status_x003E_k__BackingField" nillable="true" type="tns:NUC_NuCardStatusDTO" />
+      <xs:element name="_x003C_TrackingNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_UserDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NUC_NuCardDTO" nillable="true" type="tns:NUC_NuCardDTO" />
+  <xs:complexType name="NUC_NuCardStatusDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_NuCardStatusId_x003E_k__BackingField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NUC_NuCardStatusDTO" nillable="true" type="tns:NUC_NuCardStatusDTO" />
+</xs:schema>

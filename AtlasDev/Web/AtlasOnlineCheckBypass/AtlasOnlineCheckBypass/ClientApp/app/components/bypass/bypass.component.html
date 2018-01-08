@@ -1,0 +1,57 @@
+﻿<h1>Bypass checks</h1>
+<div *ngIf="bypassSettings">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aria-label="..." [(ngModel)]="bypassSettings.creditCheck" (ngModelChange)="settingChanged();">
+                </span>
+                <input type="text" class="form-control" aria-label="..." value="Credit Check">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aria-label="..." [(ngModel)]="bypassSettings.avsCheck" (ngModelChange)="settingChanged();">
+                </span>
+                <input type="text" class="form-control" aria-label="..." value="AVS Check">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aria-label="..." [(ngModel)]="bypassSettings.affordabilityCheck" (ngModelChange)="settingChanged();">
+                </span>
+                <input type="text" class="form-control" aria-label="..." value="Affordability">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aria-label="..." [(ngModel)]="bypassSettings.fraudCheck" (ngModelChange)="settingChanged();">
+                </span>
+                <input type="text" class="form-control" aria-label="..." value="Fraud">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aria-label="..." [(ngModel)]="bypassSettings.xdsCheck" (ngModelChange)="settingChanged();">
+                </span>
+                <input type="text" class="form-control" aria-label="..." value="XDS Checks">
+            </div>
+        </div>
+    </div>
+</div>

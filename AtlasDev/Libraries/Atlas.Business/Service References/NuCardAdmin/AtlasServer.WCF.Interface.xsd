@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SourceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminIDOrPassport" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppVer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommOptions1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommOptions2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FingerprintFinger" type="xs:int" />
+      <xs:element minOccurs="0" name="FingerprintTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MachineIPAddresses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserIDOrPassport" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceRequest" nillable="true" type="tns:SourceRequest" />
+  <xs:complexType name="BalanceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInCents" type="xs:int" />
+      <xs:element minOccurs="0" name="Expired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Lost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stolen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stopped" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BalanceResult" nillable="true" type="tns:BalanceResult" />
+  <xs:complexType name="StatementResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceInCents" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatementLines" nillable="true" type="tns:ArrayOfStatementLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatementResult" nillable="true" type="tns:StatementResult" />
+  <xs:complexType name="ArrayOfStatementLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatementLine" nillable="true" type="tns:StatementLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatementLine" nillable="true" type="tns:ArrayOfStatementLine" />
+  <xs:complexType name="StatementLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TransactionAmountInCents" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatementLine" nillable="true" type="tns:StatementLine" />
+  <xs:complexType name="CardStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Empty" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Expired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Loaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINBlocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Redeemed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Retired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stolen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stopped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardStatus" nillable="true" type="tns:CardStatus" />
+</xs:schema>

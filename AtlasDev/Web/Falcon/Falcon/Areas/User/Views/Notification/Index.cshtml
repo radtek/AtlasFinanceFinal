@@ -1,0 +1,126 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Notifications";
+}
+
+  <div class="page-content" ng-controller="NotificationController" ng-init="init(@Html.Json((object)ViewBag.BranchId), @Html.Json((object)ViewBag.PersonId))">
+  <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          Widget settings form goes here
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn blue">Save changes</button>
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <!-- BEGIN PAGE HEADER-->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+      <h3 class="page-title">
+        Notifications @*<small>blank page</small>*@
+      </h3>
+      <ul class="page-breadcrumb breadcrumb">
+        <li class="btn-group">
+          <button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+            <span>
+              Actions
+            </span>
+            <i class="fa fa-angle-down"></i>
+          </button>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li>
+              <a ng-click="refresh(@Html.Json((object)ViewBag.BranchId), @Html.Json((object)ViewBag.PersonId))">Refresh</a>
+            </li>
+            <li>
+              <a ng-click="markSelectedAsRead(@Html.Json((object)ViewBag.PersonId))">Mark Selected Read</a>
+            </li>
+            <li>
+              <a ng-click="markAllAsRead(@Html.Json((object)ViewBag.PersonId))">Mark All Read</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/">Home</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <a href="#">Notifications</a>
+        </li>
+      </ul>
+      <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+  </div>
+  <!-- END PAGE HEADER-->
+  <!-- BEGIN PAGE CONTENT-->
+  <div class="row" >
+    <div class="col-md-12">
+      <div class="portlet box green tasks-widget">
+        <div class="portlet-title">
+          <div class="caption">
+            <i class="fa fa-bullhorn"></i>Notifications
+          </div>
+        </div>
+        <div class="portlet-body" >
+          <div class="task-content">
+            <div class="scroller" style="height: 480px;" data-always-visible="1" data-rail-visible1="1">
+              <!-- START TASK LIST -->
+              <ul class="task-list">
+                <li ng-repeat="notification in notifications track by $index">
+                  <div class="task-checkbox">
+                    <input type="checkbox" class="liChild" value="" ng-model="notification.Selected" />
+                  </div>
+                  <div class="task-title">
+                    <span class="task-title-sp">
+                      {{notification.Title}}
+                    </span>
+                    <span class="label label-sm" am-time-ago="notification.NotificationDate"
+                          ng-class="{'label-success':1==notification.PriorityLevel, 'label-danger':4==notification.PriorityLevel, 'label-warning':3==notification.PriorityLevel, 'label-info':2==notification.PriorityLevel}">
+                      {{notification.NotificationDate}}
+                    </span>
+                  </div>
+                  <div class="task-content">
+                    <span>
+                      {{notification.Description}}
+                    </span>
+                  </div>
+                  <div class="task-config">
+                    <div class="task-config-btn btn-group">
+                      <a class="btn btn-xs default" href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu pull-right">
+                        <li>
+                          <a ng-click="markAsRead(@Html.Json((object)ViewBag.PersonId), notification.NotificationId)"><i class="fa fa-check"></i> Mark Read</a>
+                        </li>
+                        <li ng-show="notification.ActionUrl">
+                          <a ng-click="goTo(notification.ActionUrl)"><i class="fa fa-eye"></i> Goto Link</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+              <!-- END START TASK LIST -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END PAGE CONTENT-->
+</div>

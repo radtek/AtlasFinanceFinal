@@ -1,0 +1,38 @@
+﻿<div class="tabbable-custom">
+  <ul class="nav nav-tabs" id="accBurueaTab">
+    <li class="">
+      <a href="#bucr" data-toggle="tab">
+        Credit
+      </a>
+    </li>
+    <li class="">
+      <a href="#buav" data-toggle="tab">
+        AVS
+      </a>
+    </li>
+    <li class="">
+      <a href="#bufr" data-toggle="tab">
+        Fraud
+      </a>
+    </li>
+    <li class="">
+      <a href="#buau" data-toggle="tab">
+        Authentication
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane" id="bucr">
+      @{Html.RenderPartial("_Enquiries_Credit");}
+    </div>
+    <div class="tab-pane" id="buav">
+      @{Html.RenderPartial("_Enquiries_Avs");}
+    </div> 
+    <div class="tab-pane" id="bufr" >
+      @{Html.RenderPartial("_Enquiries_Fraud");}
+    </div>  
+    <div class="tab-pane" id="buau">
+    @{Html.RenderPartial("_Enquiries_Authentication");}
+    </div>     
+  </div>
+</div>

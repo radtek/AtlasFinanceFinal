@@ -1,0 +1,33 @@
+---
+layout : default
+---
+{{!
+	This template is actually an extension of with_outline.html. Ruhoh only allows
+	nesting layouts to 2 levels, so there's some duplication here form the other template. This template only differs inside the area marked **ACCOUNT PAGE SPECIFIC**
+}}
+<div class="container-outline">
+  <h1 class="hn-in-outline fc-beta">
+  	<strong>{{ page.title }}</strong>
+  	{{# page.title_additional }}
+		<span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+  	<span class="fc-alpha">{{ . }}</span>{{/ page.title_additional }}
+  </h1>
+
+  {{! **ACCOUNT PAGE SPECIFIC }}
+  <div class="cf">
+	<div class="brad-delta bd-alpha-ltr account-menu-bg">
+			<div class="row cf">
+				<div class="col col-4">
+					{{> account_menu}}
+				</div><!-- .col -->
+				<div class="col col-8">
+					<div class="plr-gamma cf">
+						<h2 class="fc-beta mb-delta">{{ page.title_secondary }}</h2>
+						{{{ page.content }}}
+					</div>
+				</div><!-- .col -->
+			</div><!-- .row -->
+		</div>
+  </div>
+
+</div>

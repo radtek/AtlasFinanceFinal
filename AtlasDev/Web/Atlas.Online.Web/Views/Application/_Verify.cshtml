@@ -1,0 +1,9 @@
+﻿@using Atlas.Online.Web.Extensions;
+
+<div class="ac" ng-init="init('@Html.Raw((object)ViewBag.TimeoutRedirect)')">  
+  <div atl-svg-spinner img-src="@Url.Content("~/Assets/img/verify/verify-bg.png")"></div>
+
+  <p class="fc-beta fs-epsilon"><strong>Please be patient while we process your application. Please do not refresh this page.</strong></p>
+
+  <small>Please be patient. This may take up to five minutes.</small>
+</div>

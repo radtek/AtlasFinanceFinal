@@ -1,0 +1,286 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "User Management - ByPass users";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="row" ng-controller="UserByPassController" ng-init="init();">
+    <div class="col-md-12">
+        <div class="alert alert-info" ng-if="!loaded">
+            <center><strong>Loading:</strong> Please be patient...</center>
+        </div>
+        <div id="filter" class="tab-pane active">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        @*<div class="col-md-6">
+                            <div class="col-md-2 col-center">
+                                <label>Branch</label>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control"
+                                        ng-options="c.BranchId as c.Name + ' ' + '[' + c.LegacyBranchNum + ']' for c in branches"
+                                        ng-model="branch"
+                                        ng-disabled="branchesLoading">
+                                    <option selected="true" value='' disabled>
+                                        Select Branch...
+                                    </option>
+                                </select>
+                            </div>
+                        </div>*@
+                        <div class="col-md-6">
+                            <div class="col-md-2 col-center">
+                                <label>ID No.</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" ng-model="idNo">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-2 col-center">
+                                <label>First Name</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" ng-model="firstName">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <br />
+                    <div class="row">
+                       
+                        <div class="col-md-6">
+                            <div class="col-md-2 col-center">
+                                <label>Last Name</label>
+                            </div>
+                            <div class="col-md-4">
+                                    <input type="text" class="form-control" ng-model="lastName">
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="panel-footer clearfix">
+                    <div>
+                        <button class="btn btn-info pull-right component-well" ng-click="search()" button-loading="searching" data-loading-text="Processing Request...">Search</button>
+                        <button class="btn btn-info pull-right component-well" ng-click="lastName='';firstName='';idNo='';branch='';" ng-disabled="!loaded">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table si-table class="table table-striped ng-cloak">
+            <tr>
+                <th class="col-align-center">#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID No.</th>
+                <th class="col-align-center">Operator Code</th>
+             
+                <th class="col-align-center">ByPass</th>
+            </tr>
+            <tbody>
+                <tr si-sortable ng-repeat="user in users">
+                    <td class="col-align-center">{{ ::user.PersonId }}</td>
+                    <td>{{::user.Firstname}}</td>
+                    <td>{{::user.Lastname}}</td>
+                    <td>{{::user.IdNum }}</td>
+                    <td class="col-align-center">{{::user.LegacyClientCode}}
+                       </td>
+                   
+                    <td class="col-align-center">
+                        <center>
+                            <a ng-click="bypass(user)" rel="tooltip" title="ByPass" style="cursor: pointer;"
+                               id="button_manage_{{user.PersonId}}" href="!#byPassUserDlg" data-toggle="modal">
+                                <span class="curved-border label label-info">ByPass</span>
+                            </a>
+                        </center>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <si-table-pagination limit="{{pageLimit}}" indices="5" total="params.total" offset="params.offset" />
+                    </td>
+                    <td colspan="3">
+                        <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 100;" anchor-prevent-propagation>100</a>
+                        <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 10;" anchor-prevent-propagation>10</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+       
+    <div modal-stack></div>
+
+    <div aria-hidden="true" aria-labelledby="viewByPassUserDlg" role="dialog" tabindex="-1" id="byPassUserDlg" class="modal bs-modal-lg" style="overflow-y: auto;z-index:1040" data-keyboard="false">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                    <center>
+                        <h4 class="modal-title">ByPass User</h4>
+                    </center>
+                </div>
+                <div class="modal-body">
+                    <div class="tabbable-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#details" anchor-prevent-propagation>Details</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div id="details" class="tab-pane active">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>FirstName</label>
+                                             <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="firstName" name="firstName" value="{{ allocateUser.Firstname }}" disabled />
+                                                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>LastName</label>
+                                                <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="lastName" name="lastName" value="{{ allocateUser.Lastname}}" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Operator Code</label>
+                                                <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" ng-model="userOperatorCode" id="userOperatorCode" name="userOperatorCode" value="{{ allocateUser.LegacyClientCode}}" disabled  />
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>ID No</label>
+                                                <input type="text" class="form-control form-control-solid placeholder-no-fix" id="idNo" name="idNo" value="{{ allocateUser.IdNum }}" disablded />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Regional Manager Code</label>
+                                                <input type="text" class="form-control form-control-solid placeholder-no-fix" ng-model="regionalManagerCode" id="rmCode" name="rmCode" value="{{ }}" disabled />
+                                            </div>
+                                        </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Branch No</label>
+                                                    <select class="form-control"
+                                                            ng-options="b.Name + ' [' + b.LegacyBranchNum + '] ' for b in branches | orderBy:'Name'"
+                                                            ng-model="branch"
+                                                            ng-disabled="branchesLoading"
+                                                            required="required">
+                                                        <option selected="true" value='' disabled>
+                                                            Select Branch...
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                               </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Operator's New Level</label>
+                                                                                       
+                                                <select class="form-control"
+                                                        ng-model="newOperatorLevel" ng-init="5"
+                                                        required="required" >
+                                                    <option selected="true" value='' disabled>
+                                                       5
+                                                    </option>
+                                                    
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                       
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Reason Code</label>
+                                                <select class="form-control"
+                                                        ng-model="reasonCode"
+                                                        required>
+
+                                                        <option selected="true" value='' disabled>
+                                                            Select Reason...
+                                                        </option>
+                                                        <option>Branch Manager Sick/Absent</option>
+                                                        <option>Consultant Sick / Absent</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Authorization Start Date
+                                                </label>
+                                                <div class="input-group input-large  date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                                                    <input type="text" class="form-control" ng-model="filterAuthorisationStartDate" readonly="" style="cursor: pointer !important;"
+                                                           comp-datepicker-trigger ng-disabled="loading">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn" ng-click="filterAuthorisationStartDate=''" ng-disabled="loading"><i class="fa fa-times"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Authorization End Date
+                                                </label>
+                                                <div class="input-group input-large  date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                                                    <input type="text" class="form-control" ng-model="filterAuthorisationEndDate" readonly="" style="cursor: pointer !important;"
+                                                           comp-datepicker-trigger ng-disabled="loading">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn" ng-click="filterAuthorisationEndDate=''" ng-disabled="loading"><i class="fa fa-times"></i></button>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Comments</label>
+                                                        <input type="text" class="form-control" ng-model="comments"
+                                                               placeholder=" " id=" comments" name="comments" value="{{COMMENTS}}" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-6  col-xs-offset-6">
+                                                    <button type="button" class="btn btn-primary component-well pull-right" ng-click="processAuthorisation()" ng-disabled="processing">
+                                                        Process
+                                                    </button>
+                                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

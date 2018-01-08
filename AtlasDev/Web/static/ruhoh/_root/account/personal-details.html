@@ -1,0 +1,76 @@
+---
+title : My Account
+title_secondary : Personal details
+description:
+page_list_description: Personal Details
+layout: account
+---
+<form action="">
+	<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="cell-number" class="field-label">Cell number</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/inputs_two }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="email" class="field-label">Email address</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="address-line-1" class="field-label">Address Line 1</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="address-line-2" class="field-label">Address Line 2</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="city" class="field-label">City / Town</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4 pr-micro">
+				<label for="province" class="field-label">Province</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				<div class="row cf">
+					<div class="col col-8 pr-micro">
+						{{> forms/select }}
+					</div><!-- .col -->
+					<div class="col col-4">
+						{{> forms/select }}
+					</div><!-- .col -->
+				</div><!-- .row -->
+			</div><!-- .col -->
+		</div>
+
+	</div><!-- .row -->
+	<div class="ar">
+		<label for="submit" class="btn btn-right"><input id="submit" name="submit" type="submit" value="Update"></label>
+	</div>
+</form>

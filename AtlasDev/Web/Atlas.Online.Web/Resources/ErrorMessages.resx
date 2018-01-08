@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Application_CannotGetStepPastCurrent" xml:space="preserve">
+    <value>Cannot request step data for step greater than the application step.</value>
+    <comment>Application.Get</comment>
+  </data>
+  <data name="Application_Expired" xml:space="preserve">
+    <value>Please note that your application has expired as you have taken more than {0} hours to complete it. Please click on the link below to begin a new application.</value>
+  </data>
+  <data name="Application_ExpiredNotice" xml:space="preserve">
+    <value>Please note that your application has expired as you have taken more than {0} hours to complete it. You may begin a new application now.</value>
+  </data>
+  <data name="Application_NoApplicationForUser" xml:space="preserve">
+    <value>No current application found for user id {0}.</value>
+  </data>
+  <data name="Application_NotFound" xml:space="preserve">
+    <value>The specified application cannot be found.</value>
+  </data>
+  <data name="Application_StepValidationFail" xml:space="preserve">
+    <value>Step has failed validation.</value>
+    <comment>Used in server side validation.</comment>
+  </data>
+  <data name="AVS_BankDetailsFailed" xml:space="preserve">
+    <value>Your banking details failed account validation. Before you are able to complete your application your account details must be validated. Please check that you have entered the correct details.</value>
+  </data>
+  <data name="ForgottenPassword_UserNotFound" xml:space="preserve">
+    <value>We cannot locate the your account. Please ensure that you have entered the correct details.</value>
+  </data>
+  <data name="PasswordReset_ResetError" xml:space="preserve">
+    <value>There was an error resetting your password. Please request another password reset email and try again.</value>
+  </data>
+  <data name="Validation_AccountNumberInvalid" xml:space="preserve">
+    <value>Your account number failed validation. Please check that you have entered your details correctly.</value>
+  </data>
+  <data name="Validation_IdNumberRegex" xml:space="preserve">
+    <value>Please enter your ID number consisting of 13 numbers without any spaces or non-numeric characters.</value>
+  </data>
+  <data name="Validation_RemoteVerifyFailed" xml:space="preserve">
+    <value>An error has occurred and we are unable to verify your {0} at this time. &lt;a href="javascript:void(0)" ng-click="revalidateAccNo()"&gt;Try again.&lt;/a&gt;</value>
+  </data>
+  <data name="Validation_Required" xml:space="preserve">
+    <value>Please complete the {0} field.</value>
+  </data>
+  <data name="Validation_Unique" xml:space="preserve">
+    <value>The specified {0} is already in use.</value>
+  </data>
+  <data name="Atlas_ClientNotFound" xml:space="preserve">
+    <value>The specified client cannot be found.</value>
+  </data>
+  <data name="Validation_FailedObject" xml:space="preserve">
+    <value>Failed to validate object.</value>
+  </data>
+  <data name="Application_InvalidStatus" xml:space="preserve">
+    <value>Application has an invalid status '{0}'.</value>
+  </data>
+  <data name="Verification_QuestionsFailed" xml:space="preserve">
+    <value>Unfortunately you did not answer enough questions correctly.&lt;br&gt;Would you like to try again?</value>
+  </data>
+  <data name="MyAccount_PasswordChangeFailed" xml:space="preserve">
+    <value>Failed to change your password. Please check that you entered your current password correctly.</value>
+  </data>
+  <data name="Application_CannotSelectHoliday" xml:space="preserve">
+    <value>You have selected a Sunday or public holiday. Please select the next or previous working day.</value>
+  </data>
+  <data name="Application_LoanAmountOutOfBounds" xml:space="preserve">
+    <value>The amount you entered is either too large or too small. The loan amount has been adjusted.</value>
+  </data>
+  <data name="Application_CompleteFirst" xml:space="preserve">
+    <value>Please complete the application process.</value>
+    <comment>Displayed if user goes to quote acceptance when application does not have afforability</comment>
+  </data>
+  <data name="General_404" xml:space="preserve">
+    <value>We cannot find that page.</value>
+    <comment>Custom error page</comment>
+  </data>
+  <data name="General_Error" xml:space="preserve">
+    <value>Unfortunately, a server error has occurred.</value>
+    <comment>Custom error page</comment>
+  </data>
+  <data name="Application_LoanPeriodOutOfBounds" xml:space="preserve">
+    <value>The loan period you entered is either too large or too small. The loan period has been adjusted.</value>
+  </data>
+  <data name="Application_TechnicalError" xml:space="preserve">
+    <value>Unfortunately there has been a technical error with your loan application. We are working to resolve the problem, please try again in a few hours.&lt;br&gt;We apologies for the inconvenience caused.</value>
+  </data>
+  <data name="Application_CannotApply" xml:space="preserve">
+    <value>Unfortunately, you cannot apply for a loan at this time as your last application was declined. Please check again in a few days.</value>
+  </data>
+  <data name="Application_AlreadyComplete" xml:space="preserve">
+    <value>Your application is already complete.</value>
+  </data>
+  <data name="Application_AlreadyPending" xml:space="preserve">
+    <value>You may not apply for another loan as you already have a pending or active application.</value>
+  </data>
+</root>

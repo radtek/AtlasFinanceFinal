@@ -1,0 +1,248 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Payouts";
+}
+
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="page-content" ng-controller="PayoutController" ng-init="init(@Html.Json((object)ViewBag.BranchId), @Html.Json((object)ViewBag.PersonId))">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="page-breadcrumb breadcrumb">
+        <li class="btn-group">
+          <button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+            <span>
+              Actions
+            </span>
+            <i class="fa fa-angle-down"></i>
+          </button>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li>
+              <a ng-click="refresh()">Refresh</a>
+            </li>
+            <li class="divider" ng-show="canHold || canRemoveHold"></li>
+            <li>
+              <a ng-click="hold()" ng-show="canHold">Hold Selected</a>
+            </li>
+            <li>
+              <a ng-click="removeHold()" ng-show="canRemoveHold">Remove Hold on Selected</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/">Home</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/Dashboard">Dashboard</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <a href="#">Payout</a>
+        </li>
+      </ul>
+      <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-repeat="alert in alerts" ng-show="alerts.length > 0">
+        <div class="alert " ng-class="{'alert-warning':alert.PriorityString == 'warning', 'alert-danger':alert.PriorityString == 'danger', 'alert-info':alert.PriorityString == 'info', 'alert-success':alert.PriorityString == 'success'}">
+          <button class="close" aria-hidden="true" data-dismiss="alert" type="button"></button>
+          {{alert.Message}}
+        </div>
+      </div>
+      <div class="tabbable-custom">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#statistics">Statistics</a>
+          </li>
+          <li>
+            <a data-toggle="tab" href="#filter">Filter</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="statistics" class="tab-pane active">
+            <div>
+              <div class="clearfix">
+                <div class="col-md-2">
+                  <label>Total Transactions</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.TotalTransactions}}</strong>
+                </div>
+                <div class="col-md-2">
+                  <label>Cancelled & Removed</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.CancelledRemoved}}</strong>
+                </div>
+                <div class="col-md-2">
+                  <label>New & On Hold</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.NewOnHold}}</strong>
+                </div>
+              </div>
+              <div class="clearfix pad-buffer-top">
+                <div class="col-md-2">
+                  <label>Invalid</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.Invalid}}</strong>
+                </div>
+                <div class="col-md-2">
+                  <label>Submitted</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.Submitted}}</strong>
+                </div>
+                <div class="col-md-2">
+                  <label>Successful</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.Successful}}</strong>
+                </div>
+              </div>
+              <div class="clearfix pad-buffer-top">
+                <div class="col-md-2">
+                  <label>Failed</label>
+                </div>
+                <div class="col-md-2">
+                  <strong>{{statistics.Failed}}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="filter" class="tab-pane">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="clearfix">
+                  <div class="col-md-2">
+                    <label>Start Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input type="text" class="form-control" ng-model="filterStartDate" readonly="">
+                        <span class="input-group-btn">
+                          <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                          <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>End Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                        <input type="text" class="form-control" ng-model="filterEndDate" readonly="">
+                        <span class="input-group-btn">
+                          <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                          <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Payout No.</label>
+                  </div>
+                  <div class="col-md-4">
+                    <input class="form-control input-medium" id="filters_payoutId" numbers-only="numbers-only" ng-model="filterPayoutId" name="payoutId" type="text" />
+                  </div>
+                  <div class="col-md-2">
+                    <label>ID Number</label>
+                  </div>
+                  <div class="col-md-4">
+                    <input class="form-control input-medium" id="filters_iDNumber" ng-model="filterIdNumber" name="IdNumber" type="text" />
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Branch</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group input-medium">
+                      <select ng-init="getCompanys()" class="form-control" ng-model="filterCompany" ng-options="c.CompanyId as c.CompanyName for c in companies"></select>
+                      <span class="input-group-btn">
+                        <button class="btn" ng-click="filterCompany=0"><i class="fa fa-times"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Bank</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group input-medium">
+                      <select ng-init="getBanks()" class="form-control" ng-model="filterBank" ng-options="b.BankId as b.BankName for b in banks"></select>
+                      <span class="input-group-btn">
+                        <button class="btn" ng-click="filterBank=0"><i class="fa fa-times"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer clearfix">
+                <div>
+                  <button ng-click="refresh()" class="btn green pull-right">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table ng-table="tableParams" class="table table-striped" show-filter="true">
+          <tr ng-repeat="payout in $data">
+            <td>
+              <div class="checker"><span ng-class="{checked:payout.Selected, unchecked:!payout.Selected}"><input type="checkbox" ng-model="payout.Selected" ng-checked="dataSelected();"></span></div>
+            </td>
+            <td data-title="'Payout No.'" filter="{ 'PayoutId': 'text' }" sortable="'PayoutId'">
+              <center> {{payout.PayoutId}}</center>
+            </td>
+            <td data-title="'Action Date'" filter="{ 'ActionDate': 'text' }" sortable="'ActionDate'">
+              <center> {{payout.ActionDate | date:'yyyy-MM-dd'}}</center>
+            </td>
+            <td data-title="'Status'" filter="{ 'PayoutStatus': 'text' }" sortable="'PayoutStatus'">
+              <center><label ng-class="payout.PayoutStatusColor"> {{payout.PayoutStatus}}</label></center>
+            </td>
+            <td data-title="'Id Number'" filter="{ 'IdNumber': 'text' }" sortable="'IdNumber'">
+              <center> {{payout.IdNumber}}</center>
+            </td>
+            <td data-title="'Bank'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+              <center> {{payout.Bank}}</center>
+            </td>
+            <td data-title="'Bank Account No.'" filter="{ 'BankAccountNo': 'text' }" sortable="'BankAccountNo'">
+              <center> {{payout.BankAccountNo}}</center>
+            </td>
+            <td data-title="'Bank Account Name'" filter="{ 'BankAccountName': 'text' }" sortable="'BankAccountName'">
+              <center> {{payout.BankAccountName}}</center>
+            </td>
+            <td data-title="'Amount'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs">
+              <center> {{payout.Amount | currency}}</center>
+            </td>
+            <td data-title="'Result'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'Result'">
+              <center>{{ payout.Result }} </center>
+            </td>
+            <td data-title="'CreateDate'" header-class="hidden-sm hidden-xs" class="hidden-sm hidden-xs" sortable="'CreateDate'">
+              <center> {{payout.CreateDate | date:'yyyy-MM-dd HH:mm'}}</center>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page end-->
+@section Scripts {
+<script>
+  jQuery(document).ready(function () {
+    ComponentsPickers.init();
+  });
+</script>
+}

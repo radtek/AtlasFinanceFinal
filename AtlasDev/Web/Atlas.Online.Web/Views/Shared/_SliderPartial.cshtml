@@ -1,0 +1,114 @@
+﻿@using Atlas.Online.Web.Helpers
+@using Atlas.Online.Web.Extensions.Ng
+
+<form action="#" autocomplete="off" ng-controller="SliderController" onsubmit="return false" ng-submit="submitSlider()" name="sliderForm">
+
+    <div class="row cf fc-alpha-lt bgc-alpha-ltst">
+
+        <div class="col lg-2-3 loader" ng-class="{loader: loading}">
+            <div class="bgc-ntrl-min pt-alpha lg-bdr-alpha-ltr cf">
+
+                <div class="pb-gamma plr-beta">
+                    
+                    <h1 class="fc-beta fs-kilo">Apply Now</h1>
+
+                    <div class="bgi-gr-tb-alpha bd-alpha-ltr brad-gamma mb-beta bxsh-down">
+                        <div class="row cf">
+                            <div class="col md-2-3 p-alpha">
+                                <p class="fs-zeta mt-none">How much money do you need?</p>
+                                <div class="ruler"></div>
+                                @Ng.Slider("capital", "{{ minCapital }}", "{{ maxCapital }}", new Dictionary<string, object>()
+                                {
+                                    { "change", "amountSliderChange()" }
+                                })
+                            </div>
+                            <div class="col md-1-3">
+                                <div class="bgi-circle-grad ptb-beta pl-beta cf">
+                                    <p>
+                                        <strong class="ff-mega fs-kilo fc-beta tsh-ntrl-min" ng-bind="capital | f8NumberRange:minCapital:maxCapital | f8currency:'R ':0"></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bgi-gr-tb-alpha bd-alpha-ltr brad-gamma mb-beta bxsh-down">
+                        <div class="row cf">
+                            <div class="col md-2-3 p-alpha">
+                                <p class="fs-zeta mt-none">How long do you need it for?</p>
+                                <div class="ruler"></div>
+                                @Ng.Slider("period", "{{ minPeriod }}", "{{ maxPeriod }}", new Dictionary<string, object>() { { "on-mouse-up", "validateWorkingDay()" }, { "on-mouse-down", "isWorkingDay = true" } })
+                            </div>
+                            <div class="col md-1-3">
+                                <div class="bgi-circle-grad ptb-beta pl-beta cf">
+                                    <p>
+                                        <strong class="ff-mega fs-kilo fc-beta tsh-ntrl-min" ng-pluralize count="period |  number:0" when="{one: '1 day', other: '{} days'}"></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @Html.Partial("_SliderNotifications")
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col lg-1-3 pt-alpha plr-beta">
+            
+            <h2 class="fc-alpha">Start Your Application</h2>
+
+            <div class="row row-ib-cols row-ib-cols-va-m cf">
+                <div class="field">
+                    <div class="col col-6">
+                        <label for="amount" class="field-label">Loan amount</label>
+                    </div>
+                    <div class="col col-6">
+                        <input id="amount" class="input-beta d-block" name="capital" ng-model="capital" ng-focus="isCapitalEditing=true" ng-blur="isCapitalEditing=false" f8-currency-field="{symbol:'R ', decimals: 0}">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="col col-6">
+                        <label for="fees" class="field-label">Interest and fees</label>
+                        @Html.NgTooltip(options: "tooltipOptions", title: @"
+                            <strong>Service Fee:</strong>
+                            R50 per month plus VAT<br><br>
+                            <strong>Initiation Fee:</strong><br>
+                            Loans under R1000: 15% plus VAT<br>
+                            Loans over R1000: R150 plus 10% on any value above R1000 plus VAT<br><br>
+                            <strong>Interest Rate:</strong>
+                            0.17% per day<br><br>
+                            <small>All Interest and Fees on your Atlas Online Loan are calculated based on the Regulations as set out in Chapter 5 of the National Credit Act 34 of 2005.</small>
+                        ")
+                    </div>
+                    <div class="col col-6">
+                        <input id="fees" name="fees" class="input-beta d-block" ng-model="totalFee" ng-model-formatter="f8currency:R:0" readonly>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="col col-6">
+                        <label for="repayment" class="field-label">Repayment Amount</label>
+                    </div>
+                    <div class="col col-6">
+                        <input id="repayment" name="repayment" class="input-beta d-block" ng-model="repayment" ng-model-formatter="f8currency:R:0" readonly>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="col col-6">
+                        <label for="date" class="field-label">Repayment Date</label>
+                    </div>
+                    <div class="col col-6">
+                        <input id="repaymentDate" name="repaymentDate" class="input-beta d-block" ng-model="repaymentDate" ui-date="dateOptions" readonly ng-change="validateWorkingDay()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pr-alpha ac">
+                <a class="btn-round" ng-class="{disabled: !workingDay || loading}" href="javascript:void(0);" ng-click="submitSlider($event)">
+                    Apply
+                </a>
+            </div>
+        </div>
+    </div>
+</form>

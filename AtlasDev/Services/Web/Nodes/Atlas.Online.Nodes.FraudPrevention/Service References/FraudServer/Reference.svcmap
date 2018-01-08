@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e1ce4b0-17e4-4e4e-b06d-cd0025b42db9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Atlas.Domain" />
+      <ReferencedAssembly AssemblyName="Atlas.Enumerators" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8200/FraudServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="305b7355-940a-4f61-9d4b-9c2aa541a41e" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="22bebe1f-3303-4daf-9b89-13e18453b53d" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c2b8219a-3f5e-4323-9a66-8d0fbe419310" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+    <MetadataFile FileName="Atlas.ThirdParty.Fraud.TransUnion.xsd" MetadataType="Schema" ID="21255982-c088-49ab-a531-f18e775d3dca" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="c1e81ae8-fa9a-4259-8abc-e36e689bebb4" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+    <MetadataFile FileName="Atlas.Enumerators.xsd" MetadataType="Schema" ID="b2ba3876-f53d-4629-ab1a-e4f0f0235292" SourceId="1" SourceUrl="net.tcp://localhost:8200/FraudServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

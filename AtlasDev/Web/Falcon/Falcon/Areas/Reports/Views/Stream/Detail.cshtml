@@ -1,0 +1,66 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Stream Daily Report";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="StreamDetailReportController" ng-init="init(@Html.Raw((object)ViewBag.PersonId))">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="clearfix">
+            <div class="col-md-1">
+              <label>Group Type</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group input-medium">
+                <select id="selectGroup" placeholder="Select a Group" class="form-control" ng-model="filterGroup"
+                        ng-options="g.GroupTypeId as g.Description for g in groupTypes"></select>
+              </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <label>Branch</label>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group input-medium">
+                <select id="selectBranch" placeholder="Select a Branch" class="form-control" ng-model="filterBranch"
+                        ng-options="g.BranchId as g.Name for g in branches"></select>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-md-1">
+              <label>Case Status</label>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <div isteven-multi-select input-model="caseStatuses" output-model="caseStatuses1" button-label="Description" item-label="Description" tick-property="Ticked" orientation="vertical"
+                     group-property="MultiSelectGroup">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <label>Streams</label>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <div isteven-multi-select input-model="streamTypes" output-model="streamTypes1" button-label="Description" item-label="Description" tick-property="Ticked" orientation="vertical"
+                     group-property="MultiSelectGroup">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button ng-click="export()" ng-disabled="disableButtons" class="btn green">{{btnExportText}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- page end-->
+

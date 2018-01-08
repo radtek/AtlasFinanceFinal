@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "{{ title }}";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+
+    ViewBag.NgApp = "atlas.application";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/atlas-application")
+}
+
+<div class="container-outline loader" ng-controller="ApplicationCtrl" ng-class="{loader: booting}">
+    <div class="pos-r">
+        <h1 class="hn-in-outline fc-beta">
+            <strong class="ng-cloak">{{ UI.heading }}</strong>    
+            <span class="ng-cloak" ng-show="!!UI.title">
+                <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+                <span class="fc-alpha" ng-bind="UI.title"></span>
+            </span>
+        </h1>
+
+        @Html.Partial("_ApplyNowSteps")
+
+        <div class="cf">
+            <div class="alert alert-error ng-cloak" ng-show="!!App.lastError" ng-bind-template="{{ App.lastError.Message }}: {{ App.lastError.ExceptionMessage }}"></div>
+            <div class="alert alert-error ng-cloak" ng-show="!!errorState" ng-bind-template="{{ errorState.status }} - An internal error has occurred. Please try again later."></div>
+            <div class="alert alert-error ng-cloak" ng-show="UI.error">{{ UI.error.message }} <a href="javascript:void(0);" ng-show="!!UI.error.retryHandler" ng-click="UI.error.retryHandler()">Retry.</a></div>
+            <div ng-view ng-class="{loader: UI.loading}"></div>
+        </div>
+
+        <hr class="hr-dotted" ng-show="UI.showButtons">
+
+        <div class="row cf ng-cloak anim-margin" ng-show="!booting && UI.showButtons">
+            <div class="col md-1-2">
+                <button class="btn btn-l btn-alpha btn-l-alpha btn-left btn-l-left btn-left-alpha btn-l-left-alpha mb-none" ng-show="App.hasPreviousStep()" ng-click="back()"  ng-disabled="UI.loading">
+                    <i ng-bind="App.previousStep().name"></i>
+                    <i class="btn-l-hint btn-l-hint-alpha btn-l-hint-left btn-l-hint-left-alpha" ng-bind-template="Step {{ App.stepId - 1 }}"></i>
+                </button>
+                &nbsp;
+            </div>
+            <div class="col md-1-2 ar">
+                <button class="btn btn-l btn-right btn-l-right mb-none" ng-show="App.hasNextStep()" ng-click="next()" ng-disabled="UI.loading">
+                    <i class="btn-l-hint btn-l-hint-right" ng-bind-template="Step {{ App.stepId + 1 }}"></i>
+                    <i ng-bind="App.nextStep().name"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

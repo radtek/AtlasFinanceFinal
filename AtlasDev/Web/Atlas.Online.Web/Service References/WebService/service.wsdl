@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WebServer.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Otp" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.App" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Models.Dto" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebService_OTP_Send_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_Send" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_OTP_Send_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_OTP_Verify_InputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_Verify" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_OTP_Verify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OTP_VerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AVS_Submit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_Submit" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AVS_Submit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_SubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AVS_GetResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AVS_GetResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AVS_GetResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_CDV_VerifyAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CDV_VerifyAccount" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_CDV_VerifyAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CDV_VerifyAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_Submit_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_Submit" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_Submit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_SubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_GetAffordability_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_GetAffordability" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_GetAffordability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_GetAffordabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_AcceptAffordability_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_AcceptAffordability" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_AcceptAffordability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_AcceptAffordabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_SubmitSettlement_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_SubmitSettlement" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_SubmitSettlement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_SubmitSettlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_ApplyIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_ApplyIn" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_ApplyIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_ApplyInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_GetDeclinedReason_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_GetDeclinedReason" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_GetDeclinedReason_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_GetDeclinedReasonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_SliderRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:APP_SliderRules" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_APP_SliderRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:APP_SliderRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_PreApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_PreApprove" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_PreApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_PreApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_AcceptQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_AcceptQuote" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_AcceptQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_AcceptQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_RejectQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_RejectQuote" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_RejectQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_RejectQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_GetQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_GetQuote" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_QTE_GetQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QTE_GetQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_GetQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:VER_GetQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_GetQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VER_GetQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_SubmitQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:VER_SubmitQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_SubmitQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VER_SubmitQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_CheckStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:VER_CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_VER_CheckStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VER_CheckStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetClientStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetClientStatement" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetClientStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetClientStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_CheckSettlement_InputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_CheckSettlement" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_CheckSettlement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_CheckSettlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetSettlementQuotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetSettlementQuotation" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetSettlementQuotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetSettlementQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetQuote" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetPaidUpLetter_InputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetPaidUpLetter" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_MYC_GetPaidUpLetter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MYC_GetPaidUpLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_NTF_Registration_InputMessage">
+    <wsdl:part name="parameters" element="tns:NTF_Registration" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_NTF_Registration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NTF_RegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_NTF_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:NTF_ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_NTF_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NTF_ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_UTL_GetHolidays_InputMessage">
+    <wsdl:part name="parameters" element="tns:UTL_GetHolidays" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_UTL_GetHolidays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UTL_GetHolidaysResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWebService">
+    <wsdl:operation name="OTP_Send">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/OTP_Send" message="tns:IWebService_OTP_Send_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/OTP_SendResponse" message="tns:IWebService_OTP_Send_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/OTP_Verify" message="tns:IWebService_OTP_Verify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/OTP_VerifyResponse" message="tns:IWebService_OTP_Verify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_Submit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/AVS_Submit" message="tns:IWebService_AVS_Submit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/AVS_SubmitResponse" message="tns:IWebService_AVS_Submit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/AVS_GetResponse" message="tns:IWebService_AVS_GetResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/AVS_GetResponseResponse" message="tns:IWebService_AVS_GetResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CDV_VerifyAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/CDV_VerifyAccount" message="tns:IWebService_CDV_VerifyAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/CDV_VerifyAccountResponse" message="tns:IWebService_CDV_VerifyAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_Submit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_Submit" message="tns:IWebService_APP_Submit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_SubmitResponse" message="tns:IWebService_APP_Submit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetAffordability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_GetAffordability" message="tns:IWebService_APP_GetAffordability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_GetAffordabilityResponse" message="tns:IWebService_APP_GetAffordability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_AcceptAffordability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_AcceptAffordability" message="tns:IWebService_APP_AcceptAffordability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_AcceptAffordabilityResponse" message="tns:IWebService_APP_AcceptAffordability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_SubmitSettlement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_SubmitSettlement" message="tns:IWebService_APP_SubmitSettlement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_SubmitSettlementResponse" message="tns:IWebService_APP_SubmitSettlement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_ApplyIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_ApplyIn" message="tns:IWebService_APP_ApplyIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_ApplyInResponse" message="tns:IWebService_APP_ApplyIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetDeclinedReason">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_GetDeclinedReason" message="tns:IWebService_APP_GetDeclinedReason_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_GetDeclinedReasonResponse" message="tns:IWebService_APP_GetDeclinedReason_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="APP_SliderRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/APP_SliderRules" message="tns:IWebService_APP_SliderRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/APP_SliderRulesResponse" message="tns:IWebService_APP_SliderRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QTE_PreApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/QTE_PreApprove" message="tns:IWebService_QTE_PreApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/QTE_PreApproveResponse" message="tns:IWebService_QTE_PreApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QTE_AcceptQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/QTE_AcceptQuote" message="tns:IWebService_QTE_AcceptQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/QTE_AcceptQuoteResponse" message="tns:IWebService_QTE_AcceptQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QTE_RejectQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/QTE_RejectQuote" message="tns:IWebService_QTE_RejectQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/QTE_RejectQuoteResponse" message="tns:IWebService_QTE_RejectQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QTE_GetQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/QTE_GetQuote" message="tns:IWebService_QTE_GetQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/QTE_GetQuoteResponse" message="tns:IWebService_QTE_GetQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VER_GetQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/VER_GetQuestions" message="tns:IWebService_VER_GetQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/VER_GetQuestionsResponse" message="tns:IWebService_VER_GetQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VER_SubmitQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/VER_SubmitQuestions" message="tns:IWebService_VER_SubmitQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/VER_SubmitQuestionsResponse" message="tns:IWebService_VER_SubmitQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VER_CheckStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/VER_CheckStatus" message="tns:IWebService_VER_CheckStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/VER_CheckStatusResponse" message="tns:IWebService_VER_CheckStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetClientStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MYC_GetClientStatement" message="tns:IWebService_MYC_GetClientStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/MYC_GetClientStatementResponse" message="tns:IWebService_MYC_GetClientStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MYC_CheckSettlement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MYC_CheckSettlement" message="tns:IWebService_MYC_CheckSettlement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/MYC_CheckSettlementResponse" message="tns:IWebService_MYC_CheckSettlement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetSettlementQuotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MYC_GetSettlementQuotation" message="tns:IWebService_MYC_GetSettlementQuotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/MYC_GetSettlementQuotationResponse" message="tns:IWebService_MYC_GetSettlementQuotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MYC_GetQuote" message="tns:IWebService_MYC_GetQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/MYC_GetQuoteResponse" message="tns:IWebService_MYC_GetQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetPaidUpLetter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MYC_GetPaidUpLetter" message="tns:IWebService_MYC_GetPaidUpLetter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/MYC_GetPaidUpLetterResponse" message="tns:IWebService_MYC_GetPaidUpLetter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NTF_Registration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/NTF_Registration" message="tns:IWebService_NTF_Registration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/NTF_RegistrationResponse" message="tns:IWebService_NTF_Registration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NTF_ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/NTF_ForgotPassword" message="tns:IWebService_NTF_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/NTF_ForgotPasswordResponse" message="tns:IWebService_NTF_ForgotPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UTL_GetHolidays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/UTL_GetHolidays" message="tns:IWebService_UTL_GetHolidays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/UTL_GetHolidaysResponse" message="tns:IWebService_UTL_GetHolidays_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServer.NET" type="tns:IWebService">
+    <wsp:PolicyReference URI="#WebServer.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="OTP_Send">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/OTP_Send" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/OTP_Verify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_Submit">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/AVS_Submit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetResponse">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/AVS_GetResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDV_VerifyAccount">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/CDV_VerifyAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_Submit">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_Submit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetAffordability">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_GetAffordability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_AcceptAffordability">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_AcceptAffordability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_SubmitSettlement">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_SubmitSettlement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_ApplyIn">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_ApplyIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetDeclinedReason">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_GetDeclinedReason" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_SliderRules">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/APP_SliderRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_PreApprove">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/QTE_PreApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_AcceptQuote">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/QTE_AcceptQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_RejectQuote">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/QTE_RejectQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_GetQuote">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/QTE_GetQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_GetQuestions">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/VER_GetQuestions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_SubmitQuestions">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/VER_SubmitQuestions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_CheckStatus">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/VER_CheckStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetClientStatement">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/MYC_GetClientStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_CheckSettlement">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/MYC_CheckSettlement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetSettlementQuotation">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/MYC_GetSettlementQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetQuote">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/MYC_GetQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetPaidUpLetter">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/MYC_GetPaidUpLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NTF_Registration">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/NTF_Registration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NTF_ForgotPassword">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/NTF_ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UTL_GetHolidays">
+      <soap12:operation soapAction="http://tempuri.org/IWebService/UTL_GetHolidays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServer.HTTP" type="tns:IWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OTP_Send">
+      <soap:operation soapAction="http://tempuri.org/IWebService/OTP_Send" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTP_Verify">
+      <soap:operation soapAction="http://tempuri.org/IWebService/OTP_Verify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_Submit">
+      <soap:operation soapAction="http://tempuri.org/IWebService/AVS_Submit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AVS_GetResponse">
+      <soap:operation soapAction="http://tempuri.org/IWebService/AVS_GetResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDV_VerifyAccount">
+      <soap:operation soapAction="http://tempuri.org/IWebService/CDV_VerifyAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_Submit">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_Submit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetAffordability">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_GetAffordability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_AcceptAffordability">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_AcceptAffordability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_SubmitSettlement">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_SubmitSettlement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_ApplyIn">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_ApplyIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_GetDeclinedReason">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_GetDeclinedReason" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APP_SliderRules">
+      <soap:operation soapAction="http://tempuri.org/IWebService/APP_SliderRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_PreApprove">
+      <soap:operation soapAction="http://tempuri.org/IWebService/QTE_PreApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_AcceptQuote">
+      <soap:operation soapAction="http://tempuri.org/IWebService/QTE_AcceptQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_RejectQuote">
+      <soap:operation soapAction="http://tempuri.org/IWebService/QTE_RejectQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QTE_GetQuote">
+      <soap:operation soapAction="http://tempuri.org/IWebService/QTE_GetQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_GetQuestions">
+      <soap:operation soapAction="http://tempuri.org/IWebService/VER_GetQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_SubmitQuestions">
+      <soap:operation soapAction="http://tempuri.org/IWebService/VER_SubmitQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VER_CheckStatus">
+      <soap:operation soapAction="http://tempuri.org/IWebService/VER_CheckStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetClientStatement">
+      <soap:operation soapAction="http://tempuri.org/IWebService/MYC_GetClientStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_CheckSettlement">
+      <soap:operation soapAction="http://tempuri.org/IWebService/MYC_CheckSettlement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetSettlementQuotation">
+      <soap:operation soapAction="http://tempuri.org/IWebService/MYC_GetSettlementQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetQuote">
+      <soap:operation soapAction="http://tempuri.org/IWebService/MYC_GetQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MYC_GetPaidUpLetter">
+      <soap:operation soapAction="http://tempuri.org/IWebService/MYC_GetPaidUpLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NTF_Registration">
+      <soap:operation soapAction="http://tempuri.org/IWebService/NTF_Registration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NTF_ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IWebService/NTF_ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UTL_GetHolidays">
+      <soap:operation soapAction="http://tempuri.org/IWebService/UTL_GetHolidays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServer">
+    <wsdl:port name="WebServer.NET" binding="tns:WebServer.NET">
+      <soap12:address location="net.tcp://localhost:8200/WebServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/WebServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WebServer.HTTP" binding="tns:WebServer.HTTP">
+      <soap:address location="http://localhost:8201/WebServer" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

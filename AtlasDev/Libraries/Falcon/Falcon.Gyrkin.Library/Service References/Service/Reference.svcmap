@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c319b094-a91f-45e4-a8d7-3c0ef7cd5e57" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+      <CollectionMapping TypeName="System.Collections.Hashtable" Category="Dictionary" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8200/FalconService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e8558696-6f7e-4333-ba7a-943dc94398d8" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="fb10381c-720a-488f-9385-8f35a65ddc52" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b93e1f06-f274-4e49-a8e0-5690ef0005cd" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="6943b413-c86e-4c03-8d7a-1e63101ac537" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Falcon.Common.Structures.Report.Ass1.xsd" MetadataType="Schema" ID="55247350-2c89-4caa-9413-b8915fb6438b" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Falcon.Common.Structures1.xsd" MetadataType="Schema" ID="7b3f0b2a-f6a0-450e-94f7-3f7be2acf43d" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Atlas.Enumerators.xsd" MetadataType="Schema" ID="15106268-c163-4ba8-8325-e4825348b5bd" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="81cc5615-5d08-4e7c-9ccc-37e0a7767ac8" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Falcon.Common.Structures.Avs1.xsd" MetadataType="Schema" ID="54349856-684f-43b0-ba32-4dc486e69902" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Atlas.Domain.DTO.xsd" MetadataType="Schema" ID="b32e1151-8bde-4946-82c9-a1c213ddd356" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Atlas.Domain.DTO.Nucard.xsd" MetadataType="Schema" ID="7cf3134e-1364-47a8-9e4b-2f439959bca3" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Falcon.Common.Structures.Branch.xsd" MetadataType="Schema" ID="29c74a41-6d46-4602-a180-e2477923c819" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+    <MetadataFile FileName="Falcon.Common.Structures.Report.General1.xsd" MetadataType="Schema" ID="92a0ee52-eb82-4a40-984b-83d360d17392" SourceId="1" SourceUrl="net.tcp://localhost:8200/FalconService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

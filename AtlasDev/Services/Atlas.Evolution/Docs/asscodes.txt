@@ -1,0 +1,73 @@
+ATLAS FINANCE
+-------------
+1) Transaction Types (trtype in TRANS.DBF and BDTRANS.DBF)
+   -----------------
+
+   A = Adjustment / Journal
+   B = Refund Credit Balance (not used)
+   C = Cancel Loan
+   D = Discount (not used any more)
+   E = Early Settlement Discount
+   F = Refund
+   G = Refund
+   H = Hand Over to SDC
+   I = Reschedule Penalty (not used any more)
+   M = Modify (not used)
+   P = Payment (i.e. Receipt)
+   R = Repayment (i.e. an Instalment due for payment)
+   W = Write Off
+   X = Discount Allowed (not used any more)
+
+
+   J = Journal Note - Ignore
+   S = Re-Schedule Note - Ignore
+   T = Part Payment Note - Ignore
+   K = Refund Note - Ignore
+
+
+2) Transaction Status (trstat in TRANS.DBF and BDTRANS.DBF)
+   ------------------
+   Normally appear against the "R" trtypes (Repayment/Instalment due)
+   Sometimes a "U" trstat will appear next to a "P" trtype (is a reverse receipt)
+
+   B = Credit Balance refund
+   C = Cancelled
+   D = Discounted
+   E = Early Settled
+   F = Refund
+   G = Credit Balance refund
+   H = Handed Over
+   J = Journalised
+   K = Partly Refunded
+   P = Paid
+   S = Rescheduled
+   T = Part Paid
+   U = Cancelled Receipt (originally a part payment)
+   X = Part Discount
+
+3) Loan Status (status in LOANS.DBF)
+   -----------
+   A = Adjustment
+   C = Cancelled
+   D = Discounted
+   E = Early Settled
+   F = Fully paid up loan and closed
+   H = Handed over
+   J = Journalised
+   N = New Loan without any transactions
+   P = Part Payment
+   R = Refunded
+   S = ReScheduled
+   W = Written Off
+
+
+4) Transaction Amount Sign (tramount in TRANS.DBF and BDTRANS.DBF)
+   -----------------------
+   ignore records with Trtype and Trstat = J,T,S,K
+   if trtype = 'EPCWHDFGB' multiply tramount with -1
+
+
+5) Notes
+   -----
+   If you sum all the TRANS.DBF tramount where trtype = "R" and there is
+   no trstat, the total should be the balance in the LOANS.DBF outamnt.

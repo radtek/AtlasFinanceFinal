@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CreditServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CreditServer.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.RabbitMQ.Messages.Credit" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICreditServer_QueueEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueueEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="ICreditServer_QueueEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueueEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditServer_Enquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:Enquiry" />
+  </wsdl:message>
+  <wsdl:message name="ICreditServer_Enquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditServer_GetReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="ICreditServer_GetReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICreditServer">
+    <wsdl:operation name="QueueEnquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditServer/QueueEnquiry" message="tns:ICreditServer_QueueEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditServer/QueueEnquiryResponse" message="tns:ICreditServer_QueueEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Enquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditServer/Enquiry" message="tns:ICreditServer_Enquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditServer/EnquiryResponse" message="tns:ICreditServer_Enquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditServer/GetReport" message="tns:ICreditServer_GetReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditServer/GetReportResponse" message="tns:ICreditServer_GetReport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditServer.NET" type="tns:ICreditServer">
+    <wsp:PolicyReference URI="#CreditServer.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="QueueEnquiry">
+      <soap12:operation soapAction="http://tempuri.org/ICreditServer/QueueEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Enquiry">
+      <soap12:operation soapAction="http://tempuri.org/ICreditServer/Enquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap12:operation soapAction="http://tempuri.org/ICreditServer/GetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CreditServer.HTTP" type="tns:ICreditServer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QueueEnquiry">
+      <soap:operation soapAction="http://tempuri.org/ICreditServer/QueueEnquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Enquiry">
+      <soap:operation soapAction="http://tempuri.org/ICreditServer/Enquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="http://tempuri.org/ICreditServer/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditServer">
+    <wsdl:port name="CreditServer.NET" binding="tns:CreditServer.NET">
+      <soap12:address location="net.tcp://localhost:8200/CreditServer" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/CreditServer</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CreditServer.HTTP" binding="tns:CreditServer.HTTP">
+      <soap:address location="http://localhost:8201/CreditServer" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

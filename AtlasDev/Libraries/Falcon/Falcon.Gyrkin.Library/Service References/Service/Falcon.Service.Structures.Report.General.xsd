@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.General" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Falcon.Common.Structures.Report.General" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRegionBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionBranch" nillable="true" type="tns:RegionBranch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegionBranch" nillable="true" type="tns:ArrayOfRegionBranch" />
+  <xs:complexType name="RegionBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchId" type="xs:long" />
+      <xs:element minOccurs="0" name="MultiSelectGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ticked" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionBranch" nillable="true" type="tns:RegionBranch" />
+</xs:schema>

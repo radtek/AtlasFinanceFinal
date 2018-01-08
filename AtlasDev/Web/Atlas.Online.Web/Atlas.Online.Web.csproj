@@ -1,0 +1,761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC864F61-6301-4F6B-AD50-DBF4EA167A65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Online.Web</RootNamespace>
+    <AssemblyName>Atlas.Online.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>b410a34b</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AttributeRouting">
+      <HintPath>..\packages\AttributeRouting.Core.3.5.6\lib\net40\AttributeRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web">
+      <HintPath>..\packages\AttributeRouting.Core.Web.3.5.6\lib\net40\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Mvc">
+      <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.MVC.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.1.5.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>packages\FileHelpers.3.1.5\lib\net45\FileHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvc.Mailer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.1.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.1.7\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AttributeRoutingConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Assets\fnt\icon\atlas-icons.svg" />
+    <Content Include="Assets\img\need-help.png" />
+    <Content Include="Assets\img\responsible-lending.jpg" />
+    <Content Include="Assets\img\shadows\shadow-circular.png" />
+    <Content Include="Assets\img\steps-bg.png" />
+    <Content Include="Assets\img\tooltip-help.png" />
+    <Content Include="Assets\img\verify\verify-bg.png" />
+    <Content Include="Assets\img\verify\verify-cap.png" />
+    <Content Include="Assets\js\controllers\Affordability.js" />
+    <Content Include="Assets\js\controllers\application\BankingDetails.js" />
+    <Content Include="Assets\js\controllers\application\LoanPicker.js" />
+    <Content Include="Assets\js\controllers\application\Verify.js" />
+    <Content Include="Assets\js\controllers\QuoteAcceptance.js" />
+    <Compile Include="Controllers\Api\AffordabilityController.cs" />
+    <Compile Include="Controllers\Api\ApplicationController.cs" />
+    <Compile Include="Controllers\Api\VerificationQuestionsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Extensions\Affordability.cs" />
+    <Compile Include="Helpers\IP.cs" />
+    <Compile Include="Mailers\ApplicationMailer.cs" />
+    <Compile Include="Mailers\ContactMailer.cs" />
+    <Compile Include="Migrations\201503301325007_initial.cs" />
+    <Compile Include="Migrations\201503301325007_initial.Designer.cs">
+      <DependentUpon>201503301325007_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PaidUpLetterModel.cs" />
+    <Compile Include="Models\SettlementContractModel.cs" />
+    <Compile Include="Models\StatementModel.cs" />
+    <Compile Include="Models\Dto\AffordabilityDto.cs" />
+    <Compile Include="Models\Dto\PersonalDetailsDto.cs" />
+    <Compile Include="Models\ContractModel.cs" />
+    <Compile Include="Models\Steps\QuoteAcceptance.cs" />
+    <Compile Include="Service References\PDFServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Validations\ClientSideValidation.cs" />
+    <Compile Include="Validations\ExcludeEnumAttribute.cs" />
+    <Compile Include="Validations\CurrencyAttribute.cs" />
+    <Compile Include="Configuration\AtlasConfig.cs" />
+    <Compile Include="Configuration\AtlasOnlineConfigurationElement.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\AccountsController.cs" />
+    <Compile Include="Controllers\Api\ApplicationStepController.cs" />
+    <Compile Include="Controllers\Api\AppApiController.cs" />
+    <Compile Include="Controllers\Api\AvsController.cs" />
+    <Compile Include="Controllers\Api\MyAccountController.cs" />
+    <Compile Include="Controllers\Api\OtpController.cs" />
+    <Compile Include="Controllers\Api\LoanController.cs" />
+    <Compile Include="Controllers\Api\QuoteAcceptanceController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Helpers\SharedServices.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyAccountController.cs" />
+    <Compile Include="Extensions\Flash\ActionResultExtensions.cs" />
+    <Compile Include="Extensions\Flash\FlashHtmlExtensions.cs" />
+    <Compile Include="Extensions\Flash\FlashStorage.cs" />
+    <Compile Include="Extensions\Flash\WrappedActionResultWithFlash.cs" />
+    <Compile Include="Extensions\HtmlHelperExtension.cs" />
+    <Compile Include="Extensions\Ng\FormsExtension.cs" />
+    <Compile Include="Extensions\Ng\GeneralExtensions.cs" />
+    <Compile Include="Extensions\Ng\Lib\Common.cs" />
+    <Compile Include="Extensions\Ng\Lib\NgValidationAttributesGenerator.cs" />
+    <Compile Include="Extensions\Ng\DropDownExtension.cs" />
+    <Compile Include="Extensions\Ng\ValidationExtension.cs" />
+    <Compile Include="Extensions\TagBuilder.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipHttpAttribute.cs" />
+    <Compile Include="Filters\CustomErrorHandle.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DropDownHelper.cs" />
+    <Compile Include="Helpers\NgHelper.cs" />
+    <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="Helpers\ViewHelper.cs" />
+    <Compile Include="Mailers\AccountMailer.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Validations\IClientSideValidationsProvider.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\Dto\EmployerDetailsDto.cs" />
+    <Compile Include="Models\Steps\Interfaces\IBankDetailsDtoWrapper.cs" />
+    <Compile Include="Models\Steps\ApplicationStepFactory.cs" />
+    <Compile Include="Models\Dto\BankDetailDto.cs" />
+    <Compile Include="Models\MessageBoxModel.cs" />
+    <Compile Include="Models\Dto\Loan.cs" />
+    <Compile Include="Models\Steps\ApplicationStepBase.cs" />
+    <Compile Include="Models\Steps\ConfirmVerifyStep.cs" />
+    <Compile Include="Models\Steps\EmployerDetailsStep.cs" />
+    <Compile Include="Models\Steps\IncomeExpensesStep.cs" />
+    <Compile Include="Models\Steps\Interfaces\IEmployerDetailsDtoWrapper.cs" />
+    <Compile Include="Models\Steps\PersonalDetailsStep.cs" />
+    <Compile Include="Models\Steps\VerifyStep.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\AllowApiActionsAttribute.cs" />
+    <Compile Include="Security\JavascriptSecurity.cs" />
+    <Compile Include="Security\ValidateHttpAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Validations\ClientSideAttribute.cs" />
+    <Compile Include="Validations\NgDataTypeAttribute.cs" />
+    <Compile Include="Validations\NgStringLengthAttribute.cs" />
+    <Compile Include="Validations\UniqueCellAttribute.cs" />
+    <Compile Include="Validations\UniqueEmailAttribute.cs" />
+    <Compile Include="Validations\EnumRequiredAttribute.cs" />
+    <Compile Include="Validations\UniqueIdNumberAttribute.cs" />
+    <Content Include="Assets\js\shared\navigation.js" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\img\atlas-online-logo.png" />
+    <Content Include="Assets\img\button-round.png" />
+    <Content Include="Assets\img\footer\microfinance-sa-logo.png" />
+    <Content Include="Assets\img\footer\microfinance-sa-logo.svg" />
+    <Content Include="Assets\img\footer\national-credit-regulator-logo.png" />
+    <Content Include="Assets\img\footer\national-credit-regulator-logo.svg" />
+    <Content Include="Assets\img\header\default-header-atlas-online.jpg" />
+    <Content Include="Assets\img\loader-l.gif" />
+    <Content Include="Assets\img\loader.gif" />
+    <Content Include="Assets\img\messages\message-clock.png" />
+    <Content Include="Assets\img\messages\message-cross.png" />
+    <Content Include="Assets\img\messages\message-face.png" />
+    <Content Include="Assets\img\messages\message-lock.png" />
+    <Content Include="Assets\img\messages\message-tickgreen.png" />
+    <Content Include="Assets\img\messages\message-tick.png" />
+    <Content Include="Assets\img\slider-handle.png" />
+    <Content Include="Assets\img\slider-value-bg.png" />
+    <Content Include="Assets\img\sprite-buttons.png" />
+    <Content Include="Assets\img\vendor\dropkick\dk_arrows.png" />
+    <Content Include="Assets\img\vendor\dropkick\dk_arrows_white.png" />
+    <Content Include="Assets\js\controllers\application\Application.js" />
+    <Content Include="Assets\js\controllers\MyAccount.js" />
+    <Content Include="Assets\js\controllers\OtpController.js" />
+    <Content Include="Assets\js\controllers\Slider.js" />
+    <Content Include="Assets\js\controllers\application\ConfirmVerify.js" />
+    <Content Include="Assets\js\controllers\application\IncomeExpenses.js" />
+    <Content Include="Assets\js\controllers\application\EmployerDetails.js" />
+    <Content Include="Assets\js\controllers\application\PersonalDetails.js" />
+    <Content Include="Assets\js\controllers\Verification.js" />
+    <Content Include="Assets\js\shared\config.js" />
+    <Content Include="Assets\js\shared\core.js" />
+    <Content Include="Assets\js\shared\directives.js" />
+    <Content Include="Assets\js\shared\polyfills.js" />
+    <Content Include="Assets\js\shared\factories.js" />
+    <Content Include="Assets\js\shared\filters.js" />
+    <Content Include="Assets\js\shared\services.js" />
+    <Content Include="Assets\js\shared\ui.js" />
+    <Content Include="Assets\js\vendor\angular\angular-cookies.js" />
+    <Content Include="Assets\js\vendor\angular\angular-ui-dialog.js" />
+    <Content Include="Assets\js\vendor\angular\angular-ui-transition.js" />
+    <Content Include="Assets\js\vendor\angular\angular-locale_en-za.js" />
+    <Content Include="Assets\js\vendor\angular\angular-resource.js" />
+    <Content Include="Assets\js\vendor\angular\angular-ui-date.js" />
+    <Content Include="Assets\js\vendor\angular\angular.js" />
+    <Content Include="Assets\js\vendor\angular\angulartics-google-analytics.js" />
+    <Content Include="Assets\js\vendor\angular\angulartics.js" />
+    <Content Include="Assets\js\vendor\bootstrap\bootstrap-collapse.js" />
+    <Content Include="Assets\js\vendor\bootstrap\bootstrap-modal.js" />
+    <Content Include="Assets\js\vendor\bootstrap\bootstrap-tab.js" />
+    <Content Include="Assets\js\vendor\bootstrap\bootstrap-transition.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery-1.8.3.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery-1.8.3.min.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery.dropkick-1.0.0.js" />
+    <Content Include="Assets\js\vendor\jquery\jquery.tooltipster.js" />
+    <Content Include="Assets\fnt\icon\atlas-icons.eot" />
+    <Content Include="Assets\fnt\icon\atlas-icons.ttf" />
+    <Content Include="Assets\fnt\icon\atlas-icons.woff" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Atlas.Online.Web.Models.Dto.LoanRulesDto.datasource" />
+    <Content Include="Atlas.Domain.Structures.AccountStatement.datasource" />
+    <Content Include="Atlas.Domain.Structures.Quotation.datasource" />
+    <Content Include="Atlas.Domain.Structures.Settlement.datasource" />
+    <None Include="Properties\PublishProfiles\Live.pubxml" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Service References\PDFServer\Atlas.Online.Web.PDFServer.PdfResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Service References\PDFServer\configuration91.svcinfo" />
+    <None Include="Service References\PDFServer\configuration.svcinfo" />
+    <None Include="Service References\PDFServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.AccountStatement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.ApplicationAffordability.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.ApplicationDeclinedReason.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.ApplicationSettlementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.ApplicationSettlementResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.OtpSendResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.PaidUpLetter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.Questions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.Quotation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.Settlement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebService\Atlas.Online.Web.WebService.VerificationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PDFServer\Atlas.PDF.Server.WCF.Interface.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFServer\service.wsdl" />
+    <None Include="Service References\PDFServer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PDFServer\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Domain.Structures.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Enumerators.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Online.Web.Models.Dto.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Online.Web.Service.Entities.App.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Online.Web.Service.Entities.Otp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Atlas.Online.Web.Service.Entities.Verification.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\configuration91.svcinfo" />
+    <None Include="Service References\WebService\configuration.svcinfo" />
+    <None Include="Service References\WebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_DefaultLayout.cshtml" />
+    <Content Include="Views\Home\TermsAndConditions.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_NavPartial.cshtml" />
+    <Content Include="Views\MyAccount\Index.cshtml" />
+    <Content Include="Views\MyAccount\_AccountNav.cshtml" />
+    <Content Include="Views\Shared\_LogoutPartial.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Shared\_SliderPartial.cshtml" />
+    <Content Include="Views\Account\OTP.cshtml" />
+    <Content Include="Views\Application\_PersonalDetails.cshtml" />
+    <Content Include="Views\Application\_EmployerDetails.cshtml" />
+    <Content Include="Views\Shared\_ApplyNowSteps.cshtml" />
+    <Content Include="Views\Application\_IncomeExpenses.cshtml" />
+    <Content Include="Views\Application\_ConfirmVerify.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Smtp.config" />
+    <Content Include="Views\Shared\_MailerLayout.cshtml" />
+    <Content Include="Views\AccountMailer\ForgotPassword.cshtml" />
+    <Content Include="Views\Shared\MessageBox.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Shared\_SliderNotifications.cshtml" />
+    <Content Include="Views\Application\_Verify.cshtml" />
+    <Content Include="Views\Application\_BankDetail.cshtml" />
+    <Content Include="Views\Shared\_HomeFeatured.cshtml" />
+    <Content Include="Views\MyAccount\_BankDetails.cshtml" />
+    <Content Include="Views\ContactMailer\Contact.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\Questions.cshtml" />
+    <Content Include="Views\ContactMailer\Questions.cshtml" />
+    <Content Include="Views\Application\Affordability.cshtml" />
+    <Content Include="Views\Application\DeclinedReasons.cshtml" />
+    <Content Include="Views\Application\Verification.cshtml" />
+    <Content Include="Views\MyAccount\_PersonalDetails.cshtml" />
+    <Content Include="Views\MyAccount\_LoginDetails.cshtml" />
+    <Content Include="Views\MyAccount\_CurrentLoan.cshtml" />
+    <Content Include="Views\MyAccount\_LoanHistory.cshtml" />
+    <Content Include="Views\Reports\PaidUpLetter.cshtml" />
+    <Content Include="Views\Reports\Contract.cshtml" />
+    <Content Include="Views\Reports\Statement.cshtml" />
+    <Content Include="Views\Reports\Layout.cshtml" />
+    <Content Include="Views\MyAccount\_LoanSettlements.cshtml" />
+    <Content Include="Views\MyAccount\_LoanTable.cshtml" />
+    <Content Include="Views\Application\QuoteAcceptance.cshtml" />
+    <Content Include="Views\ApplicationMailer\DeclinedReview.cshtml" />
+    <Content Include="Views\Home\SiteSurvey.cshtml" />
+    <Content Include="Views\MyAccount\_BankDetailNotifications.cshtml" />
+    <Content Include="Views\Application\_BankDetailNotifications.cshtml" />
+    <Content Include="Views\MyAccount\_LoanButtons.cshtml" />
+    <Content Include="Views\Application\QA_AdditionalInformation.cshtml" />
+    <Content Include="Views\Application\QA_TermsAndConditions.cshtml" />
+    <Content Include="Views\Application\QA_DirectDebitAuthorisation.cshtml" />
+    <Content Include="Views\Reports\SettlementContract.cshtml" />
+    <Content Include="Views\AccountMailer\NewRegistration.cshtml" />
+    <Content Include="Views\Home\SiteSurveyVoted.cshtml" />
+    <Content Include="Views\Shared\_TagManager.cshtml" />
+    <None Include="Service References\WebService\service.wsdl" />
+    <None Include="Service References\WebService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Assets\css\vendor\minified\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6aecfad7-a17c-4fb0-9ab6-bfce0f3c5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Web\Atlas.Online.Data\Atlas.Online.Data.csproj">
+      <Project>{549e38dc-8d90-4ced-bf3f-48a53766823c}</Project>
+      <Name>Atlas.Online.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Web\Atlas.Online.Web.Common\Atlas.Online.Web.Common.csproj">
+      <Project>{86009074-067c-425a-a14d-8cb05d5c2183}</Project>
+      <Name>Atlas.Online.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503301325007_initial.resx">
+      <DependentUpon>201503301325007_initial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PDFServer\" />
+    <WCFMetadataStorage Include="Service References\WebService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>44300</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44300</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>https://atlas.local/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

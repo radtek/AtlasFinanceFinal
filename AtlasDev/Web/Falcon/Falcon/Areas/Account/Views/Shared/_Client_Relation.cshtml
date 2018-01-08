@@ -1,0 +1,86 @@
+﻿<div ng-controller="AccountClientRelationController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="relationParams" class="table">
+            <tr ng-repeat="relation in $data" ng-click="changeSelection('relRowSelected',relation,'relations')" ng-class="{selected: relation.$selected}" style="cursor: pointer;">
+              <td data-title="'First Name'">
+                <center> {{relation.FirstName}}</center>
+              </td>
+              <td data-title="'Last Name'">
+                <center> {{relation.LastName}}</center>
+              </td>
+              <td data-title="'Relation'">
+                <center> {{relation.RelationType}}</center>
+              </td>
+              <td data-title="'Cell No'">
+                <center> {{relation.CellNo}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="submit" class="btn green" ng-click="relationDialgueNew = true;" data-toggle="modal" href="#RelationDialogue">New</button>
+            <button type="submit" class="btn yellow" ng-disabled="!relRowSelected.$selected" ng-click="relationDialgueNew = false;" data-toggle="modal" href="#RelationDialogue">Update</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+  <!-- Relation Modals -->
+  <div class="modal fade" id="RelationDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" onshow="OpenModalDialogue();" boot-modal ng-init="$parent.updateRelationDialogue(relRowSelected);">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header label-warning" ng-if="relationDialgueNew  === true">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Add Relation</h4>
+        </div>
+        <div class="modal-header label-danger" ng-if="relationDialgueNew  === false">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+          <h4 class="modal-title">Update Relation</h4>
+        </div>
+        <div class="modal-body form">
+          <div class="centered">
+            <form action="#" class="form-horizontal">
+              <div class="form-body">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Type</label>
+                  <div class="col-md-3">
+                    <select ng-init="getRelationTypes()" class="form-control input-medium" ng-model="$parent.newRelationRelationTypeId" ng-options="a.RelationTypeId as a.Description for a in relationTypes"></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Firstname</label>
+                  <div class="col-md-3">
+                    <input class="form-control input-medium" ng-model="$parent.newRelationFirstName" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Lastname</label>
+                  <div class="col-md-3">
+                    <input class="form-control input-medium" ng-model="$parent.newRelationLastName" type="text" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Cell No</label>
+                  <div class="col-md-3">
+                    <input class="form-control input-medium" ng-model="$parent.newRelationCellNo" type="text" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn green" ng-click="addRelation();" ng-if="relationDialgueNew === true">Confirm</button>
+          <button type="button" class="btn yellow" ng-click="updateRelation();" ng-if="relationDialgueNew === false">Confirm</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>

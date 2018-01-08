@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Online.Web.Service.Entities.Verification" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfQuestions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Questions" nillable="true" type="tns:Questions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuestions" nillable="true" type="tns:ArrayOfQuestions" />
+  <xs:complexType name="Questions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answers" nillable="true" type="tns:ArrayOfQuestions.Answer" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="StoreId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Questions" nillable="true" type="tns:Questions" />
+  <xs:complexType name="ArrayOfQuestions.Answer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Questions.Answer" nillable="true" type="tns:Questions.Answer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuestions.Answer" nillable="true" type="tns:ArrayOfQuestions.Answer" />
+  <xs:complexType name="Questions.Answer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAnswer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Questions.Answer" nillable="true" type="tns:Questions.Answer" />
+  <xs:complexType name="VerificationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Iteration" type="xs:int" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificationResult" nillable="true" type="tns:VerificationResult" />
+</xs:schema>

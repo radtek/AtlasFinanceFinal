@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1b4393fb-b32b-49ee-a8a3-bbb9f2f1e868" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8202/AssThirdParty/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="434bd7f6-66c8-4c7b-8135-4cd73d6ad9fa" SourceId="1" SourceUrl="net.tcp://localhost:8202/AssThirdParty/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ea948ad2-0532-4e0b-83da-5e8cdac92c10" SourceId="1" SourceUrl="net.tcp://localhost:8202/AssThirdParty/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="a08d2553-3ef0-49b8-ab16-e09968325dc7" SourceId="1" SourceUrl="net.tcp://localhost:8202/AssThirdParty/mex" />
+    <MetadataFile FileName="Atlas.WCF.Interface.xsd" MetadataType="Schema" ID="1f8e1472-c077-4475-82e1-22c38ce01f32" SourceId="1" SourceUrl="net.tcp://localhost:8202/AssThirdParty/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

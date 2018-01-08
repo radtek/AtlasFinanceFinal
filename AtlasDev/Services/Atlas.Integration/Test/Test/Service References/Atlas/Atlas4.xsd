@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration.Activity" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration.Activity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ClientLastActivityRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdNumberOrPassport" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientLastActivityRequest" nillable="true" type="tns:ClientLastActivityRequest" />
+  <xs:complexType name="ClientLastActivityResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activities" nillable="true" type="tns:ArrayOfLastActivity" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientLastActivityResult" nillable="true" type="tns:ClientLastActivityResult" />
+  <xs:complexType name="ArrayOfLastActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LastActivity" nillable="true" type="tns:LastActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLastActivity" nillable="true" type="tns:ArrayOfLastActivity" />
+  <xs:complexType name="LastActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activity" type="tns:ActivityTypeEnum" />
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LastActivity" nillable="true" type="tns:LastActivity" />
+  <xs:simpleType name="ActivityTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewLoan">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InstalmentPaid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LoanClosed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HandedOver">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityTypeEnum" nillable="true" type="tns:ActivityTypeEnum" />
+</xs:schema>

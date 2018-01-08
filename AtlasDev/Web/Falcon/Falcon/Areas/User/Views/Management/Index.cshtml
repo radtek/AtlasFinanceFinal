@@ -1,0 +1,535 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "User Management - manage users";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div class="row" ng-controller="UserManagementListController" ng-init="init();">
+  <div class="col-md-12">
+    <div class="alert alert-info" ng-if="!loaded">
+      <center><strong>Loading:</strong> Please be patient...</center>
+    </div>
+    <div id="filter" class="tab-pane active">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Branch</label>
+              </div>
+              <div class="col-md-4">
+                <select class="form-control" ng-options="c.BranchId as c.Name + ' ' + '[' + c.LegacyBranchNum + ']' for c in branches" ng-model="branch" ng-disabled="branchesLoading">
+                  <option selected="true" value='' disabled>
+                    Select Branch...
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>ID No.</label>
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="idNo">
+              </div>
+            </div>
+          </div><br />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>First Name</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="firstName">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-2 col-center">
+                <label>Last Name</label>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="lastName">
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+        <div class="panel-footer clearfix">
+          <div>
+            <button class="btn btn-info pull-right component-well" ng-click="search()" button-loading="searching" data-loading-text="Processing Request..." ng-disabled="!loaded">Search</button>
+            <button class="btn btn-info pull-right component-well" ng-click="lastName='';firstName='';idNo='';branch='';" ng-disabled="!loaded">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table si-table class="table table-striped ng-cloak">
+      <tr>
+        <th class="col-align-center">#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>ID No.</th>
+        <th class="col-align-center">Operator Code</th>
+        <th class="col-align-center">Linked</th>
+        <th class="col-align-center">Manage</th>
+      </tr>
+      <tbody>
+        <tr si-sortable ng-repeat="user in users">
+          <td class="col-align-center">{{ ::user.PersonId }}</td>
+          <td>{{::user.Firstname}}</td>
+          <td>{{::user.Lastname}}</td>
+          <td>{{::user.IdNum }}</td>
+          <td class="col-align-center">{{::user.LegacyClientCode}}</td>
+          <td class="col-align-center">{{ ::user.WebLinked ? 'Yes' : 'No' }}</td>
+          <td class="col-align-center">
+            <center>
+              <a ng-click="manage(user)" rel="tooltip" title="Link" style="cursor: pointer;" id="button_manage_{{user.PersonId}}" href="!#manageUserDlg" data-toggle="modal"><span class="curved-border label label-info">manage</span></a>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <si-table-pagination limit="{{pageLimit}}" indices="5" total="params.total" offset="params.offset" />
+          </td>
+          <td colspan="3">
+            <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 100;" anchor-prevent-propagation>100</a>
+            <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 10;" anchor-prevent-propagation>10</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div aria-hidden="true" aria-labelledby="viewManageUserDlg" role="dialog" tabindex="-1" id="manageUserDlg" class="modal bs-modal-lg" style="overflow-y: auto;z-index:1040" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header modal-header-primary">
+          <center>
+            <h4 class="modal-title">Manage User</h4>
+          </center>
+        </div>
+        <div class="modal-body">
+          <div class="tabbable-custom">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a data-toggle="tab" href="#details" anchor-prevent-propagation>Details</a>
+              </li>
+              <li>
+                <a data-toggle="tab" href="#webUser" anchor-prevent-propagation>Web User</a>
+              </li>
+
+                <li>
+                    <a data-toggle="tab" href="#changePassword" anchor-prevent-propagation>Change Password</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+              <div id="details" class="tab-pane active">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>FirstName</label>
+                        <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="firstName" name="firstName" value="{{ allocateUser.Firstname }}" disabled />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>LastName</label>
+                        <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="lastName" name="lastName" value="{{ allocateUser.Lastname}}" disabled />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Operator Code</label>
+                        <input type="text" class="form-control form-control-solid placeholder-no-fix" id="legacyClientCode" name="idNo" value="{{ allocateUser.LegacyClientCode }}" disabled />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>ID No</label>
+                        <input type="text" class="form-control form-control-solid placeholder-no-fix" id="idNo" name="idNo" value="{{ allocateUser.IdNum }}" disabled />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Associate Branches</label>
+                        <div class="form-group">
+                          <select class="form-control" ng-options="c.BranchId as c.Name + ' ' + '[' + c.LegacyBranchNum + ']' for c in branches" ng-model="associatedBranchId" ng-disabled="!branchSelector">
+                            <option selected="true" value='' disabled>
+                              Select Branch...
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-primary component-well pull-right" data-loading-text="processing request..." ng-click="branchSelector = true;">Change</button>
+                      <button type="button" class="btn btn-primary component-well pull-right" data-loading-text=" processing request..." button-loading="savingBranchAssociation" ng-click="saveBranchAssociation()" ng-disabled="!branchSelector">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Associated Roles</label>
+                        <div class="form-group">
+                          <select multiple="" class="form-control" ng-options="c.RoleName as c.RoleName for c in assignedroles" ng-model="role" ng-disabled="!allocateUser.WebLinked"></select>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary component-well pull-right" ng-disabled="loadingClaims || (userId == undefined)|| (userId == null) || (userId == '')" data-loading-text=" processing request..." href="!#assignRolesDlg" data-toggle="modal" ng-disabled="!allocateUser.WebLinked"> Modify</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="webUser" class="tab-pane">
+                <table si-table class="table table-striped ng-cloak" ng-if="noneLinked">
+                  <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Last Login</th>
+                  @*  <th class="col-align-center">Link</th>*@
+                    <th>Created</th>
+                 @*   <th class="col-align-center">Manage</th>*@
+                  </tr>
+                  <tbody>
+                      <tr si-sortable ng-repeat="user in falconUsers" ng-if="!user.Linked">
+                          <td>{{::user.UserName}}</td>
+                          <td>{{::user.Email}}</td>
+                          <td>{{::user.LastLogin | date: 'yyyy-MM-dd HH:mm'}}</td>
+                          @*<td class="col-align-center">{{ ::user.Linked ? 'Yes' : 'No' }}</td>*@
+                          <td>{{::user.Created | date: 'yyyy-MM-dd HH:mm'}}</td>
+                          @*<td class="col-align-center">
+              <center><a ng-click="setWebUser(user)" rel="tooltip" title="link" style="cursor: pointer;" id="button_link_{{user.Id}}" href="!#confirmLinkDlg" data-toggle="modal"><span class="curved-border label label-info">link</span></a></center>
+            </td>*@
+                      </tr>
+                  </tbody>
+                </table>
+                <table si-table class="table table-striped ng-cloak" ng-if="!noneLinked">
+                  <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Last Login</th>
+                    @*<th class="col-align-center">Link</th>*@
+                    <th>Created</th>
+                    @*<th class="col-align-center">Manage</th>*@
+                  </tr>
+                  <tbody>
+                      <tr si-sortable ng-repeat="user in webusersByGuId" ng-if="allocateUser.WebReference === user.Id">
+                          <td>{{::user.Username}}</td>
+                          <td>{{::user.Email}}</td>
+                          <td>{{::user.LastLogin | date: 'yyyy-MM-dd HH:mm'}}</td>
+                          @*<td class="col-align-center">{{ ::user.Linked ? 'Yes' : 'No' }}</td>*@
+                          <td>{{::user.Created | date: 'yyyy-MM-dd HH:mm'}}</td>
+                          @*<td class="col-align-center">
+              <center><a ng-click="setWebUser(user)" rel="tooltip" title="Unlink" style="cursor: pointer;" id="button_unlink_{{user.Id}}" href="!#confirmUnlinkDlg" data-toggle="modal"><span class="curved-border label label-info">unlink</span></a></center>
+            </td>*@
+                      </tr>
+                  </tbody>
+                </table>
+                <div class="row" ng-if="noneLinked">
+                  <div class="col-md-12">
+                    <a class="pull-left btn btn-primary component-well" href="!#addUserDlg" data-toggle="modal" anchor-prevent-propagation>Add User</a>
+                  </div>
+                </div>
+              </div>
+
+
+                <div id="changePassword" class="tab-pane">
+                    <div class="row">
+                        <div class="col-mod-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="newPassword" name="newPassword" ng-model="newPassword" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="pull-right btn btn-primary component-well" ng-click="changePwrd()" ng-disabled="changed">Change Password</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div aria-hidden="true" aria-labelledby="viewLinkDlg" role="dialog" tabindex="-1" id="linkDlg" class="modal bs-modal-lg" style="overflow-y: auto;z-index:1040">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header modal-header-primary">
+          <center>
+            <h4 class="modal-title">Link User</h4>
+          </center>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Web Users</h4>
+            </div>
+            <div class="col-md-12">
+              <table si-table class="table table-striped ng-cloak">
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Last Login</th>
+                  <th class="col-align-center">Link</th>
+                  <th>Created</th>
+                  <th class="col-align-center">Manage</th>
+                </tr>
+                <tbody>
+                  <tr si-sortable ng-repeat="user in webUsers" ng-if="!user.Linked">
+                    <td>{{::user.UserName}}</td>
+                    <td>{{::user.Email}}</td>
+                    <td>{{::user.LastLogin | date: 'yyyy-MM-dd HH:mm'}}</td>
+                    <td class="col-align-center">{{ ::user.Linked ? 'Yes' : 'No' }}</td>
+                    <td>{{::user.Created | date: 'yyyy-MM-dd HH:mm'}}</td>
+                    <td class="col-align-center">
+                      <div ng-if="user.Linked">
+                        <center>
+                          <a ng-click="unlink(user)" rel="tooltip" title="Link" style="cursor: pointer;" id="button_{{user.Id}}"><span class="curved-border label label-info">unlink</span></a>
+                          <a ng-click="viewLinkInfo(user)" rel="tooltip" title="Link" style="cursor: pointer;" id="button_{{user.Id}}"><span class="curved-border label label-info">info</span></a>
+                        </center>
+                      </div>
+                      <div ng-if="!user.Linked">
+                        <center><a ng-click="setWebUser(user)" rel="tooltip" title="Link" style="cursor: pointer;" id="button_{{user.Id}}" href="!#confirmLinkDlg" data-toggle="modal"><span class="curved-border label label-info">link</span></a></center>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3">
+                      <si-table-pagination limit="{{pageLimit}}" indices="5" total="params.total" offset="params.weboffset" />
+                    </td>
+                    <td colspan="3">
+                      <a class="pull-right btn green-meadow component-well-margin-top" ng-click="webUserPageLimit = 100;" anchor-prevent-propagation>100</a>
+                      <a class="pull-right btn green-meadow component-well-margin-top" ng-click="webUserPageLimit = 10;" anchor-prevent-propagation>10</a>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <a class="pull-left btn btn-primary component-well" href="!#addUserDlg" data-toggle="modal" anchor-prevent-propagation>Add User</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div aria-hidden="true" aria-labelledby="viewAddUser" role="dialog" tabindex="-1" id="addUserDlg" class="modal" style="overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="saveContact" novalidate style="display: block;" ng-cloak>
+          <div class="modal-header modal-header-primary">
+            <center>
+              <h4 class="modal-title">Add User</h4>
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <legend>Allocate to user</legend>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Person Id</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="PersonId" name="PersonId" value="{{ allocateUser.PersonId }}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>FirstName</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="firstName" name="firstName" value="{{ allocateUser.Firstname }}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>LastName</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="lastName" name="lastName" value="{{ allocateUser.Lastname}}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>ID No</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" id="idNo" name="idNo" value="{{ allocateUser.IdNum }}" disabled />
+                  </div>
+                </div>
+                <legend>Create web user</legend>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" name="Username" id="Username" placeholder="" ng-maxlength="80" ng-model="username" required tabindex="1">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" name="Email" id="Email" placeholder="" ng-model="email" tabindex="2">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control form-control-solid placeholder-no-fix" ng-maxlength="20" autocomplete="off" name="Password" id="Password" placeholder="" ng-model="password" tabindex="3">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control form-control-solid placeholder-no-fix" ng-maxlength="20" autocomplete="off" name="ConfirmPassword" id="ConfirmPassword" ng-model="confirmPassword" placeholder="" tabindex="4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+            <button type="submit" class="btn btn-primary component-well pull-right" button-loading="savingUser" ng-disabled="!password === confirmPassword" ng-click="saveUser(allocateUser.PersonId,username,email,password);" data-loading-text=" processing request...">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" aria-labelledby="viewConfirmLinkDlg" role="dialog" tabindex="-1" id="confirmLinkDlg" class="modal" style="overflow-y: auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form name="confirmLinkForm" id="confirmLinkForm">
+          <div class="modal-header modal-header-yellow-crusta">
+            <center>
+              <h4 class="modal-title">Are you sure you wish to link this user?</h4>
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <legend>Core User</legend>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Person Id</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="PersonId" name="PersonId" value="{{ allocateUser.PersonId }}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>FirstName</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="firstName" name="firstName" value="{{ allocateUser.Firstname }}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>LastName</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" placeholder="" id="lastName" name="lastName" value="{{ allocateUser.Lastname}}" disabled />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>ID No</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" id="idNo" name="idNo" value="{{ allocateUser.IdNum }}" disabled />
+                  </div>
+                </div>
+                <legend>Web User</legend>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Id:</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" name="userId" id="userId" placeholder="" disabled value="{{ linkSelectedUser.Id }}" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" name="Username" id="Username" placeholder="" disabled value="{{ linkSelectedUser.UserName }}" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control form-control-solid placeholder-no-fix" name="Email" id="Email" placeholder="" disabled value="{{ linkSelectedUser.Email }}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+            <a class="pull-right btn btn-primary component-well" button-loading="savingLink" ng-click="linkToUser(allocateUser,linkSelectedUser)" data-loading-text="Processing Request...">Link</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" aria-labelledby="viewConfirmUnlinkDlg" role="dialog" tabindex="-1" id="confirmUnlinkDlg" class="modal" style="overflow-y: auto;z-index:2147483646">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form name="confirmUnlinkForm" id="confirmUnlinkForm">
+          <div class="modal-header modal-header-yellow-crusta">
+            <center>
+              <h4 class="modal-title">Unlink User</h4>
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                Are you sure you wish to unlink this user?
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+            <a class="pull-right btn btn-primary component-well" button-loading="savingUnLink" ng-click="unlinkUser()" data-loading-text="Processing Request...">Unlink</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden="true" aria-labelledby="viewAssignRoles" role="dialog" tabindex="-1" id="assignRolesDlg" class="modal" style="overflow-y: auto;z-index:2147483647">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="assignRoles" method="post" novalidate style="display: block;">
+          <div class="modal-header modal-header-primary">
+            <center>
+              <h4 class="modal-title">Assign Roles</h4>
+            </center>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <legend>Unassigned Roles</legend>
+                <div class="form-group">
+                  <select multiple="" class="form-control" ng-options="c.RoleName as c.RoleName for c in assignableRoles" ng-model="assignableRole"></select>
+                </div>
+                <button type="button" class="btn btn-primary component-well pull-right" ng-click="addRole()">Add</button>
+                <legend>Assigned Roles</legend>
+                <div class="form-group">
+                  <select multiple="" class="form-control" ng-options="c.RoleName as c.RoleName for c in assignedroles" ng-model="assignedRole"></select>
+                </div>
+                <button type="button" class="btn btn-primary component-well pull-right" ng-click="removeRole()">Remove</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="pull-right btn btn-danger component-well" data-dismiss="modal" ng-disabled="saving">Cancel</a>
+            <button type="button" class="btn btn-primary component-well pull-right" button-loading="savingRoles" data-loading-text=" processing request..." ng-click="saveRoles()">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div modal-stack></div>
+</div>

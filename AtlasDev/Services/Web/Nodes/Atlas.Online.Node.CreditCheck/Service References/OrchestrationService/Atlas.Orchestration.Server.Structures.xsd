@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Orchestration.Server.Structures" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Orchestration.Server.Structures" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="BankDetail" nillable="true" type="tns:BankDetail" />
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContact" />
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Employer" nillable="true" type="tns:Employer" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Gender" type="q1:General.Gender" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Host" type="q2:General.Host" />
+      <xs:element minOccurs="0" name="IdNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relation" nillable="true" type="tns:Relation" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="AddressType" type="q3:General.AddressType" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line4" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Province" type="q4:General.Province" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="BankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="AccountType" type="q5:General.BankAccountType" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Bank" type="q6:General.BankName" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Period" type="q7:General.BankPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankDetail" nillable="true" type="tns:BankDetail" />
+  <xs:complexType name="ArrayOfContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContact" nillable="true" type="tns:ArrayOfContact" />
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="ContactType" type="q8:General.ContactType" />
+      <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="Employer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContact" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employer" nillable="true" type="tns:Employer" />
+  <xs:complexType name="Relation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContact" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="RelationType" type="q9:General.RelationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Relation" nillable="true" type="tns:Relation" />
+</xs:schema>

@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OrchestrationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="OrchestrationService.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrchestrationService_GetByIdNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdNo" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetByIdNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetbyPk_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetbyPk" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetbyPk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetbyPkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetails" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetail" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetAccountVerification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountVerification" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetAccountVerification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountVerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetAccountVerificationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountVerificationById" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetAccountVerificationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountVerificationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetailByDetailId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetailByDetailId" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetBankDetailByDetailId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankDetailByDetailIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_SaveBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBank" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_SaveBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_UpdateBankDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankDetails" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_UpdateBankDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GenerateOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOTP" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GenerateOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_VerifyOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOTP" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_VerifyOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetCompiledTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompiledTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetCompiledTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompiledTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_CreatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePerson" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_CreatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_CompanyPolicies_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyPolicies" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_CompanyPolicies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyPoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_AccountPolicies_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccountPolicies" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_AccountPolicies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccountPoliciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetReApplyDelay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReApplyDelay" />
+  </wsdl:message>
+  <wsdl:message name="IOrchestrationService_GetReApplyDelay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReApplyDelayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOrchestrationService">
+    <wsdl:operation name="GetByIdNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetByIdNo" message="tns:IOrchestrationService_GetByIdNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetByIdNoResponse" message="tns:IOrchestrationService_GetByIdNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/Save" message="tns:IOrchestrationService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/SaveResponse" message="tns:IOrchestrationService_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetbyPk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetbyPk" message="tns:IOrchestrationService_GetbyPk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetbyPkResponse" message="tns:IOrchestrationService_GetbyPk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetails" message="tns:IOrchestrationService_GetBankDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetailsResponse" message="tns:IOrchestrationService_GetBankDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetail" message="tns:IOrchestrationService_GetBankDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetailResponse" message="tns:IOrchestrationService_GetBankDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetAccountVerification" message="tns:IOrchestrationService_GetAccountVerification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetAccountVerificationResponse" message="tns:IOrchestrationService_GetAccountVerification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerificationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetAccountVerificationById" message="tns:IOrchestrationService_GetAccountVerificationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetAccountVerificationByIdResponse" message="tns:IOrchestrationService_GetAccountVerificationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetailByDetailId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetailByDetailId" message="tns:IOrchestrationService_GetBankDetailByDetailId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetBankDetailByDetailIdResponse" message="tns:IOrchestrationService_GetBankDetailByDetailId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/SaveBank" message="tns:IOrchestrationService_SaveBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/SaveBankResponse" message="tns:IOrchestrationService_SaveBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/UpdateBankDetails" message="tns:IOrchestrationService_UpdateBankDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/UpdateBankDetailsResponse" message="tns:IOrchestrationService_UpdateBankDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GenerateOTP" message="tns:IOrchestrationService_GenerateOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GenerateOTPResponse" message="tns:IOrchestrationService_GenerateOTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/VerifyOTP" message="tns:IOrchestrationService_VerifyOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/VerifyOTPResponse" message="tns:IOrchestrationService_VerifyOTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompiledTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetCompiledTemplate" message="tns:IOrchestrationService_GetCompiledTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetCompiledTemplateResponse" message="tns:IOrchestrationService_GetCompiledTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/CreatePerson" message="tns:IOrchestrationService_CreatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/CreatePersonResponse" message="tns:IOrchestrationService_CreatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyPolicies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/CompanyPolicies" message="tns:IOrchestrationService_CompanyPolicies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/CompanyPoliciesResponse" message="tns:IOrchestrationService_CompanyPolicies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountPolicies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/AccountPolicies" message="tns:IOrchestrationService_AccountPolicies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/AccountPoliciesResponse" message="tns:IOrchestrationService_AccountPolicies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReApplyDelay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrchestrationService/GetReApplyDelay" message="tns:IOrchestrationService_GetReApplyDelay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrchestrationService/GetReApplyDelayResponse" message="tns:IOrchestrationService_GetReApplyDelay_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrchestrationService.NET" type="tns:IOrchestrationService">
+    <wsp:PolicyReference URI="#OrchestrationService.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetByIdNo">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetByIdNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetbyPk">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetbyPk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetails">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetail">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerification">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetAccountVerification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerificationById">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetAccountVerificationById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetailByDetailId">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetailByDetailId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBank">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/SaveBank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetails">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/UpdateBankDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOTP">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GenerateOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/VerifyOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompiledTemplate">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetCompiledTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/CreatePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyPolicies">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/CompanyPolicies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountPolicies">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/AccountPolicies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReApplyDelay">
+      <soap12:operation soapAction="http://tempuri.org/IOrchestrationService/GetReApplyDelay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrchestrationService.HTTP" type="tns:IOrchestrationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetByIdNo">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetByIdNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetbyPk">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetbyPk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetails">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetail">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerification">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetAccountVerification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountVerificationById">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetAccountVerificationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankDetailByDetailId">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetBankDetailByDetailId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBank">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/SaveBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankDetails">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/UpdateBankDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOTP">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GenerateOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/VerifyOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompiledTemplate">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetCompiledTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/CreatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyPolicies">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/CompanyPolicies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountPolicies">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/AccountPolicies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReApplyDelay">
+      <soap:operation soapAction="http://tempuri.org/IOrchestrationService/GetReApplyDelay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrchestrationService">
+    <wsdl:port name="OrchestrationService.NET" binding="tns:OrchestrationService.NET">
+      <soap12:address location="net.tcp://localhost:8200/OrchestrationService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/OrchestrationService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="OrchestrationService.HTTP" binding="tns:OrchestrationService.HTTP">
+      <soap:address location="http://localhost:8201/OrchestrationService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

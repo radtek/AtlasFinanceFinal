@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:complexType name="PER_PersonDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_AddressDetails_x003E_k__BackingField" nillable="true" type="tns:ArrayOfAddressDTO" />
+      <xs:element name="_x003C_BankDetails_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBankDetailDTO" />
+      <xs:element name="_x003C_Branch_x003E_k__BackingField" nillable="true" type="tns:BRN_BranchDTO" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" name="_x003C_Cards_x003E_k__BackingField" nillable="true" type="q1:ArrayOfNUC_NuCardDTO" />
+      <xs:element name="_x003C_ClientCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Contacts_x003E_k__BackingField" nillable="true" type="tns:ArrayOfContactDTO" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_DateOfBirth_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_Designation_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Employer_x003E_k__BackingField" nillable="true" type="tns:CPY_CompanyDTO" />
+      <xs:element name="_x003C_EmploymentHistory_x003E_k__BackingField" nillable="true" type="tns:ArrayOfCPY_CompanyDTO" />
+      <xs:element name="_x003C_Firstname_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Gender_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Host_x003E_k__BackingField" nillable="true" type="tns:HostDTO" />
+      <xs:element name="_x003C_IdNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_LastEditedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_Lastname_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_LegacyClientCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Middlename_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Othername_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_PersonId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_PersonType_x003E_k__BackingField" nillable="true" type="tns:PER_TypeDTO" />
+      <xs:element name="_x003C_Race_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Relations_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPER_RelationDTO" />
+      <xs:element name="_x003C_SalaryFrequency_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Security_x003E_k__BackingField" nillable="true" type="tns:PER_SecurityDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PER_PersonDTO" nillable="true" type="tns:PER_PersonDTO" />
+  <xs:complexType name="ArrayOfAddressDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressDTO" nillable="true" type="tns:AddressDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressDTO" nillable="true" type="tns:ArrayOfAddressDTO" />
+  <xs:complexType name="AddressDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_AddressId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_AddressType_x003E_k__BackingField" nillable="true" type="tns:AddressTypeDTO" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Line1_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Line2_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Line3_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Line4_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_PostalCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Province_x003E_k__BackingField" nillable="true" type="tns:ProvinceDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDTO" nillable="true" type="tns:AddressDTO" />
+  <xs:complexType name="AddressTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Type" type="q2:General.AddressType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressTypeDTO" nillable="true" type="tns:AddressTypeDTO" />
+  <xs:complexType name="ProvinceDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ProvinceId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_ShortCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvinceDTO" nillable="true" type="tns:ProvinceDTO" />
+  <xs:complexType name="ArrayOfBankDetailDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankDetailDTO" nillable="true" type="tns:BankDetailDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankDetailDTO" nillable="true" type="tns:ArrayOfBankDetailDTO" />
+  <xs:complexType name="BankDetailDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_AccountName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_AccountNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_AccountType_x003E_k__BackingField" nillable="true" type="tns:BankAccountTypeDTO" />
+      <xs:element name="_x003C_Bank_x003E_k__BackingField" nillable="true" type="tns:BankDTO" />
+      <xs:element name="_x003C_Code_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_DetailId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankDetailDTO" nillable="true" type="tns:BankDetailDTO" />
+  <xs:complexType name="BankAccountTypeDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_AccountTypeId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankAccountTypeDTO" nillable="true" type="tns:BankAccountTypeDTO" />
+  <xs:complexType name="BankDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_BankId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_SwiftCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_UniversalCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankDTO" nillable="true" type="tns:BankDTO" />
+  <xs:complexType name="BRN_BranchDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_BranchId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_CloseDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_Comment_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Company_x003E_k__BackingField" nillable="true" type="tns:CPY_CompanyDTO" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" name="_x003C_DefaultNuCardProfile_x003E_k__BackingField" nillable="true" type="q3:NUC_NuCardProfileDTO" />
+      <xs:element name="_x003C_DeletedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_LegacyBranchNum_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_OpenDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_Region_x003E_k__BackingField" nillable="true" type="tns:RegionDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BRN_BranchDTO" nillable="true" type="tns:BRN_BranchDTO" />
+  <xs:complexType name="CPY_CompanyDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Addresses_x003E_k__BackingField" nillable="true" type="tns:ArrayOfAddressDTO" />
+      <xs:element name="_x003C_BankDetails_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBankDetailDTO" />
+      <xs:element name="_x003C_Branches_x003E_k__BackingField" nillable="true" type="tns:ArrayOfBRN_BranchDTO" />
+      <xs:element name="_x003C_CompanyId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Contacts_x003E_k__BackingField" nillable="true" type="tns:ArrayOfContactDTO" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_DeletedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_EmployerCode_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_LastEditedDT_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ParentId_x003E_k__BackingField" nillable="true" type="tns:CPY_CompanyDTO" />
+      <xs:element name="_x003C_Persons_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPER_PersonDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CPY_CompanyDTO" nillable="true" type="tns:CPY_CompanyDTO" />
+  <xs:complexType name="ArrayOfBRN_BranchDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BRN_BranchDTO" nillable="true" type="tns:BRN_BranchDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBRN_BranchDTO" nillable="true" type="tns:ArrayOfBRN_BranchDTO" />
+  <xs:complexType name="ArrayOfContactDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactDTO" nillable="true" type="tns:ContactDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactDTO" nillable="true" type="tns:ArrayOfContactDTO" />
+  <xs:complexType name="ContactDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_ContactId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_ContactType_x003E_k__BackingField" nillable="true" type="tns:ContactTypeDTO" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_CreatedDT_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Value_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactDTO" nillable="true" type="tns:ContactDTO" />
+  <xs:complexType name="ContactTypeDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_ContactTypeId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactTypeDTO" nillable="true" type="tns:ContactTypeDTO" />
+  <xs:complexType name="ArrayOfPER_PersonDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PER_PersonDTO" nillable="true" type="tns:PER_PersonDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPER_PersonDTO" nillable="true" type="tns:ArrayOfPER_PersonDTO" />
+  <xs:complexType name="RegionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegacyRegionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Atlas.Domain.DTO.Nucard" minOccurs="0" name="Profile" nillable="true" type="q4:NUC_NuCardProfileDTO" />
+      <xs:element minOccurs="0" name="RegionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionDTO" nillable="true" type="tns:RegionDTO" />
+  <xs:complexType name="ArrayOfCPY_CompanyDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CPY_CompanyDTO" nillable="true" type="tns:CPY_CompanyDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCPY_CompanyDTO" nillable="true" type="tns:ArrayOfCPY_CompanyDTO" />
+  <xs:complexType name="HostDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostId" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Type" type="q5:General.Host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HostDTO" nillable="true" type="tns:HostDTO" />
+  <xs:complexType name="PER_TypeDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_TypeId_x003E_k__BackingField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PER_TypeDTO" nillable="true" type="tns:PER_TypeDTO" />
+  <xs:complexType name="ArrayOfPER_RelationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PER_RelationDTO" nillable="true" type="tns:PER_RelationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPER_RelationDTO" nillable="true" type="tns:ArrayOfPER_RelationDTO" />
+  <xs:complexType name="PER_RelationDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_PersonRelationId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Person_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_RelationPerson_x003E_k__BackingField" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element name="_x003C_Relation_x003E_k__BackingField" nillable="true" type="tns:PER_RelationTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PER_RelationDTO" nillable="true" type="tns:PER_RelationDTO" />
+  <xs:complexType name="PER_RelationTypeDTO">
+    <xs:sequence>
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_RelationTypeId_x003E_k__BackingField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PER_RelationTypeDTO" nillable="true" type="tns:PER_RelationTypeDTO" />
+  <xs:complexType name="PER_SecurityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="CreatedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeletedBy" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="DeletedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvalidUserNameOrPassword" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastEditedBy" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="LastEditedDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastLoggedIn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LegacyOperatorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoggedIn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LogginAttemptCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:PER_PersonDTO" />
+      <xs:element minOccurs="0" name="PersonSecurityId" type="xs:long" />
+      <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PER_SecurityDTO" nillable="true" type="tns:PER_SecurityDTO" />
+  <xs:complexType name="ArrayOfACC_PolicyDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ACC_PolicyDTO" nillable="true" type="tns:ACC_PolicyDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfACC_PolicyDTO" nillable="true" type="tns:ArrayOfACC_PolicyDTO" />
+  <xs:complexType name="ACC_PolicyDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyId" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Type" type="q6:Account.Policy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACC_PolicyDTO" nillable="true" type="tns:ACC_PolicyDTO" />
+</xs:schema>

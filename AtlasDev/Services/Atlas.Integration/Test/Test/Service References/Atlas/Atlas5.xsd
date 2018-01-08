@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd2" namespace="Atlas.Services.2015.Integration.Login" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd3" namespace="Atlas.Services.2015.Integration.Branch" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd4" namespace="Atlas.Services.2015.Integration.User" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd5" namespace="Atlas.Services.2015.Integration.SMS" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd6" namespace="Atlas.Services.2015.Integration.OTP" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd7" namespace="Atlas.Services.2015.Integration.Activity" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd8" namespace="Atlas.Services.2015.Integration.ScoreCard" />
+  <xs:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd10" namespace="Atlas.Services.2015.Integration.Opportunity" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Atlas.Services.2015.Integration.Login" minOccurs="0" name="system" nillable="true" type="q1:SystemLoginRequest" />
+        <xs:element xmlns:q2="Atlas.Services.2015.Integration.Login" minOccurs="0" name="user" nillable="true" type="q2:UserLoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="Atlas.Services.2015.Integration.Login" minOccurs="0" name="LoginResult" nillable="true" type="q3:LoginResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="Atlas.Services.2015.Integration.Branch" minOccurs="0" name="GetBranchListResult" nillable="true" type="q4:BranchListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="Atlas.Services.2015.Integration.User" minOccurs="0" name="GetUsersResult" nillable="true" type="q5:UsersResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="Atlas.Services.2015.Integration.SMS" minOccurs="0" name="request" nillable="true" type="q6:SendSMSRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="Atlas.Services.2015.Integration.SMS" minOccurs="0" name="SendSMSResult" nillable="true" type="q7:SendSMSResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOTPViaSMS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="Atlas.Services.2015.Integration.OTP" minOccurs="0" name="request" nillable="true" type="q8:SendOTPRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOTPViaSMSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="Atlas.Services.2015.Integration.OTP" minOccurs="0" name="SendOTPViaSMSResult" nillable="true" type="q9:SendOTPResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientLastActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="Atlas.Services.2015.Integration.Activity" minOccurs="0" name="request" nillable="true" type="q10:ClientLastActivityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientLastActivityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="Atlas.Services.2015.Integration.Activity" minOccurs="0" name="GetClientLastActivityResult" nillable="true" type="q11:ClientLastActivityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScoreCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="Atlas.Services.2015.Integration.ScoreCard" minOccurs="0" name="request" nillable="true" type="q12:ScoreCardRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScoreCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="Atlas.Services.2015.Integration.ScoreCard" minOccurs="0" name="GetScoreCardResult" nillable="true" type="q13:ScoreCardResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOpportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="Atlas.Services.2015.Integration.Opportunity" minOccurs="0" name="request" nillable="true" type="q14:AddOpportunityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOpportunityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="Atlas.Services.2015.Integration.Opportunity" minOccurs="0" name="AddOpportunityResult" nillable="true" type="q15:AddOpportunityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOpportunityStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="Atlas.Services.2015.Integration.Opportunity" minOccurs="0" name="request" nillable="true" type="q16:CheckOpportunityStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOpportunityStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="Atlas.Services.2015.Integration.Opportunity" minOccurs="0" name="CheckOpportunityStatusResult" nillable="true" type="q17:CheckOpportunityStatusResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

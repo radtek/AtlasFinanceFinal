@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="acb85606-61dc-439d-b08b-027ec573449c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Atlas.Enumerators" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="f5d8b9fa-df9d-46b7-9722-b2ff954934fc" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="e8f99e0d-7c57-4e26-9a0d-0191b801d4ea" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="1bf2d4c8-43e3-428d-b255-f855a7f00f8f" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" />
+    <MetadataFile FileName="Atlas.ThirdParty.Xds1.xsd" MetadataType="Schema" ID="03bdb1e6-b625-4cd4-8061-476d16516d6a" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" />
+    <MetadataFile FileName="System1.xsd" MetadataType="Schema" ID="c60ce5b2-9821-462c-84fa-27cee1acfc11" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/AuthenticationServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

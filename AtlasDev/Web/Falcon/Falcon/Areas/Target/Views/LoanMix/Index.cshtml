@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Target - Loan Mix";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" ng-controller="TargetLoanMixController" ng-init="init();">
+
+    <div class="row">
+        <div id="filter" class="tab-pane active">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-12 clearfix">
+                        <div class="col-md-2 col-center">
+                            <label>Target Month</label>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group input-medium">
+                                <select id="selectMonth" placeholder="Select a Month" class="form-control" ng-model="filterMonth" ng-options="r.Id as r.Month for r in monthNames"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-center">
+                            <label>Target Year</label>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="input-group input-medium">
+                                <select id="selectYear" placeholder="Select a Year" class="form-control" ng-model="filterYear" ng-options="r as r for r in years"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div>
+                        <button class="btn btn-info pull-right" ng-disabled="!enableSave" style="margin-left: 5px" ng-click="saveTargets()">Save</button>
+                        <button class="btn btn-info pull-right" ng-disabled="gettingTargets" ng-click="getTargets()" button-loading="gettingTargets" data-loading-text="Processing Request...">Get Targets</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 clearfix">
+            <ul class="nav nav-tabs">
+                <li ng-repeat="target in targets">
+                    <div class="input-group input-small" style="padding:5px">
+                        <label class="label label-primary">{{target.TargetDate | date: 'EEE, MMM dd, y'}}</label>
+                        <label class="label label-default">Pay no. {{target.PayNo}}</label>
+                        <input type="text" class="form-control" ng-model="target.Percent" ng-change="targetChanged(target);" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42909E2D-45B8-44CC-9B2D-BE40CE0D148F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Domain</RootNamespace>
+    <AssemblyName>Atlas.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Web\Atlas.Online\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainExceptions.cs" />
+    <Compile Include="Model\Interface\IAudit.cs" />
+    <Compile Include="Model\Account\ACC_AccountNote.cs" />
+    <Compile Include="Model\Account\ACC_AccountStatus.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityOptionStatus.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityCategoryType.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityOptionType.cs" />
+    <Compile Include="Model\Account\ACC_Arrearage.cs" />
+    <Compile Include="Model\Account\ACC_DebitControl.cs" />
+    <Compile Include="Model\Account\ACC_DebitControlTransaction.cs" />
+    <Compile Include="Model\Account\ACC_Policy.cs" />
+    <Compile Include="Model\Account\ACC_Quotation.cs" />
+    <Compile Include="Model\Account\ACC_QuotationStatus.cs" />
+    <Compile Include="Model\Account\ACC_ScoreResult.cs" />
+    <Compile Include="Model\Account\ACC_Settlement.cs" />
+    <Compile Include="Model\Account\ACC_SettlementStatus.cs" />
+    <Compile Include="Model\Account\ACC_StatusReason.cs" />
+    <Compile Include="Model\Account\ACC_StatusSubReason.cs" />
+    <Compile Include="Model\Account\ACC_ThirdPartyPayout.cs" />
+    <Compile Include="Model\Account\ACC_CreditPolicy.cs" />
+    <Compile Include="Model\Account\ACC_PayRule.cs" />
+    <Compile Include="Model\Account\ACC_AccountPayRule.cs" />
+    <Compile Include="Model\Account\ACC_PayDateType.cs" />
+    <Compile Include="Model\Account\ACC_PayDate.cs" />
+    <Compile Include="Model\Account\ACC_SettlementType.cs" />
+    <Compile Include="Model\Account\ACC_History.cs" />
+    <Compile Include="Model\Account\ACC_AccountPolicy.cs" />
+    <Compile Include="Model\Altech\ALT_EDOContractCancel.cs" />
+    <Compile Include="Model\Altech\ALT_LogEDOInstalmentCancel.cs" />
+    <Compile Include="Model\ASS\DataSync\ASS_BranchServer.cs" />
+    <Compile Include="Model\ASS\DataSync\ASS_MasterTableChangeTracking.cs" />
+    <Compile Include="Model\ASS\DataSync\ASS_DbUpdateScript.cs" />
+    <Compile Include="Model\ASS\DataSync\ASS_LogSyncServerEvent.cs" />
+    <Compile Include="Model\ASS\DataSync\ASS_ServerTable.cs" />
+    <Compile Include="Model\AVS\AVS_ExclusionRule.cs" />
+    <Compile Include="Model\AVS\AVS_Exclusion.cs" />
+    <Compile Include="Model\AVS\AVS_Status.cs" />
+    <Compile Include="Model\Bank\BNK_Period.cs" />
+    <Compile Include="Model\Biometric\BIO_LogHardware.cs" />
+    <Compile Include="Model\Biometric\BIO_LogRequest.cs" />
+    <Compile Include="Model\Branch\BRN_Contacts.cs" />
+    <Compile Include="Model\Bureau\BUR_EnquiryDocument.cs" />
+    <Compile Include="Model\Bureau\BUR_Policy.cs" />
+    <Compile Include="Model\Bureau\BUR_AccountPolicy.cs" />
+    <Compile Include="Model\Bureau\BUR_Storage.cs" />
+    <Compile Include="Model\Bureau\BUR_Batch.cs" />
+    <Compile Include="Model\Bureau\BUR_BatchItem.cs" />
+    <Compile Include="Model\Bureau\BUR_BatchSubmission.cs" />
+    <Compile Include="Model\Bureau\BUR_SubmissionAssociation.cs" />
+    <Compile Include="Model\Company\CPY_Addresses.cs" />
+    <Compile Include="Model\Company\CPY_BankDetails.cs" />
+    <Compile Include="Model\Company\CPY_Branches.cs" />
+    <Compile Include="Model\Company\CPY_Contacts.cs" />
+    <Compile Include="Model\Debit\DBT_AVSCheckType.cs" />
+    <Compile Include="Model\Debit\DBT_ControlType.cs" />
+    <Compile Include="Model\Debit\DBT_FailureType.cs" />
+    <Compile Include="Model\Debit\DBT_ResponseCode.cs" />
+    <Compile Include="Model\Debit\DBT_ControlValidation.cs" />
+    <Compile Include="Model\Debit\DBT_Validation.cs" />
+    <Compile Include="Model\Document\DOC_ADRTraining.cs" />
+    <Compile Include="Model\Document\DOC_CategoryFileFormatAssociation.cs" />
+    <Compile Include="Model\Document\DOC_FileFormatType.cs" />
+    <Compile Include="Model\Document\DOC_FileStore.cs" />
+    <Compile Include="Model\Document\DOC_TemplateStore.cs" />
+    <Compile Include="Model\Document\DOC_TemplateType.cs" />
+    <Compile Include="Model\ETL\ETL_DebitOrder.cs" />
+    <Compile Include="Model\ETL\ETL_DebitOrderBatch.cs" />
+    <Compile Include="Model\ETL\ETL_Stage.cs" />
+    <Compile Include="Model\Document\DOC_Category.cs" />
+    <Compile Include="Model\Evolution\EVO_LoanTrack.cs" />
+    <Compile Include="Model\Evolution\EVO_LoanTrackSnapshot.cs" />
+    <Compile Include="Model\Evolution\EVO_UploadBatch.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_Enquiry.cs" />
+    <Compile Include="Model\FPM\FPM_ConsumerTelephoneHistory.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_CaseDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_AliasDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_BankDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_EmploymentDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_OtherIdDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_TelephoneDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_AddressDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_IncidentDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_PersonalDetail.cs" />
+    <Compile Include="Model\FPM\FPM_SAFPS_Subject.cs" />
+    <Compile Include="Model\Fraud\FRD_CaseBankDetail.cs" />
+    <Compile Include="Model\Fraud\FRD_Case.cs" />
+    <Compile Include="Model\Fraud\FRD_CaseNote.cs" />
+    <Compile Include="Model\Fraud\FRD_CaseCompany.cs" />
+    <Compile Include="Model\Fraud\FRD_Contact.cs" />
+    <Compile Include="Model\Fraud\FRD_Person.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_Fee.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_FeeRangeType.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_Transaction.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_TransactionType.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_TransactionTypeGroup.cs" />
+    <Compile Include="Model\GeneralLedger\LGR_Type.cs" />
+    <Compile Include="Model\Language\LNG_Language.cs" />
+    <Compile Include="Model\Note\NTE_Note.cs" />
+    <Compile Include="Model\Notification\NTF_Group.cs" />
+    <Compile Include="Model\Notification\NTF_GroupTemplate.cs" />
+    <Compile Include="Model\Notification\NTF_Template.cs" />
+    <Compile Include="Model\Notification\NTF_TemplateType.cs" />
+    <Compile Include="Model\Notification\NTF_Type.cs" />
+    <Compile Include="Model\Person\PER_AddressDetails.cs" />
+    <Compile Include="Model\Person\PER_BankDetails.cs" />
+    <Compile Include="Model\Person\PER_Contacts.cs" />
+    <Compile Include="Model\Person\PER_EmploymentHistory.cs" />
+    <Compile Include="Model\Person\PER_Region.cs" />
+    <Compile Include="Model\Person\PER_Branch.cs" />
+    <Compile Include="Model\Person\PER_RelationType.cs" />
+    <Compile Include="Model\Person\PER_OTP.cs" />
+    <Compile Include="Model\PublicHoliday.cs" />
+    <Compile Include="Model\AVS\AVS_BankAccountPeriod.cs" />
+    <Compile Include="Model\AVS\AVS_Batch.cs" />
+    <Compile Include="Model\AVS\AVS_ResponseResult.cs" />
+    <Compile Include="Model\AVS\AVS_Result.cs" />
+    <Compile Include="Model\AVS\AVS_Service.cs" />
+    <Compile Include="Model\AVS\AVS_ServiceSchedule.cs" />
+    <Compile Include="Model\AVS\AVS_ServiceScheduleBank.cs" />
+    <Compile Include="Model\AVS\AVS_ServiceType.cs" />
+    <Compile Include="Model\AVS\AVS_Transaction.cs" />
+    <Compile Include="Model\AVS\AVS_ResponseGroup.cs" />
+    <Compile Include="Model\AVS\AVS_ResponseCode.cs" />
+    <Compile Include="Model\Biometric\BIO_Setting.cs" />
+    <Compile Include="Model\Biometric\BIO_UploadTemplate.cs" />
+    <Compile Include="Model\Debit\DBT_ServiceMessage.cs" />
+    <Compile Include="Model\Debit\DBT_Transmission.cs" />
+    <Compile Include="Model\Debit\DBT_TransmissionSet.cs" />
+    <Compile Include="Model\Debit\DBT_TransmissionTransaction.cs" />
+    <Compile Include="Model\Debit\DBT_BatchStatus.cs" />
+    <Compile Include="Model\Debit\DBT_Batch.cs" />
+    <Compile Include="Model\Debit\DBT_Transaction.cs" />
+    <Compile Include="Model\Debit\DBT_Control.cs" />
+    <Compile Include="Model\Debit\DBT_ControlStatus.cs" />
+    <Compile Include="Model\Debit\DBT_HostService.cs" />
+    <Compile Include="Model\Debit\DBT_Status.cs" />
+    <Compile Include="Model\Debit\DBT_DebitType.cs" />
+    <Compile Include="Model\Debit\DBT_ServiceScheduleBank.cs" />
+    <Compile Include="Model\Debit\DBT_ServiceSchedule.cs" />
+    <Compile Include="Model\Debit\DBT_Service.cs" />
+    <Compile Include="Model\FPM\FPM_DecisionCode.cs" />
+    <Compile Include="Model\FPM\FPM_AuthenticationProcessStore.cs" />
+    <Compile Include="Model\FPM\FPM_Authentication.cs" />
+    <Compile Include="Model\Account\ACC_Account.cs" />
+    <Compile Include="Model\Addresss\ADR_Type.cs" />
+    <Compile Include="Model\AEDOReport\AEDOLogin.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportBatch.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportCancelled.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportFailed.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportFuture.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportNewTransaction.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportRetry.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportSettled.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportSuccess.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportUnmatched.cs" />
+    <Compile Include="Model\AEDOReport\AEDOReportUnsettled.cs" />
+    <Compile Include="Model\Bank\BNK_Branch.cs" />
+    <Compile Include="Model\Bank\BNK_CDV.cs" />
+    <Compile Include="Model\Biometric\BIO_UploadBitmap.cs" />
+    <Compile Include="Model\Biometric\BIO_UploadSession.cs" />
+    <Compile Include="Model\Bureau\BUR_Accounts.cs" />
+    <Compile Include="Model\Bureau\BUR_AccountStatusCode.cs" />
+    <Compile Include="Model\Bureau\BUR_AccountTypeCode.cs" />
+    <Compile Include="Model\Addresss\ADR_Address.cs" />
+    <Compile Include="Model\Branch\BRN_Branch.cs" />
+    <Compile Include="Model\Bank\BNK_AccountType.cs" />
+    <Compile Include="Model\Bank\BNK_Detail.cs" />
+    <Compile Include="Model\Branch\BranchCompany.cs" />
+    <Compile Include="Model\Company\CPY_Company.cs" />
+    <Compile Include="Model\Contact\ContactType.cs" />
+    <Compile Include="Model\Contact\Contact.cs" />
+    <Compile Include="Model\Config\Config.cs" />
+    <Compile Include="Model\Bank\BNK_Bank.cs" />
+    <Compile Include="Model\Branch\BRN_Config.cs" />
+    <Compile Include="Model\Company\CPY_Type.cs" />
+    <Compile Include="Model\Company\CPY_AssociationType.cs" />
+    <Compile Include="Model\Bureau\BUR_BatchSubmissionItem.cs" />
+    <Compile Include="Model\FPM\FPM_AddressFrequency.cs" />
+    <Compile Include="Model\FPM\FPM_ConsumerCellphoneValidation.cs" />
+    <Compile Include="Model\FPM\FPM_ConsumerTelephone.cs" />
+    <Compile Include="Model\FPM\FPM_PhoneTypeMap.cs" />
+    <Compile Include="Model\FPM\FPM_Phone.cs" />
+    <Compile Include="Model\FPM\FPM_HawkIDV.cs" />
+    <Compile Include="Model\FPM\FPM_HawkAlert.cs" />
+    <Compile Include="Model\FPM\FPM_FraudScore_Reason.cs" />
+    <Compile Include="Model\FPM\FPM_FraudScore.cs" />
+    <Compile Include="Model\Account\ACC_AccountFee.cs" />
+    <Compile Include="Model\Account\ACC_Status.cs" />
+    <Compile Include="Model\Account\ACC_AccountType.cs" />
+    <Compile Include="Model\Account\ACC_AccountTypeFee.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityOption.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityOptionFee.cs" />
+    <Compile Include="Model\Account\ACC_QuickQuote.cs" />
+    <Compile Include="Model\Account\ACC_TopUp.cs" />
+    <Compile Include="Model\Account\ACC_Affordability.cs" />
+    <Compile Include="Model\Account\ACC_AffordabilityCategory.cs" />
+    <Compile Include="Model\Host\Host.cs" />
+    <Compile Include="Model\Account\ACC_PeriodFrequency.cs" />
+    <Compile Include="Model\NuCard\NUC_LogStockEvent.cs" />
+    <Compile Include="Model\Notification\NTF_Notification.cs" />
+    <Compile Include="Model\Notification\NTF_Status.cs" />
+    <Compile Include="Model\Notification\NTF_Priority.cs" />
+    <Compile Include="Model\Payout\PYT_ResultCode.cs" />
+    <Compile Include="Model\Payout\PYT_ResultQualifier.cs" />
+    <Compile Include="Model\Payout\PYT_ServiceScheduleBank.cs" />
+    <Compile Include="Model\Payout\PYT_ServiceSchedule.cs" />
+    <Compile Include="Model\Payout\PYT_Batch.cs" />
+    <Compile Include="Model\Payout\PYT_BatchStatus.cs" />
+    <Compile Include="Model\Payout\PYT_HostService.cs" />
+    <Compile Include="Model\Payout\PYT_Payout.cs" />
+    <Compile Include="Model\Payout\PYT_PayoutStatus.cs" />
+    <Compile Include="Model\Payout\PYT_PayoutValidation.cs" />
+    <Compile Include="Model\Payout\PYT_ReplyCode.cs" />
+    <Compile Include="Model\Payout\PYT_ReplyCodeType.cs" />
+    <Compile Include="Model\Payout\PYT_Service.cs" />
+    <Compile Include="Model\Payout\PYT_ServiceType.cs" />
+    <Compile Include="Model\Payout\PYT_Transmission.cs" />
+    <Compile Include="Model\Payout\PYT_TransmissionSet.cs" />
+    <Compile Include="Model\Payout\PYT_TransmissionTransaction.cs" />
+    <Compile Include="Model\Payout\PYT_Validation.cs" />
+    <Compile Include="Model\Person\PER_Type.cs" />
+    <Compile Include="Model\Bureau\BUR_Colour.cs" />
+    <Compile Include="Model\Bureau\BUR_Band.cs" />
+    <Compile Include="Model\Bureau\BUR_BandRange.cs" />
+    <Compile Include="Model\Bureau\BUR_Service.cs" />
+    <Compile Include="Model\Account\ACC_TopUpStatus.cs" />
+    <Compile Include="Model\Log\LogProductEvent.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOLogin.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportBatch.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportCancelled.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportDisputed.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportFailed.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportFuture.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportInProcess.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportSuccess.cs" />
+    <Compile Include="Model\NAEDOReport\NAEDOReportTransactionUploaded.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCardBatchCard.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCardProcess.cs" />
+    <Compile Include="Model\Product\PRD_ProductType.cs" />
+    <Compile Include="Model\Product\PRD_ProductBatch.cs" />
+    <Compile Include="Model\Product\PRD_Product.cs" />
+    <Compile Include="Model\Bureau\BUR_Enquiry.cs" />
+    <Compile Include="Model\Target\TAR_BranchCIMonthly.cs" />
+    <Compile Include="Model\Target\TAR_HandoverTarget.cs" />
+    <Compile Include="Model\Target\TAR_DailySale.cs" />
+    <Compile Include="Model\Target\TAR_LoanMix.cs" />
+    <Compile Include="Model\TSPReport\TSPReportBatch.cs" />
+    <Compile Include="Model\TSPReport\TSPReportCancelled.cs" />
+    <Compile Include="Model\TSPReport\TSPReportFailed.cs" />
+    <Compile Include="Model\TSPReport\TSPReportFuture.cs" />
+    <Compile Include="Model\TSPReport\TSPReportInProcess.cs" />
+    <Compile Include="Model\TSPReport\TSPReportSuccess.cs" />
+    <Compile Include="Model\TSPReport\TSPReportTransactionUploaded.cs" />
+    <Compile Include="Model\Log\LogCoreEvents.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCard.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCardBatch.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCardStatus.cs" />
+    <Compile Include="Model\Log\LogHWStatus.cs" />
+    <Compile Include="Model\NuCard\NUC_LogAdminEvent.cs" />
+    <Compile Include="Model\NuCard\NUC_NuCardProfile.cs" />
+    <Compile Include="Model\Log\LogTCCTerminal.cs" />
+    <Compile Include="Model\Person\PER_Person.cs" />
+    <Compile Include="Model\TCC\TCCTerminal.cs" />
+    <Compile Include="Model\Transaction\TransactionType.cs" />
+    <Compile Include="Model\Transaction\TransactionSource.cs" />
+    <Compile Include="Model\Person\PER_Relation.cs" />
+    <Compile Include="Model\Region\Region.cs" />
+    <Compile Include="Model\Person\PER_Role.cs" />
+    <Compile Include="Model\Province\Province.cs" />
+    <Compile Include="Model\Relation\RelationType.cs" />
+    <Compile Include="Model\Role\RoleType.cs" />
+    <Compile Include="Model\NuCard\NUC_Transaction.cs" />
+    <Compile Include="Model\Person\PER_Security.cs" />
+    <Compile Include="Model\Web\WEB_WebRole.cs" />
+    <Compile Include="Model\Web\WEB_UserRole.cs" />
+    <Compile Include="Model\Workflow\WFL_ConditionGroupResult.cs" />
+    <Compile Include="Model\Workflow\WFL_ConditionPrimaryKey.cs" />
+    <Compile Include="Model\Workflow\WFL_DataExtType.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessDataExt.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepJobAccount.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepUserGroup.cs" />
+    <Compile Include="Model\Workflow\WFL_UserGroupLink.cs" />
+    <Compile Include="Model\Workflow\WFL_UserGroup.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepEscalationGroup.cs" />
+    <Compile Include="Model\Workflow\WFL_EscalationGroupPerson.cs" />
+    <Compile Include="Model\Workflow\WFL_EscalationGroup.cs" />
+    <Compile Include="Model\Workflow\WFL_EscalationLevel.cs" />
+    <Compile Include="Model\Workflow\WFL_EscalationTemplate.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepEscalation.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepJobEscalation.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepJobEscalationNotification.cs" />
+    <Compile Include="Model\Workflow\WFL_ScheduleProcessDay.cs" />
+    <Compile Include="Model\Workflow\WFL_ScheduleProcessStatus.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStepJob.cs" />
+    <Compile Include="Model\Workflow\WFL_JobState.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessJob.cs" />
+    <Compile Include="Model\Workflow\WFL_PeriodFrequency.cs" />
+    <Compile Include="Model\Workflow\WFL_ScheduleProcessStep.cs" />
+    <Compile Include="Model\Workflow\WFL_ScheduleFrequency.cs" />
+    <Compile Include="Model\Workflow\WFL_Trigger.cs" />
+    <Compile Include="Model\Workflow\WFL_BusinessDay.cs" />
+    <Compile Include="Model\Workflow\WFL_Decision.cs" />
+    <Compile Include="Model\Workflow\WFL_ConditionGroup.cs" />
+    <Compile Include="Model\Workflow\WFL_ConditionClassProperty.cs" />
+    <Compile Include="Model\Workflow\WFL_ConditionClass.cs" />
+    <Compile Include="Model\Workflow\WFL_Condition.cs" />
+    <Compile Include="Model\Workflow\WFL_Process.cs" />
+    <Compile Include="Model\Workflow\WFL_ProcessStep.cs" />
+    <Compile Include="Model\Workflow\WFL_ScheduleProcess.cs" />
+    <Compile Include="Model\Workflow\WFL_Workflow.cs" />
+    <Compile Include="Model\Workflow\WFL_WorkflowHost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Security\COR_AppUsage.cs" />
+    <Compile Include="Model\Security\COR_Software.cs" />
+    <Compile Include="Model\Security\COR_LogAppUsage.cs" />
+    <Compile Include="Model\Security\COR_LogMachineInfo.cs" />
+    <Compile Include="Model\Security\COR_Machine.cs" />
+    <Compile Include="Serializable\NuCardAdditionalLogInfo.cs" />
+    <Compile Include="Serializable\Product\CellPhone.cs" />
+    <Compile Include="Serializable\Product\Helper.cs" />
+    <Compile Include="Serializable\Product\SimCard.cs" />
+    <Compile Include="Structures\AccountInfo.cs" />
+    <Compile Include="Structures\AccountStatement.cs" />
+    <Compile Include="Structures\AccountVerification.cs" />
+    <Compile Include="Structures\AffordabilityOption.cs" />
+    <Compile Include="Structures\BankDetail.cs" />
+    <Compile Include="Structures\PendingAVS.cs" />
+    <Compile Include="Structures\ProcessAccount.cs" />
+    <Compile Include="Structures\Quotation.cs" />
+    <Compile Include="Structures\Settlement.cs" />
+    <Compile Include="Structures\StatementTransaction.cs" />
+    <Compile Include="Model\UserTracking\UserTracking_PinnedUsers.cs" />
+    <Compile Include="Model\UserTracking\UserTracking_RuleSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Risk\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6aecfad7-a17c-4fb0-9ab6-bfce0f3c5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07fc6272-5fa2-45a7-a99c-062ec5b0c205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

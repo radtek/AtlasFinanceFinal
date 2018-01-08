@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Atlas.Services.2015.Integration" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Atlas.Services.2015.Integration" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Atlas.Services.2015.Integration/Imports">
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd0" namespace="Atlas.Services.2015.Integration" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd2" namespace="Atlas.Services.2015.Integration.Login" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd3" namespace="Atlas.Services.2015.Integration.Branch" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd4" namespace="Atlas.Services.2015.Integration.User" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd5" namespace="Atlas.Services.2015.Integration.SMS" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd6" namespace="Atlas.Services.2015.Integration.OTP" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd7" namespace="Atlas.Services.2015.Integration.Activity" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd8" namespace="Atlas.Services.2015.Integration.ScoreCard" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd9" namespace="Atlas.Services.2015.Integration.AtlasProduct" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd10" namespace="Atlas.Services.2015.Integration.Opportunity" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd11" namespace="Atlas.Services.2015.Integration.Vetting" />
+      <xsd:import schemaLocation="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntegration_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetBranchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchList" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetBranchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_SendOTPViaSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTPViaSMS" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_SendOTPViaSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTPViaSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetClientLastActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientLastActivity" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetClientLastActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientLastActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetScoreCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScoreCard" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_GetScoreCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScoreCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_AddOpportunity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_AddOpportunity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_CheckOpportunityStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOpportunityStatus" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_CheckOpportunityStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOpportunityStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIntegration">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/Login" message="tns:IIntegration_Login_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/LoginResponse" message="tns:IIntegration_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetBranchList" message="tns:IIntegration_GetBranchList_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetBranchListResponse" message="tns:IIntegration_GetBranchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetUsers" message="tns:IIntegration_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetUsersResponse" message="tns:IIntegration_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/SendSMS" message="tns:IIntegration_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/SendSMSResponse" message="tns:IIntegration_SendSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTPViaSMS">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/SendOTPViaSMS" message="tns:IIntegration_SendOTPViaSMS_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/SendOTPViaSMSResponse" message="tns:IIntegration_SendOTPViaSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientLastActivity">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetClientLastActivity" message="tns:IIntegration_GetClientLastActivity_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetClientLastActivityResponse" message="tns:IIntegration_GetClientLastActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreCard">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetScoreCard" message="tns:IIntegration_GetScoreCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/GetScoreCardResponse" message="tns:IIntegration_GetScoreCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOpportunity">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/AddOpportunity" message="tns:IIntegration_AddOpportunity_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/AddOpportunityResponse" message="tns:IIntegration_AddOpportunity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOpportunityStatus">
+      <wsdl:input wsaw:Action="Atlas.Services.2015.Integration/IIntegration/CheckOpportunityStatus" message="tns:IIntegration_CheckOpportunityStatus_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.Services.2015.Integration/IIntegration/CheckOpportunityStatusResponse" message="tns:IIntegration_CheckOpportunityStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

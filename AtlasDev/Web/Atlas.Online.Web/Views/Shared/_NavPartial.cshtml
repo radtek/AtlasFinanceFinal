@@ -1,0 +1,30 @@
+﻿@using Atlas.Online.Web.Helpers
+@using Atlas.Online.Web.Models
+<nav id="PrimaryNavigation">
+
+    <span class="trigger ion-navicon-round"></span>
+
+    <ul class="d-iblock menu">
+        @Html.NavItems(new Dictionary<string, string>()
+        {
+            {"Home", "@Home#Index"},
+            {"About", "@Home#About"},
+            {"Questions", "@Home#Questions"},
+            {"Contact", "@Home#Contact"}
+        })
+
+        @if (Request.IsAuthenticated)
+        {
+            @Html.NavItem("My Account", "MyAccount", "Index")
+            <li class="menu-item">
+                @Html.Partial("_LogoutPartial", new MessageBoxModel.Button())
+            </li>
+        }
+        else
+        {
+            @Html.NavItem("Register", "Account", "Register")
+            @Html.NavItem("Login", "Account", "LogIn")
+        }
+    </ul>
+
+</nav>

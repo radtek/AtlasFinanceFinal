@@ -1,0 +1,68 @@
+﻿@model Atlas.Online.Web.Models.MessageBoxModel
+
+@using Atlas.Online.Web.Extensions.Flash
+
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.IconUrl = Url.Content(String.Format("~/Assets/img/messages/message-{0}.png", Model.Icon.ToString().ToLower()));
+    ViewBag.MessageAttributes = Model.Alert.HasValue ? String.Format(@"class='alert alert-{0}'", Model.Alert.ToString().ToLower()) : String.Empty;
+    
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+<div class="container-outline">
+	<div class="pos-r">
+		<h1 class="hn-in-outline fc-beta">
+			<strong>@Model.Title</strong>
+		</h1>
+		<div class="row cf">
+		  <div class="col col-8 col-push-pull push-2">
+			  <div class="brad-delta p-beta bxsh-up-l mt-epsilon mb-beta bd-alpha-ltr ac">
+		
+				  <!-- image container -->
+				  <div class="ac">              
+					  <img class="mtn-message" src="@ViewBag.IconUrl" width="94" height="94" alt="Image icon for message">
+				  </div>
+		
+				  <!-- large text -->
+				  <p class="@Model.HeadingClasses">@Html.Raw(Model.Heading)</p>
+		
+				  <div class="@Model.MessageClasses">
+					  @Model.Message
+		          @Html.Raw(Model.HtmlMessage)
+				  </div>
+		
+		        @* buttons occupying equal space from the middle *@
+				  <div class="row cf pt-alpha">
+					  <div class="col col-6 pr-alpha ar">
+		            @if (Model.ButtonLeft != null) {
+                if (Model.ButtonLeft.CustomHtml != null)
+                {
+                  @Html.Raw(Model.ButtonLeft.CustomHtml)
+                }
+                else
+                {
+						      <a href="@Model.ButtonLeft.Url" class="btn btn-left d-block mb-none">@Model.ButtonLeft.Text</a>
+                }
+		            }
+		            &nbsp;
+					  </div><!-- .col -->
+					  <div class="col col-6 pl-alpha al">
+		            @if (Model.ButtonRight != null) {
+                if (Model.ButtonRight.CustomHtml != null)
+                {
+                  @Html.Raw(Model.ButtonRight.CustomHtml)
+                }
+                else
+                {
+						      <a href="@Model.ButtonRight.Url" class="btn btn-right d-block mb-none">@Model.ButtonRight.Text</a>
+		            }
+                }
+		            &nbsp;
+					  </div><!-- .col -->
+				  </div><!-- .row -->
+		
+			  </div>
+		  </div><!-- .col -->
+		</div><!-- .row -->
+  </div>
+</div>

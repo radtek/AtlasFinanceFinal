@@ -1,0 +1,163 @@
+.dk_container {
+	@include gradient(background, linear-gradient(top, $clr-ntrl-min, $clr-alpha-ltst));
+	background-color: $clr-alpha-ltst;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 14px;
+	@include px-and-rem(margin-bottom, 1.5);
+	border-radius: $bradius-delta;
+	box-shadow: 0 1px 2px hsla(0, 0%, 0%, .25);
+}
+.dk_container.disabled {
+	box-shadow: none;
+}
+	.dk_container:focus {
+		outline: 0;
+	}
+	.dk_container a {
+		cursor: pointer;
+		text-decoration: none;
+	}
+	.dk_container.disabled a {
+		color: $clr-alpha-lt;
+		cursor: default;
+	}
+
+/* Opens the dropdown and holds the menu label */
+.dk_toggle {
+	background-image: url('../img/vendor/dropkick/dk_arrows.png');
+	background-repeat: no-repeat;
+	background-position: right 1em center;
+	border: 1px solid $clr-alpha-lt;
+	color: $clr-alpha;
+	padding: .85em;
+	text-shadow: $clr-ntrl-min 1px 1px 0;
+	border-radius: $bradius-delta;
+	@include transition(border-color 250ms);
+}
+
+	.dk_toggle:hover { border-color: $clr-alpha-lt;}
+	/* Applied when the dropdown is focused */
+	.dk_focus .dk_toggle {
+		border-color: $clr-alpha-dk;
+		box-shadow: 0 0 5px hsla(0, 0%, 0%, .25);
+	}
+
+.disabled .dk_toggle,
+.disabled .dk_toggle:hover {
+	background-image: none;
+	border-color: $clr-alpha-ltr;
+}
+/* Applied whenever the dropdown is open */
+.dk_open {
+	box-shadow: 0 0 5px hsla(0, 0%, 0%, .25);
+	z-index: 10;
+}
+	.dk_open .dk_toggle {
+		background-color: $clr-alpha-ltr;
+		border-color: #8c8c8c;
+		box-shadow: inset 0 -2px 5px $clr-alpha-lt;
+		border-radius: 3px 3px 0 0;
+	}
+
+/* The outer container of the options */
+.dk_options {
+	box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
+	border-radius: 0 0 3px 3px;
+}
+	.dk_options a {
+		background-color: $clr-ntrl-min;
+		border-bottom: 1px solid $clr-alpha-ltr;
+		font-weight: bold;
+		padding: 8px 10px;
+	}
+	.dk_options li:last-child a {
+		border-bottom: none;
+	}
+	.dk_options a:hover,
+	.dk_option_current a {
+		background-color: $clr-alpha-ltst;
+		color: $clr-alpha-dk;
+		text-decoration: none;
+	}
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.dk_options_inner {
+	border: 1px solid #8c8c8e;
+	border-bottom-width: 2px;
+	border-bottom-color: #999;
+	color: #333;
+	max-height: 250px;
+	text-shadow: $clr-ntrl-min 0 1px 0;
+	border-radius: 0 0 3px 3px;
+}
+
+/* Set a max-height on the options inner */
+.dk_options_inner,
+.dk_touch .dk_options {
+	max-height: 250px;
+}
+
+/******  End Theme ******/
+
+/***** Critical to the continued enjoyment of working dropdowns ******/
+
+.dk_container {
+	display: none;
+	float: left;
+	position: relative;
+}
+	.dk_container a {
+		outline: 0;
+	}
+
+.dk_toggle {
+	display: inline-block;
+	position: relative;
+}
+
+.dk_open {
+	position: relative;
+}
+	.dk_open .dk_options {
+		display: block;
+	}
+	.dk_open .dk_label {
+		color: inherit;
+	}
+
+.dk_options {
+	display: none;
+	background: $clr-ntrl-min;
+	margin-top: -1px;
+	position: absolute;
+	right: 0;
+	width: 100%;
+}
+	.dk_options a {
+		display: block;
+	}
+	.dk_options_inner {
+		overflow: auto;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+.dk_touch .dk_options {
+	overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+	max-height: none;
+	overflow: visible;
+}
+
+.dk_fouc select {
+	position: relative;
+	top: -99999em;
+	visibility: hidden;
+}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/

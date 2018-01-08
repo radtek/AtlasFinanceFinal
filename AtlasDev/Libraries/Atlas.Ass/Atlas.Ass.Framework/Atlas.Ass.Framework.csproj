@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C619816D-6491-495C-A6F9-78130FA24C6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.Ass.Framework</RootNamespace>
+    <AssemblyName>Atlas.Ass.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IAssBureauRepository.cs" />
+    <Compile Include="Repository\IAssCiRepository.cs" />
+    <Compile Include="Repository\IAssStreamRepository.cs" />
+    <Compile Include="Repository\IAssGeneralRepository.cs" />
+    <Compile Include="Structures\IArrears.cs" />
+    <Compile Include="Structures\IBasicLoan.cs" />
+    <Compile Include="Structures\IBranchCIMonthly.cs" />
+    <Compile Include="Structures\IBudget.cs" />
+    <Compile Include="Structures\IClientLoanInfo.cs" />
+    <Compile Include="Structures\ICollectionRefund.cs" />
+    <Compile Include="Structures\ICollections.cs" />
+    <Compile Include="Structures\IDebtorsBook.cs" />
+    <Compile Include="Structures\IHandoverInfo.cs" />
+    <Compile Include="Structures\IHandoverInfo_New.cs" />
+    <Compile Include="Structures\ILoansFlagged.cs" />
+    <Compile Include="Structures\IOldestArrears.cs" />
+    <Compile Include="Structures\IPossibleHandover.cs" />
+    <Compile Include="Structures\IQryCollections.cs" />
+    <Compile Include="Structures\IReswipes.cs" />
+    <Compile Include="Structures\IRolledAccounts.cs" />
+    <Compile Include="Structures\IVAP.cs" />
+    <Compile Include="Structures\Stream\IAccount.cs" />
+    <Compile Include="Structures\Stream\IAccountTranscation.cs" />
+    <Compile Include="Structures\Stream\IClientLoan.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

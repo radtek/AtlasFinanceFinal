@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Domain.Structures" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:complexType name="Quotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="Bank" type="q1:General.BankName" />
+      <xs:element minOccurs="0" name="BankAccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankAccountNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="BankAccountType" type="q2:General.BankAccountType" />
+      <xs:element minOccurs="0" name="BankBranch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfDebit" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DebitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InitiationFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InterestRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuotationId" type="xs:long" />
+      <xs:element minOccurs="0" name="QuotationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuoteDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RepaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResidentialAddressCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialAddressLine1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialAddressLine2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialAddressLine3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialAddressLine4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceFee" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Quotation" nillable="true" type="tns:Quotation" />
+  <xs:complexType name="AccountStatement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmountOverdue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Arrears" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAging120Days" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAging150Days" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAging30Days" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAging60Days" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAging90Days" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAgingCurrent" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArrearsAgingTotalDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DaysOverdue" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaulAdminFeesLevied" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FeesLevied" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestAccrued" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LegalFeesLevied" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LoanAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthlyInterestRate" type="xs:float" />
+      <xs:element minOccurs="0" name="OtherCredits" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtherDebits" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentReceived" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PhysicalAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepaymentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatementDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatementTransactions" nillable="true" type="tns:ArrayOfStatementTransaction" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDue" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountStatement" nillable="true" type="tns:AccountStatement" />
+  <xs:complexType name="ArrayOfStatementTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatementTransaction" nillable="true" type="tns:StatementTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatementTransaction" nillable="true" type="tns:ArrayOfStatementTransaction" />
+  <xs:complexType name="StatementTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CreditAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DebitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatementTransaction" nillable="true" type="tns:StatementTransaction" />
+  <xs:complexType name="Settlement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fees" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Interest" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettlementDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SettlementId" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValidDaysLeft" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Settlement" nillable="true" type="tns:Settlement" />
+</xs:schema>

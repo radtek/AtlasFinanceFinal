@@ -1,0 +1,58 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+<body class="login">
+  <!-- BEGIN LOGO -->
+  <div class="logo">
+    <img src="~/assets/img/logo-big.png" alt="" />
+  </div>
+  <!-- END LOGO -->
+  <!-- BEGIN LOGIN -->
+  <div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+    <form class="login-form" name="otpForm" ng-submit="otpForm.$valid && submitForm()" ng-controller="OTPController" style="display: block;" novalidate ng-cloak>
+      <div ng-show="otpError" class="alert alert-danger">
+        <center>{{ error }}</center>
+      </div>
+      <div class="form-actions clearfix" ng-show="otpError">
+        <button type="button" class="pull-left btn btn-primary" ng-click="otpError = false;">
+          Retry
+        </button>
+      </div>
+      <div ng-show="!otpError">
+        <h3><center>Enter OTP to verify</center></h3>
+        <div class="form-group">
+          <div class="input-icon">
+            <i class="fa fa-code"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="OTP" name="OTP" numbers-only="numbers-only" ng-model="OTPNo" required />
+          </div>
+        </div>
+        <div class="form-actions clearfix">
+          <button type="button" class="pull-left btn btn-primary" button-loading="resending" data-loading-text="Sending..." ng-click="resend('@Html.Raw(ViewBag.UserId)')">Resend</button>
+          <button type="submit" class="pull-right btn btn-success" button-loading="verifying" data-loading-text="Verifying...">
+            Verify
+            <i class="m-icon-swapright m-icon-white"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- END LOGIN FORM -->
+  </div>
+  <!-- END LOGIN -->
+  <div class="copyright">
+    2013-2014 &copy; Atlas Finance
+  </div>
+  @section Scripts
+  {
+    @Scripts.Render("~/StandardJs")
+    <script>
+      jQuery(document).ready(function () {
+        Metronic.init();
+        Layout.init();
+        Login.initOTP();
+      });
+    </script>
+  }
+</body>
+@section LoginCSS{
+  @Styles.Render("~/LoginCSS")
+}

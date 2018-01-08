@@ -1,0 +1,13 @@
+﻿<div ng-controller="AccountApplicationCreationClientCheck">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Enter ID Number</h3>
+    </div>
+    <div class="panel-body">
+      <input type="text" class="form-control centre-align" name="IdNumber" ng-model="idNo" required>
+      <div class="alert alert-info component-well-margin-top" ng-show="infoBox">
+        <center> {{ message }}</center>
+      </div>
+    </div>
+  </div>
+</div>

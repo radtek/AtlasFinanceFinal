@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Target - Handover Budget";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" ng-controller="TargetHandoverController" ng-init="init();">
+
+    <div class="row">
+        <div id="filter" class="tab-pane active">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-12 clearfix">
+                        <div class="col-md-1 col-center">
+                            <label>Host</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-medium">
+                                <select id="selectHost" placeholder="Select a Host" class="form-control" ng-model="filterHost" ng-options="r.HostId as r.HostName for r in hosts"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-center">
+                            <label>Branch</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-medium">
+                                <select id="selectBranch" placeholder="Select a Branch" class="form-control" ng-model="filterBranch" ng-options="r.BranchId as r.Name for r in branches"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-center">
+                            <label>Target Month</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-medium">
+                                <select id="selectMonth" placeholder="Select a Month" class="form-control" ng-model="filterMonth" ng-options="r.Id as r.Month for r in monthNames"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-center">
+                            <label>Target Year</label>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-medium">
+                                <select id="selectYear" placeholder="Select a Year" class="form-control" ng-model="filterYear" ng-options="r as r for r in years"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+                    <div>
+                        <button class="btn btn-info pull-right" ng-disabled="!enableSave" style="margin-left: 5px" ng-click="saveTargets()">Save</button>
+                        <button class="btn btn-info pull-right" ng-disabled="gettingTargets" ng-click="getTargets()" button-loading="gettingTargets" data-loading-text="Processing Request...">Get Targets</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 clearfix">
+            <div class="table-responsive">
+                <table si-table class="table table-striped ng-cloak">
+                    <tr>
+                        <th>Host</th>
+                        <th>Branch</th>
+                        <th class="col-align-center">Target Date</th>
+                        <th class="col-align-right">Handover Budget</th>
+                        <th class="col-align-right">Arrears %</th>
+                    </tr>
+                    <tbody>
+                        <tr ng-repeat="target in targets">
+                            <td>{{ target.Host}}</td>
+                            <td>{{ target.BranchDescription}}</td>
+                            <td class="col-align-center">{{target.TargetDate | date:'MMM yyyy'}}</td>
+                            <td class="col-align-right"><input type="text" class="form-control" ng-model="target.HandoverBudget" ng-change="targetChanged(target);" /></td>
+                            <td class="col-align-right"><input type="text" class="form-control" ng-model="target.ArrearTarget" ng-change="targetChanged(target);" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

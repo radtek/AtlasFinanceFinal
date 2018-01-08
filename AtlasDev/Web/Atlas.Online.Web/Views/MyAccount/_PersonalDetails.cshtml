@@ -1,0 +1,85 @@
+﻿@model Atlas.Online.Web.Models.Dto.PersonalDetailsDto
+
+@using Atlas.Online.Web.Extensions.Ng
+
+@using (Html.NgBeginForm(htmlAttributes: new Dictionary<string, object>() { { "name", "form" }, { "novalidate", "novalidate" }, { "f8-initialize-model", null } }))
+{
+    <div class="row row-ib-cols row-ib-cols-va-m cf">
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+                @Html.LabelFor(x => x.CellNo, new { @class = "field-label" })
+            </div>
+            <div class="col sm-2-3">
+                @Html.NgTextBoxFor(x => x.CellNo, new Dictionary<string, object>() {
+                    { "class", "d-block" },
+                    { "validate-remotely", null},
+                    { "validate-on-startup", false },
+                    { "endpoint", Url.HttpRouteUrl("ActionApi", new { controller = "Accounts", action = "CellInUse", cell = ":value"})}
+               })
+            </div>
+            @Html.NgLoader(text: "checking...", ngShow: "form.CellNo.$error.remotevaliditypending")
+            @Html.NgValidationMessagesFor(x => x.CellNo)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+                @Html.LabelFor(x => x.Address1, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.Address1, new { @class = "d-block" })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.Address1)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+				@Html.LabelFor(x => x.Address2, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.Address2, new { @class = "d-block" })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.Address2)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+				@Html.LabelFor(x => x.Address3, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.Address3, new { @class = "d-block" })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.Address3)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+                @Html.LabelFor(x => x.City, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				@Html.NgTextBoxFor(x => x.City, new { @class = "d-block" })
+			</div>
+            @Html.NgValidationMessagesFor(x => x.City)
+        </div>
+        <div class="field cf">
+            <div class="col sm-1-3 pr-micro">
+                @Html.LabelFor(x => x.Province, new { @class = "field-label" })
+			</div>
+			<div class="col sm-2-3">
+				<div class="row cf">
+					<div class="col col-8 pr-micro">
+						@Html.NgDropDownListFor(x => x.Province, new { @class = "d-block" })
+					</div>
+					<div class="col col-4">
+                        @Html.NgTextBoxFor(x => x.PostalCode, new { @class = "d-block" })
+					</div>
+				</div>
+			</div>
+            @Html.NgValidationMessagesFor(x => x.Province)
+            @Html.NgValidationMessagesFor(x => x.PostalCode)
+        </div>
+    </div>
+    <div class="ar">
+        <label for="submit" class="btn" ng-class="{disabled: form.$invalid}">
+            <input id="submit" name="submit" type="submit" ng-disabled="form.$invalid" ng-click="update($event)" value="Update">
+        </label>    
+    </div>
+    <div class="alert alert-warning" @if (ViewBag.Client.OTPVerified) { @Html.Raw("ng-show='cellNoChanged'") }>
+        Your cellphone number has not yet been validated. Click update to save and continue to OTP validation.
+    </div>
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.Services.2015.Integration.AtlasProduct" elementFormDefault="qualified" targetNamespace="Atlas.Services.2015.Integration.AtlasProduct" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAtlasProductResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AtlasProductResult" nillable="true" type="tns:AtlasProductResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAtlasProductResult" nillable="true" type="tns:ArrayOfAtlasProductResult" />
+  <xs:complexType name="AtlasProductResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Passed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AtlasProductResult" nillable="true" type="tns:AtlasProductResult" />
+</xs:schema>

@@ -1,0 +1,199 @@
+﻿@{
+  ViewBag.Title = "Naedo Control";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div ng-controller="NaedoControlController" class="ng-cloak page-content" ng-init="init()" ng-cloak>
+  <div class="alert alert-block alert-danger fade in" ng-show="recordNotFound && loaded" ng-cloak>
+    <center><i class="fa fa-times-circle"></i> <strong>Error:</strong> Batch {{ id }} does not exist.</center>
+  </div>
+    <section class="panel">
+      <section class="panel-body">
+        <fieldset>
+          <legend></legend>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_bank">Bank</label>
+                <input class="form-control" id="control_bank" name="control[bank]" type="text" value="{{ bank }}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_account_name">Account Name</label>
+                <input class="form-control" id="control_account_name" name="control[account_name]" type="text" value="{{ bankAccountName }}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_account_number">Account Number</label>
+                <input class="form-control" id="control_account_number" name="control[account_number]" type="text" value="{{ bankAccountNo }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_id_number">ID Number</label>
+                <input class="form-control" id="control_id_number" name="control[id_number]" type="text" value="{{ idNumber }}" ng-readonly="true" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend></legend>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="user_control_status">Control Status</label>
+                <input class="form-control" id="control_control_status" name="control[control_status]" type="text" value="{{ controlStatus}}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_current_repetition">Current Repetition</label>
+                <input class="form-control" id="control_current_repetition" name="control[current_repetition]" type="text" value="{{ currentRep }}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_total_repetitions">Total Repetitions</label>
+                <input class="form-control" id="control_total_repetitions" name="control[total_repetitions]" type="text" value="{{ repetitions }}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_instalment">Instalment</label>
+                <input class="form-control" id="control_instalment" name="control[instalment]" type="text" value="{{ instalment | currency }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_first_instalment_date">First Instalment Date</label>
+                <input class="form-control" id="control_first_instalment_date" name="control[first_instalment_date]" type="text" value="{{ firstInstalmentDate  | date:'yyyy-MM-dd' }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="control_last_instalment_date">Last Instalment Date</label>
+                <input class="form-control" id="control_last_instalment_date" name="control[last_instalment_date]" type="text" value="{{ lastInstalmentDate  | date:'yyyy-MM-dd' }}" ng-readonly="true">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend></legend>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_frequency">Frequency</label>
+                <input class="form-control" id="control_frequency" name="control[frequency]" type="text" value="{{ frequency }}" ng-readonly="true" />
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_day_of_month">Period</label>
+                <input class="form-control" id="control_day_of_month" name="control[day_of_month]" type="text" value="{{ payDateOfEachMonth }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_pay_type">Pay Type</label>
+                <input class="form-control" id="control_pay_type" name="control[pay_type]" type="text" value="{{ payDatetype }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="user_pay_rule">Pay Rule</label>
+                <input class="form-control" id="user_pay_rule" name="control[pay_rule]" type="text" value="{{ payRule }}" ng-readonly="true">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="control_bank_statement_reference">Bank Statement Reference</label>
+                <input class="form-control" id="control_bank_statement_reference" name="control[bank_statement_reference]" type="text" value="{{ bankStatementRef }}" ng-readonly="true">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+    </section>
+    <section class="panel-body hidden-sm hidden-xs">
+      <fieldset>
+        <legend>Transactions</legend>
+        <div class="table-responsive">
+          <table ng-table="controlParams" class="table ng-cloak">
+            <tr ng-repeat="control in $data">
+              <td data-title="'No.'" class="hidden-sm hidden-xs">
+                <center> {{control.TransactionNo}}</center>
+              </td>
+              <td data-title="'Repetition'" class="hidden-sm hidden-xs" sortable="'Repetition'">
+                <center> {{control.Repetition}}</center>
+              </td>
+              <td data-title="'Response Code'" class="hidden-sm hidden-xs" sortable="'ResponseCode'">
+                <center><strong>{{control.ResponseCode}}</strong></center>
+              </td>
+              <td data-title="'Response'" class="hidden-sm hidden-xs">
+                <center>{{control.ResponseCodeDescription}}</center>
+              </td>
+
+              <td data-title="'Override Tracking Days'" class="hidden-sm hidden-xs" ng-show="overrideTrackingDayColumn" sortable="'OverrideTrackingDays'">
+                <center>{{ control.OverrideTrackingDays }}</center>
+              </td>
+
+              <td data-title="'Cancel Date'" class="hidden-sm hidden-xs" ng-show="cancelDate">
+                <center> {{control.CancelDate | date:'yyyy-MM-dd' }}</center>
+              </td>
+              <td data-title="'Status'" class="hidden-sm hidden-xs" sortable="'Status'">
+                <center><span falcon-label class="curved-border" condition="control.StatusColour">{{control.StatusDescription}}</span></center>
+              </td>
+              <td data-title="'Override Action Date'" class="hidden-sm hidden-xs" ng-show="overrideTrackingDate" sortable="'OverrideActionDate'">
+                <div ng-if="overrideTrackingDate">
+                  <center><span class="curved-border label label-danger">{{control.OverrideActionDate  | date:'yyyy-MM-dd' }}</span> </center>
+                </div>
+              </td>
+
+              <td data-title="'Action Date'" class="hidden-sm hidden-xs" sortable="'ActionDate'">
+                <div ng-if="!overrideTrackingDate"><center> {{control.ActionDate | date:'yyyy-MM-dd'}}</center></div>
+                <div ng-if="overrideTrackingDate"><center><span class="curved-border label label-warning" style="text-decoration:line-through;">{{control.ActionDate | date:'yyyy-MM-dd'}}</span></center></div>
+              </td>
+              <td data-title="'Override Amount'" class="hidden-sm hidden-xs" ng-show="overrideTrackingAmount" sortable="'OverrideAmount'">
+                <div ng-if="control.OverrideAmount">
+                  <center><span class=" curved-border label label-primary">{{control.OverrideAmount  | currency }}</span></center>
+                </div>
+              </td>
+              <td data-title="'Amount'" class="hidden-sm hidden-xs">
+                <div ng-if="control.OverrideAmount">
+                  <center><span class="curved-border label label-danger" style="text-decoration:line-through">{{control.Amount | currency}}</span></center>
+                </div>
+                <div ng-if="!control.OverrideAmount">
+                  <center><span class="curved-border label label-primary">{{control.Amount | currency}}</span></center>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </section>
+  </div>

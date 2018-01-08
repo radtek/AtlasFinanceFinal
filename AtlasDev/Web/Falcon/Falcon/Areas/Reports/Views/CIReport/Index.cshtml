@@ -1,0 +1,62 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "CI Report";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div  ng-controller="AssDashboardController" ng-init="init(@Html.Raw((object)ViewBag.PersonId))">
+  @*<div class="row" ng-show="!isLoaded">
+        <div class="col-lg-12">
+            <div class="">
+                <center><img src="~/assets/img/icon_loading.gif" /></center>
+            </div>
+        </div>
+    </div>*@
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="col-md-2">
+                    <label>Select Month And Year</label>
+                </div>
+                <div class="col-md-2">
+                    <div class="input-group input-medium">
+                        <select id="selectMonth" placeholder="Select a Month" class="form-control" ng-model="filterMonth" ng-options="r.Id as r.Month for r in monthNames" ng-change="monthSelectionChanged();"></select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="input-group input-small">
+                        <select id="selectYear" placeholder="Select a Year" ng-disabled="disableYearPicker" class="form-control" ng-model="filterYear" ng-options="r as r for r in years"></select>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <label>Region</label>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div multi-select input-model="rBranches" button-label="Name" item-label="Name" tick-property="Ticked" orientation="vertical"
+                             group-property="MultiSelectGroup">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button ng-click="export()" ng-disabled="disableButtons" class="btn green">{{btnExportText}}</button>
+            <button ng-click="refresh()" ng-disabled="disableButtons" class="btn green">{{btnApplyText}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Cheque</h3>
+      @*<div id="chart" dx-chart="{ legend: amountChartSettings.legend, bindingOptions: {dataSource: 'amountChartSettings.dataSource', series: 'amountChartSettings.series', commonSeriesSettings: 'amountChartSettings.commonSeriesSettings' , tooltip: 'amountChartSettings.tooltip', valueAxis: 'amountChartSettings.valueAxis' }}"></div>*@
+    </div>
+  </div>
+</div><!-- page end-->

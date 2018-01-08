@@ -1,0 +1,158 @@
+﻿@using Atlas.Online.Web.Extensions.Ng
+@using Atlas.Online.Web.Security
+
+@model Atlas.Online.Web.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    ViewBag.ngApp = "atlas.core";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/core")
+}
+
+<div class="container-outline">
+    <div class="pos-r">
+        <h1 class="hn-in-outline fc-beta">
+            <strong>Apply Now</strong>
+            <span>
+                <span class="ff-zeta fc-alpha-lt fs-kilo va-t">&#x203a;</span>
+                <span class="fc-alpha">Please register to continue</span>
+            </span>         
+        </h1>
+        <div class="cf" ng-controller="GenericFormCtrl">
+            <div class="row cf">
+                <div class="col col-12">
+                    <p>Thank you for choosing to apply for a loan with Atlas Online. Please fill out the below details to register to our site for the quickest and easiest way to apply for a loan.</p>
+                </div>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new Dictionary<string, object>() { { "name", "form" }, { "novalidate", "novalidate" }, { "f8-initialize-model", null } }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <div class="row cf">
+                    <div class="col md-1-2 pr-beta xsm-no-padding sm-no-padding">
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">                
+                                    @Html.LabelFor(m => m.FirstName, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.FirstName, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.FirstName)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.Surname, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.Surname, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.Surname)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.Cell, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.Cell, new Dictionary<string, object>()
+                                    {
+                                        {"class", "d-block"},
+                                        {"validate-remotely", null},
+                                        {"endpoint", Url.HttpRouteUrl("ActionApi", new { controller = "Accounts", action = "CellInUse", cell = ":value"})}
+                                   })
+                                </div>
+                                @Html.NgLoader(text: "checking...", ngShow: "form.Cell.$error.remotevaliditypending")
+                                @Html.NgValidationMessagesFor(m => m.Cell)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.CellConfirm, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.CellConfirm, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.CellConfirm)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col md-1-2">
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.Email, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.Email, new Dictionary<string, object>()
+                                    {
+                                        {"type", "email"},
+                                        {"class", "d-block"},
+                                        {"validate-remotely", null },
+                                        { "endpoint", Url.HttpRouteUrl("ActionApi", new { controller = "Accounts", action = "EmailInUse", email = ":value"}) }
+                                   })
+                                </div>
+                                @Html.NgLoader(text: "checking...", ngShow: "form.Email.$error.remotevaliditypending")
+                                @Html.NgValidationMessagesFor(m => m.Email)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.EmailConfirm, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgTextBoxFor(m => m.EmailConfirm, new { @class = "d-block", type = "email" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.EmailConfirm)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.Password, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgPasswordFor(m => m.Password, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.Password)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col sm-1-3 md-1-4">
+                                    @Html.LabelFor(m => m.PasswordConfirm, new { @class = "field-label" })
+                                </div>
+                                <div class="col sm-2-3 md-3-4">
+                                    @Html.NgPasswordFor(m => m.PasswordConfirm, new { @class = "d-block" })
+                                </div>
+                                @Html.NgValidationMessagesFor(m => m.PasswordConfirm)
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="field cf">
+                                <div class="col col-12">
+                                    @Html.NgCheckBoxFor(m => m.PolicyAccepted, new { @class = "visuallyhidden", id = "policy-accepted" })
+                                    <label class="field-label" for="policy-accepted"><span class="icon checkbox-custom visuallyhidden-ie8"></span> I have read and understand the @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home")</label>
+                                    @Html.NgValidationMessagesFor(m => m.PolicyAccepted)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-ib-cols row-ib-cols-va-m cf">
+                            <div class="col ar">
+                                <input type="submit" name="submit" value="Register" class="btn btn-l btn-l-right" ng-click="submit(form, $event)" />
+                            </div>
+                        </div>
+                        <div class="ar">Already registered? @Html.ActionLink("Click here to log in.", "Login")</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

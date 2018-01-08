@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4B44803-02CC-4B6C-BF0C-372DAC2617F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.RabbitMQ.Messages</RootNamespace>
+    <AssemblyName>Atlas.RabbitMQ.Messages</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Web\Atlas.Online\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\Services\Atlas.Notification.Server\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AVS\AddAVSRequest.cs" />
+    <Compile Include="AVS\QueryAVSMessage.cs" />
+    <Compile Include="AVS\IncomingResponseMessage.cs" />
+    <Compile Include="Coupon\CouponMessage.cs" />
+    <Compile Include="Credit\BATB2.cs" />
+    <Compile Include="Credit\CreditRequestLegacy.cs" />
+    <Compile Include="Credit\CreditStreamResponse.cs" />
+    <Compile Include="Credit\ReportResponse.cs" />
+    <Compile Include="Credit\ReportRequest.cs" />
+    <Compile Include="Credit\ENQGlobal.cs" />
+    <Compile Include="Credit\RegisterNLRLoan2.cs" />
+    <Compile Include="Credit\ResponseBatchX.cs" />
+    <Compile Include="Credit\ResponseRegisterClient.cs" />
+    <Compile Include="Credit\NLRLoanClose.cs" />
+    <Compile Include="Credit\RegisterNLRLoan.cs" />
+    <Compile Include="Credit\UpdateLoan.cs" />
+    <Compile Include="Credit\UpdateClient.cs" />
+    <Compile Include="Credit\RegisterEmployer.cs" />
+    <Compile Include="Credit\RegisterTelephone.cs" />
+    <Compile Include="Credit\RegisterAddress.cs" />
+    <Compile Include="Credit\RegisterPayment.cs" />
+    <Compile Include="Credit\RegisterLoan.cs" />
+    <Compile Include="Credit\CreditRequest.cs" />
+    <Compile Include="Credit\CreditResponse.cs" />
+    <Compile Include="Credit\RegisterClient.cs" />
+    <Compile Include="DebitOrder\AddAdditionalDebitOrder.cs" />
+    <Compile Include="DebitOrder\CancelAdditionalDebitOrder.cs" />
+    <Compile Include="DebitOrder\MultiQueryDebitOrder.cs" />
+    <Compile Include="DebitOrder\MultiResponseMessage.cs" />
+    <Compile Include="DebitOrder\QueryNaedoBatch.cs" />
+    <Compile Include="DebitOrder\ResponseNaedoBatch.cs" />
+    <Compile Include="DebitOrder\StopDebitOrder.cs" />
+    <Compile Include="DebitOrder\NewDebitOrder.cs" />
+    <Compile Include="DebitOrder\QueryDebitOrder.cs" />
+    <Compile Include="DebitOrder\ResponseMessage.cs" />
+    <Compile Include="DebitOrder\UnbatchResponseMessage.cs" />
+    <Compile Include="DebitOrder\UnbatchRejectedTransactions.cs" />
+    <Compile Include="DebitOrder\UpdateDebitOrder.cs" />
+    <Compile Include="Event\FingerPrintEventMessage.cs" />
+    <Compile Include="Fraud\FraudRequest.cs" />
+    <Compile Include="Fraud\FraudResponse.cs" />
+    <Compile Include="IMessage.cs" />
+    <Compile Include="InitiatePayoutMessage.cs" />
+    <Compile Include="Notification\EventLogNotifyMessage.cs" />
+    <Compile Include="Notification\SMSNotifyMessage.cs" />
+    <Compile Include="Notification\EmailNotifyMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Push\PushMessage.cs" />
+    <Compile Include="ReplyMessage.cs" />
+    <Compile Include="Web\DecisionMessage.cs" />
+    <Compile Include="Web\AccountCreationMessage.cs" />
+    <Compile Include="Web\AccountVerificationMessage.cs" />
+    <Compile Include="Web\AffordabilityMessage.cs" />
+    <Compile Include="Web\ApplicationDecisionMessage.cs" />
+    <Compile Include="Web\UpdateApplicationInformation.cs" />
+    <Compile Include="Web\ClientMessage.cs" />
+    <Compile Include="Web\CreditMessage.cs" />
+    <Compile Include="Web\EmailMessage.cs" />
+    <Compile Include="Web\FraudPreventionMessage.cs" />
+    <Compile Include="Web\IMessage.cs" />
+    <Compile Include="Web\SinkMessage.cs" />
+    <Compile Include="Web\SMSMessage.cs" />
+    <Compile Include="Workflow\MoveWorkflowProcessMessage.cs" />
+    <Compile Include="Workflow\StartWorflowProcessMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Data\Atlas.Domain.csproj">
+      <Project>{42909e2d-45b8-44cc-9b2d-be40ce0d148f}</Project>
+      <Name>Atlas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07FC6272-5FA2-45A7-A99C-062EC5B0C205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

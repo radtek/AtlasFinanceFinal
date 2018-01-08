@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Account.AccountStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inactive" />
+      <xs:enumeration value="Technical_Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancelled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Declined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Review">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PreApproved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Approved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Open">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Legal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WrittenOff">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Settled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Closed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Account.AccountStatus" nillable="true" type="tns:Account.AccountStatus" />
+  <xs:simpleType name="Account.AccountStatusReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Not_Set" />
+      <xs:enumeration value="Affordability" />
+      <xs:enumeration value="ExcessiveLoans" />
+      <xs:enumeration value="UnderAdministration" />
+      <xs:enumeration value="EmployerDeclined" />
+      <xs:enumeration value="DebitOrdersNotAllowed" />
+      <xs:enumeration value="NoEmployment" />
+      <xs:enumeration value="PossiblyFraudulent" />
+      <xs:enumeration value="VerificationFailed" />
+      <xs:enumeration value="SalaryNotEFT" />
+      <xs:enumeration value="PossibleRetrenchment" />
+      <xs:enumeration value="IndefiniteSickLeave" />
+      <xs:enumeration value="EmployeeonDisabliity" />
+      <xs:enumeration value="ForthcomingMaternityLeave" />
+      <xs:enumeration value="PartTimeEmployee" />
+      <xs:enumeration value="ContractEmployee" />
+      <xs:enumeration value="CommissionBasedEmployee" />
+      <xs:enumeration value="EmployedUnder6Months" />
+      <xs:enumeration value="ClientUnder21YearsofAge" />
+      <xs:enumeration value="Pensioner" />
+      <xs:enumeration value="NetSalaryLessThanR1000" />
+      <xs:enumeration value="HandedOver" />
+      <xs:enumeration value="Fixedarrangementoncurrentloans" />
+      <xs:enumeration value="CreditRisk" />
+      <xs:enumeration value="LoanApplicationIncompleteIncorrect" />
+      <xs:enumeration value="UnderDebtReview" />
+      <xs:enumeration value="QuotationExpired" />
+      <xs:enumeration value="NetSalaryLessThanR1500" />
+      <xs:enumeration value="CompanyPolicy" />
+      <xs:enumeration value="EmployerBlocked" />
+      <xs:enumeration value="LegalAccount" />
+      <xs:enumeration value="UnderDebtMediation" />
+      <xs:enumeration value="Fraud" />
+      <xs:enumeration value="ClientStatus" />
+      <xs:enumeration value="NoLongerInterested" />
+      <xs:enumeration value="RejectedOptions" />
+      <xs:enumeration value="Uncontactable" />
+      <xs:enumeration value="TechnicalError" />
+      <xs:enumeration value="ProductWasNeverRequired" />
+      <xs:enumeration value="MultipleSAFPSIncidentListing" />
+      <xs:enumeration value="BadDebt" />
+      <xs:enumeration value="Disability" />
+      <xs:enumeration value="Deceased" />
+      <xs:enumeration value="Retrenched" />
+      <xs:enumeration value="Authentication" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Account.AccountStatusReason" nillable="true" type="tns:Account.AccountStatusReason" />
+  <xs:simpleType name="Account.AccountStatusSubReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Not_Set" />
+      <xs:enumeration value="PersonalConfirmed" />
+      <xs:enumeration value="PersonalSuspect" />
+      <xs:enumeration value="IdentityTheftConfirmed" />
+      <xs:enumeration value="IdentityTheftSuspect" />
+      <xs:enumeration value="AgeMaximumof60Years" />
+      <xs:enumeration value="AgeMinimumof21Years" />
+      <xs:enumeration value="CountryofBirth" />
+      <xs:enumeration value="EmployedMinimumPeriodofEmployment" />
+      <xs:enumeration value="EmployerIsBlocked" />
+      <xs:enumeration value="EmployerType" />
+      <xs:enumeration value="FraudulentAlertDeclinedPreviousLoan" />
+      <xs:enumeration value="LatestInstalmentsPaid" />
+      <xs:enumeration value="LoanStatusCurrent" />
+      <xs:enumeration value="LoanStatusPrevious" />
+      <xs:enumeration value="NetIncomeMinimum" />
+      <xs:enumeration value="PaidViaEFT" />
+      <xs:enumeration value="PermanentlyEmployed" />
+      <xs:enumeration value="RetirementAge" />
+      <xs:enumeration value="SalaryBankAccount" />
+      <xs:enumeration value="StatusCurrent" />
+      <xs:enumeration value="ThreeMonthlyInstalmentsPaid" />
+      <xs:enumeration value="UnderAdministration" />
+      <xs:enumeration value="UnderDebtReview" />
+      <xs:enumeration value="MaximumOpenLoans" />
+      <xs:enumeration value="AffordabilityNoOptions" />
+      <xs:enumeration value="SAFPSMultipleIncidentListings" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Account.AccountStatusSubReason" nillable="true" type="tns:Account.AccountStatusSubReason" />
+</xs:schema>

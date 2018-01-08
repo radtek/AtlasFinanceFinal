@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.ThirdParty.Xds" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfQuestionAnswers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuestionAnswers" nillable="true" type="tns:QuestionAnswers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuestionAnswers" nillable="true" type="tns:ArrayOfQuestionAnswers" />
+  <xs:complexType name="QuestionAnswers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answers" nillable="true" type="tns:ArrayOfQuestionAnswers.Answer" />
+      <xs:element minOccurs="0" name="AuthenticationProcessStoreId" type="xs:long" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuestionAnswers" nillable="true" type="tns:QuestionAnswers" />
+  <xs:complexType name="ArrayOfQuestionAnswers.Answer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuestionAnswers.Answer" nillable="true" type="tns:QuestionAnswers.Answer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuestionAnswers.Answer" nillable="true" type="tns:ArrayOfQuestionAnswers.Answer" />
+  <xs:complexType name="QuestionAnswers.Answer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnswerId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAnswer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuestionAnswers.Answer" nillable="true" type="tns:QuestionAnswers.Answer" />
+  <xs:complexType name="VerificationStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Iteration" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificationStatus" nillable="true" type="tns:VerificationStatus" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PASSED" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="NO_MORE_RETRIES" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+</xs:schema>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.RabbitMQ.Messages.Credit" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.RabbitMQ.Messages.Credit" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reasons" nillable="true" type="tns:ArrayOfReason" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reason" nillable="true" type="tns:Reason" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReason" nillable="true" type="tns:ArrayOfReason" />
+  <xs:complexType name="Reason">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reason" nillable="true" type="tns:Reason" />
+  <xs:complexType name="ArrayOfNLRCPAAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NLRCPAAccount" nillable="true" type="tns:NLRCPAAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNLRCPAAccount" nillable="true" type="tns:ArrayOfNLRCPAAccount" />
+  <xs:complexType name="NLRCPAAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" minOccurs="0" name="AccountType" type="q1:Risk.BureauAccountType" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalanceDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BureauFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataSubmissionCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HighLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Installment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestRateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JoinLoanParticpants" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastPayment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastPaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoanIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OverdueAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnershipTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepaymentPeriod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepaymentPeriodType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettlementDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SubAccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subscriber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NLRCPAAccount" nillable="true" type="tns:NLRCPAAccount" />
+  <xs:complexType name="CreditResponse">
+    <xs:sequence>
+      <xs:element name="_x003C_Age_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_CorrelationId_x003E_k__BackingField" type="ser:guid" />
+      <xs:element name="_x003C_CreatedAt_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" name="_x003C_Decision_x003E_k__BackingField" type="q2:Account.AccountStatus" />
+      <xs:element name="_x003C_Error_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_File_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MessageId_x003E_k__BackingField" nillable="true" type="xs:long" />
+      <xs:element name="_x003C_NLRCPAAccounts_x003E_k__BackingField" nillable="true" type="tns:ArrayOfNLRCPAAccount" />
+      <xs:element name="_x003C_NLREnquiryNo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Products_x003E_k__BackingField" nillable="true" type="tns:ArrayOfProduct" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Reasons_x003E_k__BackingField" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element name="_x003C_RiskType_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ScoreDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+      <xs:element name="_x003C_Score_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_TotalCPAAccount_x003E_k__BackingField" type="xs:decimal" />
+      <xs:element name="_x003C_TotalNLRAccount_x003E_k__BackingField" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditResponse" nillable="true" type="tns:CreditResponse" />
+</xs:schema>

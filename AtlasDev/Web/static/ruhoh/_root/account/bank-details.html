@@ -1,0 +1,57 @@
+---
+title : My Account
+title_secondary : Bank details
+description:
+page_list_description: Bank Details
+layout: account
+---
+<form action="">
+	<div class="row row-ib-cols row-ib-cols-va-m cf">
+
+		<div class="field cf">
+			<div class="col col-4">
+				<label for="bank" class="field-label">Bank</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/select }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4">
+				<label for="account-holder" class="field-label">Account Holder</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4">
+				<label for="account-type" class="field-label">Account type</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/select }}
+			</div><!-- .col -->
+		</div>
+
+		<div class="field cf">
+			<div class="col col-4">
+				<label for="account-number" class="field-label">Account number</label>
+			</div><!-- .col -->
+			<div class="col col-8">
+				{{> forms/input }}
+			</div><!-- .col -->
+		</div>
+
+	</div><!-- .row -->
+	<div>
+		<input class="visuallyhidden" type="checkbox" id="radio3" name="radios">
+		<label class="field-label case-n" for="radio3">
+			<i class="icon checkbox-custom visuallyhidden-ie8"></i> I confirm that my salary is paid to the bank account provided
+		</label>
+	</div>
+	<div class="ar">
+		<label for="submit" class="btn btn-right"><input id="submit" name="submit" type="submit" value="Update"></label>
+	</div>
+</form>

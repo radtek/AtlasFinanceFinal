@@ -1,0 +1,73 @@
+﻿namespace Atlas.Reporting.DTO
+{
+  public class ASS_CiReportSales
+  {
+    public long Id { get; set; }
+    public string LoanMeth { get; set; }
+    public string Name { get; set; }
+    public int PayNo { get; set; }
+    public string QtySfee { get; set; }
+    public float Cheque { get; set; }
+    public float Target { get; set; }
+    public float TargetPercent { get; set; }
+    public float ActualPercent { get; set; }
+    public float DeviationPercent { get; set; }
+    public float ChargesExclVat { get; set; }
+    public float ChargesVat { get; set; }
+    public float TotalCharges { get; set; }
+    public float ChargesPercent { get; set; }
+    public float CreditLife { get; set; }
+    public float CreditLifePercent { get; set; }
+    public float LoanFeeExclVat { get; set; }
+    public float LoanFeeVat { get; set; }
+    public float LoanFeeInclVat { get; set; }
+    public float LoanFeePercent { get; set; }
+    public float FuneralAddOn { get; set; }
+    public float AgeAddOn { get; set; }
+    public float VapExcl { get; set; }
+    public float VapVat { get; set; }
+    public float VapIncl { get; set; }
+    public float TotalAddOn { get; set; }
+    public float AddOnPercent { get; set; }
+    public float TotFeeExcl { get; set; }
+    public float TotFeeVat { get; set; }
+    public float TotFeeIncl { get; set; }
+    public float TotFeePercent { get; set; }
+    public float HandedOverLoansAmount { get; set; }
+    public float HandedOverLoanPercent { get; set; }
+    public int Loans { get; set; }
+    public float LoanMix { get; set; }
+    public int VapValueLinked { get; set; }
+    public int VapLinked { get; set; }
+    public int VapDeniedByConWithAuth { get; set; }
+    public int VapDeniedByConWithOutAuth { get; set; }
+    public int VapExcludedLoans { get; set; }
+    public float Collections { get; set; }
+    public float RolledValue { get; set; }
+    public float RolledPercent { get; set; }
+    public float Refunds { get; set; }
+    public float QuantityClientNew { get; set; }
+    public int HandedOverLoansQuantity { get; set; }
+    public int HandedOverClientQuantity { get; set; }
+    public int ClientsBranch { get; set; }
+    public int SalesRepLoans { get; set; }
+    public int NewClientNoOfLoans { get; set; }
+    public int CurrentClient { get; set; }
+    public int RevivedClient { get; set; }
+    public float AverageRevivedClientAmount { get; set; }
+    public float NewClientMix { get; set; }
+    public float AverageLoan { get; set; }
+    public float NewClientAverageLoan { get; set; }
+    public int ReswipeBankChange { get; set; }
+    public int ReswipeLoanTermChange { get; set; }
+    public int ReswipeInstalmentChange { get; set; }
+    public int OneMonth { get; set; }
+    public int OneMonthThin { get; set; }
+    public int OneMonthCapped { get; set; }
+    public int TwoToFourMonth { get; set; }
+    public int FiveToSixMonth { get; set; }
+    public int TwelveMonth { get; set; }
+    public int Declined { get; set; }
+    public int TotalProducts { get; set; }
+  }
+}

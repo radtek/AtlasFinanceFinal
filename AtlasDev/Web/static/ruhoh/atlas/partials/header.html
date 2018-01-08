@@ -1,0 +1,31 @@
+<!--[if lte IE 8]>
+<div class="wrap cf">
+	<div class="alert alert-danger">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a modern browser</a> to experience this site.</div>
+</div>
+<![endif]-->
+
+<header class="bgc-beta bgi-gr-tb-alpha ptb-alpha">
+
+	<div class="wrap cf">
+
+		<div class="row cf">
+			<div class="col col-2">
+				<div class="logo-container cf">
+					<a href="/"><img class="logo" src="{{urls.media}}/atlas-online-logo.png" alt="Atlas Online logo" width="143" height="95"></a>
+				</div>
+			</div>
+
+			<div class="col col-10">
+				<nav>
+					<ul class="menu">
+						{{# data.navigation?to__root }}
+							{{> navigation_list }}
+						{{/ data.navigation?to__root }}
+					</ul>
+				</nav>
+			</div>
+		</div><!-- .row -->
+
+	</div>
+
+</header>

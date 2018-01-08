@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a24b7177-b620-4a45-8e56-6a340822c1d1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.atlasonline.co.za/Atlas.Server.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Atlas.xsd" MetadataType="Schema" ID="59b9bc3a-1e16-4f86-96c4-0373676153a3" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd4" />
+    <MetadataFile FileName="Atlas1.xsd" MetadataType="Schema" ID="0d84a9eb-b309-47cc-b7a0-9288bfcfe6ea" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd9" />
+    <MetadataFile FileName="Atlas2.xsd" MetadataType="Schema" ID="b4d78e2a-ff0e-4cfa-acef-733bbdbb2caf" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd2" />
+    <MetadataFile FileName="Integration.wsdl" MetadataType="Wsdl" ID="af9e2bf9-e535-4590-a7b2-dcb48efe709e" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?wsdl" />
+    <MetadataFile FileName="Atlas3.xsd" MetadataType="Schema" ID="ca5bbf69-7265-488a-a318-dc8fcb89ee75" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd10" />
+    <MetadataFile FileName="Atlas4.xsd" MetadataType="Schema" ID="629fa267-c5c2-41eb-8098-836cc25e086b" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd7" />
+    <MetadataFile FileName="Atlas5.xsd" MetadataType="Schema" ID="4d79c528-e92f-427f-87c4-e38f7c09a40a" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd0" />
+    <MetadataFile FileName="Atlas12.xsd" MetadataType="Schema" ID="58c5f871-0136-419a-9d18-69e5f1819e8c" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd12" />
+    <MetadataFile FileName="Atlas6.xsd" MetadataType="Schema" ID="fd69bc5a-d575-47b8-9426-74799501b525" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd5" />
+    <MetadataFile FileName="Atlas.wsdl" MetadataType="Wsdl" ID="a83823f1-a87f-4017-a05c-844cd7cdc0ee" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Atlas7.xsd" MetadataType="Schema" ID="b2bf9343-1377-426f-ab62-75f25533aefe" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd6" />
+    <MetadataFile FileName="Atlas8.xsd" MetadataType="Schema" ID="4806636e-8ed7-4731-bf1a-25e6f1c18c1d" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd1" />
+    <MetadataFile FileName="Atlas9.xsd" MetadataType="Schema" ID="ed0899b5-e7ae-43aa-95cd-d668a4f9b588" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd8" />
+    <MetadataFile FileName="Atlas10.xsd" MetadataType="Schema" ID="03e62647-476c-4cb1-b749-5bc7c0279944" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd11" />
+    <MetadataFile FileName="Atlas11.xsd" MetadataType="Schema" ID="a130d54b-b4cc-4999-996e-632228c1c78e" SourceId="1" SourceUrl="https://api.atlasonline.co.za/Atlas.Server.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

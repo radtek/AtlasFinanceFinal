@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.DataSync.WCF.Client", "Atlas.DataSync.WCF.Client.csproj", "{966FA7EB-8D68-4DFA-B146-FF13583203B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.DataSync.WCF", "..\Atlas.DataSync.WCF\Atlas.DataSync.WCF.csproj", "{834B9DD8-6FBE-49D2-9F17-4A519DE8B7F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlas.Shared.Client", "..\..\..\Libraries\Atlas.Shared.Client\Atlas.Shared.Client.csproj", "{20A6EF1A-71A6-402F-82A1-1B96B40C12C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{966FA7EB-8D68-4DFA-B146-FF13583203B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966FA7EB-8D68-4DFA-B146-FF13583203B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966FA7EB-8D68-4DFA-B146-FF13583203B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966FA7EB-8D68-4DFA-B146-FF13583203B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834B9DD8-6FBE-49D2-9F17-4A519DE8B7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834B9DD8-6FBE-49D2-9F17-4A519DE8B7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834B9DD8-6FBE-49D2-9F17-4A519DE8B7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834B9DD8-6FBE-49D2-9F17-4A519DE8B7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A6EF1A-71A6-402F-82A1-1B96B40C12C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A6EF1A-71A6-402F-82A1-1B96B40C12C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A6EF1A-71A6-402F-82A1-1B96B40C12C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A6EF1A-71A6-402F-82A1-1B96B40C12C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

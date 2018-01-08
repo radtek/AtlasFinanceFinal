@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Atlas.ThirdParty.Altech.NuCard" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Atlas.ThirdParty.Altech.NuCard" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Atlas.ThirdParty.Altech.NuCard/Imports">
+      <xsd:import namespace="Atlas.ThirdParty.Altech.NuCard" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INuCardAdminServer_LinkCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_LinkCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_AllocateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_AllocateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CardBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CardBalance" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CardBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CardBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_DeductFromProfileLoadCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductFromProfileLoadCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_DeductFromProfileLoadCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductFromProfileLoadCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_DeductFromCardLoadProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductFromCardLoadProfile" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_DeductFromCardLoadProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductFromCardLoadProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TransferFundsBetweenCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferFundsBetweenCards" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TransferFundsBetweenCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferFundsBetweenCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CardStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CardStatement" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CardStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CardStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_StopCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_StopCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_GetCardStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardStatus" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_GetCardStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CancelStopCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelStopCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_CancelStopCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelStopCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_ResetPin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPin" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_ResetPin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_UpdateAllocatedCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAllocatedCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_UpdateAllocatedCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAllocatedCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TryPingNuCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryPingNuCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TryPingNuCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryPingNuCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_IsBranchConfigured_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBranchConfigured" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_IsBranchConfigured_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBranchConfiguredResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_AllocateAndDeductFromProfileLoadCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateAndDeductFromProfileLoadCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_AllocateAndDeductFromProfileLoadCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateAndDeductFromProfileLoadCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TransferFundsToNewCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferFundsToNewCard" />
+  </wsdl:message>
+  <wsdl:message name="INuCardAdminServer_TransferFundsToNewCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferFundsToNewCardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INuCardAdminServer">
+    <wsdl:operation name="LinkCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/LinkCard" message="tns:INuCardAdminServer_LinkCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/LinkCardResponse" message="tns:INuCardAdminServer_LinkCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllocateCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateCard" message="tns:INuCardAdminServer_AllocateCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateCardResponse" message="tns:INuCardAdminServer_AllocateCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CardBalance">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardBalance" message="tns:INuCardAdminServer_CardBalance_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardBalanceResponse" message="tns:INuCardAdminServer_CardBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromProfileLoadCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromProfileLoadCard" message="tns:INuCardAdminServer_DeductFromProfileLoadCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromProfileLoadCardResponse" message="tns:INuCardAdminServer_DeductFromProfileLoadCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromCardLoadProfile">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromCardLoadProfile" message="tns:INuCardAdminServer_DeductFromCardLoadProfile_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromCardLoadProfileResponse" message="tns:INuCardAdminServer_DeductFromCardLoadProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsBetweenCards">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsBetweenCards" message="tns:INuCardAdminServer_TransferFundsBetweenCards_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsBetweenCardsResponse" message="tns:INuCardAdminServer_TransferFundsBetweenCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CardStatement">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardStatement" message="tns:INuCardAdminServer_CardStatement_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardStatementResponse" message="tns:INuCardAdminServer_CardStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/StopCard" message="tns:INuCardAdminServer_StopCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/StopCardResponse" message="tns:INuCardAdminServer_StopCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStatus">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/GetCardStatus" message="tns:INuCardAdminServer_GetCardStatus_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/GetCardStatusResponse" message="tns:INuCardAdminServer_GetCardStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelStopCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CancelStopCard" message="tns:INuCardAdminServer_CancelStopCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CancelStopCardResponse" message="tns:INuCardAdminServer_CancelStopCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPin">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/ResetPin" message="tns:INuCardAdminServer_ResetPin_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/ResetPinResponse" message="tns:INuCardAdminServer_ResetPin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocatedCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/UpdateAllocatedCard" message="tns:INuCardAdminServer_UpdateAllocatedCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/UpdateAllocatedCardResponse" message="tns:INuCardAdminServer_UpdateAllocatedCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryPingNuCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TryPingNuCard" message="tns:INuCardAdminServer_TryPingNuCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TryPingNuCardResponse" message="tns:INuCardAdminServer_TryPingNuCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBranchConfigured">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/IsBranchConfigured" message="tns:INuCardAdminServer_IsBranchConfigured_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/IsBranchConfiguredResponse" message="tns:INuCardAdminServer_IsBranchConfigured_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllocateAndDeductFromProfileLoadCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateAndDeductFromProfileLoadCard" message="tns:INuCardAdminServer_AllocateAndDeductFromProfileLoadCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateAndDeductFromProfileLoadCardResponse" message="tns:INuCardAdminServer_AllocateAndDeductFromProfileLoadCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsToNewCard">
+      <wsdl:input wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsToNewCard" message="tns:INuCardAdminServer_TransferFundsToNewCard_InputMessage" />
+      <wsdl:output wsaw:Action="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsToNewCardResponse" message="tns:INuCardAdminServer_TransferFundsToNewCard_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

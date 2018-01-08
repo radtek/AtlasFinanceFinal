@@ -1,0 +1,91 @@
+﻿@model Atlas.Online.Web.Models.Steps.Interfaces.IBankDetailsDtoWrapper
+
+@using Atlas.Online.Web.Extensions.Ng;
+<div atl-banking-details>
+    @Html.Partial("_BankDetailNotifications")
+    <div ng-class="{loader: bankDetailsLoading}">  
+        <div class="row cf mb-gamma">
+            <div class="col md-1-2 pr-alpha sm-no-padding">
+                <div class="row row-ib-cols row-ib-cols-va-m cf">
+                    <div class="field cf">
+                        <div class="col sm-1-3 pr-alpha">
+                            @Html.LabelFor(m => m.BankDetail.BankName, new { @class = "field-label" })
+                            @Html.NgTooltip(title: "This is the account that your salary goes into and your loan repayment will come off.")
+                        </div>
+                        <div class="col sm-2-3">
+                            @Html.NgDropDownListFor(m => m.BankDetail.BankName, new Dictionary<string, object>() { 
+                                { "class", "d-block" },
+                                { "on-change", "revalidateAccNo()" },
+                                { "ng-readonly", "bankReadOnly()" }
+                           })
+                        </div>
+                        @Html.NgValidationMessagesFor(m => m.BankDetail.BankName)
+                    </div>
+                    <div class="field cf">
+                        <div class="col sm-1-3 pr-alpha">
+                            @Html.LabelFor(m => m.BankDetail.AccountType, new { @class = "field-label" })
+                        </div>
+                        <div class="col sm-2-3">
+                            @Html.NgDropDownListFor(m => m.BankDetail.AccountType, new Dictionary<string, object>(){
+                                { "class", "d-block" },
+                                { "on-change", "revalidateAccNo()" },
+                                { "ng-readonly", "bankReadOnly()" }
+                           })
+                        </div>
+                        @Html.NgValidationMessagesFor(m => m.BankDetail.AccountType)
+                    </div>
+                    <div class="field cf">
+                        <div class="col sm-1-3 pr-alpha">
+                            @Html.LabelFor(m => m.BankDetail.AccountHolder, new { @class = "field-label" })
+                        </div>
+                        <div class="col sm-2-3">
+                            @Html.NgTextBoxFor(m => m.BankDetail.AccountHolder, new Dictionary<string, object>() {
+                                { "class", "d-block" },
+                                { "ng-readonly", "bankReadOnly()" }
+                            })
+                        </div>
+                        @Html.NgValidationMessagesFor(m => m.BankDetail.AccountHolder)
+                    </div>
+                </div>
+            </div>
+            <div class="col md-1-2 pl-alpha sm-no-padding">
+                <div class="row row-ib-cols row-ib-cols-va-m cf">
+                    <div class="field cf">
+                        <div class="col sm-1-3 pr-alpha">
+                            @Html.LabelFor(m => m.BankDetail.AccountNo, new { @class = "field-label" })
+                        </div>
+                        <div class="col sm-2-3">
+                            @Html.NgTextBoxFor(m => m.BankDetail.AccountNo, new Dictionary<string, object>() {
+                                { "class", "d-block" }, 
+                                { "validate-remotely", null },
+                                { "params", "getAccNoValidationParams()" },
+                                { "validateonstartup", false },
+                                { "ng-readonly", "bankReadOnly()" },
+                                { "endpoint",  Url.HttpRouteUrl("ActionApi", new { controller = "ApplicationStep", action = "AccountCDV", AccountNo = ":value", Bank = ":bank", AccType = ":accType"})  } 
+                           })
+                        </div>
+                        @Html.NgLoader(text: "checking...", ngShow: "form.BankDetail_AccountNo.$error.remotevaliditypending")
+                        @Html.NgValidationMessagesFor(m => m.BankDetail.AccountNo, ngShow: "{1}.{0}.$invalid")
+                    </div>
+                    <div class="field cf">
+                        <div class="col sm-1-3 va-t pr-alpha">
+                            <label for="BankPeriod" class="field-label">How long have you had the account?</label>
+                        </div>
+                        <div class="col sm-2-3">
+                            @Html.NgDropDownListFor(m => m.BankDetail.BankPeriod, new Dictionary<string, object>() {
+                                { "class", "d-block" },
+                                { "on-change", "revalidateAccNo()" },
+                                { "ng-readonly", "bankReadOnly()" }
+                            })
+                        </div>
+                        @Html.NgValidationMessagesFor(m => m.BankDetail.BankPeriod)
+                    </div>
+                </div>
+            </div>
+            <div class="cf"></div>
+            <div class="col col-6 push-6 ac pl-alpha ng-cloak" ng-show="showBankingResubmit && avsResult == AVS_RESULT.FAILED">
+                <div class="alert alert-info fc-alpha d-block"><em>Please correct your banking details to continue.</em></div>
+            </div>
+        </div>
+    </div>
+</div>

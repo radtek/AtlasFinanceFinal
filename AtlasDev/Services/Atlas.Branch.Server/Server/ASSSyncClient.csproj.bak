@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12537598-1794-4FAC-B470-9693AEFB740E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASSSyncClient</RootNamespace>
+    <AssemblyName>ASSSyncClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AtlasLib.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ASSSyncClient.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atlas.Common.4.0">
+      <HintPath>..\..\..\Libraries\Atlas.Common\bin\Debug\Atlas.Common.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Atlas.Enumerators.4.0">
+      <HintPath>..\..\..\Libraries\Atlas.Enumerators\bin\Debug\Atlas.Enumerators.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="AutomaticUpdater">
+      <HintPath>C:\Program Files (x86)\wyBuild\AutomaticUpdater\Microsoft .NET 4.0\AutomaticUpdater.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>packages\Npgsql.2.0.14.3\lib\net40\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>packages\Npgsql.2.0.14.3\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>packages\Quartz.2.2.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>packages\Topshelf.3.1.3\lib\net40-full\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf.Log4Net">
+      <HintPath>packages\Topshelf.Log4Net.3.1.3\lib\net40-full\Topshelf.Log4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\WCF\WCFExtension.cs" />
+    <Compile Include="QuartzTasks\BackupDatabase.cs" />
+    <Compile Include="QuartzTasks\CheckForAppUpdates.cs" />
+    <Compile Include="QuartzTasks\DBUpdateStrucVer.cs" />
+    <Compile Include="QuartzTasks\LogEventsToServer.cs" />
+    <Compile Include="Utils\NativeMethods.cs" />
+    <Compile Include="QuartzTasks\SyncTimeWithServer.cs" />
+    <Compile Include="QuartzTasks\UpdateLocalMasterTables.cs" />
+    <Compile Include="QuartzTasks\UploadChanges.cs" />
+    <Compile Include="Reports\Agreement\AgreementDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgreementDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Agreement\AgreementReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Agreement\AgreementReport.Designer.cs">
+      <DependentUpon>AgreementReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataFileChunkServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataFileRequestServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataSyncServicesServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\BasicCrypto.cs" />
+    <Compile Include="Utils\Serialization\ClassToBytes.cs" />
+    <Compile Include="Utils\AppSettings.cs" />
+    <Compile Include="Utils\WCF\ChunkDownloader.cs" />
+    <Compile Include="Utils\LogEvents.cs" />
+    <Compile Include="Utils\WCF\CreateRequest.cs" />
+    <Compile Include="Utils\WCF\SourceRequestUtils.cs" />
+    <Compile Include="WCF\Implementation\ASSServer.cs" />
+    <Compile Include="WCF\Interface\IASSServer.cs" />
+    <Compile Include="WCF\Interface\IReportServer.cs" />
+    <Compile Include="WCF\Interface\SourceRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.release.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Reports\Agreement\AgreementDS.xsc">
+      <DependentUpon>AgreementDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Agreement\AgreementDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgreementDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Agreement\AgreementDS.xss">
+      <DependentUpon>AgreementDS.xsd</DependentUpon>
+    </None>
+    <None Include="Service References\DataFileChunkServer\08.wsdl" />
+    <None Include="Service References\DataFileChunkServer\08.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileChunkServer\ASSServer.WCF.Interface.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileChunkServer\service.wsdl" />
+    <None Include="Service References\DataFileChunkServer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileRequestServer\08.wsdl" />
+    <None Include="Service References\DataFileRequestServer\08.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileRequestServer\ASSServer.WCF.Interface.DataFiles.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileRequestServer\ASSServer.WCF.Interface.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataFileRequestServer\ASSSyncClient.DataFileRequestServer.DumpFileInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataFileRequestServer\ASSSyncClient.DataFileRequestServer.ProcessStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataFileRequestServer\service.wsdl" />
+    <None Include="Service References\DataFileRequestServer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\08.wsdl" />
+    <None Include="Service References\DataSyncServicesServer\08.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSServer.WCF.Interface.DataSync.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSServer.WCF.Interface.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSSyncClient.DataSyncServicesServer.KeyValueItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSSyncClient.DataSyncServicesServer.MasterTableRowChanges.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSSyncClient.DataSyncServicesServer.PingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\ASSSyncClient.DataSyncServicesServer.VerUpdateScripts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\service.wsdl" />
+    <None Include="Service References\DataSyncServicesServer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AtlasLib.ico" />
+    <None Include="Service References\DataSyncServicesServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataSyncServicesServer\configuration.svcinfo" />
+    <None Include="Service References\DataSyncServicesServer\configuration91.svcinfo" />
+    <None Include="Service References\DataFileRequestServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataFileRequestServer\configuration.svcinfo" />
+    <None Include="Service References\DataFileRequestServer\configuration91.svcinfo" />
+    <None Include="Service References\DataFileChunkServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataFileChunkServer\configuration.svcinfo" />
+    <None Include="Service References\DataFileChunkServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\Agreement\AgreementReport.resx">
+      <DependentUpon>AgreementReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataFileChunkServer\" />
+    <WCFMetadataStorage Include="Service References\DataFileRequestServer\" />
+    <WCFMetadataStorage Include="Service References\DataSyncServicesServer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>ECHO %25TIME%25  Starting build...
+SET RELEASEPATH=$(ProjectDir)..\wyUpdate\Release\V1.0.0.0
+
+IF $(ConfigurationName) == Release (
+  ECHO %25TIME%25  'Release' defined in Project- creating encrypted EXE with destination path: %25RELEASEPATH%25
+  IF NOT EXIST  "%25RELEASEPATH%25" MD "%25RELEASEPATH%25"
+  DEL "%25RELEASEPATH%25\*.*" /Q
+
+  ECHO %25TIME%25  Copying files...
+  COPY "$(TargetPath)" "%25RELEASEPATH%25"    
+  COPY "$(TargetDir)*.DLL" "%25RELEASEPATH%25"
+
+  ECHO %25TIME%25 Obfuscating main EXE...
+  "C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.Console.exe" -file "%25RELEASEPATH%25\$(TargetFileName)" -exception_handling 0 -control_flow_obfuscation 1 -flow_level 1 - resourceencryption 1 -unprintable_characters 1
+  ECHO %25TIME%25  Done!
+    
+  DEL "%25RELEASEPATH%25\$(ProjectName).exe"
+  COPY "%25RELEASEPATH%25\$(ProjectName)_Secure\*.exe" "%25RELEASEPATH%25" /Y
+  DEL "%25RELEASEPATH%25\$(ProjectName)_Secure\*.exe" /Q  
+  RD "%25RELEASEPATH%25\$(ProjectName)_Secure"
+  COPY "$(SolutionDir)App.release.config" "%25RELEASEPATH%25\$(TargetFileName).config" /Y
+)
+
+ECHO %25TIME%25  Build completed</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

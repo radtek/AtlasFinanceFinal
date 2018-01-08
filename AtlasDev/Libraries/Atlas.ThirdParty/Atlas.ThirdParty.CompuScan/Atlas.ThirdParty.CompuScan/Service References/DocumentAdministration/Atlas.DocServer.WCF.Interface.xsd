@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Atlas.DocServer.WCF.Interface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Atlas.DocServer.WCF.Interface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" />
+  <xs:complexType name="DocumentInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" name="_x003C_Category_x003E_k__BackingField" type="q1:Document.Category" />
+      <xs:element name="_x003C_ClientPersonId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Comment_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CreateDate_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CreatedByPersonId_x003E_k__BackingField" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" name="_x003C_FileFormatType_x003E_k__BackingField" type="q2:Document.FileFormat" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.Enumerators" name="_x003C_Generator_x003E_k__BackingField" type="q3:Document.Generator" />
+      <xs:element name="_x003C_Hash_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Reference_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Revision_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Size_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_SourceData_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_x003C_SourceTemplateId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_StorageId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_StorageSystemRef_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentInfo" nillable="true" type="tns:DocumentInfo" />
+</xs:schema>

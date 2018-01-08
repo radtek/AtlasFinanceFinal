@@ -1,0 +1,106 @@
+﻿<div ng-controller="AccountEnquiriesFraudController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="fraudParams" class="table">
+            <tr ng-repeat="fraud in $data" ng-click="changeSelection('fsRowSelected', fraud, 'fraudEnquiries')" ng-class="{selected: fraud.$selected}" style="cursor: pointer;">
+              <td data-title="'Rating'">
+                <center> {{fraud.Rating}}</center>
+              </td>
+              <td data-title="'Description'">
+                <center> {{fraud.RatingDescription}}</center>
+              </td>
+              <td data-title="'ID No'">
+                <center> {{fraud.IDNumber}}</center>
+              </td>
+              <td data-title="'Bank Account No'">
+                <center> {{fraud.BankAccountNo}}</center>
+              </td>
+              <td data-title="'Cell No'">
+                <center> {{fraud.CellNo }}</center>
+              </td>
+              <td data-title="'Passed'">
+                <center>
+                  <i class="fa fa-check" style="color:green;font-size:large;" ng-if="fraud.Passed"></i>
+                  <i class="fa fa-times" style="color: red; font-size: large; " ng-if="!fraud.Passed"></i>
+                </center>
+              </td>
+              <td data-title="'Override Date'">
+                <center> {{fraud.OverrideDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+              <td data-title="'Override User'">
+                <center> {{fraud.OverrideUser | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+              <td data-title="'Create Date'" sortable="'CreateDate'">
+                <center> {{fraud.CreatedDate | date:'yyyy-MM-dd HH:mm'}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button type="button" class="btn red" ng-disabled="!row || !row.$selected || row.OverrideDate" data-toggle="modal" href="#OverrideFraudDialogue">Override</button>
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <section class="panel-body">
+      <fieldset>
+        <h4>Fraud Reasons</h4>
+        <div class="table-responsive">
+          <table ng-table="fraudReasonParams" class="table">
+            <tr ng-repeat="fraudReason in $data">
+              <td data-title="'Reason'">
+                <center> {{fraudReason.ReasonCode}}</center>
+              </td>
+              <td data-title="'Description'">
+                <center> {{fraudReason.Description}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </section>
+    <!-- Modals -->
+    <div class="modal fade" id="OverrideFraudDialogue" tabindex="-1" role="basic" aria-hidden="true" style="display: none; overflow:hidden;" boot-modal>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header label-danger">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Override</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <p>
+                You are about to override the fraud result to <span class="label-success curved-border">Passed</span>, are you sure you wish to continue?
+              </p>
+              <h5>Reason:</h5>
+              <p>
+                <textarea class="col-md-12 form-control" rows="3" maxlength="500" ng-model="fraud.OverrideReason" style="resize: vertical;"></textarea>
+              </p>
+              <span class="help-block pull-right">
+                {{500 - fraud.OverrideReason.length}} characters left
+              </span>
+              <div class="clearfix"></div>
+              <div class="alert alert-danger" ng-show="fraud.OverrideReason == 0">
+                Please enter a reason
+              </div>
+              <div class="alert alert-warning" ng-show="fraud.OverrideReason.length <= 20 && fraud.OverrideReason.length !== 0">
+                Reason entered is to short.
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn red" button-loading="is_processing" data-loading-text="Processing..." ng-click="fraudOverrideScore(@ViewBag.PersonId)">Confirm</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- End Modals -->
+  </section>
+</div>

@@ -1,0 +1,28 @@
+﻿<div ng-controller="AccountDocumentController">
+  <section class="panel">
+    <section class="panel-body">
+      <div class="tabbable-custom">
+        <ul class="nav nav-tabs" id="accDocuments">
+          <li class="">
+            <a href="#acdd" data-toggle="tab">
+              Documents
+            </a>
+          </li>
+          <li class="">
+            <a href="#acdu" data-toggle="tab">
+              Upload / Classify
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="acdd">
+            @{Html.RenderPartial("_Documents_Document");}
+          </div>
+          <div class="tab-pane" id="acdu">
+            @{Html.RenderPartial("_Documents_Upload");}
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>

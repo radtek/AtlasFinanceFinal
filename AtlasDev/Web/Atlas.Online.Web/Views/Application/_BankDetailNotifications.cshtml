@@ -1,0 +1,16 @@
+﻿@using Atlas.Online.Web.Resources;
+<div class="of-h">
+  <div class="alert alert-info anim-margin anim-margin-top-hide ng-cloak" ng-class="{'anim-margin-top-hide': avsResult != AVS_RESULT.NORESULT}">
+    @Html.Raw(ViewBag.AVS_BankDetailsProcessing)      
+  </div>
+</div>
+<div class="of-h">
+  <div class="alert alert-success anim-margin anim-margin-top-hide ng-cloak" ng-class="{'anim-margin-top-hide': avsResult != AVS_RESULT.PASSED && avsResult != AVS_RESULT.PASSEDWARNINGS}">
+    @Html.Raw(Messages.AVS_BankDetailsPassed)
+  </div>
+</div>
+<div class="of-h">
+  <div class="alert alert-error anim-margin anim-margin-top-hide ng-cloak" ng-class="{'anim-margin-top-hide': avsResult != AVS_RESULT.FAILED}">
+    @Html.Raw(ErrorMessages.AVS_BankDetailsFailed)
+  </div>
+</div>

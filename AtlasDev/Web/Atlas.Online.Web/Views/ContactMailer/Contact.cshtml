@@ -1,0 +1,18 @@
+﻿@model Atlas.Online.Web.Models.ContactModel
+
+@using Atlas.Online.Web.Models
+
+Good day,<br />
+<br />
+Atlas Online has recieved a query from <strong>@Html.DisplayFor(x => x.Name)</strong>.<br />
+<br />
+<blockquote>@Model.Question</blockquote>
+<br />
+@if (Model.PreferredContact == PreferredContact.Call) 
+{
+  @Html.Raw(String.Format("The client prefers to be called at <strong>{0}</strong>.", Model.CellNo));
+}
+@if (Model.PreferredContact == PreferredContact.Email) 
+{
+  @Html.Raw(String.Format("The client prefers to be emailed at <a href='mailto:{0}'><strong>{0}</strong></a>.", Model.Email));
+}

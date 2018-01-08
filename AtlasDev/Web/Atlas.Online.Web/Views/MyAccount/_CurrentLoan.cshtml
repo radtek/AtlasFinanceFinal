@@ -1,0 +1,56 @@
+﻿@using Atlas.Online.Data.Models.DTO;
+@using Atlas.Online.Web.Extensions;
+@using Atlas.Online.Web.Common.Extensions;
+
+<p class="fc-beta fs-zeta"><strong>Welcome @ViewBag.Client.FullName!</strong></p>
+
+<h3 class="fc-beta fs-epsilon">Current Loan application</h3>
+
+<table class="d-table-full ac table-alt mb-beta table-hoverable" ng-class="{loader: loans != null && !loans.length }" ng-init="init('@Html.Raw(@ViewBag.Status)', '@Html.Raw(@ViewBag.ApplicationId)')">
+    <thead>
+        <tr>
+            <th>Account No</th>
+            <th>Loan Amount</th>
+			<th>Application Date</th>
+			<th>Repayment Date</th>
+            <th>Repayment Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.CurrentLoan == null)
+        {
+            <tr><td colspan="6" class="fc-alpha ac">No current loan. Please click on 'Apply for a new loan' to create one.</td></tr>
+        }
+        else 
+        {
+            ApplicationDto item = ViewBag.CurrentLoan;
+            <tr>
+                @Html.TableCell(String.Format("<a href='javascript:void(0);' class='td-d {1}'>{0}</a>", !String.IsNullOrEmpty(item.AccountNo) ? item.AccountNo : "--", item.Affordability != null ? item.Affordability.Arrears.HasValue ? "fc-beta" : "" : ""))
+                @Html.TableCell(String.Format("{0:C0}", item.Amount))
+                @Html.TableCell(item.CreateDate.ToString("dd-MM-yyyy"))
+                @Html.TableCell(item.RepaymentDate.ToString("dd-MM-yyyy"))
+                @Html.TableCell(item.Affordability != null ? String.Format("{0:C0}", item.Affordability.RepaymentAmount) : "--")
+                @Html.TableCell(item.Affordability != null ? item.Affordability.Arrears.HasValue  ? "<span class='fc-beta'>Overdue</span>" : item.Status.ToString() : item.Status.ToString())
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewBag.CanContinue)
+{
+    <a href="@Url.Action("Index", "Application")" class="btn btn-right vertical-center">Resume Application</a>
+}
+
+@if (ViewBag.CurrentLoan != null) {
+    <div class="cf">
+        <a href="#/CurrentLoan/Settlements/{{ selectedAppId }}" class="d-iblock ac mr-alpha" ng-click="preventClick($event)" ng-class="{ disabled : !selectedRow || !canSettle }">
+            <i class="circle-icon-container fc-alpha-ltr fs-mega">
+                <i class="icon icon-credit-card fc-alpha fs-gamma" ng-class="{ 'fc-alpha-lt': !selectedRow || !canSettle }"></i>
+            </i>
+            <div>Settlements</div>
+        </a>
+        @Html.Partial("_LoanButtons")
+    </div>
+}
+<p class="fw-b">If you need assistance please contact our <span class="fc-beta">customer care line 000 000 0000</span></p>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="73f665b2-8129-415b-af77-54030afaf14e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Atlas.Enumerators" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9001/BankVerificationServer/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex.wsdl" MetadataType="Wsdl" ID="988d1b22-baa7-48b8-9877-c6656902d9d8" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex?wsdl=wsdl0" />
+    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="fd77baeb-65cb-4286-bc53-1b139fd9b49a" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex?xsd=xsd1" />
+    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="755486fa-dff6-4605-885a-d9bba180640b" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex?xsd=xsd0" />
+    <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="88c49272-4a0d-4625-baa1-b3fbed4c87b9" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex?xsd=xsd3" />
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="8bacf5b3-6f4c-4a83-96d0-cca1e872a5b3" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex?xsd=xsd2" />
+    <MetadataFile FileName="VerificationServer.wsdl" MetadataType="Wsdl" ID="c45c7ace-20a4-4449-825a-2c7cf4568d0b" SourceId="1" SourceUrl="http://localhost:9001/BankVerificationServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

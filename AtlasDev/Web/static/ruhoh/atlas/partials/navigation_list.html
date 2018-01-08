@@ -1,0 +1,7 @@
+{{#is_active_page }}
+  <li class="current-menu-item menu-item"><a href="{{url}}">{{title}}</a></li>
+{{/is_active_page}}
+
+{{^is_active_page}}
+  <li class="menu-item"><a href="{{url}}">{{title}}</a></li>
+{{/is_active_page }}

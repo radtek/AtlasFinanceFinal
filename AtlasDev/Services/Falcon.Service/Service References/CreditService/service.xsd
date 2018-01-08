@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Atlas.RabbitMQ.Messages.Credit" />
+  <xs:element name="QueueEnquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="legacyBranchNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="surname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="addressLine1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="homeTelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="homeTelNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workTelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workTelNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isIDPassportNo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isExistingClient" type="xs:boolean" />
+        <xs:element minOccurs="0" name="requestUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueueEnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="totalCPAAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="totalNLRAccount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="nlrEnquiryNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="enquiryDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="score" type="xs:int" />
+        <xs:element minOccurs="0" name="riskType" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="reasons" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="errors" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Enquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="surname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="addressLine1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="addressLine4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="homeTelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="homeTelNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workTelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workTelNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isIDPassportNo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isExistingClient" type="xs:boolean" />
+        <xs:element minOccurs="0" name="requestUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Atlas.RabbitMQ.Messages.Credit" minOccurs="0" name="EnquiryResult" nillable="true" type="q3:CreditResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enquiryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

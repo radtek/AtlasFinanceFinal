@@ -1,0 +1,202 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Workflow";
+}
+<div class="page-content" ng-controller="WorkflowController" ng-init="init(@Html.Json((object)ViewBag.BranchId), @Html.Json((object)ViewBag.PersonId))">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="page-breadcrumb breadcrumb">
+        <li class="btn-group">
+          <button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+            <span>
+              Actions
+            </span>
+            <i class="fa fa-angle-down"></i>
+          </button>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li>
+              <a ng-click="refresh()">Refresh</a>
+            </li>
+            @*<li class="divider"></li>
+            <li>
+              <a ng-click="move()" ng-show="canHold">Move Selected</a>
+            </li>*@
+          </ul>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/">Home</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <i class="fa fa-home"></i>
+          <a href="/Dashboard">Dashboard</a>
+          <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+          <a href="#">Workflow</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable-custom">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#statistics">Statistics</a>
+          </li>
+          <li>
+            <a data-toggle="tab" href="#filter">Filter</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="statistics" class="tab-pane active">
+            @*<div>
+                <div class="clearfix">
+                  <div class="col-md-2">
+                    <label>Total Transactions</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.TotalTransactions}}</strong>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Cancelled & Removed</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.CancelledRemoved}}</strong>
+                  </div>
+                  <div class="col-md-2">
+                    <label>New & On Hold</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.NewOnHold}}</strong>
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Invalid</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.Invalid}}</strong>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Submitted</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.Submitted}}</strong>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Successful</label>
+                  </div>
+                  <div class="col-md-2">
+                    <strong>{{statistics.Successful}}</strong>
+                  </div>
+                </div>
+              </div>*@
+          </div>
+          <div id="filter" class="tab-pane">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="clearfix">
+                  <div class="col-md-2">
+                    <label>Host</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <select ng-init="getHosts(@Html.Json((object)ViewBag.PersonId))" class="form-control input-medium" ng-model="filterHost" ng-options="c.HostId as c.HostName for c in hosts"></select>
+                      <button class="btn" ng-click="filterHost=1"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Start Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input class="form-control form-control-inline input-medium default-date-picker" size=" 16" type="text" ng-model="filterStartDate" value="">
+                      <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>End Date</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input class="form-control form-control-inline input-medium default-date-picker" id="filters_endDate" size="16" type="text" ng-model="filterEndDate" value="">
+                      <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix pad-buffer-top">
+                  <div class="col-md-2">
+                    <label>Branch</label>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <select ng-init="getCompanys()" class="form-control input-medium" ng-model="filterCompany" ng-options="c.CompanyId as c.CompanyName for c in companies"></select>
+                      <button class="btn" ng-click="filterCompany=0"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Account No.</label>
+                  </div>
+                  <div class="col-md-4">
+                    <input class="form-control input-sm" ng-model="filterAccountNo" name="accountNo" type="text" />
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer clearfix">
+                <div>
+                  <button ng-click="refresh()" class="btn green pull-right">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table ng-table="tableParams" class="table table-striped" show-filter="true">
+          <tr ng-repeat="process in $data">
+            <td>
+              <input type="checkbox" ng-model="process.Selected" class="list-child" ng-checked="dataSelected();">
+            </td>
+            <td data-title="'Process Job No.'" filter="{ 'ProcessJobId': 'text' }" sortable="'ProcessJobId'">
+              <center> {{process.ProcessJobId}}</center>
+            </td>
+            <td data-title="'Account No.'" filter="{ 'AccountNo': 'text' }" sortable="'AccountNo'">
+              <center> {{process.AccountNo}}</center>
+            </td>
+            <td data-title="'Id Number'" filter="{ 'IdNumber': 'text' }" sortable="'IdNumber'">
+              <center> {{process.IdNumber}}</center>
+            </td>
+            <td data-title="'First Name'" filter="{ 'FirstName': 'text' }" sortable="'FirstName'">
+              <center> {{process.FirstName}}</center>
+            </td>
+            <td data-title="'Last Name'" filter="{ 'LastName': 'text' }" sortable="'LastName'">
+              <center> {{process.LastName}}</center>
+            </td>
+            <td data-title="'Account Type'" filter="{ 'AccountType': 'text' }" sortable="'AccountType'">
+              <center> {{process.AccountType}}</center>
+            </td>
+            <td data-title="'Status'" filter="{ 'Status': 'text' }" sortable="'Status'">
+              <center> {{process.Status}}</center>
+            </td>
+            <td data-title="'Start Date'" filter="{ 'ProcessStartDate': 'text' }" sortable="'ProcessStartDate'">
+              <center> {{process.ProcessStartDate | date:'yyyy-MM-dd'}}</center>
+            </td>
+            <td data-title="'End Date'" filter="{ 'ProcessEndDate': 'text' }" sortable="'ProcessEndDate'">
+              <center> {{process.ProcessEndDate | date:'yyyy-MM-dd'}}</center>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div><!-- page end-->
+@section Scripts {
+  @Scripts.Render("~/WorkflowController")
+}
+
+

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D254B0A-F82D-449D-9779-31EB14475094}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Falcon.Common.Structures</RootNamespace>
+    <AssemblyName>Falcon.Common.Structures</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASS\BranchServer.cs" />
+    <Compile Include="Avs\AvsService.cs" />
+    <Compile Include="Bureau\CompuscanProducts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CampaignManager.cs" />
+    <Compile Include="CompuScanProduct.cs" />
+    <Compile Include="DebitOrder\DebitOrderControl.cs" />
+    <Compile Include="DebitOrder\DebitOrderResponseBatch.cs" />
+    <Compile Include="DebitOrder\DebitOrderResponseTransaction.cs" />
+    <Compile Include="DebitOrder\DebitOrderResponse.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountCache.cs" />
+    <Compile Include="AccountDetail.cs" />
+    <Compile Include="AccountHistory.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="AddressType.cs" />
+    <Compile Include="AffordabilityCategory.cs" />
+    <Compile Include="Analytics.cs" />
+    <Compile Include="Avs\Avs.cs" />
+    <Compile Include="Avs\AvsServiceScheduleBank.cs" />
+    <Compile Include="Avs\AvsStatistics.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankDetail.cs" />
+    <Compile Include="Branch\Branch.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactType.cs" />
+    <Compile Include="DashboardAlert.cs" />
+    <Compile Include="Employer.cs" />
+    <Compile Include="ETL.cs" />
+    <Compile Include="Host.cs" />
+    <Compile Include="LedgerTransactionType.cs" />
+    <Compile Include="NaedoServiceScheduleBank.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="PayoutStatistics.cs" />
+    <Compile Include="PayoutTransaction.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="ProcessAccountStep.cs" />
+    <Compile Include="Province.cs" />
+    <Compile Include="Publicholiday.cs" />
+    <Compile Include="Quotation.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="Report\Ass\CIBranchSummary.cs" />
+    <Compile Include="Report\Ass\CIScoreBand.cs" />
+    <Compile Include="Report\General\RegionBranch.cs" />
+    <Compile Include="Relation.cs" />
+    <Compile Include="Report\Ass\AverageLoan.cs" />
+    <Compile Include="Report\Ass\AverageNewCientLoan.cs" />
+    <Compile Include="Report\Ass\Cheque.cs" />
+    <Compile Include="Report\Ass\CIFile.cs" />
+    <Compile Include="Report\Ass\Insurance.cs" />
+    <Compile Include="Report\Ass\InsurancePercentiles.cs" />
+    <Compile Include="Report\Ass\Interest.cs" />
+    <Compile Include="Report\Ass\InterestPercentiles.cs" />
+    <Compile Include="Report\Ass\LoanMix.cs" />
+    <Compile Include="Report\Ass\MainSummary.cs" />
+    <Compile Include="Report\Ass\PossibleHandoversFile.cs" />
+    <Compile Include="Report\General\Series.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="ServiceStates.cs" />
+    <Compile Include="Target\BranchCiMonthly.cs" />
+    <Compile Include="Target\DailySaleModel.cs" />
+    <Compile Include="Target\HandoverTarget.cs" />
+    <Compile Include="Target\LoanMixModel.cs" />
+    <Compile Include="UserTracking\UserTrackingPinnedUserRuleset.cs" />
+    <Compile Include="UserTracking\UserTrackingPinnedUser.cs" />
+    <Compile Include="UserTracking\UserTrackingUserMovement.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="WebRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6aecfad7-a17c-4fb0-9ab6-bfce0f3c5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Atlas.Enumerators\Atlas.Enumerators.csproj">
+      <Project>{07FC6272-5FA2-45A7-A99C-062EC5B0C205}</Project>
+      <Name>Atlas.Enumerators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Falcon.Interfaces\Falcon.Common.Interfaces.csproj">
+      <Project>{130E010C-66A1-4128-8F61-03118BCE3B53}</Project>
+      <Name>Falcon.Common.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\Stream\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="Atlas.ThirdParty.Altech.NuCard" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NuCardAdminServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NuCardAdmin.NET_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="Atlas.ThirdParty.Altech.NuCard" location="" />
+  <wsdl:types />
+  <wsdl:binding name="NuCardAdmin.NET" type="i0:INuCardAdminServer">
+    <wsp:PolicyReference URI="#NuCardAdmin.NET_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LinkCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/LinkCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllocateCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardBalance">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromProfileLoadCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromProfileLoadCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromCardLoadProfile">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromCardLoadProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsBetweenCards">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsBetweenCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardStatement">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/StopCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStatus">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/GetCardStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelStopCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CancelStopCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPin">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/ResetPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocatedCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/UpdateAllocatedCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryPingNuCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TryPingNuCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBranchConfigured">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/IsBranchConfigured" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllocateAndDeductFromProfileLoadCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateAndDeductFromProfileLoadCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsToNewCard">
+      <soap12:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsToNewCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NuCardAdmin.HTTP" type="i0:INuCardAdminServer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LinkCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/LinkCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllocateCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardBalance">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromProfileLoadCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromProfileLoadCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductFromCardLoadProfile">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/DeductFromCardLoadProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsBetweenCards">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsBetweenCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardStatement">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CardStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/StopCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStatus">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/GetCardStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelStopCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/CancelStopCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPin">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/ResetPin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAllocatedCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/UpdateAllocatedCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryPingNuCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TryPingNuCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBranchConfigured">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/IsBranchConfigured" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllocateAndDeductFromProfileLoadCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/AllocateAndDeductFromProfileLoadCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferFundsToNewCard">
+      <soap:operation soapAction="Atlas.ThirdParty.Altech.NuCard/INuCardAdminServer/TransferFundsToNewCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NuCardAdminServer">
+    <wsdl:port name="NuCardAdmin.NET" binding="tns:NuCardAdmin.NET">
+      <soap12:address location="net.tcp://localhost:8200/NuCardAdmin" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8200/NuCardAdmin</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NuCardAdmin.HTTP" binding="tns:NuCardAdmin.HTTP">
+      <soap:address location="http://localhost:8201/NuCardAdmin" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

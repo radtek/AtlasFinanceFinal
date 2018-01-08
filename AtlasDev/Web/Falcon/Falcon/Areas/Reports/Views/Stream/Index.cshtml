@@ -1,0 +1,328 @@
+﻿@using Falcon.Gyrkin.Library.Extensions
+@{
+  ViewBag.Title = "Stream Performance Report";
+  Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" ng-model="token" value="@Html.RequestVerificationToken()" copy-value ng-cloak />
+<div ng-controller="StreamReportController" ng-init="init(@Html.Raw((object)ViewBag.PersonId))">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="clearfix">
+            <div class="col-md-1">
+              <label>Start Range</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group">
+                <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                  <input type="text" class="form-control" ng-model="filterStartDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                  <span class="input-group-btn">
+                    <button class="btn" ng-click="filterStartDate=''"><i class="fa fa-times"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <label>End Range</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group">
+                <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+                  <input type="text" class="form-control" ng-model="filterEndDate" readonly="" style="cursor: pointer !important;" comp-datepicker-trigger>
+                  <span class="input-group-btn">
+                    <button class="btn" ng-click="filterEndDate=''"><i class="fa fa-times"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <label>Region</label>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <div isteven-multi-select input-model="regions" button-label="Description" item-label="Description" tick-property="Ticked" orientation="vertical" on-item-click="regionSelected(data)"
+                     on-select-all="regionSelectAll()"
+                     on-select-none="regionClearBranches()"
+                     on-reset="regionClearBranches()"
+                     group-property="MultiSelectGroup"
+                     helper-elements="all none filter"
+                     output-model="selectedRegions"
+                     max-labels="1">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <label>Branch</label>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <div isteven-multi-select input-model="selectedRegionBranches" output-model="selectedBranches" button-label="Name" item-label="Name" tick-property="Ticked" orientation="vertical"
+                     group-property="MultiSelectGroup"
+                     helper-elements="all none filter"
+                     max-labels="1">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-md-1">
+              <label>Group Type</label>
+            </div>
+            <div class="col-md-2">
+              <div class="input-group input-medium">
+                <select id="selectGroup" placeholder="Select a Group" class="form-control" ng-model="filterGroup"
+                        ng-options="g.GroupTypeId as g.Description for g in groupTypes"></select>
+              </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-1">
+              <label ng-show="false">Users</label>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group" ng-show="false">
+                <div isteven-multi-select input-model="rUsers" output-model="rUsers1" button-label="Name" item-label="Name" tick-property="Ticked" orientation="vertical"
+                     group-property="MultiSelectGroup">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form">
+          <div class="form-actions right">
+            <button ng-click="export()" ng-disabled="disableButtons" class="btn green">{{btnExportText}}</button>
+            <button ng-click="apply()" ng-disabled="disableButtons" class="btn green">{{btnApplyText}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form">
+        <ul class="page-breadcrumb breadcrumb">
+          <li ng-show="drillDownLevel >= 1">
+            <i class="fa fa-home"></i>
+            <a href="" ng-click="fastNavigateDrilldown(1)">Regions {{regionsDrilldownfilter}}</a>
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li ng-show="drillDownLevel >= 2">
+            <i class="fa fa-home"></i>
+            <a href="" ng-click="fastNavigateDrilldown(2)">Branches {{branchesDrilldownfilter}}</a>
+            <i class="fa fa-angle-right"></i>
+          </li>
+          <li ng-show="drillDownLevel >= 3">
+            <i class="fa fa-home"></i>
+            <a href="">Details</a>
+            <i class="fa fa-angle-right"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="drillDownLevel <= 2">
+    <div class="note note-success centre-align">
+      {{headerColumn}}
+    </div>
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table si-table class="table table-striped ng-cloak">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Branch</th>
+              <th>Allocated User</th>
+              <th>Category</th>
+              @*<th>Sub-Category</th>*@
+
+              @*Created *@
+              @*<th ng-show="showCreated" ><center>Accounts</center></th>
+              <th ng-show="showCreated"><center>Debtors</center></th>
+              <th ng-show="showCreated"><center>Cases</center></th>*@
+              <th ng-show="showCreated"><center>System Closed Cases</center></th>
+              @*<th ng-show="showCreated"><center>Workable Cases</center></th>*@
+              <th ng-click="showCreated||changeView('created')"ng-class="{'text-primary pointer':(!showCreated)}"><center>Current Accounts</center></th>
+              <th ng-show="showCreated"><center>Current Clients</center></th>
+              <th ng-show="showCreated"><center>Current Cases</center></th>
+
+              @*PTP*@
+              <th ng-click="showDues||changeView('dues')" ng-class="{'text-primary pointer':(!showDues)}"><center>{{PTPPTC}}'s Obtained</center></th>
+              <th ng-show="showDues"><center>{{PTPPTC}}'s Broken</center></th>
+              <th ng-show="showDues"><center>Successful {{PTPPTC}}'s</center></th>
+              <th ng-show="showDues"><center>Follow Ups</center></th>
+              <th ng-show="showDues"><center>Not Actioned</center></th>
+              <th ng-show="showDues"><center>Hit Rate % PTP's vs Current Cases</center></th>
+              <th ng-show="showDues"><center>Hit Rate % Successful PTP's vs Current Cases</center></th>
+              <th ng-show="showDues"><center>Escalations</center></th>
+              <th ng-show="showDues"><center>Transferred In</center></th>
+              <th ng-show="showDues"><center>Transferred Out</center></th>
+              <th ng-show="showDues"><center>SMS Count</center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="line in accountData" ng-click="(drillDownLevel >= 2 || disableButtons)||drillDown(line)" ng-class="{'text-primary pointer':(drillDownLevel < 2 && !disableButtons)}">
+              <td>{{line.Region}}</td>
+              <td>{{line.Branch}}</td>
+              <td>{{line.AllocatedUser}}</td>
+              <td>{{line.Category}}</td>
+              @*<td>{{line.SubCategory}}</td>*@
+
+              @*Created*@
+              @*<td><center>{{line.Accounts}}</center></td>
+              <td ng-show="showCreated"><center>{{line.Debtors}}</center></td>
+              <td ng-show="showCreated"><center>{{line.Cases}}</center></td>*@
+              <td ng-show="showCreated"><center>{{line.SystemClosedCases}}</center></td>
+              @*<td ng-show="showCreated"><center>{{line.WorkableCases}}</center></td>*@
+              <td ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'CurrentAccounts')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.CurrentAccounts}}</center></td>
+              <td ng-show="showCreated" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'CurrentClients')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.CurrentClients}}</center></td>
+              <td ng-show="showCreated" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'CurrentCases')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.CurrentCases}}</center></td>
+
+              @*PTP*@
+              <td ng-click="(drillDownLevel < 2)||drillDownToAccounts(line, 'PtpPtcObtained')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.PtpPtcObtained}}</center></td>
+              <td ng-show="showDues" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'PtpPtcBroken')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.PtpPtcBroken}}</center></td>
+              <td ng-show="showDues" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'PtpPtcSuccessful')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.PtpPtcSuccessful}}</center></td>
+              <td ng-show="showDues" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'FollowUps')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.FollowUps}}</center></td>
+              <td ng-show="showDues"><center>{{line.NoActionCount}}</center></td>
+              <td ng-show="showDues"><center>{{line.PtpPtcHitRate}}</center></td>
+              <td ng-show="showDues"><center>{{line.PtpPtcHitRateSuccessful}}</center></td>
+              <td ng-show="showDues" ng-click="(drillDownLevel < 2 || disableButtons)||drillDownToAccounts(line, 'Escalations')" ng-class="{'text-primary pointer':(drillDownLevel >= 2 && !disableButtons)}"><center>{{line.Escalations}}</center></td>
+              <td ng-show="showDues"><center>{{line.TransferredIn}}</center></td>
+              <td ng-show="showDues"><center>{{line.TransferredOut}}</center></td>
+              <td ng-show="showDues"><center>{{line.SMSCount}}</center></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="drillDownLevel > 2">
+    <div class="col-md-12">
+      <div class="form">
+        <div class="form-actions right">
+          <button ng-click="exportAccounts()" ng-disabled="disableButtons" class="btn green">{{btnExportAccountsText}}</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table si-table class="table table-striped ng-cloak">
+          <thead>
+            <tr>
+              <th width="20px"></th>
+              <th class="col-align-center">#</th>
+              <th>Reference No.</th>
+              <th>Client Name</th>
+              <th>ID No.</th>
+              <th class="col-align-center">Priority</th>
+              <th class="col-align-center">Status</th>
+              <th class="col-align-center">Allocated User</th>
+              <th class="col-align-center">Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr si-sortable ng-repeat="case in streamData">
+              <td><input type="checkbox" id="chkRegionalManager" ng-model="case.CaseStream.transfer" ng-checked="multiTransferSelected()" /></td>
+              <td class="col-align-center">{{ case.CaseId }}</td>
+              <td>{{ case.AccountReference}}</td>
+              <td>{{case.DebtorFullName}}</td>
+              <td>{{case.DebtorIdNumber}}</td>
+              <td class="col-align-center">{{case.Priority}}</td>
+              <td class="col-align-center">{{case.CaseStatus}}</td>
+              <td class="col-align-center">{{case.AllocatedUserFullName }}</td>
+              <td class="col-align-center"><center> <a ng-click="viewHistory(case)" button-loading="button_loading_{{case.CaseStreamActionId}}" rel="tooltip" title="View" style="cursor: pointer;" id="button_{{case.CaseStreamActionId}}"><span class="curved-border label label-info">view history</span></a></center></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6">
+                <si-table-pagination limit="{{pageLimit}}" indices="5" total="params.total" offset="params.offset" />
+              </td>
+              <td colspan="4">
+                <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 100;" anchor-prevent-propagation>100</a>
+                <a class="pull-right btn green-meadow component-well-margin-top" ng-click="pageLimit = 10;" anchor-prevent-propagation>10</a>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="viewAllocateDlg" role="dialog" tabindex="-1" id="allocateDialog" class="modal bs-modal-lg" style="overflow-y: auto;z-index:1040" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header modal-header-primary">
+          <center>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===1">New Stream - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info " aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===2">Promise to Pay Stream - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===3">Promise to Come - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===4">Follow Up - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===5">Broken Promise to Pay - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===6">Completed - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+            <h4 class="modal-title" ng-show="currentWorkItem.StreamId===7">Broken Promise to Come - Case No [<strong>{{currentWorkItem.CaseId}}</strong>][<strong>{{currentWorkItem.AccountReference}}</strong>][<strong>{{currentWorkItem.Category}} - {{currentWorkItem.SubCategory}}</strong>]<a class="pull-right btn btn-info" aria-hidden="true" data-dismiss="modal" href="" anchor-prevent-propagation>X</a></h4>
+          </center>
+        </div>
+        <div class="modal-header modal-header-info" ng-show="currentWorkItem.CaseStream.Stream.StreamType != 1">
+          <center>
+            Previous Action Complete Comment: {{ previousCompleteNote }}
+          </center>
+        </div>
+        <div class="modal-header modal-header-info" ng-show="currentWorkItem.ActionTypeId === 3 && currentWorkItem.StreamId===2">
+          <center>
+            This client has promised to pay at <strong>{{ currentWorkItem.ActionDate | date: 'EEEE, MMMM d, y HH:mm' }}</strong>.
+          </center>
+        </div>
+        <div class="modal-header modal-header-info" ng-show="currentWorkItem.ActionTypeId === 3 && currentWorkItem.StreamId===3">
+          <center>
+            This client has promised to come at <strong>{{ currentWorkItem.ActionDate | date: 'EEEE, MMMM d, y HH:mm' }}</strong>.
+          </center>
+        </div>
+        <div class="modal-header modal-header-danger" ng-show="currentWorkItem.NoActionCount>0 ">
+          <center>
+            Please note there has been <strong>{{ currentWorkItem.NoActionCount }}</strong> no action's performed on this case.
+          </center>
+        </div>
+        <div class="modal-body">
+          <div class="tabbable-custom">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a data-toggle="tab" href="#history" anchor-prevent-propagation>History</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="history" class="tab-pane active">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-striped ng-cloak" id="notes" name="notes" si-table>
+                      <thead>
+                        <tr>
+                          <th class="col-align-center">#</th>
+                          <th>Note</th>
+                          <th sort-by="CreateDate" sort-init="desc" class="col-align-center">Created</th>
+                          <th class="col-align-center">Comment</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr si-sortable ng-repeat="note in notes" id="{{note.NoteId}}">
+                          <td class="col-align-center">{{ note.NoteId}}</td>
+                          <td>{{ note.Note}}</td>
+                          <td class="col-align-center">{{ note.CreateDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                          <td class="col-align-center"><span class="label label-default"><i class="fa fa-comment-o" style="cursor: pointer;"></i></span></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td colspan="9">
+                            <si-table-pagination limit="10" indices="5" />
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- page end-->

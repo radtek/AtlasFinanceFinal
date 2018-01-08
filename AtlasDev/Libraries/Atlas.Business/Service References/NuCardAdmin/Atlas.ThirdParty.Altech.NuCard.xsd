@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Atlas.ThirdParty.Altech.NuCard" elementFormDefault="qualified" targetNamespace="Atlas.ThirdParty.Altech.NuCard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" />
+  <xs:element name="LinkCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q1:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllocateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q2:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idOrPassportNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellPhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllocateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllocateCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q3:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardBalanceResult" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="balanceResult" nillable="true" type="q4:BalanceResult" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductFromProfileLoadCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q5:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductFromProfileLoadCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeductFromProfileLoadCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductFromCardLoadProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q6:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeductFromCardLoadProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeductFromCardLoadProfileResult" type="xs:int" />
+        <xs:element minOccurs="0" name="transferredAmountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferFundsBetweenCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q7:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumberFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardNumberTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stopTheFromCard" type="xs:boolean" />
+        <xs:element minOccurs="0" name="stopReasonCodeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferFundsBetweenCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransferFundsBetweenCardsResult" type="xs:int" />
+        <xs:element minOccurs="0" name="transferredAmountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q8:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CardStatementResult" type="xs:int" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="statementResult" nillable="true" type="q9:StatementResult" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q10:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stopReasonCodeID" type="xs:int" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StopCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="transferredAmountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q11:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCardStatusResult" type="xs:int" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="cardStatus" nillable="true" type="q12:CardStatus" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelStopCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q13:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelStopCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelStopCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q14:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetPinResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAllocatedCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q15:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellphoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAllocatedCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAllocatedCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryPingNuCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q16:SourceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TryPingNuCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TryPingNuCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsBranchConfigured">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q17:SourceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsBranchConfiguredResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsBranchConfiguredResult" type="xs:int" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllocateAndDeductFromProfileLoadCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q18:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idOrPassportNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellPhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AllocateAndDeductFromProfileLoadCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AllocateAndDeductFromProfileLoadCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferFundsToNewCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/AtlasServer.WCF.Interface" minOccurs="0" name="sourceRequest" nillable="true" type="q19:SourceRequest" />
+        <xs:element minOccurs="0" name="cardNumberFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardNumberTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stopReasonCodeID" type="xs:int" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idOrPassportNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cellPhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferFundsToNewCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransferFundsToNewCardResult" type="xs:int" />
+        <xs:element minOccurs="0" name="transferredAmountInCents" type="xs:int" />
+        <xs:element minOccurs="0" name="serverTransactionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,6 @@
+/* is dependant on @include transform() */
+@mixin use-gpu() {
+	@include transform(translateZ(0));
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}

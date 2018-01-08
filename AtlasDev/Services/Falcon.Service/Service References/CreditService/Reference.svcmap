@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2058fa32-686d-433d-8f00-ed7eb783a31d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8200/CreditServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ff4eaf85-8600-44c7-8ded-f578f47a5239" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="774ed9f2-440d-4369-8097-59bd3ad7d6c0" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8ef4042e-4ea8-4df9-a941-d045674f7030" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="e3325771-782f-49cc-abbd-af9d6ed923c1" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+    <MetadataFile FileName="Atlas.RabbitMQ.Messages.Credit.xsd" MetadataType="Schema" ID="5fba49ef-279e-4e10-a641-7471775c0eb8" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+    <MetadataFile FileName="Atlas.Enumerators.xsd" MetadataType="Schema" ID="f4259552-cf13-4b52-b25d-bd528f324050" SourceId="1" SourceUrl="net.tcp://localhost:8200/CreditServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

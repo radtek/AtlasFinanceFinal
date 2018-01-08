@@ -1,0 +1,17 @@
+﻿<div ng-controller="AccountRouteHistoryController">
+  <section class="panel">
+    <section class="panel-body">
+      <fieldset>
+        <div class="table-responsive">
+          <table ng-table="routeHistoryParams" class="table" style="cursor: pointer;">
+            <tr ng-repeat="routeHist in $data" ng-click="changeSelection('rhOptionRowSelected',routeHistory,'routeHistory')" ng-class="{selected: quotation.$selected}">
+              <td data-title="'RouteHistory Id.'">
+                <center> {{routeHist.Id}}</center>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </section>
+  </section>
+</div>

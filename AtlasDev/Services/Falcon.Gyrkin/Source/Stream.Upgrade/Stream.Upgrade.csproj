@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2123CCF7-676B-4B57-8D1F-919F9EDA7C25}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stream.Upgrade</RootNamespace>
+    <AssemblyName>Stream.Upgrade</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atlas.Data.Dapper">
+      <HintPath>..\..\..\..\Libraries\Atlas.Data.Dapper\bin\Debug\Atlas.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\Atlas.Common\Atlas.Common.csproj">
+      <Project>{6AECFAD7-A17C-4FB0-9AB6-BFCE0F3C5391}</Project>
+      <Name>Atlas.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteTransactionNotes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithoutBranch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithoutContact.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithoutDebtor.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithoutHost.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountNotes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithoutBranch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithoutContact.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithoutDebtor.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithoutHost.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateNote.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountTransactionNotesRemaining.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stream_db upgrade_2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithoutReference.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithoutReference.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CountCasesWithLastImportReference.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateCasesWithLastImportReference.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

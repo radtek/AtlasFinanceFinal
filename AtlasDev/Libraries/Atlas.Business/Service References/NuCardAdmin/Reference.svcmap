@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16b6ea94-c245-4025-94c0-227a0ba06e56" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Atlas.ThirdParty.Altech.NuCard.wsdl" MetadataType="Wsdl" ID="f6886616-5f9a-4567-b7c3-e62baff45aca" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="367a655d-2547-454d-a4fb-b3cc3d67f376" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" />
+    <MetadataFile FileName="Atlas.ThirdParty.Altech.NuCard.xsd" MetadataType="Schema" ID="e1d06973-6c22-44b7-b933-6e3c66f748ef" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="8088cd28-45fa-40a1-b095-7d5047aa50cf" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" />
+    <MetadataFile FileName="AtlasServer.WCF.Interface.xsd" MetadataType="Schema" ID="71a0e633-48cc-4ed3-9b85-a0d6cfa87172" SourceId="1" SourceUrl="net.tcp://172.31.75.38:8200/NuCardAdmin/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

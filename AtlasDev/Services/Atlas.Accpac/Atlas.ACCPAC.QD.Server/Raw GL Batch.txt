@@ -1,0 +1,75 @@
+Dim session As ACCPACXAPILib.xapiSession
+Set session = CreateObject("Accpac.xapisession")
+session.Open "ADMIN", "ADMIN", "TWOCOM", Date, 0
+
+Dim GLbatch As ACCPACXAPILib.xapiView
+Dim GLbatchFields As ACCPACXAPILib.xapiFields
+Set GLbatch = session.OpenView("GL0008", "GL")
+Set GLbatchFields = GLbatch.Fields
+
+
+Dim GLbatchHeader As ACCPACXAPILib.xapiView
+Dim GLbatchHeaderFields As ACCPACXAPILib.xapiFields
+Set GLbatchHeader = session.OpenView("GL0006", "GL")
+Set GLbatchHeaderFields = GLbatchHeader.Fields
+
+Dim GLbatchDetail As ACCPACXAPILib.xapiView
+Dim GLbatchDetailFields As ACCPACXAPILib.xapiFields
+Set GLbatchDetail = session.OpenView("GL0010", "GL")
+Set GLbatchDetailFields = GLbatchDetail.Fields
+
+Dim GLbatchDetail2 As ACCPACXAPILib.xapiView
+Dim GLbatchDetail2Fields As ACCPACXAPILib.xapiFields
+Set GLbatchDetail2 = session.OpenView("GL0402", "GL")
+Set GLbatchDetail2Fields = GLbatchDetail2.Fields
+
+GLbatch.Compose Array(GLbatchHeader)
+GLbatchHeader.Compose Array(GLbatch, GLbatchDetail)
+GLbatchDetail.Compose Array(GLheader, GLbatchDetail2)
+GLbatchDetail2.Compose Array(GLDetail)
+
+X = 2
+
+GLbatch.Browse "((Batchstat = ""1"" or batchstat = ""6"" or batchstat = ""9""))", 1
+
+GLbatch.Init
+GLbatch.Read
+GLbatchHeaderFields("Btchendtry").PutWithoutVerification ("")
+GLbatchHeader.Browse "", 1
+GLbatchHeader.Fetch
+
+GLbatchHeaderFields("BTchentry").PutWithoutVerification (BatchLabel.Caption)
+GLbatch.Update
+GLbatchHeaderFields("DATEENTRY").Value = BatchSS.Range("B" & X)
+GLbatchHeaderFields("SRCETYPE") = SourceCombo.Text
+
+If reverseCheck.Value = True Then
+GLbatchHeaderFields("SWREVERSE").PutWithoutVerification ("1")
+End If
+'debit side
+GLbatchDetail.RecordClear
+GLbatchDetail.RecordGenerate False
+
+GLbatchDetailFields("ACCTID") = BatchSS.Range("E" & X)
+GLbatchDetailFields("SCURNAMT") = BatchSS.Range("D" & X)
+GLbatchDetailFields("TRANSREF") = BatchSS.Range("A" & X)
+GLbatchDetailFields("TRANSEDESC") = BatchSS.Range("C" & X)
+GLbatchDetail.Insert
+GLbatchDetail.Fields("TRANSNBR").PutWithoutVerification (X)
+
+GLbatchDetail.Read
+GLbatchDetail.RecordGenerate False
+
+GLbatchDetailFields("ACCTID") = BatchSS.Range("E" & X)
+GLbatchDetailFields("SCURNAMT") = BatchSS.Range("D" & X) * -1
+GLbatchDetailFields("TRANSREF") = BatchSS.Range("A" & X)
+GLbatchDetailFields("TRANSEDESC") = BatchSS.Range("C" & X)
+GLbatchDetail.Insert
+GLbatchDetail.Fields("TRANSNBR").PutWithoutVerification (X)
+GLbatchDetail.Read
+
+GLbatchHeaderFields("JRNLDESC").PutWithoutVerification (BatchLabel.Caption)
+
+GLbatchHeader.Insert
+GLbatchHeader.Read
+GLbatchHeader.Update

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{966FA7EB-8D68-4DFA-B146-FF13583203B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Atlas.DataSync.WCF.Client</RootNamespace>
+    <AssemblyName>Atlas.DataSync.WCF.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientProxies\DataSyncAdminClient.cs" />
+    <Compile Include="ClientProxies\DataSyncDataClient.cs" />
+    <Compile Include="ClientProxies\DataSyncDataFileRequestClient.cs" />
+    <Compile Include="ClientProxies\DataSyncDataFileClient.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\SourceRequestUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.DataSync.WCF\Atlas.DataSync.WCF.csproj">
+      <Project>{4b91df6a-7219-4465-857f-b2c16b1d3763}</Project>
+      <Name>Atlas.DataSync.WCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems')" />
+  <Import Project="..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems" Label="Shared" Condition="Exists('..\..\..\SharedCodeProjects\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared\Atlas.Desktop.Client.Shared.projitems')" />
+  <Import Project="..\..\..\SharedCodeProjects\Atlas.Shared.Client\Atlas.Shared.Client.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
